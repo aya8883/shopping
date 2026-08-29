@@ -1,0 +1,57 @@
+table:
+  name: supermarkets
+  schema: public
+object_relationships: []
+array_relationships:
+  - name: offers
+    using:
+      foreign_key_constraint_on:
+        column: supermarket_id
+        table:
+          name: supermarket_offers
+          schema: public
+  - name: branches
+    using:
+      foreign_key_constraint_on:
+        column: supermarket_id
+        table:
+          name: supermarket_branches
+          schema: public
+select_permissions:
+  - role: anonymous
+    permission:
+      columns: "*"
+      filter:
+        active: { _eq: true }
+      allow_aggregations: true
+  - role: consumer
+    permission:
+      columns: "*"
+      filter:
+        active: { _eq: true }
+      allow_aggregations: true
+  - role: reviewer
+    permission:
+      columns: "*"
+      filter: {}
+      allow_aggregations: true
+  - role: admin
+    permission:
+      columns: "*"
+      filter: {}
+      allow_aggregations: true
+insert_permissions:
+  - role: admin
+    permission:
+      check: {}
+      columns: "*"
+update_permissions:
+  - role: admin
+    permission:
+      columns: "*"
+      filter: {}
+      check: {}
+delete_permissions:
+  - role: admin
+    permission:
+      filter: {}

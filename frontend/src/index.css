@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-brand: #0f766e;
+  --color-brand-dark: #0b5a54;
+  --color-brand-light: #14b8a6;
+  --color-brand-muted: #ccfbf1;
+  --color-savings: #15803d;
+  --color-surface: #ffffff;
+  --color-ink: #134e4a;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'IBM Plex Sans Arabic', 'IBM Plex Sans', system-ui, sans-serif;
+  color: var(--color-ink);
+}
+
+* {
+  box-sizing: border-box;
+}

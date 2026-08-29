@@ -1,0 +1,53 @@
+table:
+  name: product_categories
+  schema: public
+object_relationships:
+  - name: parent
+    using:
+      foreign_key_constraint_on: parent_id
+array_relationships:
+  - name: products
+    using:
+      foreign_key_constraint_on:
+        column: category_id
+        table:
+          name: products
+          schema: public
+select_permissions:
+  - role: anonymous
+    permission:
+      columns: "*"
+      filter:
+        active: { _eq: true }
+      allow_aggregations: true
+  - role: consumer
+    permission:
+      columns: "*"
+      filter:
+        active: { _eq: true }
+      allow_aggregations: true
+  - role: reviewer
+    permission:
+      columns: "*"
+      filter: {}
+      allow_aggregations: true
+  - role: admin
+    permission:
+      columns: "*"
+      filter: {}
+      allow_aggregations: true
+insert_permissions:
+  - role: admin
+    permission:
+      check: {}
+      columns: "*"
+update_permissions:
+  - role: admin
+    permission:
+      columns: "*"
+      filter: {}
+      check: {}
+delete_permissions:
+  - role: admin
+    permission:
+      filter: {}

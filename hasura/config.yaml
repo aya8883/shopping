@@ -1,0 +1,9 @@
+version: 3
+endpoint: http://localhost:8080
+admin_secret: wain_awfar_hasura_admin_secret_dev
+metadata_directory: metadata
+migrations_directory: migrations
+seeds_directory: seeds
+actions:
+  kind: synchronous
+  handler_webhook_baseurl: http://localhost:3001

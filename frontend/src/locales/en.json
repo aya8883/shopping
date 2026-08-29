@@ -1,0 +1,69 @@
+{
+  "app": {
+    "name": "Wain Awfar",
+    "slogan": "Compare. Save. Shop smarter.",
+    "city": "Riyadh",
+    "currency": "SAR",
+    "demoBadge": "Demo prices"
+  },
+  "nav": {
+    "home": "Home",
+    "search": "Search",
+    "offers": "Offers",
+    "myList": "My List",
+    "profile": "Profile"
+  },
+  "home": {
+    "headline": "Save more on your groceries",
+    "subtitle": "Compare supermarket prices and find the best deals.",
+    "searchPlaceholder": "Search products, brands…",
+    "categories": "Categories",
+    "bestDeals": "Best deals",
+    "popular": "Popular products",
+    "leaflets": "Current leaflets",
+    "validationTitle": "Price comparison check"
+  },
+  "search": {
+    "title": "Search",
+    "placeholder": "Milk, Almarai, مراعي…",
+    "noResults": "No results",
+    "hint": "Try English or Arabic product names"
+  },
+  "product": {
+    "bestPrice": "Best price",
+    "youSave": "You save",
+    "regular": "Regular",
+    "unitPrice": "Unit",
+    "addToList": "Add to list",
+    "comparePrices": "Compare prices",
+    "noCurrentPrice": "No current price is available.",
+    "offers": "Current offers",
+    "size": "Size",
+    "brand": "Brand"
+  },
+  "offers": {
+    "title": "Offers",
+    "weekly": "Weekly offers",
+    "comingSoon": "Filters and sorting arrive in a later phase."
+  },
+  "list": {
+    "title": "My list",
+    "empty": "Start adding products to your shopping list.",
+    "compare": "Compare stores",
+    "optimize": "Optimize basket",
+    "phaseNote": "Shopping lists and basket optimization ship in Phase 4."
+  },
+  "profile": {
+    "title": "Profile",
+    "language": "Language",
+    "signIn": "Sign in",
+    "signOut": "Sign out",
+    "anonymous": "Browsing as guest — search and compare freely."
+  },
+  "common": {
+    "loading": "Loading…",
+    "error": "Something went wrong",
+    "retry": "Retry",
+    "sar": "{{amount}} SAR"
+  }
+}

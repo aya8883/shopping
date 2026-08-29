@@ -1,0 +1,12 @@
+{
+  "name": "wain-awfar",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Riyadh supermarket price comparison — Wain Awfar",
+  "scripts": {
+    "dev:infra": "docker compose up -d postgres supertokens-db supertokens hasura auth-service",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "setup": "powershell -ExecutionPolicy Bypass -File ./scripts/setup-dev.ps1",
+    "test": "npm --prefix frontend run test"
+  }
+}

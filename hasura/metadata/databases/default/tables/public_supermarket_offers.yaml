@@ -1,0 +1,63 @@
+table:
+  name: supermarket_offers
+  schema: public
+object_relationships:
+  - name: product
+    using:
+      foreign_key_constraint_on: product_id
+  - name: supermarket
+    using:
+      foreign_key_constraint_on: supermarket_id
+  - name: branch
+    using:
+      foreign_key_constraint_on: branch_id
+  - name: leaflet
+    using:
+      foreign_key_constraint_on: leaflet_id
+select_permissions:
+  - role: anonymous
+    permission:
+      columns: "*"
+      filter:
+        active: { _eq: true }
+      allow_aggregations: true
+  - role: consumer
+    permission:
+      columns: "*"
+      filter:
+        active: { _eq: true }
+      allow_aggregations: true
+  - role: reviewer
+    permission:
+      columns: "*"
+      filter: {}
+      allow_aggregations: true
+  - role: admin
+    permission:
+      columns: "*"
+      filter: {}
+      allow_aggregations: true
+insert_permissions:
+  - role: admin
+    permission:
+      check: {}
+      columns: "*"
+  - role: reviewer
+    permission:
+      check: {}
+      columns: "*"
+update_permissions:
+  - role: admin
+    permission:
+      columns: "*"
+      filter: {}
+      check: {}
+  - role: reviewer
+    permission:
+      columns: "*"
+      filter: {}
+      check: {}
+delete_permissions:
+  - role: admin
+    permission:
+      filter: {}

@@ -1,0 +1,35 @@
+﻿table:
+  name: price_alerts
+  schema: public
+select_permissions:
+  - role: consumer
+    permission:
+      columns: "*"
+      filter:
+        user_id: { _eq: X-Hasura-User-Id }
+      allow_aggregations: true
+  - role: admin
+    permission:
+      columns: "*"
+      filter: {}
+      allow_aggregations: true
+  - role: reviewer
+    permission:
+      columns: "*"
+      filter: {}
+      allow_aggregations: true
+insert_permissions:
+  - role: admin
+    permission:
+      check: {}
+      columns: "*"
+update_permissions:
+  - role: admin
+    permission:
+      columns: "*"
+      filter: {}
+      check: {}
+delete_permissions:
+  - role: admin
+    permission:
+      filter: {}

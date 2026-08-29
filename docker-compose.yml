@@ -1,0 +1,126 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-wain_awfar}
+      POSTGRES_USER: ${POSTGRES_USER:-wain_awfar}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-wain_awfar_dev_password}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./scripts/init-postgres.sh:/docker-entrypoint-initdb.d/01-init.sh:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-wain_awfar} -d ${POSTGRES_DB:-wain_awfar}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  supertokens-db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${SUPERTOKENS_POSTGRES_USER:-supertokens}
+      POSTGRES_PASSWORD: ${SUPERTOKENS_POSTGRES_PASSWORD:-supertokens_dev_password}
+      POSTGRES_DB: ${SUPERTOKENS_POSTGRES_DB:-supertokens}
+    volumes:
+      - supertokens_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${SUPERTOKENS_POSTGRES_USER:-supertokens} -d ${SUPERTOKENS_POSTGRES_DB:-supertokens}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  supertokens:
+    image: registry.supertokens.io/supertokens/supertokens-postgresql:9.2
+    restart: unless-stopped
+    depends_on:
+      supertokens-db:
+        condition: service_healthy
+    ports:
+      - "3567:3567"
+    environment:
+      POSTGRESQL_CONNECTION_URI: "postgresql://${SUPERTOKENS_POSTGRES_USER:-supertokens}:${SUPERTOKENS_POSTGRES_PASSWORD:-supertokens_dev_password}@supertokens-db:5432/${SUPERTOKENS_POSTGRES_DB:-supertokens}"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3567/hello"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  hasura:
+    image: hasura/graphql-engine:v2.42.0
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    environment:
+      HASURA_GRAPHQL_DATABASE_URL: ${HASURA_GRAPHQL_DATABASE_URL:-postgres://wain_awfar:wain_awfar_dev_password@postgres:5432/wain_awfar}
+      HASURA_GRAPHQL_ADMIN_SECRET: ${HASURA_GRAPHQL_ADMIN_SECRET:-wain_awfar_hasura_admin_secret_dev}
+      HASURA_GRAPHQL_JWT_SECRET: ${HASURA_GRAPHQL_JWT_SECRET}
+      HASURA_GRAPHQL_UNAUTHORIZED_ROLE: ${HASURA_GRAPHQL_UNAUTHORIZED_ROLE:-anonymous}
+      HASURA_GRAPHQL_ENABLE_CONSOLE: ${HASURA_GRAPHQL_ENABLE_CONSOLE:-true}
+      HASURA_GRAPHQL_DEV_MODE: ${HASURA_GRAPHQL_DEV_MODE:-true}
+      HASURA_GRAPHQL_ENABLED_LOG_TYPES: ${HASURA_GRAPHQL_ENABLED_LOG_TYPES:-startup,http-log,webhook-log,websocket-log,query-log}
+      HASURA_GRAPHQL_METADATA_DATABASE_URL: ${HASURA_GRAPHQL_DATABASE_URL:-postgres://wain_awfar:wain_awfar_dev_password@postgres:5432/wain_awfar}
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/healthz"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  auth-service:
+    build:
+      context: ./functions/auth-service
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    depends_on:
+      supertokens:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+    ports:
+      - "3001:3001"
+    environment:
+      PORT: ${AUTH_SERVICE_PORT:-3001}
+      CORS_ORIGIN: ${AUTH_SERVICE_CORS_ORIGIN:-http://localhost:5173}
+      SUPERTOKENS_CONNECTION_URI: ${SUPERTOKENS_CONNECTION_URI:-http://supertokens:3567}
+      SUPERTOKENS_API_KEY: ${SUPERTOKENS_API_KEY:-}
+      SUPERTOKENS_APP_NAME: ${SUPERTOKENS_APP_NAME:-Wain Awfar}
+      API_DOMAIN: ${VITE_SUPERTOKENS_API_DOMAIN:-http://localhost:3001}
+      WEBSITE_DOMAIN: ${VITE_WEBSITE_DOMAIN:-http://localhost:5173}
+      DATABASE_URL: ${HASURA_GRAPHQL_DATABASE_URL:-postgres://wain_awfar:wain_awfar_dev_password@postgres:5432/wain_awfar}
+      JWT_ACCESS_TOKEN_SIGNING_KEY: ${JWT_ACCESS_TOKEN_SIGNING_KEY:-wain-awfar-dev-jwt-secret-key-change-in-production-32chars}
+      HASURA_GRAPHQL_URL: http://hasura:8080/v1/graphql
+      HASURA_ADMIN_SECRET: ${HASURA_GRAPHQL_ADMIN_SECRET:-wain_awfar_hasura_admin_secret_dev}
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      target: development
+    restart: unless-stopped
+    depends_on:
+      - hasura
+      - auth-service
+    ports:
+      - "5173:5173"
+    environment:
+      VITE_APP_NAME: ${VITE_APP_NAME:-Wain Awfar}
+      VITE_APP_NAME_AR: ${VITE_APP_NAME_AR:-وين أوفر؟}
+      VITE_HASURA_GRAPHQL_URL: ${VITE_HASURA_GRAPHQL_URL:-http://localhost:8080/v1/graphql}
+      VITE_SUPERTOKENS_API_DOMAIN: ${VITE_SUPERTOKENS_API_DOMAIN:-http://localhost:3001}
+      VITE_WEBSITE_DOMAIN: ${VITE_WEBSITE_DOMAIN:-http://localhost:5173}
+      VITE_DEFAULT_CITY: ${VITE_DEFAULT_CITY:-Riyadh}
+      VITE_DEFAULT_LOCALE: ${VITE_DEFAULT_LOCALE:-ar}
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    profiles:
+      - full
+
+volumes:
+  postgres_data:
+  supertokens_db_data:

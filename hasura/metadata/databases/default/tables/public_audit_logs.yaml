@@ -1,0 +1,29 @@
+﻿table:
+  name: audit_logs
+  schema: public
+select_permissions:
+  - role: reviewer
+    permission:
+      columns: "*"
+      filter: {}
+      allow_aggregations: true
+  - role: admin
+    permission:
+      columns: "*"
+      filter: {}
+      allow_aggregations: true
+insert_permissions:
+  - role: admin
+    permission:
+      check: {}
+      columns: "*"
+update_permissions:
+  - role: admin
+    permission:
+      columns: "*"
+      filter: {}
+      check: {}
+delete_permissions:
+  - role: admin
+    permission:
+      filter: {}

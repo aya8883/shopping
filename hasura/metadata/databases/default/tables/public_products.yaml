@@ -1,0 +1,68 @@
+table:
+  name: products
+  schema: public
+object_relationships:
+  - name: brand
+    using:
+      foreign_key_constraint_on: brand_id
+  - name: category
+    using:
+      foreign_key_constraint_on: category_id
+  - name: subcategory
+    using:
+      foreign_key_constraint_on: subcategory_id
+array_relationships:
+  - name: offers
+    using:
+      foreign_key_constraint_on:
+        column: product_id
+        table:
+          name: supermarket_offers
+          schema: public
+select_permissions:
+  - role: anonymous
+    permission:
+      columns: "*"
+      filter:
+        active: { _eq: true }
+      allow_aggregations: true
+  - role: consumer
+    permission:
+      columns: "*"
+      filter:
+        active: { _eq: true }
+      allow_aggregations: true
+  - role: reviewer
+    permission:
+      columns: "*"
+      filter: {}
+      allow_aggregations: true
+  - role: admin
+    permission:
+      columns: "*"
+      filter: {}
+      allow_aggregations: true
+insert_permissions:
+  - role: admin
+    permission:
+      check: {}
+      columns: "*"
+  - role: reviewer
+    permission:
+      check: {}
+      columns: "*"
+update_permissions:
+  - role: admin
+    permission:
+      columns: "*"
+      filter: {}
+      check: {}
+  - role: reviewer
+    permission:
+      columns: "*"
+      filter: {}
+      check: {}
+delete_permissions:
+  - role: admin
+    permission:
+      filter: {}
