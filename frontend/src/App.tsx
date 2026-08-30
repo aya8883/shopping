@@ -9,6 +9,7 @@ import { ProductDetailPage } from './pages/ProductDetailPage';
 import { OffersPage } from './pages/OffersPage';
 import { ComparePage } from './pages/ComparePage';
 import { ShoppingListPage } from './pages/ShoppingListPage';
+import { PlanBasketPage } from './pages/PlanBasketPage';
 import { ProfilePage } from './pages/ProfilePage';
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
         <Route index element={<HomePage />} />
         <Route path="search" element={<SearchPage />} />
         <Route path="compare" element={<ComparePage />} />
+        <Route path="plan" element={<PlanBasketPage />} />
         <Route path="products/:id" element={<ProductDetailPage />} />
         <Route path="offers" element={<OffersPage />} />
         <Route path="list" element={<ShoppingListPage />} />

@@ -65,6 +65,10 @@ function resolve(operation: string, variables: Record<string, unknown>) {
           .slice(0, limit),
       };
     }
+    case 'GetCatalogForPlanner':
+      return {
+        products: mockProducts.slice(0, Number(variables.limit ?? 100)),
+      };
     default:
       console.warn(`[mock-graphql] Unhandled operation: ${operation}`);
       return {};

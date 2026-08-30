@@ -69,7 +69,10 @@ export function ShoppingListPage() {
           {t('list.title')}
         </Typography>
         <Alert severity="info">{t('list.empty')}</Alert>
-        <Button component={RouterLink} to="/offers" variant="contained">
+        <Button component={RouterLink} to="/plan" variant="contained" size="large">
+          {t('plan.title')}
+        </Button>
+        <Button component={RouterLink} to="/offers" variant="outlined">
           {t('list.browseOffers')}
         </Button>
       </Stack>

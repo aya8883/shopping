@@ -111,16 +111,16 @@ export function HomePage() {
         <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1} sx={{ mt: 1.5 }}>
           <Button
             component={RouterLink}
-            to="/compare"
+            to="/plan"
             variant="contained"
             size="large"
             endIcon={<ArrowForwardIcon />}
             fullWidth
           >
-            {t('compare.title')}
+            {t('plan.title')}
           </Button>
-          <Button component={RouterLink} to="/offers" variant="outlined" size="large" fullWidth>
-            {t('offers.weekly')}
+          <Button component={RouterLink} to="/compare" variant="outlined" size="large" fullWidth>
+            {t('compare.title')}
           </Button>
         </Stack>
       </Surface>
