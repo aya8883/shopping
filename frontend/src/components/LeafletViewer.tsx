@@ -69,27 +69,45 @@ export function LeafletViewer({
   const canNext = pageIndex < sorted.length - 1;
 
   return (
-    <Stack spacing={1.75}>
-      <Stack direction="row" alignItems="center" justifyContent="space-between" gap={1}>
-        <Stack direction="row" alignItems="center" spacing={1}>
+    <Stack spacing={1.5}>
+      <Stack
+        direction={{ xs: 'column', sm: 'row' }}
+        alignItems={{ xs: 'stretch', sm: 'center' }}
+        justifyContent="space-between"
+        gap={1}
+      >
+        <Stack direction="row" alignItems="center" spacing={1} sx={{ minWidth: 0 }}>
           <Box
             sx={{
-              width: 34,
-              height: 34,
-              borderRadius: 2,
+              width: 28,
+              height: 28,
+              borderRadius: 1.5,
               display: 'grid',
               placeItems: 'center',
               bgcolor: `${accentColor}18`,
               color: accentColor,
+              flexShrink: 0,
             }}
           >
-            <AutoStoriesOutlinedIcon fontSize="small" />
+            <AutoStoriesOutlinedIcon sx={{ fontSize: 16 }} />
           </Box>
-          <Typography variant="subtitle1" fontWeight={800}>
+          <Typography
+            variant="subtitle2"
+            fontWeight={800}
+            noWrap
+            sx={{ minWidth: 0 }}
+          >
             {t('offers.leafletPages', { store: storeName })}
           </Typography>
         </Stack>
-        <Stack direction="row" spacing={1} alignItems="center">
+        <Stack
+          direction="row"
+          spacing={0.75}
+          alignItems="center"
+          flexWrap="wrap"
+          useFlexGap
+          sx={{ justifyContent: { xs: 'flex-start', sm: 'flex-end' } }}
+        >
           <Chip
             size="small"
             label={t('offers.pageOf', {
@@ -97,9 +115,11 @@ export function LeafletViewer({
               total: sorted.length,
             })}
             sx={{
+              height: 26,
               bgcolor: accentColor,
               color: '#fff',
               fontWeight: 800,
+              '& .MuiChip-label': { px: 1, fontSize: '0.72rem' },
             }}
           />
           {sourceUrl ? (
@@ -108,8 +128,14 @@ export function LeafletViewer({
               href={sourceUrl}
               target="_blank"
               rel="noopener noreferrer"
-              endIcon={<OpenInNewIcon fontSize="small" />}
-              sx={{ fontWeight: 700 }}
+              endIcon={<OpenInNewIcon sx={{ fontSize: 14 }} />}
+              sx={{
+                fontWeight: 700,
+                minHeight: 28,
+                px: 1,
+                fontSize: '0.75rem',
+                '& .MuiButton-endIcon': { ml: 0.5 },
+              }}
             >
               {t('offers.openOfficial')}
             </Button>
@@ -122,10 +148,10 @@ export function LeafletViewer({
         sx={{
           position: 'relative',
           overflow: 'hidden',
-          borderRadius: 4,
+          borderRadius: 3,
           border: `1px solid ${accentColor}33`,
           background: `linear-gradient(180deg, ${accentColor}12, rgba(255,255,255,0.95) 28%)`,
-          boxShadow: `0 18px 40px ${accentColor}22`,
+          boxShadow: `0 14px 32px ${accentColor}1f`,
         }}
       >
         <Box
@@ -137,7 +163,7 @@ export function LeafletViewer({
           sx={{
             display: 'block',
             width: '100%',
-            maxHeight: { xs: 480, sm: 640 },
+            maxHeight: { xs: 420, sm: 560 },
             objectFit: 'contain',
             mx: 'auto',
             bgcolor: '#fff',
@@ -145,44 +171,52 @@ export function LeafletViewer({
         />
 
         <IconButton
+          size="small"
           aria-label={t('offers.prevPage')}
           disabled={!canPrev}
           onClick={() => setPageIndex((i) => Math.max(0, i - 1))}
           sx={{
             position: 'absolute',
             top: '50%',
-            left: 10,
+            left: 6,
             transform: 'translateY(-50%)',
+            width: 32,
+            height: 32,
             bgcolor: 'rgba(255,255,255,0.95)',
             color: accentColor,
-            boxShadow: '0 8px 20px rgba(15,61,58,0.16)',
+            boxShadow: '0 4px 12px rgba(15,61,58,0.14)',
             '&:hover': { bgcolor: '#fff' },
             '&.Mui-disabled': { bgcolor: 'rgba(255,255,255,0.55)' },
+            '& .MuiSvgIcon-root': { fontSize: 18 },
           }}
         >
           <ChevronLeftIcon />
         </IconButton>
         <IconButton
+          size="small"
           aria-label={t('offers.nextPage')}
           disabled={!canNext}
           onClick={() => setPageIndex((i) => Math.min(sorted.length - 1, i + 1))}
           sx={{
             position: 'absolute',
             top: '50%',
-            right: 10,
+            right: 6,
             transform: 'translateY(-50%)',
+            width: 32,
+            height: 32,
             bgcolor: 'rgba(255,255,255,0.95)',
             color: accentColor,
-            boxShadow: '0 8px 20px rgba(15,61,58,0.16)',
+            boxShadow: '0 4px 12px rgba(15,61,58,0.14)',
             '&:hover': { bgcolor: '#fff' },
             '&.Mui-disabled': { bgcolor: 'rgba(255,255,255,0.55)' },
+            '& .MuiSvgIcon-root': { fontSize: 18 },
           }}
         >
           <ChevronRightIcon />
         </IconButton>
       </Paper>
 
-      <Stack direction="row" spacing={1.25} justifyContent="center" flexWrap="wrap" useFlexGap>
+      <Stack direction="row" spacing={1} justifyContent="center" flexWrap="wrap" useFlexGap>
         {sorted.map((p, index) => {
           const selected = index === pageIndex;
           return (
@@ -196,17 +230,17 @@ export function LeafletViewer({
               sx={{
                 border: selected ? '2px solid' : '1px solid',
                 borderColor: selected ? accentColor : 'rgba(15,118,110,0.14)',
-                borderRadius: 2,
-                p: 0.35,
+                borderRadius: 1.5,
+                p: 0.25,
                 bgcolor: '#fff',
                 cursor: 'pointer',
-                width: 64,
-                height: 84,
+                width: 48,
+                height: 64,
                 overflow: 'hidden',
                 boxShadow: selected
-                  ? `0 10px 22px ${accentColor}33`
-                  : '0 4px 12px rgba(15,61,58,0.06)',
-                transform: selected ? 'translateY(-2px)' : 'none',
+                  ? `0 8px 16px ${accentColor}33`
+                  : '0 3px 10px rgba(15,61,58,0.06)',
+                transform: selected ? 'translateY(-1px)' : 'none',
                 transition: 'transform 160ms ease, box-shadow 160ms ease',
               }}
             >
