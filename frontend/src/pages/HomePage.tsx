@@ -111,6 +111,15 @@ export function HomePage() {
           {t('product.compareStores')}
         </Typography>
         <SupermarketFilter />
+        <Button
+          component={RouterLink}
+          to="/compare"
+          variant="contained"
+          fullWidth
+          sx={{ mt: 1.5 }}
+        >
+          {t('compare.title')}
+        </Button>
       </section>
 
       <section>
