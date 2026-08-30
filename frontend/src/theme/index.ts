@@ -89,11 +89,12 @@ export function createAppTheme(locale: AppLocale) {
       MuiCssBaseline: {
         styleOverrides: {
           body: {
-            backgroundColor: '#F4F7F6',
+            backgroundColor: '#F3F8F6',
             backgroundImage: `
-              radial-gradient(ellipse 80% 50% at 0% -10%, rgba(45, 212, 191, 0.22), transparent 55%),
-              radial-gradient(ellipse 60% 40% at 100% 0%, rgba(234, 88, 12, 0.10), transparent 50%),
-              linear-gradient(180deg, #F7FBFA 0%, #EEF4F2 45%, #F4F7F6 100%)
+              radial-gradient(ellipse 90% 55% at -5% -5%, rgba(45, 212, 191, 0.28), transparent 55%),
+              radial-gradient(ellipse 70% 45% at 105% 0%, rgba(234, 88, 12, 0.16), transparent 52%),
+              radial-gradient(ellipse 50% 35% at 50% 100%, rgba(22, 163, 74, 0.08), transparent 60%),
+              linear-gradient(180deg, #F8FCFA 0%, #EEF5F2 48%, #F3F8F6 100%)
             `,
             backgroundAttachment: 'fixed',
             minHeight: '100vh',

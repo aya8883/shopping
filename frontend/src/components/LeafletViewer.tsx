@@ -9,6 +9,7 @@ import Paper from '@mui/material/Paper';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import AutoStoriesOutlinedIcon from '@mui/icons-material/AutoStoriesOutlined';
 import { useTranslation } from 'react-i18next';
 
 export type LeafletPage = {
@@ -22,10 +23,12 @@ export function LeafletViewer({
   pages,
   sourceUrl,
   storeName,
+  accentColor = '#0D9488',
 }: {
   pages: LeafletPage[];
   sourceUrl?: string | null;
   storeName: string;
+  accentColor?: string;
 }) {
   const { t } = useTranslation();
   const sorted = [...pages].sort((a, b) => a.page_number - b.page_number);
@@ -37,7 +40,14 @@ export function LeafletViewer({
 
   if (!sorted.length) {
     return (
-      <Paper variant="outlined" sx={{ p: 3 }}>
+      <Paper
+        variant="outlined"
+        sx={{
+          p: 3,
+          borderRadius: 4,
+          background: 'linear-gradient(160deg, #fff, rgba(240,253,250,0.8))',
+        }}
+      >
         <Typography color="text.secondary">{t('offers.noPages')}</Typography>
         {sourceUrl ? (
           <Button
@@ -59,11 +69,26 @@ export function LeafletViewer({
   const canNext = pageIndex < sorted.length - 1;
 
   return (
-    <Stack spacing={1.5}>
+    <Stack spacing={1.75}>
       <Stack direction="row" alignItems="center" justifyContent="space-between" gap={1}>
-        <Typography variant="subtitle1" fontWeight={800}>
-          {t('offers.leafletPages', { store: storeName })}
-        </Typography>
+        <Stack direction="row" alignItems="center" spacing={1}>
+          <Box
+            sx={{
+              width: 34,
+              height: 34,
+              borderRadius: 2,
+              display: 'grid',
+              placeItems: 'center',
+              bgcolor: `${accentColor}18`,
+              color: accentColor,
+            }}
+          >
+            <AutoStoriesOutlinedIcon fontSize="small" />
+          </Box>
+          <Typography variant="subtitle1" fontWeight={800}>
+            {t('offers.leafletPages', { store: storeName })}
+          </Typography>
+        </Stack>
         <Stack direction="row" spacing={1} alignItems="center">
           <Chip
             size="small"
@@ -71,6 +96,11 @@ export function LeafletViewer({
               current: pageIndex + 1,
               total: sorted.length,
             })}
+            sx={{
+              bgcolor: accentColor,
+              color: '#fff',
+              fontWeight: 800,
+            }}
           />
           {sourceUrl ? (
             <Button
@@ -79,6 +109,7 @@ export function LeafletViewer({
               target="_blank"
               rel="noopener noreferrer"
               endIcon={<OpenInNewIcon fontSize="small" />}
+              sx={{ fontWeight: 700 }}
             >
               {t('offers.openOfficial')}
             </Button>
@@ -87,18 +118,22 @@ export function LeafletViewer({
       </Stack>
 
       <Paper
-        variant="outlined"
+        elevation={0}
         sx={{
           position: 'relative',
           overflow: 'hidden',
-          borderRadius: 3,
-          bgcolor: 'rgba(15, 61, 58, 0.03)',
+          borderRadius: 4,
+          border: `1px solid ${accentColor}33`,
+          background: `linear-gradient(180deg, ${accentColor}12, rgba(255,255,255,0.95) 28%)`,
+          boxShadow: `0 18px 40px ${accentColor}22`,
         }}
       >
         <Box
           component="img"
+          key={page.id}
           src={page.image_url ?? undefined}
           alt={`${storeName} leaflet page ${page.page_number}`}
+          className="animate-fade-in"
           sx={{
             display: 'block',
             width: '100%',
@@ -116,11 +151,13 @@ export function LeafletViewer({
           sx={{
             position: 'absolute',
             top: '50%',
-            left: 8,
+            left: 10,
             transform: 'translateY(-50%)',
-            bgcolor: 'rgba(255,255,255,0.92)',
-            boxShadow: 1,
+            bgcolor: 'rgba(255,255,255,0.95)',
+            color: accentColor,
+            boxShadow: '0 8px 20px rgba(15,61,58,0.16)',
             '&:hover': { bgcolor: '#fff' },
+            '&.Mui-disabled': { bgcolor: 'rgba(255,255,255,0.55)' },
           }}
         >
           <ChevronLeftIcon />
@@ -132,46 +169,56 @@ export function LeafletViewer({
           sx={{
             position: 'absolute',
             top: '50%',
-            right: 8,
+            right: 10,
             transform: 'translateY(-50%)',
-            bgcolor: 'rgba(255,255,255,0.92)',
-            boxShadow: 1,
+            bgcolor: 'rgba(255,255,255,0.95)',
+            color: accentColor,
+            boxShadow: '0 8px 20px rgba(15,61,58,0.16)',
             '&:hover': { bgcolor: '#fff' },
+            '&.Mui-disabled': { bgcolor: 'rgba(255,255,255,0.55)' },
           }}
         >
           <ChevronRightIcon />
         </IconButton>
       </Paper>
 
-      <Stack direction="row" spacing={1} justifyContent="center" flexWrap="wrap" useFlexGap>
-        {sorted.map((p, index) => (
-          <Box
-            key={p.id}
-            component="button"
-            type="button"
-            onClick={() => setPageIndex(index)}
-            aria-label={t('offers.goToPage', { page: p.page_number })}
-            aria-current={index === pageIndex ? 'true' : undefined}
-            sx={{
-              border: index === pageIndex ? '2px solid' : '1px solid',
-              borderColor: index === pageIndex ? 'primary.main' : 'divider',
-              borderRadius: 1.5,
-              p: 0.25,
-              bgcolor: '#fff',
-              cursor: 'pointer',
-              width: 56,
-              height: 72,
-              overflow: 'hidden',
-            }}
-          >
+      <Stack direction="row" spacing={1.25} justifyContent="center" flexWrap="wrap" useFlexGap>
+        {sorted.map((p, index) => {
+          const selected = index === pageIndex;
+          return (
             <Box
-              component="img"
-              src={p.image_url ?? undefined}
-              alt=""
-              sx={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-            />
-          </Box>
-        ))}
+              key={p.id}
+              component="button"
+              type="button"
+              onClick={() => setPageIndex(index)}
+              aria-label={t('offers.goToPage', { page: p.page_number })}
+              aria-current={selected ? 'true' : undefined}
+              sx={{
+                border: selected ? '2px solid' : '1px solid',
+                borderColor: selected ? accentColor : 'rgba(15,118,110,0.14)',
+                borderRadius: 2,
+                p: 0.35,
+                bgcolor: '#fff',
+                cursor: 'pointer',
+                width: 64,
+                height: 84,
+                overflow: 'hidden',
+                boxShadow: selected
+                  ? `0 10px 22px ${accentColor}33`
+                  : '0 4px 12px rgba(15,61,58,0.06)',
+                transform: selected ? 'translateY(-2px)' : 'none',
+                transition: 'transform 160ms ease, box-shadow 160ms ease',
+              }}
+            >
+              <Box
+                component="img"
+                src={p.image_url ?? undefined}
+                alt=""
+                sx={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+              />
+            </Box>
+          );
+        })}
       </Stack>
     </Stack>
   );
