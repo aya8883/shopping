@@ -194,15 +194,16 @@ export function OffersPage() {
           <Stack direction="row" alignItems="center" spacing={1}>
             <Box
               sx={{
-                width: 36,
-                height: 36,
-                borderRadius: 2,
+                width: 32,
+                height: 32,
+                borderRadius: 1.5,
                 display: 'grid',
                 placeItems: 'center',
                 bgcolor: 'rgba(255,255,255,0.18)',
+                flexShrink: 0,
               }}
             >
-              <LocalOfferOutlinedIcon />
+              <LocalOfferOutlinedIcon sx={{ fontSize: 18 }} />
             </Box>
             <Typography variant="overline" sx={{ color: 'rgba(240,253,250,0.9)' }}>
               {t('offers.weekly')}
@@ -237,9 +238,11 @@ export function OffersPage() {
               aria-pressed={selected}
               className="animate-soft-rise delay-1"
               sx={{
-                flex: '1 1 150px',
+                flex: '1 1 140px',
+                maxWidth: '100%',
                 borderRadius: 3,
-                p: 1.5,
+                p: 1.25,
+                overflow: 'hidden',
                 textAlign: 'start',
                 border: '2px solid',
                 borderColor: selected ? colors.bg : 'rgba(15,118,110,0.10)',
@@ -257,13 +260,13 @@ export function OffersPage() {
                 },
               }}
             >
-              <Stack direction="row" spacing={1.25} alignItems="center" sx={{ width: '100%' }}>
-                <SupermarketAvatar store={leaflet.supermarket} size="md" />
-                <Box sx={{ minWidth: 0 }}>
-                  <Typography fontWeight={800} fontSize="1.05rem" noWrap>
+              <Stack direction="row" spacing={1} alignItems="center" sx={{ width: '100%', minWidth: 0 }}>
+                <SupermarketAvatar store={leaflet.supermarket} size="sm" />
+                <Box sx={{ minWidth: 0, flex: 1 }}>
+                  <Typography fontWeight={800} fontSize="0.98rem" noWrap>
                     {name}
                   </Typography>
-                  <Typography variant="caption" color="text.secondary" fontWeight={600}>
+                  <Typography variant="caption" color="text.secondary" fontWeight={600} noWrap>
                     {t('offers.offerCount', { count: leaflet.offers.length })}
                   </Typography>
                 </Box>
@@ -285,31 +288,53 @@ export function OffersPage() {
               boxShadow: '0 14px 32px rgba(15,61,58,0.07)',
             }}
           >
-            <Stack direction="row" spacing={1.5} alignItems="flex-start">
-              <SupermarketAvatar store={active.supermarket} size="lg" />
+            <Stack direction="row" spacing={1.25} alignItems="center">
+              <SupermarketAvatar store={active.supermarket} size="md" />
               <Box sx={{ minWidth: 0, flex: 1 }}>
                 <Typography
-                  variant="h5"
+                  variant="h6"
                   sx={{
                     fontFamily: '"Fraunces", Georgia, serif',
                     fontWeight: 700,
-                    lineHeight: 1.2,
+                    lineHeight: 1.25,
                   }}
                 >
                   {locale === 'ar' ? active.title_ar : active.title_en}
                 </Typography>
-                <Stack direction="row" flexWrap="wrap" useFlexGap spacing={1} sx={{ mt: 1.25 }}>
+                <Stack
+                  direction="row"
+                  flexWrap="wrap"
+                  useFlexGap
+                  spacing={0.75}
+                  sx={{
+                    mt: 1,
+                    '& .MuiChip-root': {
+                      height: 28,
+                      maxWidth: '100%',
+                    },
+                    '& .MuiChip-icon': {
+                      fontSize: 16,
+                      marginInlineStart: '8px',
+                      marginInlineEnd: '-4px',
+                    },
+                    '& .MuiChip-label': {
+                      px: 1,
+                      fontSize: '0.75rem',
+                      fontWeight: 700,
+                    },
+                  }}
+                >
                   <Chip
                     size="small"
-                    icon={<CalendarMonthOutlinedIcon />}
+                    icon={<CalendarMonthOutlinedIcon sx={{ fontSize: 16 }} />}
                     label={formatRange(active.start_date, active.end_date, locale)}
-                    sx={{ bgcolor: 'rgba(255,255,255,0.85)', fontWeight: 700 }}
+                    sx={{ bgcolor: 'rgba(255,255,255,0.85)' }}
                   />
                   <Chip
                     size="small"
-                    icon={<PlaceOutlinedIcon />}
+                    icon={<PlaceOutlinedIcon sx={{ fontSize: 16 }} />}
                     label={active.city}
-                    sx={{ bgcolor: 'rgba(255,255,255,0.85)', fontWeight: 700 }}
+                    sx={{ bgcolor: 'rgba(255,255,255,0.85)' }}
                   />
                   <Chip
                     size="small"
@@ -385,60 +410,66 @@ export function OffersPage() {
                       key={offer.id}
                       className={`animate-soft-rise ${delayClass}`}
                       sx={{
-                        position: 'relative',
-                        borderRadius: 3.5,
-                        p: 2,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: 1.25,
+                        borderRadius: 3,
+                        p: 1.75,
+                        overflow: 'hidden',
                         border: '1px solid rgba(15,118,110,0.12)',
                         background:
                           'linear-gradient(160deg, rgba(255,255,255,0.98), rgba(240,253,250,0.7) 55%, rgba(255,247,237,0.55))',
                         boxShadow: '0 10px 24px rgba(15,61,58,0.06)',
                         transition: 'transform 180ms ease, box-shadow 180ms ease',
                         '&:hover': {
-                          transform: 'translateY(-3px)',
-                          boxShadow: '0 16px 32px rgba(15,61,58,0.12)',
+                          transform: 'translateY(-2px)',
+                          boxShadow: '0 14px 28px rgba(15,61,58,0.10)',
                         },
                       }}
                     >
-                      {discount ? (
-                        <Chip
-                          size="small"
-                          color="success"
-                          label={`-${discount}%`}
-                          sx={{
-                            position: 'absolute',
-                            top: 12,
-                            insetInlineEnd: 12,
-                            fontWeight: 800,
-                          }}
-                        />
-                      ) : null}
-
                       <Stack
                         component={RouterLink}
                         to={`/products/${offer.product.id}`}
                         spacing={0.75}
-                        sx={{ textDecoration: 'none', color: 'inherit', pr: 5 }}
+                        sx={{ textDecoration: 'none', color: 'inherit', minWidth: 0 }}
                       >
-                        <Typography fontWeight={800} lineHeight={1.3} fontSize="1.05rem">
-                          {name}
-                          {qty > 0 ? (
+                        <Stack
+                          direction="row"
+                          alignItems="flex-start"
+                          justifyContent="space-between"
+                          gap={1}
+                        >
+                          <Typography
+                            fontWeight={800}
+                            lineHeight={1.3}
+                            fontSize="1rem"
+                            sx={{ minWidth: 0, flex: 1 }}
+                          >
+                            {name}
+                          </Typography>
+                          {discount ? (
                             <Chip
                               size="small"
-                              color="primary"
-                              sx={{ ml: 1 }}
-                              label={`×${qty}`}
+                              color="success"
+                              label={`-${discount}%`}
+                              sx={{
+                                height: 24,
+                                flexShrink: 0,
+                                fontWeight: 800,
+                                '& .MuiChip-label': { px: 0.75, fontSize: '0.7rem' },
+                              }}
                             />
                           ) : null}
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary" fontWeight={600}>
+                        </Stack>
+                        <Typography variant="body2" color="text.secondary" fontWeight={600} noWrap>
                           {[brand, size].filter(Boolean).join(' · ')}
                         </Typography>
-                        <Stack direction="row" alignItems="baseline" spacing={1} sx={{ pt: 0.5 }}>
+                        <Stack direction="row" alignItems="baseline" spacing={1} flexWrap="wrap">
                           <Typography
                             sx={{
                               fontFamily: '"Fraunces", Georgia, serif',
                               fontWeight: 800,
-                              fontSize: '1.55rem',
+                              fontSize: '1.35rem',
                               color: 'primary.dark',
                               letterSpacing: '-0.02em',
                             }}
@@ -456,52 +487,69 @@ export function OffersPage() {
                           ) : null}
                         </Stack>
                         <Stack direction="row" spacing={0.75} flexWrap="wrap" useFlexGap>
+                          {qty > 0 ? (
+                            <Chip
+                              size="small"
+                              color="primary"
+                              label={`×${qty}`}
+                              sx={{ height: 24, '& .MuiChip-label': { px: 0.75 } }}
+                            />
+                          ) : null}
                           {promo ? (
                             <Chip
                               size="small"
                               label={promo}
                               sx={{
+                                height: 24,
+                                maxWidth: '100%',
                                 bgcolor: 'rgba(234,88,12,0.10)',
                                 color: 'secondary.dark',
                                 fontWeight: 700,
+                                '& .MuiChip-label': { px: 0.75, fontSize: '0.7rem' },
                               }}
                             />
                           ) : null}
                           {offer.is_demo ? (
-                            <Chip size="small" color="warning" label={t('app.demoBadge')} />
+                            <Chip
+                              size="small"
+                              color="warning"
+                              label={t('app.demoBadge')}
+                              sx={{ height: 24, '& .MuiChip-label': { px: 0.75 } }}
+                            />
                           ) : null}
                         </Stack>
                       </Stack>
 
-                      <IconButton
-                        aria-label={t('product.addToList')}
-                        onClick={() => {
-                          addItem({
-                            productId: offer.product.id,
-                            name_en: offer.product.name_en,
-                            name_ar: offer.product.name_ar,
-                            size_value: offer.product.size_value,
-                            size_unit: offer.product.size_unit,
-                            brand_en: offer.product.brand?.name_en,
-                            brand_ar: offer.product.brand?.name_ar,
-                            addedFromSupermarketId: active.supermarket.id,
-                          });
-                          setToast(true);
-                        }}
-                        sx={{
-                          position: 'absolute',
-                          bottom: 12,
-                          insetInlineEnd: 12,
-                          bgcolor: 'primary.main',
-                          color: '#fff',
-                          boxShadow: '0 8px 18px rgba(13,148,136,0.35)',
-                          '&:hover': {
-                            bgcolor: 'primary.dark',
-                          },
-                        }}
-                      >
-                        <AddShoppingCartOutlinedIcon />
-                      </IconButton>
+                      <Stack direction="row" justifyContent="flex-end">
+                        <IconButton
+                          size="small"
+                          aria-label={t('product.addToList')}
+                          onClick={() => {
+                            addItem({
+                              productId: offer.product.id,
+                              name_en: offer.product.name_en,
+                              name_ar: offer.product.name_ar,
+                              size_value: offer.product.size_value,
+                              size_unit: offer.product.size_unit,
+                              brand_en: offer.product.brand?.name_en,
+                              brand_ar: offer.product.brand?.name_ar,
+                              addedFromSupermarketId: active.supermarket.id,
+                            });
+                            setToast(true);
+                          }}
+                          sx={{
+                            width: 36,
+                            height: 36,
+                            bgcolor: 'primary.main',
+                            color: '#fff',
+                            boxShadow: '0 6px 14px rgba(13,148,136,0.28)',
+                            '&:hover': { bgcolor: 'primary.dark' },
+                            '& .MuiSvgIcon-root': { fontSize: 18 },
+                          }}
+                        >
+                          <AddShoppingCartOutlinedIcon />
+                        </IconButton>
+                      </Stack>
                     </Box>
                   );
                 })}

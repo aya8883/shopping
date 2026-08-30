@@ -37,9 +37,15 @@ export function SupermarketAvatar({
         bgcolor: colors.bg,
         color: colors.fg,
         fontWeight: 800,
-        fontSize: dims.avatar * 0.4,
+        fontSize: dims.avatar * 0.38,
         border: '1px solid rgba(15, 61, 58, 0.08)',
         flexShrink: 0,
+        overflow: 'hidden',
+        '& img': {
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+        },
       }}
     >
       {initial}
