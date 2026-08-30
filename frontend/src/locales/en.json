@@ -39,6 +39,7 @@
     "addAllToList": "Add suggestion to my list",
     "openList": "Open my list"
   },
+  "compare": {
     "title": "Compare",
     "subtitle": "Pick stores, then a category or a specific product.",
     "stepStores": "Choose supermarkets",

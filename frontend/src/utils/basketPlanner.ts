@@ -94,16 +94,30 @@ export function scoreProductForNeed(product: CatalogProduct, need: PlannerNeed):
   return score;
 }
 
+function cheapestOfferPrice(product: CatalogProduct): number {
+  const prices = (product.offers ?? [])
+    .map((o) => o.offer_price)
+    .filter((p): p is number => typeof p === 'number' && Number.isFinite(p));
+  return prices.length ? Math.min(...prices) : Number.POSITIVE_INFINITY;
+}
+
 export function resolveNeed(
   need: PlannerNeed,
   catalog: CatalogProduct[],
 ): ResolvedNeed {
+  const brandPref = need.brandPreference?.trim();
   const scored = catalog
     .map((product) => ({ product, matchScore: scoreProductForNeed(product, need) }))
     .filter((x) => x.matchScore > 0)
-    .sort((a, b) => b.matchScore - a.matchScore);
+    .sort((a, b) => {
+      if (b.matchScore !== a.matchScore) return b.matchScore - a.matchScore;
+      // Same relevance: prefer cheapest offer when brand is not locked
+      if (!brandPref) {
+        return cheapestOfferPrice(a.product) - cheapestOfferPrice(b.product);
+      }
+      return 0;
+    });
 
-  const brandPref = need.brandPreference?.trim();
   let chosen = scored[0]?.product ?? null;
 
   if (brandPref) {

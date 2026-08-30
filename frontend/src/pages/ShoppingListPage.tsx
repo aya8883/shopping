@@ -85,9 +85,14 @@ export function ShoppingListPage() {
         <Typography variant="h5" fontWeight={700}>
           {t('list.title')}
         </Typography>
-        <Button color="inherit" size="small" onClick={clearBasket}>
-          {t('list.clear')}
-        </Button>
+        <Stack direction="row" spacing={1}>
+          <Button component={RouterLink} to="/plan" size="small">
+            {t('plan.short')}
+          </Button>
+          <Button color="inherit" size="small" onClick={clearBasket}>
+            {t('list.clear')}
+          </Button>
+        </Stack>
       </Stack>
 
       {loading ? <Skeleton variant="rounded" height={160} /> : null}
