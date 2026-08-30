@@ -36,6 +36,10 @@
     "unitPrice": "Unit",
     "addToList": "Add to list",
     "comparePrices": "Compare prices",
+    "compareStores": "Compare stores",
+    "selectAllStores": "Select all",
+    "clearStores": "Clear",
+    "selectStoreHint": "Select at least one supermarket to compare.",
     "noCurrentPrice": "No current price is available.",
     "offers": "Current offers",
     "size": "Size",
@@ -58,7 +62,8 @@
     "language": "Language",
     "signIn": "Sign in",
     "signOut": "Sign out",
-    "anonymous": "Browsing as guest — search and compare freely."
+    "anonymous": "Browsing as guest — search and compare freely.",
+    "stores": "Supermarkets to compare"
   },
   "common": {
     "loading": "Loading…",

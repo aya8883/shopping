@@ -8,7 +8,7 @@ import Box from '@mui/material/Box';
 import { useTranslation } from 'react-i18next';
 import { Link as RouterLink } from 'react-router-dom';
 import { compareProductOffers, formatSar } from '../../utils/pricing';
-import { useAppContext } from '../../contexts/AppContext';
+import { filterOffersBySelectedStores, useAppContext } from '../../contexts/AppContext';
 
 export interface ProductCardProduct {
   id: string;
@@ -29,11 +29,13 @@ export interface ProductCardProduct {
 
 export function ProductCard({ product }: { product: ProductCardProduct }) {
   const { t } = useTranslation();
-  const { locale } = useAppContext();
+  const { locale, selectedSupermarketIds } = useAppContext();
   const name = locale === 'ar' ? product.name_ar : product.name_en;
   const brand =
     locale === 'ar' ? product.brand?.name_ar : product.brand?.name_en;
-  const comparison = compareProductOffers(product.offers ?? []);
+  const comparison = compareProductOffers(
+    filterOffersBySelectedStores(product.offers ?? [], selectedSupermarketIds),
+  );
   const best = comparison.best;
   const supermarketName =
     locale === 'ar' ? best?.supermarket?.name_ar : best?.supermarket?.name_en;

@@ -13,6 +13,7 @@ import { useTranslation } from 'react-i18next';
 import { GET_BEST_DEALS, GET_CATEGORIES, SEARCH_PRODUCTS } from '../graphql/products/queries';
 import { ProductCard } from '../features/products/ProductCard';
 import { PriceComparisonPanel } from '../features/products/PriceComparisonPanel';
+import { SupermarketFilter } from '../components/SupermarketFilter';
 import { useAppContext } from '../contexts/AppContext';
 import { appConfig } from '../config/app';
 
@@ -21,12 +22,12 @@ const MILK_ID = '44444444-4444-4444-4444-444444444001';
 export function HomePage() {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { locale } = useAppContext();
+  const { locale, selectedSupermarketIds } = useAppContext();
   const [query, setQuery] = useState('');
 
   const { data: categoriesData, loading: categoriesLoading } = useQuery(GET_CATEGORIES);
   const { data: dealsData, loading: dealsLoading } = useQuery(GET_BEST_DEALS, {
-    variables: { limit: 6 },
+    variables: { limit: 12 },
   });
   const { data: milkData, loading: milkLoading, error: milkError } = useQuery(SEARCH_PRODUCTS, {
     variables: { search: '%Almarai Full Fat Milk%', limit: 5 },
@@ -36,6 +37,16 @@ export function HomePage() {
     () => milkData?.products?.find((p: { id: string }) => p.id === MILK_ID) ?? milkData?.products?.[0],
     [milkData],
   );
+
+  const filteredDeals = useMemo(() => {
+    const offers = dealsData?.supermarket_offers ?? [];
+    if (!selectedSupermarketIds.length) return [];
+    return offers
+      .filter((o: { supermarket: { id: string } }) =>
+        selectedSupermarketIds.includes(o.supermarket.id),
+      )
+      .slice(0, 6);
+  }, [dealsData, selectedSupermarketIds]);
 
   return (
     <Stack spacing={3} className="pb-4">
@@ -96,6 +107,13 @@ export function HomePage() {
 
       <section>
         <Typography variant="h6" fontWeight={700} gutterBottom>
+          {t('product.compareStores')}
+        </Typography>
+        <SupermarketFilter />
+      </section>
+
+      <section>
+        <Typography variant="h6" fontWeight={700} gutterBottom>
           {t('home.validationTitle')}
         </Typography>
         {milkLoading ? (
@@ -111,6 +129,7 @@ export function HomePage() {
               offers={milkProduct.offers ?? []}
               sizeValue={milkProduct.size_value}
               sizeUnit={milkProduct.size_unit}
+              showStoreFilter={false}
             />
           </Stack>
         ) : (
@@ -127,7 +146,7 @@ export function HomePage() {
             ? Array.from({ length: 4 }).map((_, i) => (
                 <Skeleton key={i} variant="rounded" height={120} />
               ))
-            : dealsData?.supermarket_offers?.map(
+            : filteredDeals.map(
                 (offer: {
                   id: string;
                   product: {

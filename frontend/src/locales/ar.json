@@ -36,6 +36,10 @@
     "unitPrice": "سعر الوحدة",
     "addToList": "أضف للقائمة",
     "comparePrices": "قارن الأسعار",
+    "compareStores": "المتاجر للمقارنة",
+    "selectAllStores": "تحديد الكل",
+    "clearStores": "مسح",
+    "selectStoreHint": "اختر سوبرماركت واحد على الأقل للمقارنة.",
     "noCurrentPrice": "لا يوجد سعر حالي لهذا المنتج.",
     "offers": "العروض الحالية",
     "size": "الحجم",
@@ -58,7 +62,8 @@
     "language": "اللغة",
     "signIn": "تسجيل الدخول",
     "signOut": "تسجيل الخروج",
-    "anonymous": "تتصفح كزائر — ابحث وقارن مباشرة."
+    "anonymous": "تتصفح كزائر — ابحث وقارن مباشرة.",
+    "stores": "السوبرماركت للمقارنة"
   },
   "common": {
     "loading": "جاري التحميل…",

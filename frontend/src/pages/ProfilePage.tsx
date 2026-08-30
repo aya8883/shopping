@@ -6,6 +6,7 @@ import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import { useTranslation } from 'react-i18next';
 import { Link as RouterLink } from 'react-router-dom';
+import { SupermarketFilter } from '../components/SupermarketFilter';
 import { useAppContext } from '../contexts/AppContext';
 import type { AppLocale } from '../config/app';
 
@@ -32,6 +33,9 @@ export function ProfilePage() {
         <ToggleButton value="ar">العربية</ToggleButton>
         <ToggleButton value="en">English</ToggleButton>
       </ToggleButtonGroup>
+
+      <Typography variant="subtitle2">{t('profile.stores')}</Typography>
+      <SupermarketFilter />
 
       <Button component={RouterLink} to="/auth" variant="contained" size="large">
         {t('profile.signIn')}
