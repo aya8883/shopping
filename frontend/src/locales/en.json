@@ -99,10 +99,18 @@
   "offers": {
     "title": "Offers",
     "weekly": "Weekly offers",
-    "weeklyThisWeek": "This week’s supermarket leaflets",
+    "weeklyThisWeek": "Open each supermarket tab to browse its leaflet",
     "offerCount": "{{count}} offers",
+    "pricedOffers": "Priced offers from this leaflet",
     "noLeaflets": "No leaflets are published for this week yet.",
     "noOffers": "No offers in this leaflet.",
+    "noPages": "Leaflet pages are not available yet.",
+    "leafletPages": "{{store}} leaflet",
+    "pageOf": "Page {{current}} of {{total}}",
+    "prevPage": "Previous page",
+    "nextPage": "Next page",
+    "goToPage": "Go to page {{page}}",
+    "openOfficial": "Open official offers",
     "comingSoon": "Filters and sorting arrive in a later phase."
   },
   "list": {

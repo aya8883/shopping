@@ -15,6 +15,7 @@ import {
 } from '../../utils/pricing';
 import { filterOffersBySelectedStores, useAppContext } from '../../contexts/AppContext';
 import { SupermarketFilter } from '../../components/SupermarketFilter';
+import { SupermarketMark } from '../../components/SupermarketMark';
 
 export function PriceComparisonPanel({
   offers,
@@ -62,15 +63,12 @@ export function PriceComparisonPanel({
               <Typography variant="overline" color="primary.dark">
                 {t('product.bestPrice')}
               </Typography>
-              <Typography
-                variant="h5"
-                fontWeight={700}
-                sx={{ fontFamily: '"Fraunces", Georgia, serif' }}
-              >
-                {locale === 'ar'
-                  ? comparison.best.supermarket?.name_ar
-                  : comparison.best.supermarket?.name_en}
-              </Typography>
+              <SupermarketMark
+                store={comparison.best.supermarket}
+                locale={locale}
+                size="lg"
+                sx={{ my: 0.5 }}
+              />
               <Typography
                 variant="h3"
                 color="primary.dark"
@@ -96,14 +94,16 @@ export function PriceComparisonPanel({
                 sizeValue,
                 sizeUnit,
               });
-              const store =
-                locale === 'ar' ? offer.supermarket?.name_ar : offer.supermarket?.name_en;
-
               return (
                 <Paper key={offer.id} variant="outlined" sx={{ p: 2 }}>
                   <Box className="flex items-start justify-between gap-3">
                     <div>
-                      <Typography fontWeight={700}>{store}</Typography>
+                      <SupermarketMark
+                        store={offer.supermarket}
+                        locale={locale}
+                        size="md"
+                        sx={{ mb: 0.5 }}
+                      />
                       {offer.regular_price ? (
                         <Typography variant="body2" color="text.secondary">
                           {t('product.regular')}: {formatSar(Number(offer.regular_price), locale)}

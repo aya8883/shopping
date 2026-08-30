@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 560" role="img" aria-label="LuLu weekly leaflet page 1">
+  <defs>
+    <linearGradient id="lbg1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B7A3E"/>
+      <stop offset="100%" stop-color="#065F31"/>
+    </linearGradient>
+  </defs>
+  <rect width="420" height="560" fill="#F4FBF6"/>
+  <rect width="420" height="110" fill="url(#lbg1)"/>
+  <circle cx="360" cy="55" r="28" fill="#F5C518"/>
+  <text x="345" y="61" fill="#0B7A3E" font-family="Arial Black, Arial, sans-serif" font-size="14">LuLu</text>
+  <text x="28" y="48" fill="#fff" font-family="Arial Black, Arial, sans-serif" font-size="26">LuLu Hypermarket</text>
+  <text x="28" y="78" fill="#F5C518" font-family="Arial, sans-serif" font-size="16" font-weight="700">Best of the week — Riyadh</text>
+  <text x="28" y="98" fill="rgba(255,255,255,0.85)" font-family="Arial, sans-serif" font-size="13">???? ???? ??????? — ??????</text>
+
+  <rect x="24" y="136" width="372" height="120" rx="16" fill="#F5C518"/>
+  <text x="44" y="178" fill="#0B7A3E" font-family="Arial Black, Arial, sans-serif" font-size="30">PRICE DROP</text>
+  <text x="44" y="212" fill="#065F31" font-family="Arial, sans-serif" font-size="18">Oil, rice, milk &amp; more</text>
+  <text x="44" y="236" fill="#065F31" font-family="Arial, sans-serif" font-size="13">Central region leaflet</text>
+
+  <rect x="24" y="276" width="178" height="150" rx="14" fill="#fff" stroke="#C8E6D3"/>
+  <text x="40" y="310" fill="#0B7A3E" font-family="Arial, sans-serif" font-size="13" font-weight="700">Noor Oil 1.5L</text>
+  <text x="40" y="336" fill="#64748B" font-family="Arial, sans-serif" font-size="12">Sunflower</text>
+  <text x="40" y="380" fill="#0B7A3E" font-family="Arial Black, Arial, sans-serif" font-size="28">23.50</text>
+  <text x="110" y="380" fill="#94A3B8" font-family="Arial, sans-serif" font-size="12">SAR</text>
+
+  <rect x="218" y="276" width="178" height="150" rx="14" fill="#fff" stroke="#C8E6D3"/>
+  <text x="234" y="310" fill="#0B7A3E" font-family="Arial, sans-serif" font-size="13" font-weight="700">Almarai Milk 2L</text>
+  <text x="234" y="336" fill="#64748B" font-family="Arial, sans-serif" font-size="12">Full Fat</text>
+  <text x="234" y="380" fill="#0B7A3E" font-family="Arial Black, Arial, sans-serif" font-size="28">10.50</text>
+  <text x="320" y="380" fill="#94A3B8" font-family="Arial, sans-serif" font-size="12">SAR</text>
+
+  <text x="28" y="530" fill="#64748B" font-family="Arial, sans-serif" font-size="12">Page 1 · Demo leaflet for Wain Awfar</text>
+</svg>

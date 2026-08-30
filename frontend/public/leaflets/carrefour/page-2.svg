@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 560" role="img" aria-label="Carrefour weekly leaflet page 2">
+  <rect width="420" height="560" fill="#F7F8FC"/>
+  <rect width="420" height="72" fill="#0B3D91"/>
+  <text x="28" y="46" fill="#fff" font-family="Arial Black, Arial, sans-serif" font-size="22">Carrefour · Pantry</text>
+
+  <rect x="24" y="100" width="178" height="180" rx="14" fill="#fff" stroke="#D7DEEE"/>
+  <text x="40" y="140" fill="#0B3D91" font-family="Arial, sans-serif" font-size="14" font-weight="700">Basmati Rice</text>
+  <text x="40" y="166" fill="#64748B" font-family="Arial, sans-serif" font-size="12">5 kg</text>
+  <text x="40" y="220" fill="#E30613" font-family="Arial Black, Arial, sans-serif" font-size="30">34.95</text>
+  <text x="40" y="248" fill="#94A3B8" font-family="Arial, sans-serif" font-size="12" text-decoration="line-through">39.95</text>
+
+  <rect x="218" y="100" width="178" height="180" rx="14" fill="#fff" stroke="#D7DEEE"/>
+  <text x="234" y="140" fill="#0B3D91" font-family="Arial, sans-serif" font-size="14" font-weight="700">Tide Detergent</text>
+  <text x="234" y="166" fill="#64748B" font-family="Arial, sans-serif" font-size="12">Automatic</text>
+  <text x="234" y="220" fill="#E30613" font-family="Arial Black, Arial, sans-serif" font-size="30">41.50</text>
+  <text x="234" y="248" fill="#94A3B8" font-family="Arial, sans-serif" font-size="12" text-decoration="line-through">48.00</text>
+
+  <rect x="24" y="300" width="372" height="180" rx="14" fill="#fff" stroke="#D7DEEE"/>
+  <text x="44" y="348" fill="#0B3D91" font-family="Arial, sans-serif" font-size="16" font-weight="700">Signal Toothpaste</text>
+  <text x="44" y="378" fill="#64748B" font-family="Arial, sans-serif" font-size="13">Fresh mint · family pack</text>
+  <text x="44" y="430" fill="#E30613" font-family="Arial Black, Arial, sans-serif" font-size="32">8.75</text>
+  <text x="140" y="430" fill="#94A3B8" font-family="Arial, sans-serif" font-size="14">SAR</text>
+
+  <text x="28" y="530" fill="#64748B" font-family="Arial, sans-serif" font-size="12">Page 2 · Demo leaflet for Wain Awfar</text>
+</svg>

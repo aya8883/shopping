@@ -16,14 +16,14 @@ export const mockSupermarkets = [
     name_en: 'Carrefour Saudi Arabia',
     name_ar: 'كارفور',
     slug: 'carrefour',
-    logo_url: null,
+    logo_url: '/supermarkets/carrefour.svg',
   },
   {
     id: '11111111-1111-1111-1111-111111111002',
     name_en: 'LuLu Hypermarket',
     name_ar: 'لولو هايبرماركت',
     slug: 'lulu',
-    logo_url: null,
+    logo_url: '/supermarkets/lulu.svg',
   },
 ];
 
@@ -478,10 +478,28 @@ function thisWeekRange() {
   return { start: isoDate(start), end: isoDate(end), today: isoDate(today) };
 }
 
+const LEAFLET_SOURCE: Record<string, string> = {
+  carrefour: 'https://www.carrefourksa.com/mafsau/en/c/Offers',
+  lulu: 'https://www.luluhypermarket.com/en-sa/promotions',
+};
+
+function mockLeafletPages(slug: string, leafletId: string) {
+  return [1, 2, 3].map((page_number) => ({
+    id: `${leafletId}-page-${page_number}`,
+    page_number,
+    image_url: `/leaflets/${slug}/page-${page_number}.svg`,
+    processing_status: 'ready',
+  }));
+}
+
 export function getMockCurrentLeaflets() {
   const { start, end } = thisWeekRange();
 
   return mockSupermarkets.map((store, index) => {
+    const leafletId = `66666666-6666-6666-6666-66666666600${index + 1}`;
+    const shortEn = store.slug === 'lulu' ? 'LuLu' : 'Carrefour';
+    const shortAr = store.slug === 'lulu' ? 'لولو' : 'كارفور';
+
     const storeOffers = mockProducts
       .flatMap((p) =>
         p.offers
@@ -514,14 +532,17 @@ export function getMockCurrentLeaflets() {
       .sort((a, b) => a.offer_price - b.offer_price);
 
     return {
-      id: `66666666-6666-6666-6666-66666666600${index + 1}`,
-      title_en: 'Weekly Offers',
-      title_ar: 'عروض الأسبوع',
+      id: leafletId,
+      title_en: `${shortEn} weekly leaflet`,
+      title_ar: `نشرة ${shortAr} الأسبوعية`,
       start_date: start,
       end_date: end,
       city: 'Riyadh',
       status: 'published',
+      source_url: LEAFLET_SOURCE[store.slug] ?? null,
+      original_file_url: `/leaflets/${store.slug}/page-1.svg`,
       supermarket: store,
+      pages: mockLeafletPages(store.slug, leafletId),
       offers: storeOffers,
     };
   });

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 560" role="img" aria-label="Carrefour weekly leaflet page 3">
+  <rect width="420" height="560" fill="#F7F8FC"/>
+  <rect width="420" height="72" fill="#E30613"/>
+  <text x="28" y="46" fill="#fff" font-family="Arial Black, Arial, sans-serif" font-size="22">Carrefour · Fresh</text>
+
+  <rect x="24" y="110" width="372" height="140" rx="16" fill="#0B3D91"/>
+  <text x="44" y="160" fill="#fff" font-family="Arial Black, Arial, sans-serif" font-size="28">Eggs 30 pack</text>
+  <text x="44" y="198" fill="#F5C518" font-family="Arial, sans-serif" font-size="18">19.95 SAR this week</text>
+
+  <rect x="24" y="274" width="372" height="200" rx="16" fill="#fff" stroke="#D7DEEE"/>
+  <text x="44" y="320" fill="#0B3D91" font-family="Arial, sans-serif" font-size="16" font-weight="700">More dairy deals inside the store</text>
+  <text x="44" y="352" fill="#64748B" font-family="Arial, sans-serif" font-size="13">Prices valid in Riyadh hypermarkets</text>
+  <text x="44" y="390" fill="#64748B" font-family="Arial, sans-serif" font-size="13">Compare on Wain Awfar before you shop</text>
+  <text x="44" y="430" fill="#E30613" font-family="Arial Black, Arial, sans-serif" font-size="20">??? ?????</text>
+
+  <text x="28" y="530" fill="#64748B" font-family="Arial, sans-serif" font-size="12">Page 3 · Demo leaflet for Wain Awfar</text>
+</svg>

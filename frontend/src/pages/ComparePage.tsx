@@ -31,8 +31,16 @@ import { type ProductCardProduct } from '../features/products/ProductCard';
 import { PriceComparisonPanel } from '../features/products/PriceComparisonPanel';
 import { compareProductOffers, formatSar } from '../utils/pricing';
 import { StepBadge, Surface } from '../components/ui/Surface';
+import { SupermarketAvatar } from '../components/SupermarketMark';
+import { supermarketShortName } from '../utils/supermarketBranding';
 
-type Store = { id: string; name_en: string; name_ar: string; slug: string };
+type Store = {
+  id: string;
+  name_en: string;
+  name_ar: string;
+  slug: string;
+  logo_url?: string | null;
+};
 type Category = { id: string; name_en: string; name_ar: string; slug: string };
 type Mode = 'category' | 'product';
 
@@ -159,16 +167,31 @@ export function ComparePage() {
             {stores.map((store) => {
               const selected = selectedSupermarketIds.includes(store.id);
               const order = selected ? selectedSupermarketIds.indexOf(store.id) + 1 : null;
-              const label = locale === 'ar' ? store.name_ar : store.name_en;
+              const label = supermarketShortName(store, locale);
               return (
                 <Chip
                   key={store.id}
+                  avatar={<SupermarketAvatar store={store} size="sm" />}
                   clickable
                   color={selected ? 'primary' : 'default'}
                   variant={selected ? 'filled' : 'outlined'}
                   label={order ? `${order}. ${label}` : label}
                   onClick={() => toggleStore(store.id)}
-                  sx={{ fontWeight: selected ? 700 : 500 }}
+                  sx={{
+                    height: 42,
+                    pl: 0.5,
+                    '& .MuiChip-label': {
+                      fontSize: '1.08rem',
+                      fontWeight: selected ? 800 : 700,
+                      px: 1.25,
+                    },
+                    '& .MuiChip-avatar': {
+                      width: 28,
+                      height: 28,
+                      marginInlineStart: '4px',
+                      marginInlineEnd: '-4px',
+                    },
+                  }}
                 />
               );
             })}

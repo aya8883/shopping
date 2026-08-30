@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 560" role="img" aria-label="LuLu weekly leaflet page 3">
+  <rect width="420" height="560" fill="#F4FBF6"/>
+  <rect width="420" height="72" fill="#F5C518"/>
+  <text x="28" y="46" fill="#0B7A3E" font-family="Arial Black, Arial, sans-serif" font-size="22">LuLu · Care</text>
+
+  <rect x="24" y="110" width="372" height="140" rx="16" fill="#0B7A3E"/>
+  <text x="44" y="160" fill="#fff" font-family="Arial Black, Arial, sans-serif" font-size="28">Signal Toothpaste</text>
+  <text x="44" y="198" fill="#F5C518" font-family="Arial, sans-serif" font-size="18">9.25 SAR this week</text>
+
+  <rect x="24" y="274" width="372" height="200" rx="16" fill="#fff" stroke="#C8E6D3"/>
+  <text x="44" y="320" fill="#0B7A3E" font-family="Arial, sans-serif" font-size="16" font-weight="700">Eggs 30 pack · 21.50 SAR</text>
+  <text x="44" y="352" fill="#64748B" font-family="Arial, sans-serif" font-size="13">Prices valid in Riyadh LuLu stores</text>
+  <text x="44" y="390" fill="#64748B" font-family="Arial, sans-serif" font-size="13">Switch tabs to compare Carrefour leaflet</text>
+  <text x="44" y="430" fill="#0B7A3E" font-family="Arial Black, Arial, sans-serif" font-size="20">??? ?????</text>
+
+  <text x="28" y="530" fill="#64748B" font-family="Arial, sans-serif" font-size="12">Page 3 · Demo leaflet for Wain Awfar</text>
+</svg>

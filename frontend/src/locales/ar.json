@@ -99,10 +99,18 @@
   "offers": {
     "title": "العروض",
     "weekly": "عروض الأسبوع",
-    "weeklyThisWeek": "منشورات العروض لهذا الأسبوع",
+    "weeklyThisWeek": "افتح تبويب كل سوبرماركت لتصفح نشرته",
     "offerCount": "{{count}} عرض",
+    "pricedOffers": "العروض المسعّرة من هذه النشرة",
     "noLeaflets": "لا توجد منشورات عروض لهذا الأسبوع بعد.",
     "noOffers": "لا توجد عروض في هذا المنشور.",
+    "noPages": "صفحات النشرة غير متوفرة بعد.",
+    "leafletPages": "نشرة {{store}}",
+    "pageOf": "صفحة {{current}} من {{total}}",
+    "prevPage": "الصفحة السابقة",
+    "nextPage": "الصفحة التالية",
+    "goToPage": "انتقل إلى الصفحة {{page}}",
+    "openOfficial": "افتح العروض الرسمية",
     "comingSoon": "الفلاتر والترتيب في مرحلة لاحقة."
   },
   "list": {

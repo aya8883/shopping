@@ -25,6 +25,9 @@ import { GET_CURRENT_LEAFLETS } from '../graphql/leaflets/queries';
 import { useAppContext } from '../contexts/AppContext';
 import { useBasket } from '../contexts/BasketContext';
 import { formatSar } from '../utils/pricing';
+import { SupermarketAvatar } from '../components/SupermarketMark';
+import { LeafletViewer, type LeafletPage } from '../components/LeafletViewer';
+import { supermarketShortName } from '../utils/supermarketBranding';
 
 type LeafletOffer = {
   id: string;
@@ -50,12 +53,15 @@ type Leaflet = {
   start_date: string;
   end_date: string;
   city: string;
+  source_url?: string | null;
   supermarket: {
     id: string;
     name_en: string;
     name_ar: string;
     slug: string;
+    logo_url?: string | null;
   };
+  pages?: LeafletPage[];
   offers: LeafletOffer[];
 };
 
@@ -146,7 +152,16 @@ export function OffersPage() {
         {leaflets.map((leaflet) => (
           <Tab
             key={leaflet.id}
-            label={locale === 'ar' ? leaflet.supermarket.name_ar : leaflet.supermarket.name_en}
+            icon={<SupermarketAvatar store={leaflet.supermarket} size="sm" />}
+            iconPosition="start"
+            label={supermarketShortName(leaflet.supermarket, locale)}
+            sx={{
+              minHeight: 56,
+              fontSize: '1.05rem',
+              fontWeight: 800,
+              gap: 1,
+              '& .MuiTab-iconWrapper': { marginBottom: 0, marginInlineEnd: 0 },
+            }}
           />
         ))}
       </Tabs>
@@ -177,6 +192,17 @@ export function OffersPage() {
               <Chip size="small" variant="outlined" label={active.city} />
             </Stack>
           </Paper>
+
+          <LeafletViewer
+            key={active.id}
+            pages={active.pages ?? []}
+            sourceUrl={active.source_url}
+            storeName={supermarketShortName(active.supermarket, locale)}
+          />
+
+          <Typography variant="subtitle1" fontWeight={800}>
+            {t('offers.pricedOffers')}
+          </Typography>
 
           {active.offers.length === 0 ? (
             <Alert severity="info">{t('offers.noOffers')}</Alert>

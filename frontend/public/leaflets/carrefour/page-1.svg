@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 560" role="img" aria-label="Carrefour weekly leaflet page 1">
+  <defs>
+    <linearGradient id="cbg1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B3D91"/>
+      <stop offset="100%" stop-color="#06265C"/>
+    </linearGradient>
+  </defs>
+  <rect width="420" height="560" fill="#F7F8FC"/>
+  <rect width="420" height="110" fill="url(#cbg1)"/>
+  <text x="28" y="48" fill="#fff" font-family="Arial Black, Arial, sans-serif" font-size="28">Carrefour</text>
+  <text x="28" y="78" fill="#F5C518" font-family="Arial, sans-serif" font-size="16" font-weight="700">Weekly Offers — Riyadh</text>
+  <text x="28" y="98" fill="rgba(255,255,255,0.85)" font-family="Arial, sans-serif" font-size="13">???? ??????? — ??????</text>
+
+  <rect x="24" y="136" width="372" height="120" rx="16" fill="#E30613"/>
+  <text x="44" y="178" fill="#fff" font-family="Arial Black, Arial, sans-serif" font-size="34">SAVE MORE</text>
+  <text x="44" y="212" fill="#fff" font-family="Arial, sans-serif" font-size="18">Fresh dairy &amp; pantry deals</text>
+  <text x="44" y="236" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="13">This week only</text>
+
+  <rect x="24" y="276" width="178" height="150" rx="14" fill="#fff" stroke="#D7DEEE"/>
+  <text x="40" y="310" fill="#0B3D91" font-family="Arial, sans-serif" font-size="13" font-weight="700">Almarai Milk 2L</text>
+  <text x="40" y="336" fill="#64748B" font-family="Arial, sans-serif" font-size="12">Full Fat</text>
+  <text x="40" y="380" fill="#E30613" font-family="Arial Black, Arial, sans-serif" font-size="28">9.95</text>
+  <text x="110" y="380" fill="#94A3B8" font-family="Arial, sans-serif" font-size="12">SAR</text>
+  <text x="40" y="404" fill="#94A3B8" font-family="Arial, sans-serif" font-size="12" text-decoration="line-through">11.50</text>
+
+  <rect x="218" y="276" width="178" height="150" rx="14" fill="#fff" stroke="#D7DEEE"/>
+  <text x="234" y="310" fill="#0B3D91" font-family="Arial, sans-serif" font-size="13" font-weight="700">Afia Oil 1.5L</text>
+  <text x="234" y="336" fill="#64748B" font-family="Arial, sans-serif" font-size="12">Sunflower</text>
+  <text x="234" y="380" fill="#E30613" font-family="Arial Black, Arial, sans-serif" font-size="28">27.95</text>
+  <text x="320" y="380" fill="#94A3B8" font-family="Arial, sans-serif" font-size="12">SAR</text>
+
+  <text x="28" y="530" fill="#64748B" font-family="Arial, sans-serif" font-size="12">Page 1 · Demo leaflet for Wain Awfar</text>
+</svg>

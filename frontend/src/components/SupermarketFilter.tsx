@@ -8,12 +8,15 @@ import Skeleton from '@mui/material/Skeleton';
 import { useTranslation } from 'react-i18next';
 import { GET_SUPERMARKETS } from '../graphql/products/queries';
 import { useAppContext } from '../contexts/AppContext';
+import { SupermarketAvatar } from './SupermarketMark';
+import { supermarketShortName } from '../utils/supermarketBranding';
 
 type Supermarket = {
   id: string;
   name_en: string;
   name_ar: string;
   slug: string;
+  logo_url?: string | null;
 };
 
 export function SupermarketFilter({ dense = false }: { dense?: boolean }) {
@@ -45,7 +48,7 @@ export function SupermarketFilter({ dense = false }: { dense?: boolean }) {
     return (
       <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
         {Array.from({ length: 2 }).map((_, i) => (
-          <Skeleton key={i} variant="rounded" width={100} height={32} />
+          <Skeleton key={i} variant="rounded" width={120} height={40} />
         ))}
       </Stack>
     );
@@ -69,16 +72,32 @@ export function SupermarketFilter({ dense = false }: { dense?: boolean }) {
       <Stack direction="row" flexWrap="wrap" useFlexGap spacing={1}>
         {stores.map((store) => {
           const selected = selectedSupermarketIds.includes(store.id);
-          const label = locale === 'ar' ? store.name_ar : store.name_en;
+          const label = supermarketShortName(store, locale);
           return (
             <Chip
               key={store.id}
+              avatar={<SupermarketAvatar store={store} size="sm" />}
               label={label}
               clickable
               color={selected ? 'primary' : 'default'}
               variant={selected ? 'filled' : 'outlined'}
               onClick={() => toggleSupermarket(store.id)}
               aria-pressed={selected}
+              sx={{
+                height: 40,
+                pl: 0.5,
+                '& .MuiChip-label': {
+                  fontSize: '1.05rem',
+                  fontWeight: 800,
+                  px: 1.25,
+                },
+                '& .MuiChip-avatar': {
+                  width: 28,
+                  height: 28,
+                  marginInlineStart: '4px',
+                  marginInlineEnd: '-4px',
+                },
+              }}
             />
           );
         })}
