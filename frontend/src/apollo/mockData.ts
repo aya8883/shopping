@@ -380,8 +380,14 @@ export function getMockCurrentLeaflets() {
             effective_price: o.effective_price,
             currency: o.currency,
             is_demo: o.is_demo,
-            promotion_description_en: o.promotion_description_en ?? 'Weekly offer',
-            promotion_description_ar: o.promotion_description_ar ?? 'عرض الأسبوع',
+            promotion_description_en:
+              'promotion_description_en' in o && o.promotion_description_en
+                ? o.promotion_description_en
+                : 'Weekly offer',
+            promotion_description_ar:
+              'promotion_description_ar' in o && o.promotion_description_ar
+                ? o.promotion_description_ar
+                : 'عرض الأسبوع',
             product: {
               id: p.id,
               name_en: p.name_en,
