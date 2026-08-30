@@ -9,6 +9,11 @@ import { setContext } from '@apollo/client/link/context';
 import { onError } from '@apollo/client/link/error';
 import Session from 'supertokens-auth-react/recipe/session';
 import { appConfig } from '../config/app';
+import { mockLink } from './mockLink';
+
+const useMockData =
+  import.meta.env.VITE_USE_MOCK_DATA === 'true' ||
+  import.meta.env.VITE_USE_MOCK_DATA === '1';
 
 const httpLink = createHttpLink({
   uri: appConfig.hasuraGraphqlUrl,
@@ -38,13 +43,23 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
       console.warn('[GraphQL]', err.message, err.extensions);
     }
   }
-  if (networkError) {
-    console.warn('[Network]', networkError.message);
+  if (networkError && !useMockData) {
+    console.warn(
+      '[Network]',
+      networkError.message,
+      '— Start Hasura (Docker) or set VITE_USE_MOCK_DATA=true in frontend/.env',
+    );
   }
 });
 
+if (useMockData) {
+  console.info('[apollo] Using local mock GraphQL data (Hasura not required)');
+}
+
 export const apolloClient = new ApolloClient({
-  link: from([errorLink, authLink as unknown as ApolloLink, httpLink]),
+  link: useMockData
+    ? from([errorLink, mockLink])
+    : from([errorLink, authLink as unknown as ApolloLink, httpLink]),
   cache: new InMemoryCache({
     typePolicies: {
       Query: {
@@ -61,7 +76,7 @@ export const apolloClient = new ApolloClient({
   }),
   defaultOptions: {
     watchQuery: {
-      fetchPolicy: 'cache-and-network',
+      fetchPolicy: useMockData ? 'cache-first' : 'cache-and-network',
       errorPolicy: 'all',
     },
     query: {
