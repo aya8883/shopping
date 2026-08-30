@@ -34,9 +34,16 @@ export function MobileBottomNavigation() {
 
   return (
     <Paper
-      elevation={8}
+      elevation={0}
       className="fixed bottom-0 inset-x-0 z-40 mx-auto max-w-app md:max-w-desktop"
-      sx={{ borderRadius: '18px 18px 0 0' }}
+      sx={{
+        borderRadius: '22px 22px 0 0',
+        border: '1px solid rgba(15, 118, 110, 0.10)',
+        borderBottom: 'none',
+        backgroundColor: 'rgba(255,255,255,0.92)',
+        backdropFilter: 'blur(18px) saturate(1.15)',
+        boxShadow: '0 -10px 30px rgba(15, 61, 58, 0.08)',
+      }}
     >
       <BottomNavigation
         showLabels

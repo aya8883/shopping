@@ -42,14 +42,30 @@ export function ProductCard({ product }: { product: ProductCardProduct }) {
 
   const discount =
     best?.regular_price && Number(best.regular_price) > best.effective
-      ? Math.round(((Number(best.regular_price) - best.effective) / Number(best.regular_price)) * 100)
+      ? Math.round(
+          ((Number(best.regular_price) - best.effective) / Number(best.regular_price)) * 100,
+        )
       : null;
 
   return (
-    <Card variant="outlined" sx={{ borderColor: 'rgba(15,118,110,0.12)' }}>
+    <Card
+      sx={{
+        overflow: 'hidden',
+        background:
+          'linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(248,252,251,0.96) 100%)',
+      }}
+    >
+      <Box
+        sx={{
+          height: 4,
+          background: best
+            ? 'linear-gradient(90deg, #0D9488, #2DD4BF)'
+            : 'rgba(15,118,110,0.12)',
+        }}
+      />
       <CardActionArea component={RouterLink} to={`/products/${product.id}`}>
-        <CardContent>
-          <Stack spacing={1}>
+        <CardContent sx={{ pt: 1.75 }}>
+          <Stack spacing={1.1}>
             <Box className="flex items-start justify-between gap-2">
               <Typography variant="subtitle1" fontWeight={700} lineHeight={1.3}>
                 {name}
@@ -59,22 +75,40 @@ export function ProductCard({ product }: { product: ProductCardProduct }) {
               ) : null}
             </Box>
             <Typography variant="body2" color="text.secondary">
-              {[brand, product.size_value && product.size_unit ? `${product.size_value}${product.size_unit}` : null]
+              {[
+                brand,
+                product.size_value && product.size_unit
+                  ? `${product.size_value}${product.size_unit}`
+                  : null,
+              ]
                 .filter(Boolean)
                 .join(' · ')}
             </Typography>
             {best ? (
-              <Box className="flex items-end justify-between gap-2 pt-1">
+              <Box className="flex items-end justify-between gap-2 pt-0.5">
                 <div>
-                  <Typography variant="h6" color="primary.dark" fontWeight={700}>
+                  <Typography
+                    variant="h5"
+                    sx={{
+                      color: 'primary.dark',
+                      fontWeight: 800,
+                      fontFamily: '"Fraunces", Georgia, serif',
+                      letterSpacing: '-0.02em',
+                    }}
+                  >
                     {formatSar(best.effective, locale)}
                   </Typography>
-                  <Typography variant="caption" color="text.secondary">
+                  <Typography variant="caption" color="text.secondary" fontWeight={600}>
                     {supermarketName}
                   </Typography>
                 </div>
                 {discount ? (
-                  <Chip size="small" color="success" label={`${discount}%`} />
+                  <Chip
+                    size="small"
+                    color="success"
+                    label={`-${discount}%`}
+                    sx={{ fontWeight: 800 }}
+                  />
                 ) : null}
               </Box>
             ) : (

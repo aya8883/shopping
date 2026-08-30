@@ -51,21 +51,32 @@ export function PriceComparisonPanel({
             <Paper
               elevation={0}
               sx={{
-                p: 2,
+                p: 2.25,
+                borderRadius: 3,
                 background:
-                  'linear-gradient(135deg, rgba(15,118,110,0.12), rgba(21,128,61,0.10))',
-                border: '1px solid rgba(15,118,110,0.18)',
+                  'linear-gradient(135deg, rgba(13,148,136,0.14), rgba(22,163,74,0.08) 55%, rgba(255,255,255,0.7))',
+                border: '1px solid rgba(13,148,136,0.20)',
+                boxShadow: '0 10px 24px rgba(13,148,136,0.10)',
               }}
             >
               <Typography variant="overline" color="primary.dark">
                 {t('product.bestPrice')}
               </Typography>
-              <Typography variant="h5" fontWeight={700}>
+              <Typography
+                variant="h5"
+                fontWeight={700}
+                sx={{ fontFamily: '"Fraunces", Georgia, serif' }}
+              >
                 {locale === 'ar'
                   ? comparison.best.supermarket?.name_ar
                   : comparison.best.supermarket?.name_en}
               </Typography>
-              <Typography variant="h4" color="primary.dark" fontWeight={700}>
+              <Typography
+                variant="h3"
+                color="primary.dark"
+                fontWeight={800}
+                sx={{ fontFamily: '"Fraunces", Georgia, serif', letterSpacing: '-0.02em' }}
+              >
                 {formatSar(comparison.best.effective, locale)}
               </Typography>
               {comparison.saving > 0 ? (

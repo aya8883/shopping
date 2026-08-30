@@ -30,6 +30,7 @@ import { useBasket } from '../contexts/BasketContext';
 import { type ProductCardProduct } from '../features/products/ProductCard';
 import { PriceComparisonPanel } from '../features/products/PriceComparisonPanel';
 import { compareProductOffers, formatSar } from '../utils/pricing';
+import { StepBadge, Surface } from '../components/ui/Surface';
 
 type Store = { id: string; name_en: string; name_ar: string; slug: string };
 type Category = { id: string; name_en: string; name_ar: string; slug: string };
@@ -116,21 +117,22 @@ export function ComparePage() {
   }, [categoryProducts, selectedSupermarketIds]);
 
   return (
-    <Stack spacing={2.5} className="pb-4">
+    <Stack spacing={2.5} className="pb-4 animate-fade-in">
       <div>
-        <Typography variant="h5" fontWeight={700}>
+        <Typography variant="h4" fontWeight={700} sx={{ letterSpacing: '-0.02em' }}>
           {t('compare.title')}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
           {t('compare.subtitle')}
         </Typography>
       </div>
 
-      <Paper variant="outlined" sx={{ p: 2 }}>
+      <Surface accent>
         <Typography variant="subtitle2" fontWeight={700} gutterBottom>
-          1. {t('compare.stepStores')}
+          <StepBadge step={1} />
+          {t('compare.stepStores')}
         </Typography>
-        <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+        <Typography variant="body2" color="text.secondary" sx={{ mb: 1.25 }}>
           {t('compare.maxStoresHint')}
         </Typography>
         <ToggleButtonGroup
@@ -182,11 +184,12 @@ export function ComparePage() {
             {maxStoreCount ? ` · ${t('compare.maxLabel', { count: maxStoreCount })}` : ''}
           </Typography>
         )}
-      </Paper>
+      </Surface>
 
-      <Paper variant="outlined" sx={{ p: 2 }}>
+      <Surface>
         <Typography variant="subtitle2" fontWeight={700} gutterBottom>
-          2. {t('compare.stepWhat')}
+          <StepBadge step={2} />
+          {t('compare.stepWhat')}
         </Typography>
         <ToggleButtonGroup
           exclusive
@@ -288,11 +291,12 @@ export function ComparePage() {
             </Stack>
           </Stack>
         )}
-      </Paper>
+      </Surface>
 
-      <Paper variant="outlined" sx={{ p: 2 }}>
+      <Surface>
         <Typography variant="subtitle2" fontWeight={700} gutterBottom>
-          3. {t('compare.stepResults')}
+          <StepBadge step={3} />
+          {t('compare.stepResults')}
         </Typography>
 
         {selectedSupermarketIds.length === 0 ? (
@@ -417,7 +421,7 @@ export function ComparePage() {
             </Stack>
           )
         ) : null}
-      </Paper>
+      </Surface>
     </Stack>
   );
 }
