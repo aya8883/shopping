@@ -9,6 +9,7 @@ import { useTranslation } from 'react-i18next';
 import { Link as RouterLink } from 'react-router-dom';
 import { compareProductOffers, formatSar } from '../../utils/pricing';
 import { filterOffersBySelectedStores, useAppContext } from '../../contexts/AppContext';
+import { SupermarketMark } from '../../components/SupermarketMark';
 
 export interface ProductCardProduct {
   id: string;
@@ -23,7 +24,13 @@ export interface ProductCardProduct {
     regular_price?: number | null;
     effective_price?: number | null;
     is_demo?: boolean | null;
-    supermarket?: { id: string; name_en: string; name_ar: string; slug: string } | null;
+    supermarket?: {
+      id: string;
+      name_en: string;
+      name_ar: string;
+      slug: string;
+      logo_url?: string | null;
+    } | null;
   }>;
 }
 
@@ -37,8 +44,6 @@ export function ProductCard({ product }: { product: ProductCardProduct }) {
     filterOffersBySelectedStores(product.offers ?? [], selectedSupermarketIds),
   );
   const best = comparison.best;
-  const supermarketName =
-    locale === 'ar' ? best?.supermarket?.name_ar : best?.supermarket?.name_en;
 
   const discount =
     best?.regular_price && Number(best.regular_price) > best.effective
@@ -98,9 +103,12 @@ export function ProductCard({ product }: { product: ProductCardProduct }) {
                   >
                     {formatSar(best.effective, locale)}
                   </Typography>
-                  <Typography variant="caption" color="text.secondary" fontWeight={600}>
-                    {supermarketName}
-                  </Typography>
+                  <SupermarketMark
+                    store={best.supermarket}
+                    locale={locale}
+                    size="sm"
+                    sx={{ mt: 0.5 }}
+                  />
                 </div>
                 {discount ? (
                   <Chip

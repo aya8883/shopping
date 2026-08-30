@@ -19,11 +19,20 @@ export const GET_CURRENT_LEAFLETS = gql`
       end_date
       city
       status
+      source_url
+      original_file_url
       supermarket {
         id
         name_en
         name_ar
         slug
+        logo_url
+      }
+      pages(order_by: { page_number: asc }) {
+        id
+        page_number
+        image_url
+        processing_status
       }
       offers(
         where: { active: { _eq: true } }
