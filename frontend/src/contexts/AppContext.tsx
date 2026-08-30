@@ -11,6 +11,7 @@ import { useTranslation } from 'react-i18next';
 import { appConfig, type AppLocale } from '../config/app';
 
 const STORAGE_KEY = 'wain-awfar.selected-supermarket-ids';
+const MAX_STORES_KEY = 'wain-awfar.max-store-count';
 
 interface AppContextValue {
   locale: AppLocale;
@@ -18,11 +19,13 @@ interface AppContextValue {
   city: string;
   setCity: (city: string) => void;
   direction: 'rtl' | 'ltr';
-  /** Empty array means “all stores” (no filter). */
   selectedSupermarketIds: string[];
   setSelectedSupermarketIds: (ids: string[]) => void;
   toggleSupermarket: (id: string) => void;
   isSupermarketSelected: (id: string) => boolean;
+  /** null = no limit (all selected stores allowed). */
+  maxStoreCount: number | null;
+  setMaxStoreCount: (count: number | null) => void;
 }
 
 const AppContext = createContext<AppContextValue | null>(null);
@@ -38,6 +41,18 @@ function readStoredIds(): string[] | null {
   }
 }
 
+function readMaxStoreCount(): number | null {
+  try {
+    const raw = localStorage.getItem(MAX_STORES_KEY);
+    if (raw === null) return 2;
+    if (raw === 'all' || raw === '0') return null;
+    const n = Number(raw);
+    return Number.isFinite(n) && n > 0 ? n : 2;
+  } catch {
+    return 2;
+  }
+}
+
 export function AppProvider({ children }: { children: ReactNode }) {
   const { i18n } = useTranslation();
   const initialLocale: AppLocale = i18n.language?.startsWith('ar')
@@ -50,6 +65,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const [selectedSupermarketIds, setSelectedSupermarketIdsState] = useState<string[]>(
     () => readStoredIds() ?? [],
   );
+  const [maxStoreCount, setMaxStoreCountState] = useState<number | null>(readMaxStoreCount);
 
   const setLocale = useCallback(
     (next: AppLocale) => {
@@ -65,13 +81,28 @@ export function AppProvider({ children }: { children: ReactNode }) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(unique));
   }, []);
 
-  const toggleSupermarket = useCallback((id: string) => {
-    setSelectedSupermarketIdsState((prev) => {
-      const next = prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id];
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
-      return next;
-    });
+  const setMaxStoreCount = useCallback((count: number | null) => {
+    setMaxStoreCountState(count);
+    localStorage.setItem(MAX_STORES_KEY, count == null ? 'all' : String(count));
   }, []);
+
+  const toggleSupermarket = useCallback(
+    (id: string) => {
+      setSelectedSupermarketIdsState((prev) => {
+        let next: string[];
+        if (prev.includes(id)) {
+          next = prev.filter((x) => x !== id);
+        } else if (maxStoreCount && prev.length >= maxStoreCount) {
+          next = [...prev.slice(1), id];
+        } else {
+          next = [...prev, id];
+        }
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+        return next;
+      });
+    },
+    [maxStoreCount],
+  );
 
   const isSupermarketSelected = useCallback(
     (id: string) => selectedSupermarketIds.includes(id),
@@ -84,6 +115,15 @@ export function AppProvider({ children }: { children: ReactNode }) {
     document.documentElement.dir = dir;
   }, [locale]);
 
+  useEffect(() => {
+    if (!maxStoreCount) return;
+    if (selectedSupermarketIds.length > maxStoreCount) {
+      const trimmed = selectedSupermarketIds.slice(0, maxStoreCount);
+      setSelectedSupermarketIdsState(trimmed);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(trimmed));
+    }
+  }, [maxStoreCount, selectedSupermarketIds]);
+
   const value = useMemo<AppContextValue>(
     () => ({
       locale,
@@ -95,6 +135,8 @@ export function AppProvider({ children }: { children: ReactNode }) {
       setSelectedSupermarketIds,
       toggleSupermarket,
       isSupermarketSelected,
+      maxStoreCount,
+      setMaxStoreCount,
     }),
     [
       locale,
@@ -104,6 +146,8 @@ export function AppProvider({ children }: { children: ReactNode }) {
       setSelectedSupermarketIds,
       toggleSupermarket,
       isSupermarketSelected,
+      maxStoreCount,
+      setMaxStoreCount,
     ],
   );
 

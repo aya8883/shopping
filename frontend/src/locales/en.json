@@ -9,9 +9,33 @@
   "nav": {
     "home": "Home",
     "search": "Search",
+    "compare": "Compare",
     "offers": "Offers",
     "myList": "My List",
     "profile": "Profile"
+  },
+  "compare": {
+    "title": "Compare",
+    "subtitle": "Pick stores, then a category or a specific product.",
+    "stepStores": "Choose supermarkets",
+    "stepWhat": "What do you want to compare?",
+    "stepResults": "Results",
+    "maxStoresHint": "Limit how many stores to compare (1, 2, or 3), then tap the stores in order.",
+    "storesCount": "{{count}} stores",
+    "storesAll": "Any number",
+    "selectedCount": "{{count}} selected",
+    "maxLabel": "max {{count}}",
+    "firstStore": "First store",
+    "byCategory": "By category",
+    "byProduct": "Specific item",
+    "productPlaceholder": "e.g. Afia oil, Almarai milk…",
+    "productHint": "Search by product or brand name",
+    "needStores": "Select at least one supermarket first.",
+    "needCategory": "Choose a category such as Cooking Oil.",
+    "needProduct": "Search and select a product to compare.",
+    "noCategoryProducts": "No priced products in this category for the selected stores.",
+    "categoryResultsHint": "Sorted by best price among your selected stores.",
+    "openProduct": "Details"
   },
   "home": {
     "headline": "Save more on your groceries",

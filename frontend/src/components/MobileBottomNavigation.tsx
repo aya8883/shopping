@@ -3,7 +3,7 @@ import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import Paper from '@mui/material/Paper';
 import Badge from '@mui/material/Badge';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
-import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+import CompareArrowsOutlinedIcon from '@mui/icons-material/CompareArrowsOutlined';
 import LocalOfferOutlinedIcon from '@mui/icons-material/LocalOfferOutlined';
 import PlaylistAddCheckOutlinedIcon from '@mui/icons-material/PlaylistAddCheckOutlined';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
@@ -13,7 +13,7 @@ import { useBasket } from '../contexts/BasketContext';
 
 const tabs = [
   { path: '/', key: 'home', icon: <HomeOutlinedIcon /> },
-  { path: '/search', key: 'search', icon: <SearchOutlinedIcon /> },
+  { path: '/compare', key: 'compare', icon: <CompareArrowsOutlinedIcon /> },
   { path: '/offers', key: 'offers', icon: <LocalOfferOutlinedIcon /> },
   { path: '/list', key: 'myList', icon: <PlaylistAddCheckOutlinedIcon />, badge: true },
   { path: '/profile', key: 'profile', icon: <PersonOutlineOutlinedIcon /> },

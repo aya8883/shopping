@@ -9,9 +9,33 @@
   "nav": {
     "home": "الرئيسية",
     "search": "بحث",
+    "compare": "قارن",
     "offers": "العروض",
     "myList": "قائمتي",
     "profile": "حسابي"
+  },
+  "compare": {
+    "title": "قارن",
+    "subtitle": "اختر المتاجر، ثم تصنيفاً أو منتجاً محدداً.",
+    "stepStores": "اختر السوبرماركت",
+    "stepWhat": "ماذا تريد أن تقارن؟",
+    "stepResults": "النتائج",
+    "maxStoresHint": "حدد عدد المتاجر (1 أو 2 أو 3) ثم اضغط على المتاجر بالترتيب.",
+    "storesCount": "{{count}} متاجر",
+    "storesAll": "بدون حد",
+    "selectedCount": "{{count}} محدد",
+    "maxLabel": "الحد {{count}}",
+    "firstStore": "المتجر الأول",
+    "byCategory": "حسب التصنيف",
+    "byProduct": "منتج محدد",
+    "productPlaceholder": "مثال: زيت عافية، حليب المراعي…",
+    "productHint": "ابحث باسم المنتج أو الماركة",
+    "needStores": "اختر سوبرماركت واحداً على الأقل أولاً.",
+    "needCategory": "اختر تصنيفاً مثل زيوت الطبخ.",
+    "needProduct": "ابحث واختر منتجاً للمقارنة.",
+    "noCategoryProducts": "لا توجد منتجات مسعّرة في هذا التصنيف للمتاجر المحددة.",
+    "categoryResultsHint": "مرتبة حسب أفضل سعر بين متاجرك المحددة.",
+    "openProduct": "التفاصيل"
   },
   "home": {
     "headline": "وفر أكثر في مقاضيك",

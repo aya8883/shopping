@@ -56,6 +56,15 @@ function resolve(operation: string, variables: Record<string, unknown>) {
           })),
       };
     }
+    case 'GetProductsByCategory': {
+      const categoryId = String(variables.categoryId ?? '');
+      const limit = Number(variables.limit ?? 40);
+      return {
+        products: mockProducts
+          .filter((p) => p.category?.id === categoryId)
+          .slice(0, limit),
+      };
+    }
     default:
       console.warn(`[mock-graphql] Unhandled operation: ${operation}`);
       return {};
