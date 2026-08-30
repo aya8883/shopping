@@ -48,6 +48,10 @@
   "offers": {
     "title": "Offers",
     "weekly": "Weekly offers",
+    "weeklyThisWeek": "This week’s supermarket leaflets",
+    "offerCount": "{{count}} offers",
+    "noLeaflets": "No leaflets are published for this week yet.",
+    "noOffers": "No offers in this leaflet.",
     "comingSoon": "Filters and sorting arrive in a later phase."
   },
   "list": {

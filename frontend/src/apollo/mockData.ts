@@ -348,3 +348,62 @@ export function getMockBestDeals(limit = 8) {
     .sort((a, b) => a.offer_price - b.offer_price)
     .slice(0, limit);
 }
+
+function isoDate(d: Date): string {
+  return d.toISOString().slice(0, 10);
+}
+
+function thisWeekRange() {
+  const today = new Date();
+  const start = new Date(today);
+  // Week starting Saturday (common in Saudi Arabia)
+  const day = today.getDay(); // 0 Sun … 6 Sat
+  const daysSinceSaturday = (day + 1) % 7;
+  start.setDate(today.getDate() - daysSinceSaturday);
+  const end = new Date(start);
+  end.setDate(start.getDate() + 6);
+  return { start: isoDate(start), end: isoDate(end), today: isoDate(today) };
+}
+
+export function getMockCurrentLeaflets() {
+  const { start, end } = thisWeekRange();
+
+  return mockSupermarkets.map((store, index) => {
+    const storeOffers = mockProducts
+      .flatMap((p) =>
+        p.offers
+          .filter((o) => o.supermarket.id === store.id)
+          .map((o) => ({
+            id: o.id,
+            offer_price: o.offer_price,
+            regular_price: o.regular_price,
+            effective_price: o.effective_price,
+            currency: o.currency,
+            is_demo: o.is_demo,
+            promotion_description_en: o.promotion_description_en ?? 'Weekly offer',
+            promotion_description_ar: o.promotion_description_ar ?? 'عرض الأسبوع',
+            product: {
+              id: p.id,
+              name_en: p.name_en,
+              name_ar: p.name_ar,
+              size_value: p.size_value,
+              size_unit: p.size_unit,
+              brand: p.brand,
+            },
+          })),
+      )
+      .sort((a, b) => a.offer_price - b.offer_price);
+
+    return {
+      id: `66666666-6666-6666-6666-66666666600${index + 1}`,
+      title_en: 'Weekly Offers',
+      title_ar: 'عروض الأسبوع',
+      start_date: start,
+      end_date: end,
+      city: 'Riyadh',
+      status: 'published',
+      supermarket: store,
+      offers: storeOffers,
+    };
+  });
+}

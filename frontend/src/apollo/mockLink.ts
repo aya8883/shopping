@@ -1,6 +1,7 @@
 import { ApolloLink, Observable } from '@apollo/client';
 import {
   getMockBestDeals,
+  getMockCurrentLeaflets,
   mockCategories,
   mockProducts,
   mockSupermarkets,
@@ -30,6 +31,8 @@ function resolve(operation: string, variables: Record<string, unknown>) {
     }
     case 'GetBestDeals':
       return { supermarket_offers: getMockBestDeals(Number(variables.limit ?? 8)) };
+    case 'GetCurrentLeaflets':
+      return { leaflets: getMockCurrentLeaflets() };
     default:
       console.warn(`[mock-graphql] Unhandled operation: ${operation}`);
       return {};

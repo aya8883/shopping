@@ -1,16 +1,37 @@
 ﻿table:
   name: leaflets
   schema: public
+object_relationships:
+  - name: supermarket
+    using:
+      foreign_key_constraint_on: supermarket_id
+array_relationships:
+  - name: offers
+    using:
+      foreign_key_constraint_on:
+        column: leaflet_id
+        table:
+          name: supermarket_offers
+          schema: public
+  - name: pages
+    using:
+      foreign_key_constraint_on:
+        column: leaflet_id
+        table:
+          name: leaflet_pages
+          schema: public
 select_permissions:
   - role: anonymous
     permission:
       columns: "*"
-      filter: {}
+      filter:
+        status: { _eq: published }
       allow_aggregations: true
   - role: consumer
     permission:
       columns: "*"
-      filter: {}
+      filter:
+        status: { _eq: published }
       allow_aggregations: true
   - role: reviewer
     permission:
