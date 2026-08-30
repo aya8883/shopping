@@ -13,6 +13,7 @@ import './index.css';
 import { initSuperTokens } from './auth/initSuperTokens';
 import { apolloClient } from './apollo/client';
 import { AppProvider, useAppContext } from './contexts/AppContext';
+import { BasketProvider } from './contexts/BasketContext';
 import { createAppTheme } from './theme';
 import App from './App';
 
@@ -49,7 +50,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <ApolloProvider client={apolloClient}>
           <AppProvider>
-            <ThemedApp />
+            <BasketProvider>
+              <ThemedApp />
+            </BasketProvider>
           </AppProvider>
         </ApolloProvider>
       </BrowserRouter>

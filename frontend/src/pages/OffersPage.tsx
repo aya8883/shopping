@@ -11,14 +11,19 @@ import Skeleton from '@mui/material/Skeleton';
 import Alert from '@mui/material/Alert';
 import Box from '@mui/material/Box';
 import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
+import IconButton from '@mui/material/IconButton';
+import Snackbar from '@mui/material/Snackbar';
+import AddShoppingCartOutlinedIcon from '@mui/icons-material/AddShoppingCartOutlined';
 import Divider from '@mui/material/Divider';
 import { useTranslation } from 'react-i18next';
 import { format, parseISO } from 'date-fns';
 import { arSA, enUS } from 'date-fns/locale';
 import { GET_CURRENT_LEAFLETS } from '../graphql/leaflets/queries';
 import { useAppContext } from '../contexts/AppContext';
+import { useBasket } from '../contexts/BasketContext';
 import { formatSar } from '../utils/pricing';
 
 type LeafletOffer = {
@@ -71,7 +76,9 @@ function formatRange(start: string, end: string, locale: string): string {
 export function OffersPage() {
   const { t } = useTranslation();
   const { locale } = useAppContext();
+  const { addItem, getQuantity } = useBasket();
   const [tab, setTab] = useState(0);
+  const [toast, setToast] = useState(false);
 
   const { data, loading, error } = useQuery(GET_CURRENT_LEAFLETS, {
     variables: { today: todayIso() },
@@ -204,50 +211,94 @@ export function OffersPage() {
                   return (
                     <Box key={offer.id}>
                       {index > 0 ? <Divider /> : null}
-                      <ListItemButton
-                        component={RouterLink}
-                        to={`/products/${offer.product.id}`}
-                        alignItems="flex-start"
+                      <ListItem
+                        disablePadding
+                        secondaryAction={
+                          <IconButton
+                            edge="end"
+                            aria-label={t('product.addToList')}
+                            color="primary"
+                            onClick={() => {
+                              addItem({
+                                productId: offer.product.id,
+                                name_en: offer.product.name_en,
+                                name_ar: offer.product.name_ar,
+                                size_value: offer.product.size_value,
+                                size_unit: offer.product.size_unit,
+                                brand_en: offer.product.brand?.name_en,
+                                brand_ar: offer.product.brand?.name_ar,
+                                addedFromSupermarketId: active.supermarket.id,
+                              });
+                              setToast(true);
+                            }}
+                          >
+                            <AddShoppingCartOutlinedIcon />
+                          </IconButton>
+                        }
                       >
-                        <ListItemText
-                          primary={
-                            <Box className="flex items-start justify-between gap-2">
-                              <Typography fontWeight={700} lineHeight={1.3}>
-                                {name}
-                              </Typography>
-                              <Typography fontWeight={700} color="primary.dark" whiteSpace="nowrap">
-                                {formatSar(Number(offer.offer_price), locale)}
-                              </Typography>
-                            </Box>
-                          }
-                          secondary={
-                            <Stack spacing={0.5} sx={{ mt: 0.5 }}>
-                              <Typography variant="body2" color="text.secondary">
-                                {[brand, size].filter(Boolean).join(' · ')}
-                              </Typography>
-                              <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
-                                {offer.regular_price ? (
-                                  <Typography
-                                    variant="caption"
-                                    color="text.secondary"
-                                    sx={{ textDecoration: 'line-through' }}
-                                  >
-                                    {formatSar(Number(offer.regular_price), locale)}
-                                  </Typography>
-                                ) : null}
-                                {discount ? (
-                                  <Chip size="small" color="success" label={`${discount}%`} />
-                                ) : null}
-                                {promo ? <Chip size="small" label={promo} variant="outlined" /> : null}
-                                {offer.is_demo ? (
-                                  <Chip size="small" color="warning" label={t('app.demoBadge')} />
-                                ) : null}
+                        <ListItemButton
+                          component={RouterLink}
+                          to={`/products/${offer.product.id}`}
+                          alignItems="flex-start"
+                          sx={{ pr: 7 }}
+                        >
+                          <ListItemText
+                            primary={
+                              <Box className="flex items-start justify-between gap-2">
+                                <Typography fontWeight={700} lineHeight={1.3}>
+                                  {name}
+                                  {getQuantity(offer.product.id) > 0 ? (
+                                    <Chip
+                                      size="small"
+                                      sx={{ ml: 1 }}
+                                      label={`×${getQuantity(offer.product.id)}`}
+                                    />
+                                  ) : null}
+                                </Typography>
+                                <Typography
+                                  fontWeight={700}
+                                  color="primary.dark"
+                                  whiteSpace="nowrap"
+                                >
+                                  {formatSar(Number(offer.offer_price), locale)}
+                                </Typography>
+                              </Box>
+                            }
+                            secondary={
+                              <Stack spacing={0.5} sx={{ mt: 0.5 }}>
+                                <Typography variant="body2" color="text.secondary">
+                                  {[brand, size].filter(Boolean).join(' · ')}
+                                </Typography>
+                                <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
+                                  {offer.regular_price ? (
+                                    <Typography
+                                      variant="caption"
+                                      color="text.secondary"
+                                      sx={{ textDecoration: 'line-through' }}
+                                    >
+                                      {formatSar(Number(offer.regular_price), locale)}
+                                    </Typography>
+                                  ) : null}
+                                  {discount ? (
+                                    <Chip size="small" color="success" label={`${discount}%`} />
+                                  ) : null}
+                                  {promo ? (
+                                    <Chip size="small" label={promo} variant="outlined" />
+                                  ) : null}
+                                  {offer.is_demo ? (
+                                    <Chip
+                                      size="small"
+                                      color="warning"
+                                      label={t('app.demoBadge')}
+                                    />
+                                  ) : null}
+                                </Stack>
                               </Stack>
-                            </Stack>
-                          }
-                          secondaryTypographyProps={{ component: 'div' }}
-                        />
-                      </ListItemButton>
+                            }
+                            secondaryTypographyProps={{ component: 'div' }}
+                          />
+                        </ListItemButton>
+                      </ListItem>
                     </Box>
                   );
                 })}
@@ -256,6 +307,13 @@ export function OffersPage() {
           )}
         </Stack>
       ) : null}
+
+      <Snackbar
+        open={toast}
+        autoHideDuration={2000}
+        onClose={() => setToast(false)}
+        message={t('product.addedToList')}
+      />
     </Stack>
   );
 }

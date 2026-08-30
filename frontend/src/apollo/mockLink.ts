@@ -33,6 +33,29 @@ function resolve(operation: string, variables: Record<string, unknown>) {
       return { supermarket_offers: getMockBestDeals(Number(variables.limit ?? 8)) };
     case 'GetCurrentLeaflets':
       return { leaflets: getMockCurrentLeaflets() };
+    case 'GetProductsForBasket': {
+      const ids = (variables.ids as string[]) ?? [];
+      return {
+        products: mockProducts
+          .filter((p) => ids.includes(p.id))
+          .map((p) => ({
+            id: p.id,
+            name_en: p.name_en,
+            name_ar: p.name_ar,
+            size_value: p.size_value,
+            size_unit: p.size_unit,
+            brand: p.brand,
+            offers: p.offers.map((o) => ({
+              id: o.id,
+              offer_price: o.offer_price,
+              effective_price: o.effective_price,
+              promotion_type: o.promotion_type,
+              minimum_quantity: o.minimum_quantity,
+              supermarket: o.supermarket,
+            })),
+          })),
+      };
+    }
     default:
       console.warn(`[mock-graphql] Unhandled operation: ${operation}`);
       return {};

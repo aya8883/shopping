@@ -1,6 +1,7 @@
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import Paper from '@mui/material/Paper';
+import Badge from '@mui/material/Badge';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import LocalOfferOutlinedIcon from '@mui/icons-material/LocalOfferOutlined';
@@ -8,12 +9,13 @@ import PlaylistAddCheckOutlinedIcon from '@mui/icons-material/PlaylistAddCheckOu
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import { useTranslation } from 'react-i18next';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useBasket } from '../contexts/BasketContext';
 
 const tabs = [
   { path: '/', key: 'home', icon: <HomeOutlinedIcon /> },
   { path: '/search', key: 'search', icon: <SearchOutlinedIcon /> },
   { path: '/offers', key: 'offers', icon: <LocalOfferOutlinedIcon /> },
-  { path: '/list', key: 'myList', icon: <PlaylistAddCheckOutlinedIcon /> },
+  { path: '/list', key: 'myList', icon: <PlaylistAddCheckOutlinedIcon />, badge: true },
   { path: '/profile', key: 'profile', icon: <PersonOutlineOutlinedIcon /> },
 ] as const;
 
@@ -21,6 +23,7 @@ export function MobileBottomNavigation() {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
+  const { itemCount } = useBasket();
 
   const current =
     tabs.find((tab) =>
@@ -41,14 +44,24 @@ export function MobileBottomNavigation() {
         onChange={(_e, value: string) => navigate(value)}
         sx={{ height: 68 }}
       >
-        {tabs.map((tab) => (
-          <BottomNavigationAction
-            key={tab.path}
-            value={tab.path}
-            label={t(`nav.${tab.key}`)}
-            icon={tab.icon}
-          />
-        ))}
+        {tabs.map((tab) => {
+          const icon =
+            'badge' in tab && tab.badge ? (
+              <Badge color="primary" badgeContent={itemCount} max={99}>
+                {tab.icon}
+              </Badge>
+            ) : (
+              tab.icon
+            );
+          return (
+            <BottomNavigationAction
+              key={tab.path}
+              value={tab.path}
+              label={t(`nav.${tab.key}`)}
+              icon={icon}
+            />
+          );
+        })}
       </BottomNavigation>
     </Paper>
   );
