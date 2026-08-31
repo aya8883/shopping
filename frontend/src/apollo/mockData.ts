@@ -495,7 +495,7 @@ function mockLeafletPages(slug: string, leafletId: string) {
 export function getMockCurrentLeaflets() {
   const { start, end } = thisWeekRange();
 
-  return mockSupermarkets.map((store, index) => {
+  const seeded = mockSupermarkets.map((store, index) => {
     const leafletId = `66666666-6666-6666-6666-66666666600${index + 1}`;
     const shortEn = store.slug === 'lulu' ? 'LuLu' : 'Carrefour';
     const shortAr = store.slug === 'lulu' ? 'لولو' : 'كارفور';
@@ -549,4 +549,19 @@ export function getMockCurrentLeaflets() {
       offers: storeOffers,
     };
   });
+
+  // Overlay leaflets published via Admin ingest (localStorage)
+  try {
+    const raw = localStorage.getItem('wain-awfar.published-leaflets');
+    if (!raw) return seeded;
+    const parsed = JSON.parse(raw) as { leaflets?: typeof seeded };
+    const overlay = Array.isArray(parsed.leaflets) ? parsed.leaflets : [];
+    if (!overlay.length) return seeded;
+    return mockSupermarkets.map((store) => {
+      const published = overlay.find((l) => l.supermarket?.id === store.id);
+      return published ?? seeded.find((l) => l.supermarket.id === store.id)!;
+    });
+  } catch {
+    return seeded;
+  }
 }

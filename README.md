@@ -16,7 +16,9 @@ React (Vite)  →  Apollo GraphQL  →  Hasura  →  PostgreSQL
                SuperTokens (auth-service)
 ```
 
-Custom Node/TypeScript services under `functions/` are used only where Hasura CRUD is not enough (auth claims, later OCR / basket actions).
+Custom Node/TypeScript services under `functions/` are used only where Hasura CRUD is not enough (auth claims, leaflet OCR / ingest, later basket actions).
+
+See [docs/leaflet-ingest.md](docs/leaflet-ingest.md) for weekly promotion ingest and freshness.
 
 ## Tech stack
 

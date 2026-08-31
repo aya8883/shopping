@@ -11,6 +11,7 @@ import { ComparePage } from './pages/ComparePage';
 import { ShoppingListPage } from './pages/ShoppingListPage';
 import { PlanBasketPage } from './pages/PlanBasketPage';
 import { ProfilePage } from './pages/ProfilePage';
+import { AdminLeafletsPage } from './pages/AdminLeafletsPage';
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
         <Route path="offers" element={<OffersPage />} />
         <Route path="list" element={<ShoppingListPage />} />
         <Route path="profile" element={<ProfilePage />} />
+        <Route path="admin/leaflets" element={<AdminLeafletsPage />} />
       </Route>
     </Routes>
   );

@@ -37,6 +37,10 @@ export function ProfilePage() {
       <Typography variant="subtitle2">{t('profile.stores')}</Typography>
       <SupermarketFilter />
 
+      <Button component={RouterLink} to="/admin/leaflets" variant="outlined" size="large">
+        {t('admin.leafletsTitle')}
+      </Button>
+
       <Button component={RouterLink} to="/auth" variant="contained" size="large">
         {t('profile.signIn')}
       </Button>
