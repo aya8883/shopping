@@ -1,6 +1,5 @@
 import { useMemo, useState } from 'react';
 import { useQuery } from '@apollo/client';
-import { Link as RouterLink } from 'react-router-dom';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Chip from '@mui/material/Chip';
@@ -8,9 +7,7 @@ import Skeleton from '@mui/material/Skeleton';
 import Alert from '@mui/material/Alert';
 import Box from '@mui/material/Box';
 import ButtonBase from '@mui/material/ButtonBase';
-import IconButton from '@mui/material/IconButton';
 import Snackbar from '@mui/material/Snackbar';
-import AddShoppingCartOutlinedIcon from '@mui/icons-material/AddShoppingCartOutlined';
 import LocalOfferOutlinedIcon from '@mui/icons-material/LocalOfferOutlined';
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
@@ -20,30 +17,13 @@ import { arSA, enUS } from 'date-fns/locale';
 import { GET_CURRENT_LEAFLETS } from '../graphql/leaflets/queries';
 import { useAppContext } from '../contexts/AppContext';
 import { useBasket } from '../contexts/BasketContext';
-import { formatSar } from '../utils/pricing';
 import { SupermarketAvatar } from '../components/SupermarketMark';
 import { LeafletViewer, type LeafletPage } from '../components/LeafletViewer';
+import { WeeklyPromoGrid, type PromoOffer } from '../components/WeeklyPromoGrid';
 import {
   supermarketBrandColors,
   supermarketShortName,
 } from '../utils/supermarketBranding';
-
-type LeafletOffer = {
-  id: string;
-  offer_price: number;
-  regular_price?: number | null;
-  is_demo?: boolean | null;
-  promotion_description_en?: string | null;
-  promotion_description_ar?: string | null;
-  product: {
-    id: string;
-    name_en: string;
-    name_ar: string;
-    size_value?: number | null;
-    size_unit?: string | null;
-    brand?: { name_en: string; name_ar: string } | null;
-  };
-};
 
 type Leaflet = {
   id: string;
@@ -61,7 +41,7 @@ type Leaflet = {
     logo_url?: string | null;
   };
   pages?: LeafletPage[];
-  offers: LeafletOffer[];
+  offers: PromoOffer[];
 };
 
 function todayIso(): string {
@@ -94,9 +74,9 @@ function storeAccent(slug?: string | null) {
     };
   }
   return {
-    soft: 'linear-gradient(145deg, rgba(13,148,136,0.14), rgba(234,88,12,0.10) 55%, rgba(255,255,255,0.9))',
-    ring: 'rgba(13,148,136,0.35)',
-    chip: '#0D9488',
+    soft: 'linear-gradient(145deg, rgba(245,196,0,0.18), rgba(255,255,255,0.95))',
+    ring: 'rgba(245,196,0,0.45)',
+    chip: '#F5C400',
   };
 }
 
@@ -105,7 +85,7 @@ export function OffersPage() {
   const { locale } = useAppContext();
   const { addItem, getQuantity } = useBasket();
   const [tab, setTab] = useState(0);
-  const [toast, setToast] = useState(false);
+  const [toastName, setToastName] = useState<string | null>(null);
 
   const { data, loading, error } = useQuery(GET_CURRENT_LEAFLETS, {
     variables: { today: todayIso() },
@@ -120,10 +100,51 @@ export function OffersPage() {
     return t('offers.offerCount', { count: active.offers.length });
   }, [active, t]);
 
+  const addPromoToBasket = (offer: PromoOffer) => {
+    if (!active) return;
+    const descEn = [
+      offer.promotion_description_en,
+      offer.product.package_description_en,
+      offer.product.size_value && offer.product.size_unit
+        ? `${offer.product.size_value}${offer.product.size_unit}`
+        : null,
+    ]
+      .filter(Boolean)
+      .join(' · ');
+    const descAr = [
+      offer.promotion_description_ar,
+      offer.product.package_description_ar,
+      offer.product.size_value && offer.product.size_unit
+        ? `${offer.product.size_value}${offer.product.size_unit}`
+        : null,
+    ]
+      .filter(Boolean)
+      .join(' · ');
+
+    addItem({
+      productId: offer.product.id,
+      name_en: offer.product.name_en,
+      name_ar: offer.product.name_ar,
+      size_value: offer.product.size_value,
+      size_unit: offer.product.size_unit,
+      brand_en: offer.product.brand?.name_en,
+      brand_ar: offer.product.brand?.name_ar,
+      addedFromSupermarketId: active.supermarket.id,
+      supermarket_name_en: active.supermarket.name_en,
+      supermarket_name_ar: active.supermarket.name_ar,
+      offer_price: Number(offer.offer_price),
+      regular_price: offer.regular_price != null ? Number(offer.regular_price) : null,
+      description_en: descEn,
+      description_ar: descAr,
+      image_url: offer.product.image_url,
+    });
+    setToastName(locale === 'ar' ? offer.product.name_ar : offer.product.name_en);
+  };
+
   if (loading) {
     return (
       <Stack spacing={2} className="pb-4">
-        <Skeleton variant="rounded" height={160} sx={{ borderRadius: 4 }} />
+        <Skeleton variant="rounded" height={120} sx={{ borderRadius: 4 }} />
         <Skeleton variant="rounded" height={72} sx={{ borderRadius: 3 }} />
         <Skeleton variant="rounded" height={320} sx={{ borderRadius: 4 }} />
       </Stack>
@@ -133,7 +154,7 @@ export function OffersPage() {
   if (error) {
     return (
       <Stack spacing={2}>
-        <Typography variant="h5" fontWeight={700}>
+        <Typography variant="h5" fontWeight={800}>
           {t('offers.title')}
         </Typography>
         <Alert severity="error">{t('common.error')}</Alert>
@@ -144,7 +165,7 @@ export function OffersPage() {
   if (!leaflets.length) {
     return (
       <Stack spacing={2}>
-        <Typography variant="h5" fontWeight={700}>
+        <Typography variant="h5" fontWeight={800}>
           {t('offers.title')}
         </Typography>
         <Alert severity="info">{t('offers.noLeaflets')}</Alert>
@@ -157,73 +178,35 @@ export function OffersPage() {
       <Box
         className="animate-soft-rise"
         sx={{
-          position: 'relative',
-          overflow: 'hidden',
           borderRadius: 4,
-          p: { xs: 2.5, sm: 3 },
-          color: '#F0FDFA',
-          background:
-            'linear-gradient(135deg, #0F766E 0%, #0D9488 42%, #EA580C 120%)',
-          boxShadow: '0 18px 40px rgba(15, 118, 110, 0.28)',
+          p: { xs: 2.25, sm: 2.75 },
+          background: 'linear-gradient(135deg, #FFE566 0%, #F5C400 70%)',
+          boxShadow: '0 16px 36px rgba(245,196,0,0.28)',
         }}
       >
-        <Box
-          sx={{
-            position: 'absolute',
-            width: 180,
-            height: 180,
-            borderRadius: '50%',
-            top: -60,
-            right: -40,
-            background: 'rgba(255,255,255,0.14)',
-            filter: 'blur(2px)',
-          }}
-        />
-        <Box
-          sx={{
-            position: 'absolute',
-            width: 120,
-            height: 120,
-            borderRadius: '50%',
-            bottom: -40,
-            left: 40,
-            background: 'rgba(245,197,24,0.22)',
-          }}
-        />
-        <Stack spacing={1} sx={{ position: 'relative', zIndex: 1 }}>
-          <Stack direction="row" alignItems="center" spacing={1}>
-            <Box
-              sx={{
-                width: 32,
-                height: 32,
-                borderRadius: 1.5,
-                display: 'grid',
-                placeItems: 'center',
-                bgcolor: 'rgba(255,255,255,0.18)',
-                flexShrink: 0,
-              }}
-            >
-              <LocalOfferOutlinedIcon sx={{ fontSize: 18 }} />
-            </Box>
-            <Typography variant="overline" sx={{ color: 'rgba(240,253,250,0.9)' }}>
-              {t('offers.weekly')}
-            </Typography>
-          </Stack>
-          <Typography
-            variant="h4"
+        <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 0.75 }}>
+          <Box
             sx={{
-              fontFamily: '"Fraunces", Georgia, serif',
-              fontWeight: 700,
-              letterSpacing: '-0.02em',
-              lineHeight: 1.15,
+              width: 32,
+              height: 32,
+              borderRadius: 1.5,
+              display: 'grid',
+              placeItems: 'center',
+              bgcolor: 'rgba(0,0,0,0.08)',
             }}
           >
-            {t('offers.title')}
-          </Typography>
-          <Typography sx={{ color: 'rgba(240,253,250,0.88)', maxWidth: 420 }}>
-            {t('offers.weeklyThisWeek')}
+            <LocalOfferOutlinedIcon sx={{ fontSize: 18 }} />
+          </Box>
+          <Typography variant="overline" fontWeight={800} color="rgba(26,26,26,0.75)">
+            {t('offers.weekly')}
           </Typography>
         </Stack>
+        <Typography sx={{ fontWeight: 900, fontSize: '1.6rem', lineHeight: 1.2, mb: 0.5 }}>
+          {t('offers.title')}
+        </Typography>
+        <Typography fontWeight={600} color="rgba(26,26,26,0.72)">
+          {t('offers.weeklyThisWeek')}
+        </Typography>
       </Box>
 
       <Stack direction="row" spacing={1.25} useFlexGap flexWrap="wrap">
@@ -236,7 +219,6 @@ export function OffersPage() {
               key={leaflet.id}
               onClick={() => setTab(index)}
               aria-pressed={selected}
-              className="animate-soft-rise delay-1"
               sx={{
                 flex: '1 1 140px',
                 maxWidth: '100%',
@@ -245,19 +227,13 @@ export function OffersPage() {
                 overflow: 'hidden',
                 textAlign: 'start',
                 border: '2px solid',
-                borderColor: selected ? colors.bg : 'rgba(15,118,110,0.10)',
+                borderColor: selected ? colors.bg : 'rgba(26,26,26,0.08)',
                 background: selected
                   ? `linear-gradient(145deg, ${colors.bg}18, #fff 70%)`
-                  : 'rgba(255,255,255,0.88)',
+                  : '#fff',
                 boxShadow: selected
                   ? `0 12px 28px ${colors.bg}33`
-                  : '0 6px 18px rgba(15,61,58,0.05)',
-                transition: 'transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease',
-                transform: selected ? 'translateY(-2px)' : 'none',
-                '&:hover': {
-                  transform: 'translateY(-2px)',
-                  borderColor: colors.bg,
-                },
+                  : '0 6px 18px rgba(15,23,42,0.05)',
               }}
             >
               <Stack direction="row" spacing={1} alignItems="center" sx={{ width: '100%', minWidth: 0 }}>
@@ -277,71 +253,42 @@ export function OffersPage() {
       </Stack>
 
       {active ? (
-        <Stack spacing={2.25} key={active.id} className="animate-soft-rise delay-2">
+        <Stack spacing={2.25} key={active.id} className="animate-soft-rise delay-1">
           <Box
             sx={{
-              p: 2.25,
+              p: 2,
               borderRadius: 4,
               border: '1px solid',
               borderColor: accent.ring,
               background: accent.soft,
-              boxShadow: '0 14px 32px rgba(15,61,58,0.07)',
             }}
           >
             <Stack direction="row" spacing={1.25} alignItems="center">
               <SupermarketAvatar store={active.supermarket} size="md" />
               <Box sx={{ minWidth: 0, flex: 1 }}>
-                <Typography
-                  variant="h6"
-                  sx={{
-                    fontFamily: '"Fraunces", Georgia, serif',
-                    fontWeight: 700,
-                    lineHeight: 1.25,
-                  }}
-                >
+                <Typography variant="h6" fontWeight={800} lineHeight={1.25}>
                   {locale === 'ar' ? active.title_ar : active.title_en}
                 </Typography>
-                <Stack
-                  direction="row"
-                  flexWrap="wrap"
-                  useFlexGap
-                  spacing={0.75}
-                  sx={{
-                    mt: 1,
-                    '& .MuiChip-root': {
-                      height: 28,
-                      maxWidth: '100%',
-                    },
-                    '& .MuiChip-icon': {
-                      fontSize: 16,
-                      marginInlineStart: '8px',
-                      marginInlineEnd: '-4px',
-                    },
-                    '& .MuiChip-label': {
-                      px: 1,
-                      fontSize: '0.75rem',
-                      fontWeight: 700,
-                    },
-                  }}
-                >
+                <Stack direction="row" flexWrap="wrap" useFlexGap spacing={0.75} sx={{ mt: 1 }}>
                   <Chip
                     size="small"
                     icon={<CalendarMonthOutlinedIcon sx={{ fontSize: 16 }} />}
                     label={formatRange(active.start_date, active.end_date, locale)}
-                    sx={{ bgcolor: 'rgba(255,255,255,0.85)' }}
+                    sx={{ bgcolor: 'rgba(255,255,255,0.9)', height: 28 }}
                   />
                   <Chip
                     size="small"
                     icon={<PlaceOutlinedIcon sx={{ fontSize: 16 }} />}
                     label={active.city}
-                    sx={{ bgcolor: 'rgba(255,255,255,0.85)' }}
+                    sx={{ bgcolor: 'rgba(255,255,255,0.9)', height: 28 }}
                   />
                   <Chip
                     size="small"
                     label={offerCountLabel}
                     sx={{
+                      height: 28,
                       bgcolor: accent.chip,
-                      color: '#fff',
+                      color: accent.chip === '#F5C400' ? '#1A1A1A' : '#fff',
                       fontWeight: 800,
                     }}
                   />
@@ -350,220 +297,35 @@ export function OffersPage() {
             </Stack>
           </Box>
 
+          <Stack spacing={1.25}>
+            <Typography variant="h6" fontWeight={900}>
+              {t('offers.clickablePromos')}
+            </Typography>
+            <Typography variant="body2" color="text.secondary" fontWeight={600}>
+              {t('offers.clickablePromosHint')}
+            </Typography>
+            <WeeklyPromoGrid
+              offers={active.offers}
+              accentColor="#F5C400"
+              getQuantity={getQuantity}
+              onAdd={addPromoToBasket}
+            />
+          </Stack>
+
           <LeafletViewer
             pages={active.pages ?? []}
             sourceUrl={active.source_url}
             storeName={supermarketShortName(active.supermarket, locale)}
             accentColor={accent.chip}
           />
-
-          <Stack spacing={1.5}>
-            <Typography
-              variant="h6"
-              sx={{ fontFamily: '"Fraunces", Georgia, serif', fontWeight: 700 }}
-            >
-              {t('offers.pricedOffers')}
-            </Typography>
-
-            {active.offers.length === 0 ? (
-              <Alert severity="info">{t('offers.noOffers')}</Alert>
-            ) : (
-              <Box
-                sx={{
-                  display: 'grid',
-                  gridTemplateColumns: {
-                    xs: '1fr',
-                    sm: '1fr 1fr',
-                  },
-                  gap: 1.5,
-                }}
-              >
-                {active.offers.map((offer, index) => {
-                  const name =
-                    locale === 'ar' ? offer.product.name_ar : offer.product.name_en;
-                  const brand =
-                    locale === 'ar'
-                      ? offer.product.brand?.name_ar
-                      : offer.product.brand?.name_en;
-                  const size =
-                    offer.product.size_value && offer.product.size_unit
-                      ? `${offer.product.size_value}${offer.product.size_unit}`
-                      : null;
-                  const promo =
-                    locale === 'ar'
-                      ? offer.promotion_description_ar
-                      : offer.promotion_description_en;
-                  const discount =
-                    offer.regular_price &&
-                    Number(offer.regular_price) > Number(offer.offer_price)
-                      ? Math.round(
-                          ((Number(offer.regular_price) - Number(offer.offer_price)) /
-                            Number(offer.regular_price)) *
-                            100,
-                        )
-                      : null;
-                  const qty = getQuantity(offer.product.id);
-                  const delayClass = index % 3 === 0 ? '' : index % 3 === 1 ? 'delay-1' : 'delay-2';
-
-                  return (
-                    <Box
-                      key={offer.id}
-                      className={`animate-soft-rise ${delayClass}`}
-                      sx={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        gap: 1.25,
-                        borderRadius: 3,
-                        p: 1.75,
-                        overflow: 'hidden',
-                        border: '1px solid rgba(15,118,110,0.12)',
-                        background:
-                          'linear-gradient(160deg, rgba(255,255,255,0.98), rgba(240,253,250,0.7) 55%, rgba(255,247,237,0.55))',
-                        boxShadow: '0 10px 24px rgba(15,61,58,0.06)',
-                        transition: 'transform 180ms ease, box-shadow 180ms ease',
-                        '&:hover': {
-                          transform: 'translateY(-2px)',
-                          boxShadow: '0 14px 28px rgba(15,61,58,0.10)',
-                        },
-                      }}
-                    >
-                      <Stack
-                        component={RouterLink}
-                        to={`/products/${offer.product.id}`}
-                        spacing={0.75}
-                        sx={{ textDecoration: 'none', color: 'inherit', minWidth: 0 }}
-                      >
-                        <Stack
-                          direction="row"
-                          alignItems="flex-start"
-                          justifyContent="space-between"
-                          gap={1}
-                        >
-                          <Typography
-                            fontWeight={800}
-                            lineHeight={1.3}
-                            fontSize="1rem"
-                            sx={{ minWidth: 0, flex: 1 }}
-                          >
-                            {name}
-                          </Typography>
-                          {discount ? (
-                            <Chip
-                              size="small"
-                              color="success"
-                              label={`-${discount}%`}
-                              sx={{
-                                height: 24,
-                                flexShrink: 0,
-                                fontWeight: 800,
-                                '& .MuiChip-label': { px: 0.75, fontSize: '0.7rem' },
-                              }}
-                            />
-                          ) : null}
-                        </Stack>
-                        <Typography variant="body2" color="text.secondary" fontWeight={600} noWrap>
-                          {[brand, size].filter(Boolean).join(' · ')}
-                        </Typography>
-                        <Stack direction="row" alignItems="baseline" spacing={1} flexWrap="wrap">
-                          <Typography
-                            sx={{
-                              fontFamily: '"Fraunces", Georgia, serif',
-                              fontWeight: 800,
-                              fontSize: '1.35rem',
-                              color: 'primary.dark',
-                              letterSpacing: '-0.02em',
-                            }}
-                          >
-                            {formatSar(Number(offer.offer_price), locale)}
-                          </Typography>
-                          {offer.regular_price ? (
-                            <Typography
-                              variant="body2"
-                              color="text.secondary"
-                              sx={{ textDecoration: 'line-through' }}
-                            >
-                              {formatSar(Number(offer.regular_price), locale)}
-                            </Typography>
-                          ) : null}
-                        </Stack>
-                        <Stack direction="row" spacing={0.75} flexWrap="wrap" useFlexGap>
-                          {qty > 0 ? (
-                            <Chip
-                              size="small"
-                              color="primary"
-                              label={`×${qty}`}
-                              sx={{ height: 24, '& .MuiChip-label': { px: 0.75 } }}
-                            />
-                          ) : null}
-                          {promo ? (
-                            <Chip
-                              size="small"
-                              label={promo}
-                              sx={{
-                                height: 24,
-                                maxWidth: '100%',
-                                bgcolor: 'rgba(234,88,12,0.10)',
-                                color: 'secondary.dark',
-                                fontWeight: 700,
-                                '& .MuiChip-label': { px: 0.75, fontSize: '0.7rem' },
-                              }}
-                            />
-                          ) : null}
-                          {offer.is_demo ? (
-                            <Chip
-                              size="small"
-                              color="warning"
-                              label={t('app.demoBadge')}
-                              sx={{ height: 24, '& .MuiChip-label': { px: 0.75 } }}
-                            />
-                          ) : null}
-                        </Stack>
-                      </Stack>
-
-                      <Stack direction="row" justifyContent="flex-end">
-                        <IconButton
-                          size="small"
-                          aria-label={t('product.addToList')}
-                          onClick={() => {
-                            addItem({
-                              productId: offer.product.id,
-                              name_en: offer.product.name_en,
-                              name_ar: offer.product.name_ar,
-                              size_value: offer.product.size_value,
-                              size_unit: offer.product.size_unit,
-                              brand_en: offer.product.brand?.name_en,
-                              brand_ar: offer.product.brand?.name_ar,
-                              addedFromSupermarketId: active.supermarket.id,
-                            });
-                            setToast(true);
-                          }}
-                          sx={{
-                            width: 36,
-                            height: 36,
-                            bgcolor: 'primary.main',
-                            color: '#fff',
-                            boxShadow: '0 6px 14px rgba(13,148,136,0.28)',
-                            '&:hover': { bgcolor: 'primary.dark' },
-                            '& .MuiSvgIcon-root': { fontSize: 18 },
-                          }}
-                        >
-                          <AddShoppingCartOutlinedIcon />
-                        </IconButton>
-                      </Stack>
-                    </Box>
-                  );
-                })}
-              </Box>
-            )}
-          </Stack>
         </Stack>
       ) : null}
 
       <Snackbar
-        open={toast}
-        autoHideDuration={2000}
-        onClose={() => setToast(false)}
-        message={t('product.addedToList')}
+        open={Boolean(toastName)}
+        autoHideDuration={2200}
+        onClose={() => setToastName(null)}
+        message={t('offers.addedWithPrice', { name: toastName ?? '' })}
       />
     </Stack>
   );

@@ -20,6 +20,14 @@ export interface BasketItem {
   brand_ar?: string | null;
   /** Store the customer was browsing when they added the item (optional). */
   addedFromSupermarketId?: string | null;
+  supermarket_name_en?: string | null;
+  supermarket_name_ar?: string | null;
+  /** Snapshot from weekly promotion when added. */
+  offer_price?: number | null;
+  regular_price?: number | null;
+  description_en?: string | null;
+  description_ar?: string | null;
+  image_url?: string | null;
 }
 
 interface BasketContextValue {
@@ -64,7 +72,20 @@ export function BasketProvider({ children }: { children: ReactNode }) {
         const next = existing
           ? prev.map((x) =>
               x.productId === item.productId
-                ? { ...x, quantity: x.quantity + qty }
+                ? {
+                    ...x,
+                    quantity: x.quantity + qty,
+                    // Refresh promo snapshot when adding again from an offer
+                    offer_price: item.offer_price ?? x.offer_price,
+                    regular_price: item.regular_price ?? x.regular_price,
+                    description_en: item.description_en ?? x.description_en,
+                    description_ar: item.description_ar ?? x.description_ar,
+                    image_url: item.image_url ?? x.image_url,
+                    supermarket_name_en: item.supermarket_name_en ?? x.supermarket_name_en,
+                    supermarket_name_ar: item.supermarket_name_ar ?? x.supermarket_name_ar,
+                    addedFromSupermarketId:
+                      item.addedFromSupermarketId ?? x.addedFromSupermarketId,
+                  }
                 : x,
             )
           : [
@@ -79,6 +100,13 @@ export function BasketProvider({ children }: { children: ReactNode }) {
                 brand_en: item.brand_en,
                 brand_ar: item.brand_ar,
                 addedFromSupermarketId: item.addedFromSupermarketId,
+                supermarket_name_en: item.supermarket_name_en,
+                supermarket_name_ar: item.supermarket_name_ar,
+                offer_price: item.offer_price,
+                regular_price: item.regular_price,
+                description_en: item.description_en,
+                description_ar: item.description_ar,
+                image_url: item.image_url,
               },
             ];
         persist(next);

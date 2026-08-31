@@ -118,21 +118,64 @@ export function ShoppingListPage() {
               item.size_value && item.size_unit
                 ? `${item.size_value}${item.size_unit}`
                 : null;
+            const desc = locale === 'ar' ? item.description_ar : item.description_en;
+            const storeName =
+              locale === 'ar' ? item.supermarket_name_ar : item.supermarket_name_en;
             return (
               <Box key={item.productId} sx={{ p: 1.5 }}>
-                <Stack direction="row" alignItems="center" justifyContent="space-between" gap={1}>
-                  <Box sx={{ minWidth: 0 }}>
+                <Stack direction="row" alignItems="center" gap={1.25}>
+                  {item.image_url ? (
+                    <Box
+                      component="img"
+                      src={item.image_url}
+                      alt=""
+                      sx={{
+                        width: 56,
+                        height: 56,
+                        borderRadius: 2,
+                        objectFit: 'cover',
+                        bgcolor: '#F3F4F6',
+                        flexShrink: 0,
+                      }}
+                    />
+                  ) : null}
+                  <Box sx={{ minWidth: 0, flex: 1 }}>
                     <Typography
                       component={RouterLink}
                       to={`/products/${item.productId}`}
-                      fontWeight={700}
+                      fontWeight={800}
                       sx={{ textDecoration: 'none', color: 'inherit' }}
                     >
                       {name}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      {[brand, size].filter(Boolean).join(' · ')}
+                    <Typography variant="body2" color="text.secondary" fontWeight={600}>
+                      {[brand, size, storeName].filter(Boolean).join(' · ')}
                     </Typography>
+                    {desc ? (
+                      <Typography variant="caption" color="text.secondary" display="block">
+                        {desc}
+                      </Typography>
+                    ) : null}
+                    {item.offer_price != null ? (
+                      <Typography
+                        fontWeight={900}
+                        color="error.main"
+                        fontSize="0.95rem"
+                        sx={{ mt: 0.25 }}
+                      >
+                        {formatSar(Number(item.offer_price), locale)}
+                        {item.regular_price != null ? (
+                          <Typography
+                            component="span"
+                            variant="caption"
+                            color="text.secondary"
+                            sx={{ ml: 1, textDecoration: 'line-through' }}
+                          >
+                            {formatSar(Number(item.regular_price), locale)}
+                          </Typography>
+                        ) : null}
+                      </Typography>
+                    ) : null}
                   </Box>
                   <Stack direction="row" alignItems="center" spacing={0.5}>
                     <IconButton

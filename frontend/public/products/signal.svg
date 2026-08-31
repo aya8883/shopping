@@ -1,0 +1,7 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img">
+  <rect width="240" height="240" rx="28" fill="#FCE7F3"/>
+  <circle cx="120" cy="95" r="48" fill="#DB2777" opacity="0.2"/>
+  <rect x="70" y="70" width="100" height="120" rx="18" fill="#fff" stroke="#DB2777" stroke-width="4"/>
+  <rect x="88" y="88" width="64" height="40" rx="8" fill="#DB2777"/>
+  <text x="120" y="210" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="800" fill="#DB2777">Signal</text>
+</svg>

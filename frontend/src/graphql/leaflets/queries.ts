@@ -52,6 +52,9 @@ export const GET_CURRENT_LEAFLETS = gql`
           name_ar
           size_value
           size_unit
+          image_url
+          package_description_en
+          package_description_ar
           brand {
             name_en
             name_ar
