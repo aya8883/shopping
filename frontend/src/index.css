@@ -3,13 +3,15 @@
 @tailwind utilities;
 
 :root {
-  --color-brand: #0d9488;
-  --color-brand-dark: #0f766e;
-  --color-brand-light: #2dd4bf;
-  --color-brand-muted: #ccfbf1;
+  --color-brand: #f5c400;
+  --color-brand-dark: #d4a800;
+  --color-brand-light: #ffe566;
+  --color-brand-muted: #fff8d6;
   --color-savings: #16a34a;
+  --color-discount: #e11d48;
   --color-surface: #ffffff;
-  --color-ink: #0f3d3a;
+  --color-ink: #1a1a1a;
+  --color-page: #f4f5f7;
 }
 
 html,
@@ -22,6 +24,7 @@ body {
   margin: 0;
   font-family: 'IBM Plex Sans Arabic', 'IBM Plex Sans', system-ui, sans-serif;
   color: var(--color-ink);
+  background: var(--color-page);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -67,4 +70,11 @@ body {
 }
 .delay-3 {
   animation-delay: 180ms;
+}
+
+.hide-scrollbar {
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }

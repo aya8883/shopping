@@ -63,14 +63,20 @@
     "openProduct": "التفاصيل"
   },
   "home": {
-    "headline": "وفر أكثر في مقاضيك",
-    "subtitle": "قارن أسعار السوبرماركت واعرف وين أوفر.",
+    "headline": "أسعار أوضح، تسوق أذكى",
+    "subtitle": "قارن أسعار السوبرماركت واعرف وين توفر أكثر.",
     "searchPlaceholder": "ابحث عن منتجات أو ماركات…",
-    "categories": "التصنيفات",
-    "bestDeals": "أفضل العروض",
+    "categories": "تصفح الأقسام",
+    "allCategories": "الكل",
+    "viewAll": "عرض الكل",
+    "bestDeals": "أفضل عروض اليوم",
     "popular": "منتجات شائعة",
     "leaflets": "عروض الأسبوع",
-    "validationTitle": "تحقق مقارنة الأسعار"
+    "validationTitle": "تحقق مقارنة الأسعار",
+    "startComparing": "ابدأ المقارنة",
+    "savingsTitle": "توفيرك حتى الآن",
+    "productsCompared": "{{count}} منتج تمت مقارنته",
+    "cheapestOften": "الأرخص غالباً"
   },
   "search": {
     "title": "بحث",

@@ -56,23 +56,22 @@ export function ProductCard({ product }: { product: ProductCardProduct }) {
     <Card
       sx={{
         overflow: 'hidden',
-        background:
-          'linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(248,252,251,0.96) 100%)',
+        background: '#FFFFFF',
       }}
     >
       <Box
         sx={{
           height: 4,
           background: best
-            ? 'linear-gradient(90deg, #0D9488, #2DD4BF)'
-            : 'rgba(15,118,110,0.12)',
+            ? 'linear-gradient(90deg, #F5C400, #FFE566)'
+            : 'rgba(26,26,26,0.08)',
         }}
       />
       <CardActionArea component={RouterLink} to={`/products/${product.id}`}>
         <CardContent sx={{ pt: 1.75 }}>
           <Stack spacing={1.1}>
             <Box className="flex items-start justify-between gap-2">
-              <Typography variant="subtitle1" fontWeight={700} lineHeight={1.3}>
+              <Typography variant="subtitle1" fontWeight={800} lineHeight={1.3}>
                 {name}
               </Typography>
               {best?.is_demo ? (
@@ -95,9 +94,8 @@ export function ProductCard({ product }: { product: ProductCardProduct }) {
                   <Typography
                     variant="h5"
                     sx={{
-                      color: 'primary.dark',
-                      fontWeight: 800,
-                      fontFamily: '"Fraunces", Georgia, serif',
+                      color: 'error.main',
+                      fontWeight: 900,
                       letterSpacing: '-0.02em',
                     }}
                   >
@@ -113,9 +111,8 @@ export function ProductCard({ product }: { product: ProductCardProduct }) {
                 {discount ? (
                   <Chip
                     size="small"
-                    color="success"
                     label={`-${discount}%`}
-                    sx={{ fontWeight: 800 }}
+                    sx={{ fontWeight: 800, bgcolor: 'error.main', color: '#fff' }}
                   />
                 ) : null}
               </Box>

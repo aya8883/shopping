@@ -2,6 +2,7 @@ import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import Paper from '@mui/material/Paper';
 import Badge from '@mui/material/Badge';
+import Box from '@mui/material/Box';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import CompareArrowsOutlinedIcon from '@mui/icons-material/CompareArrowsOutlined';
 import LocalOfferOutlinedIcon from '@mui/icons-material/LocalOfferOutlined';
@@ -37,35 +38,64 @@ export function MobileBottomNavigation() {
       elevation={0}
       className="fixed bottom-0 inset-x-0 z-40 mx-auto max-w-app md:max-w-desktop"
       sx={{
-        borderRadius: '22px 22px 0 0',
-        border: '1px solid rgba(15, 118, 110, 0.10)',
+        borderRadius: '24px 24px 0 0',
+        border: '1px solid rgba(26,26,26,0.06)',
         borderBottom: 'none',
-        backgroundColor: 'rgba(255,255,255,0.92)',
-        backdropFilter: 'blur(18px) saturate(1.15)',
-        boxShadow: '0 -10px 30px rgba(15, 61, 58, 0.08)',
+        backgroundColor: '#FFFFFF',
+        boxShadow: '0 -8px 28px rgba(15, 23, 42, 0.08)',
       }}
     >
       <BottomNavigation
         showLabels
         value={current}
         onChange={(_e, value: string) => navigate(value)}
-        sx={{ height: 68 }}
+        sx={{
+          height: 72,
+          '& .MuiBottomNavigationAction-root': {
+            gap: 0.25,
+          },
+          '& .MuiBottomNavigationAction-root.Mui-selected .nav-icon-wrap': {
+            bgcolor: 'primary.main',
+            color: 'primary.contrastText',
+            boxShadow: '0 6px 14px rgba(245,196,0,0.35)',
+          },
+        }}
       >
         {tabs.map((tab) => {
-          const icon =
+          const rawIcon =
             'badge' in tab && tab.badge ? (
-              <Badge color="primary" badgeContent={itemCount} max={99}>
+              <Badge
+                color="error"
+                badgeContent={itemCount}
+                max={99}
+                sx={{ '& .MuiBadge-badge': { fontWeight: 800, fontSize: '0.65rem' } }}
+              >
                 {tab.icon}
               </Badge>
             ) : (
               tab.icon
             );
+
           return (
             <BottomNavigationAction
               key={tab.path}
               value={tab.path}
               label={t(`nav.${tab.key}`)}
-              icon={icon}
+              icon={
+                <Box
+                  className="nav-icon-wrap"
+                  sx={{
+                    width: 40,
+                    height: 32,
+                    borderRadius: 999,
+                    display: 'grid',
+                    placeItems: 'center',
+                    transition: 'background-color 160ms ease, box-shadow 160ms ease',
+                  }}
+                >
+                  {rawIcon}
+                </Box>
+              }
             />
           );
         })}

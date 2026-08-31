@@ -63,14 +63,20 @@
     "openProduct": "Details"
   },
   "home": {
-    "headline": "Save more on your groceries",
-    "subtitle": "Compare supermarket prices and find the best deals.",
+    "headline": "Clearer prices, smarter shopping",
+    "subtitle": "Compare supermarket prices and find where you save more.",
     "searchPlaceholder": "Search products, brands…",
-    "categories": "Categories",
-    "bestDeals": "Best deals",
+    "categories": "Browse categories",
+    "allCategories": "All",
+    "viewAll": "View all",
+    "bestDeals": "Best deals today",
     "popular": "Popular products",
     "leaflets": "Current leaflets",
-    "validationTitle": "Price comparison check"
+    "validationTitle": "Price comparison check",
+    "startComparing": "Start comparing",
+    "savingsTitle": "Your savings so far",
+    "productsCompared": "{{count}} products compared",
+    "cheapestOften": "Cheapest store often"
   },
   "search": {
     "title": "Search",

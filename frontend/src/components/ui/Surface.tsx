@@ -15,18 +15,18 @@ export function SectionHeader({
   return (
     <Stack
       direction="row"
-      alignItems="flex-end"
+      alignItems="center"
       justifyContent="space-between"
       gap={1.5}
       sx={{ mb: 1.5 }}
     >
-      <Box>
+      <Box sx={{ minWidth: 0 }}>
         <Typography
           variant="h6"
           sx={{
-            fontFamily: '"Fraunces", Georgia, serif',
-            fontWeight: 700,
+            fontWeight: 800,
             lineHeight: 1.25,
+            fontSize: '1.15rem',
           }}
         >
           {title}
@@ -58,14 +58,13 @@ export function Surface({
         p: { xs: 2, sm: 2.25 },
         borderRadius: 3,
         border: '1px solid',
-        borderColor: accent ? 'rgba(13, 148, 136, 0.22)' : 'rgba(15, 118, 110, 0.10)',
+        borderColor: accent ? 'rgba(245, 196, 0, 0.35)' : 'rgba(26, 26, 26, 0.06)',
         background: accent
-          ? 'linear-gradient(145deg, rgba(240,253,250,0.95) 0%, rgba(255,255,255,0.92) 55%, rgba(255,247,237,0.55) 100%)'
-          : 'rgba(255,255,255,0.86)',
-        backdropFilter: 'blur(10px)',
+          ? 'linear-gradient(145deg, #FFF8D6 0%, #FFFFFF 60%)'
+          : '#FFFFFF',
         boxShadow: accent
-          ? '0 10px 28px rgba(13, 148, 136, 0.10)'
-          : '0 6px 20px rgba(15, 61, 58, 0.045)',
+          ? '0 12px 28px rgba(245, 196, 0, 0.14)'
+          : '0 8px 22px rgba(15, 23, 42, 0.05)',
       }}
     >
       {children}
@@ -87,9 +86,9 @@ export function StepBadge({ step }: { step: number }) {
         marginInlineEnd: 1,
         fontSize: '0.8rem',
         fontWeight: 800,
-        color: '#F0FDFA',
-        background: 'linear-gradient(135deg, #0D9488, #0F766E)',
-        boxShadow: '0 4px 10px rgba(13,148,136,0.28)',
+        color: '#1A1A1A',
+        background: '#F5C400',
+        boxShadow: '0 4px 10px rgba(245,196,0,0.35)',
         verticalAlign: 'middle',
       }}
     >
