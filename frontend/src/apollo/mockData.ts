@@ -3,14 +3,11 @@
 export { mockCategories, mockSupermarkets } from '../data/catalog';
 import { mockProducts as catalogProducts, mockSupermarkets } from '../data/catalog';
 import { leafletManifest } from '../data/leafletManifest';
-import { getLeafletHotspots, leafletProductsForStore } from '../data/leafletHotspots';
+import { getLeafletHotspots, canonicalProductsForCatalog } from '../data/leafletHotspots';
 import { supermarketShortName } from '../utils/supermarketBranding';
 
-/** Base catalog plus products tagged from weekly leaflet hotspots (e.g. Panda page 1). */
-export const mockProducts = [
-  ...catalogProducts,
-  ...mockSupermarkets.flatMap((store) => leafletProductsForStore(store.slug, store)),
-];
+/** Base catalog plus canonical products with cross-store weekly prices. */
+export const mockProducts = [...catalogProducts, ...canonicalProductsForCatalog()];
 
 export function searchMockProducts(pattern: string, limit = 20) {  const needle = pattern.replace(/%/g, '').trim().toLowerCase();
   if (!needle) return mockProducts.slice(0, limit);

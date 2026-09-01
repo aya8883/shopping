@@ -12,6 +12,7 @@ import { ShoppingListPage } from './pages/ShoppingListPage';
 import { PlanBasketPage } from './pages/PlanBasketPage';
 import { ProfilePage } from './pages/ProfilePage';
 import { AdminLeafletsPage } from './pages/AdminLeafletsPage';
+import { AdminHotspotPage } from './pages/AdminHotspotPage';
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
         <Route path="list" element={<ShoppingListPage />} />
         <Route path="profile" element={<ProfilePage />} />
         <Route path="admin/leaflets" element={<AdminLeafletsPage />} />
+        <Route path="admin/hotspots" element={<AdminHotspotPage />} />
       </Route>
     </Routes>
   );

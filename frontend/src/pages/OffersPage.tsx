@@ -20,7 +20,10 @@ import { useBasket } from '../contexts/BasketContext';
 import { SupermarketAvatar } from '../components/SupermarketMark';
 import { LeafletViewer, type LeafletPage } from '../components/LeafletViewer';
 import { WeeklyPromoGrid, type PromoOffer } from '../components/WeeklyPromoGrid';
-import type { LeafletHotspot } from '../data/leafletHotspots';
+import { ProductQuickAdd } from '../components/ProductQuickAdd';
+import { BetterPriceSnackbar } from '../components/BetterPriceSnackbar';
+import type { LeafletOfferHotspot } from '../data/leafletHotspots';
+import { getCanonicalProduct, savingsVsStore } from '../data/leafletHotspots';
 import {
   supermarketBrandColors,
   supermarketShortName,
@@ -93,7 +96,14 @@ export function OffersPage() {
   const { locale } = useAppContext();
   const { addItem, getQuantity } = useBasket();
   const [tab, setTab] = useState(0);
+  const [selectedHotspot, setSelectedHotspot] = useState<LeafletOfferHotspot | null>(null);
   const [toastName, setToastName] = useState<string | null>(null);
+  const [betterPrice, setBetterPrice] = useState<{
+    productName: string;
+    currentPrice: number;
+    best: { supermarketSlug: string; supermarketNameEn: string; supermarketNameAr: string; price: number };
+    savings: number;
+  } | null>(null);
 
   const { data, loading, error } = useQuery(GET_CURRENT_LEAFLETS, {
     variables: { today: todayIso() },
@@ -149,34 +159,46 @@ export function OffersPage() {
     setToastName(locale === 'ar' ? offer.product.name_ar : offer.product.name_en);
   };
 
-  const addHotspotToBasket = (hotspot: LeafletHotspot) => {
+  const confirmHotspotAdd = (hotspot: LeafletOfferHotspot, quantity: number) => {
     if (!active) return;
-    const p = hotspot.product;
-    const descEn = [hotspot.promotion_description_en, p.package_description_en]
-      .filter(Boolean)
-      .join(' · ');
-    const descAr = [hotspot.promotion_description_ar, p.package_description_ar]
-      .filter(Boolean)
-      .join(' · ');
+    const canonical = getCanonicalProduct(hotspot.productId);
 
     addItem({
-      productId: p.id,
-      name_en: p.name_en,
-      name_ar: p.name_ar,
-      size_value: p.size_value,
-      size_unit: p.size_unit,
-      brand_en: p.brand_en,
-      brand_ar: p.brand_ar,
+      productId: hotspot.productId,
+      name_en: canonical?.name_en ?? hotspot.name,
+      name_ar: canonical?.name_ar ?? hotspot.nameAr,
+      size_value: canonical?.size_value,
+      size_unit: canonical?.size_unit,
+      brand_en: canonical?.brand_en,
+      brand_ar: canonical?.brand_ar,
       addedFromSupermarketId: active.supermarket.id,
       supermarket_name_en: active.supermarket.name_en,
       supermarket_name_ar: active.supermarket.name_ar,
-      offer_price: hotspot.offer_price,
-      regular_price: hotspot.regular_price ?? null,
-      description_en: descEn,
-      description_ar: descAr,
-      image_url: p.image_url,
+      offer_price: hotspot.price,
+      regular_price: hotspot.oldPrice ?? null,
+      description_en: `${hotspot.unit} · ${active.supermarket.name_en}`,
+      description_ar: `${hotspot.unitAr} · ${active.supermarket.name_ar}`,
+      image_url: canonical?.image_url,
+      quantity,
     });
-    setToastName(locale === 'ar' ? p.name_ar : p.name_en);
+
+    const name = locale === 'ar' ? hotspot.nameAr : hotspot.name;
+    setToastName(name);
+
+    const hint = savingsVsStore(hotspot.productId, active.supermarket.slug, hotspot.price);
+    if (hint) {
+      setBetterPrice({
+        productName: name,
+        currentPrice: hotspot.price,
+        best: {
+          supermarketSlug: hint.best.supermarketSlug,
+          supermarketNameEn: hint.best.supermarketNameEn,
+          supermarketNameAr: hint.best.supermarketNameAr,
+          price: hint.best.price,
+        },
+        savings: hint.savings,
+      });
+    }
   };
 
   if (loading) {
@@ -356,7 +378,15 @@ export function OffersPage() {
             storeName={supermarketShortName(active.supermarket, locale)}
             accentColor={accent.chip}
             getQuantity={getQuantity}
-            onHotspotClick={addHotspotToBasket}
+            onHotspotSelect={setSelectedHotspot}
+          />
+
+          <ProductQuickAdd
+            hotspot={selectedHotspot}
+            storeName={supermarketShortName(active.supermarket, locale)}
+            open={Boolean(selectedHotspot)}
+            onClose={() => setSelectedHotspot(null)}
+            onAdd={confirmHotspotAdd}
           />
         </Stack>
       ) : null}
@@ -367,6 +397,23 @@ export function OffersPage() {
         onClose={() => setToastName(null)}
         message={t('offers.addedWithPrice', { name: toastName ?? '' })}
       />
+
+      {active && betterPrice ? (
+        <BetterPriceSnackbar
+          open={Boolean(betterPrice)}
+          productName={betterPrice.productName}
+          currentStoreNameEn={active.supermarket.name_en}
+          currentStoreNameAr={active.supermarket.name_ar}
+          currentPrice={betterPrice.currentPrice}
+          bestStoreSlug={betterPrice.best.supermarketSlug}
+          bestStoreNameEn={betterPrice.best.supermarketNameEn}
+          bestStoreNameAr={betterPrice.best.supermarketNameAr}
+          bestPrice={betterPrice.best.price}
+          savings={betterPrice.savings}
+          locale={locale}
+          onClose={() => setBetterPrice(null)}
+        />
+      ) : null}
     </Stack>
   );
 }

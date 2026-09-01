@@ -40,6 +40,9 @@ export function ProfilePage() {
       <Button component={RouterLink} to="/admin/leaflets" variant="outlined" size="large">
         {t('admin.leafletsTitle')}
       </Button>
+      <Button component={RouterLink} to="/admin/hotspots" variant="outlined" size="large">
+        {t('admin.hotspotsTitle')}
+      </Button>
 
       <Button component={RouterLink} to="/auth" variant="contained" size="large">
         {t('profile.signIn')}

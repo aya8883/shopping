@@ -112,7 +112,16 @@
     "clickablePromosHint": "Each card shows the item photo, description, and price. Tap to add to your basket.",
     "tapToAdd": "Add {{name}} to basket",
     "tapImageHint": "Tap image to add",
-    "tapLeafletHint": "Tap items on the flyer to add",
+    "tapLeafletHint": "Tap any product on the flyer to add it to your list",
+    "currentPrice": "Current price",
+    "quantity": "Quantity",
+    "decreaseQty": "Decrease quantity",
+    "increaseQty": "Increase quantity",
+    "pricesAtOtherStores": "Prices at other stores",
+    "addToList": "Add to my list",
+    "addedProduct": "Added {{name}} to your list",
+    "foundBetterPrice": "We found a better price",
+    "saveAmount": "Save {{amount}}",
     "addedWithPrice": "Added {{name}} to your basket",
     "noLeaflets": "No leaflets are published for this week yet.",
     "noOffers": "No offers in this leaflet.",
@@ -180,12 +189,20 @@
     "noMatch": "No match",
     "ingestDone": "OCR finished — review matches then publish",
     "publishDone": "Published — open Offers to see updated promotions",
-    "resetDone": "Published overlays cleared"
+    "resetDone": "Published overlays cleared",
+    "hotspotsTitle": "Annotate leaflet hotspots",
+    "hotspotsHint": "Drag a rectangle on the leaflet, pick the canonical product and price, then save. Coordinates are stored as percentages.",
+    "page": "Page",
+    "product": "Product",
+    "oldPrice": "Old price",
+    "saveHotspot": "Save hotspot",
+    "noLeafletImage": "No leaflet image for this store/page. Run sync:leaflets first."
   },
   "common": {
     "loading": "Loading…",
     "error": "Something went wrong",
     "retry": "Retry",
+    "close": "Close",
     "sar": "{{amount}} SAR"
   }
 }
