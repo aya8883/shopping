@@ -157,6 +157,8 @@ export function ComparePage() {
           <ToggleButton value={1}>{t('compare.storesCount', { count: 1 })}</ToggleButton>
           <ToggleButton value={2}>{t('compare.storesCount', { count: 2 })}</ToggleButton>
           <ToggleButton value={3}>{t('compare.storesCount', { count: 3 })}</ToggleButton>
+          <ToggleButton value={4}>{t('compare.storesCount', { count: 4 })}</ToggleButton>
+          <ToggleButton value={5}>{t('compare.storesCount', { count: 5 })}</ToggleButton>
           <ToggleButton value={0}>{t('compare.storesAll')}</ToggleButton>
         </ToggleButtonGroup>
 

@@ -20,6 +20,7 @@ import { useBasket } from '../contexts/BasketContext';
 import { SupermarketAvatar } from '../components/SupermarketMark';
 import { LeafletViewer, type LeafletPage } from '../components/LeafletViewer';
 import { WeeklyPromoGrid, type PromoOffer } from '../components/WeeklyPromoGrid';
+import type { LeafletHotspot } from '../data/leafletHotspots';
 import {
   supermarketBrandColors,
   supermarketShortName,
@@ -71,6 +72,13 @@ function storeAccent(slug?: string | null) {
       soft: 'linear-gradient(145deg, rgba(11,122,62,0.14), rgba(245,197,24,0.18) 55%, rgba(255,255,255,0.9))',
       ring: 'rgba(11,122,62,0.35)',
       chip: '#0B7A3E',
+    };
+  }
+  if (slug === 'panda') {
+    return {
+      soft: 'linear-gradient(145deg, rgba(0,107,63,0.14), rgba(255,255,255,0.92) 60%)',
+      ring: 'rgba(0,107,63,0.35)',
+      chip: '#006B3F',
     };
   }
   return {
@@ -139,6 +147,36 @@ export function OffersPage() {
       image_url: offer.product.image_url,
     });
     setToastName(locale === 'ar' ? offer.product.name_ar : offer.product.name_en);
+  };
+
+  const addHotspotToBasket = (hotspot: LeafletHotspot) => {
+    if (!active) return;
+    const p = hotspot.product;
+    const descEn = [hotspot.promotion_description_en, p.package_description_en]
+      .filter(Boolean)
+      .join(' · ');
+    const descAr = [hotspot.promotion_description_ar, p.package_description_ar]
+      .filter(Boolean)
+      .join(' · ');
+
+    addItem({
+      productId: p.id,
+      name_en: p.name_en,
+      name_ar: p.name_ar,
+      size_value: p.size_value,
+      size_unit: p.size_unit,
+      brand_en: p.brand_en,
+      brand_ar: p.brand_ar,
+      addedFromSupermarketId: active.supermarket.id,
+      supermarket_name_en: active.supermarket.name_en,
+      supermarket_name_ar: active.supermarket.name_ar,
+      offer_price: hotspot.offer_price,
+      regular_price: hotspot.regular_price ?? null,
+      description_en: descEn,
+      description_ar: descAr,
+      image_url: p.image_url,
+    });
+    setToastName(locale === 'ar' ? p.name_ar : p.name_en);
   };
 
   if (loading) {
@@ -317,6 +355,8 @@ export function OffersPage() {
             sourceUrl={active.source_url}
             storeName={supermarketShortName(active.supermarket, locale)}
             accentColor={accent.chip}
+            getQuantity={getQuantity}
+            onHotspotClick={addHotspotToBasket}
           />
         </Stack>
       ) : null}

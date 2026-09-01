@@ -9,21 +9,37 @@ export type SupermarketLike = {
 const FALLBACK_LOGOS: Record<string, string> = {
   carrefour: '/supermarkets/carrefour.svg',
   lulu: '/supermarkets/lulu.svg',
+  panda: '/supermarkets/panda.svg',
+  danube: '/supermarkets/danube.svg',
+  tamimi: '/supermarkets/tamimi.svg',
+  othaim: '/supermarkets/othaim.svg',
 };
 
 const SHORT_EN: Record<string, string> = {
   carrefour: 'Carrefour',
   lulu: 'LuLu',
+  panda: 'Panda',
+  danube: 'Danube',
+  tamimi: 'Tamimi',
+  othaim: 'Othaim',
 };
 
 const SHORT_AR: Record<string, string> = {
   carrefour: 'كارفور',
   lulu: 'لولو',
+  panda: 'بنده',
+  danube: 'الدانوب',
+  tamimi: 'التميمي',
+  othaim: 'العثيم',
 };
 
 const BRAND_COLORS: Record<string, { bg: string; fg: string }> = {
   carrefour: { bg: '#0B3D91', fg: '#FFFFFF' },
   lulu: { bg: '#0B7A3E', fg: '#F5C518' },
+  panda: { bg: '#006B3F', fg: '#FFFFFF' },
+  danube: { bg: '#C8102E', fg: '#FFFFFF' },
+  tamimi: { bg: '#1B5E20', fg: '#FFD54F' },
+  othaim: { bg: '#E65100', fg: '#FFFFFF' },
 };
 
 export function supermarketSlug(store?: SupermarketLike | null): string {

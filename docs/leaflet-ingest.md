@@ -55,6 +55,30 @@ Example daily check (when service is running):
 curl http://localhost:3010/health
 ```
 
+## Real weekly leaflet pages
+
+Pull actual promotion sheet images from public FullFlyer/ilofo catalogs:
+
+```powershell
+npm run sync:leaflets
+```
+
+This writes `frontend/public/data/leaflet-manifest.json` with CDN page URLs (6 pages per store). The Offers page uses these automatically in mock mode.
+
+Optional — cache images locally:
+
+```powershell
+node scripts/sync-leaflets.mjs --download=true --pages=6
+```
+
+Or via the processing service (when running on `:3010`):
+
+```powershell
+curl "http://localhost:3010/v1/leaflets/fetch?pages=6"
+```
+
+Configured sources live in `data/leaflet-sources.json` (Carrefour, LuLu, Panda, Danube, Tamimi, Othaim).
+
 ## Path to real store data
 
 1. Replace Mock OCR with Vision/Textract (`OCR_PROVIDER=...`)
