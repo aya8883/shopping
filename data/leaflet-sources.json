@@ -1,0 +1,49 @@
+{
+  "attribution": "Leaflet page images sourced from public FullFlyer/ilofo catalogs; verify store ToS before production.",
+  "stores": {
+    "carrefour": {
+      "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/carrefour/catalogs/79807-pdf",
+      "officialUrl": "https://www.carrefourksa.com/mafsau/en/c/Offers",
+      "title_en": "Back to School Deals",
+      "title_ar": "عروض العودة للمدرسة"
+    },
+    "lulu": {
+      "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/lulu/catalogs/80531-pdf",
+      "officialUrl": "https://www.luluhypermarket.com/en-sa/promotions",
+      "title_en": "Back to School",
+      "title_ar": "العودة للمدرسة"
+    },
+    "panda": {
+      "fullflyerUrl": "https://3orod.net/sa/offers/panda-weekly-26-august-1-september-2026/",
+      "officialUrl": "https://www.panda.com.sa/en/offers",
+      "title_en": "Weekly Offers — Back to School",
+      "title_ar": "عروض الأسبوع — العودة للمدرسة",
+      "pages": [
+        {
+          "page_number": 1,
+          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/08/panda-weekly-26-august-1-september-2026-scaled.jpg"
+        }
+      ],
+      "start_date": "2026-08-26",
+      "end_date": "2026-09-01"
+    },
+    "danube": {
+      "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/danube/catalogs/81132-pdf",
+      "officialUrl": "https://www.danube.sa/en/offers",
+      "title_en": "Back to School Deals",
+      "title_ar": "عروض العودة للمدرسة"
+    },
+    "tamimi": {
+      "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/tamimi-markets/catalogs/80960-pdf",
+      "officialUrl": "https://www.tamimimarkets.com/",
+      "title_en": "Weekly Offers",
+      "title_ar": "عروض الأسبوع"
+    },
+    "othaim": {
+      "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/othaim-markets/catalogs/80945-pdf",
+      "officialUrl": "https://www.othaimmarkets.com/",
+      "title_en": "Savings Offers",
+      "title_ar": "عروض التوفير"
+    }
+  }
+}

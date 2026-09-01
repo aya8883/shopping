@@ -112,6 +112,7 @@
     "clickablePromosHint": "Each card shows the item photo, description, and price. Tap to add to your basket.",
     "tapToAdd": "Add {{name}} to basket",
     "tapImageHint": "Tap image to add",
+    "tapLeafletHint": "Tap items on the flyer to add",
     "addedWithPrice": "Added {{name}} to your basket",
     "noLeaflets": "No leaflets are published for this week yet.",
     "noOffers": "No offers in this leaflet.",

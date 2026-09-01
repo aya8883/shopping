@@ -1,0 +1,200 @@
+{
+  "syncedAt": "2026-09-01T11:12:06.105Z",
+  "attribution": "Leaflet page images sourced from public FullFlyer/ilofo catalogs; verify store ToS before production.",
+  "stores": {
+    "carrefour": {
+      "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/carrefour/catalogs/79807-pdf",
+      "officialUrl": "https://www.carrefourksa.com/mafsau/en/c/Offers",
+      "title_en": "Back to School Deals",
+      "title_ar": "عروض العودة للمدرسة",
+      "catalog_id": "79807",
+      "start_date": "2026-08-11",
+      "end_date": "2026-08-17",
+      "pages": [
+        {
+          "page_number": 1,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/79807/0a02dfd5fcd8a9911786551453-0.jpg?w=1600&h=1600"
+        },
+        {
+          "page_number": 2,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/79807/0a02dfd5fcd8a9911786551453-1.jpg?w=1600&h=1600"
+        },
+        {
+          "page_number": 3,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/79807/0a02dfd5fcd8a9911786551453-2.jpg?w=1600&h=1600"
+        },
+        {
+          "page_number": 4,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/79807/0a02dfd5fcd8a9911786551453-3.jpg?w=1600&h=1600"
+        },
+        {
+          "page_number": 5,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/79807/0a02dfd5fcd8a9911786551453-4.jpg?w=1600&h=1600"
+        },
+        {
+          "page_number": 6,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/79807/0a02dfd5fcd8a9911786551453-5.jpg?w=1600&h=1600"
+        }
+      ]
+    },
+    "lulu": {
+      "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/lulu/catalogs/80531-pdf",
+      "officialUrl": "https://www.luluhypermarket.com/en-sa/promotions",
+      "title_en": "Back to School",
+      "title_ar": "العودة للمدرسة",
+      "catalog_id": "80531",
+      "start_date": "2026-08-18",
+      "end_date": "2026-08-31",
+      "pages": [
+        {
+          "page_number": 1,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/80531/16cda29a25398cb11787272188-0.jpg?w=1600&h=1600"
+        },
+        {
+          "page_number": 2,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/80531/16cda29a25398cb11787272188-1.jpg?w=1600&h=1600"
+        },
+        {
+          "page_number": 3,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/80531/16cda29a25398cb11787272188-2.jpg?w=1600&h=1600"
+        },
+        {
+          "page_number": 4,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/80531/16cda29a25398cb11787272188-3.jpg?w=1600&h=1600"
+        },
+        {
+          "page_number": 5,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/80531/16cda29a25398cb11787272188-4.jpg?w=1600&h=1600"
+        },
+        {
+          "page_number": 6,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/80531/16cda29a25398cb11787272188-5.jpg?w=1600&h=1600"
+        }
+      ]
+    },
+    "panda": {
+      "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/bndh/catalogs/79191-pdf",
+      "officialUrl": "https://www.panda.com.sa/en/offers",
+      "title_en": "Weekly Offers",
+      "title_ar": "عروض الأسبوع",
+      "catalog_id": "79191",
+      "start_date": "2026-08-04",
+      "end_date": "2026-08-07",
+      "pages": [
+        {
+          "page_number": 1,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/79191/31927d0933180c151785952180.jpg?w=1600&h=1600"
+        },
+        {
+          "page_number": 2,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/79191/db15634cf372f4d81785952181.jpg?w=1600&h=1600"
+        }
+      ]
+    },
+    "danube": {
+      "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/danube/catalogs/81132-pdf",
+      "officialUrl": "https://www.danube.sa/en/offers",
+      "title_en": "Back to School Deals",
+      "title_ar": "عروض العودة للمدرسة",
+      "catalog_id": "81132",
+      "start_date": "2026-08-25",
+      "end_date": "2026-09-07",
+      "pages": [
+        {
+          "page_number": 1,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81132/527d2ae9f80ff90a1787936851-0.jpg?w=1600&h=1600"
+        },
+        {
+          "page_number": 2,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81132/527d2ae9f80ff90a1787936851-1.jpg?w=1600&h=1600"
+        },
+        {
+          "page_number": 3,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81132/527d2ae9f80ff90a1787936851-2.jpg?w=1600&h=1600"
+        },
+        {
+          "page_number": 4,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81132/527d2ae9f80ff90a1787936851-3.jpg?w=1600&h=1600"
+        },
+        {
+          "page_number": 5,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81132/527d2ae9f80ff90a1787936851-4.jpg?w=1600&h=1600"
+        },
+        {
+          "page_number": 6,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81132/527d2ae9f80ff90a1787936851-5.jpg?w=1600&h=1600"
+        }
+      ]
+    },
+    "tamimi": {
+      "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/tamimi-markets/catalogs/80960-pdf",
+      "officialUrl": "https://www.tamimimarkets.com/",
+      "title_en": "Weekly Offers",
+      "title_ar": "عروض الأسبوع",
+      "catalog_id": "80960",
+      "start_date": "2026-08-25",
+      "end_date": "2026-08-31",
+      "pages": [
+        {
+          "page_number": 1,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/80960/e46bfded82cdee771787775359-0.jpg?w=1600&h=1600"
+        },
+        {
+          "page_number": 2,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/80960/e46bfded82cdee771787775359-1.jpg?w=1600&h=1600"
+        },
+        {
+          "page_number": 3,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/80960/e46bfded82cdee771787775359-2.jpg?w=1600&h=1600"
+        },
+        {
+          "page_number": 4,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/80960/e46bfded82cdee771787775359-3.jpg?w=1600&h=1600"
+        },
+        {
+          "page_number": 5,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/80960/e46bfded82cdee771787775359-4.jpg?w=1600&h=1600"
+        },
+        {
+          "page_number": 6,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/80960/e46bfded82cdee771787775359-5.jpg?w=1600&h=1600"
+        }
+      ]
+    },
+    "othaim": {
+      "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/othaim-markets/catalogs/80945-pdf",
+      "officialUrl": "https://www.othaimmarkets.com/",
+      "title_en": "Savings Offers",
+      "title_ar": "عروض التوفير",
+      "catalog_id": "80945",
+      "start_date": "2026-08-25",
+      "end_date": "2026-08-31",
+      "pages": [
+        {
+          "page_number": 1,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/80945/fbca2e4837991c7d1787771000-0.jpg?w=1600&h=1600"
+        },
+        {
+          "page_number": 2,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/80945/fbca2e4837991c7d1787771000-1.jpg?w=1600&h=1600"
+        },
+        {
+          "page_number": 3,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/80945/fbca2e4837991c7d1787771000-2.jpg?w=1600&h=1600"
+        },
+        {
+          "page_number": 4,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/80945/fbca2e4837991c7d1787771000-3.jpg?w=1600&h=1600"
+        },
+        {
+          "page_number": 5,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/80945/fbca2e4837991c7d1787771000-4.jpg?w=1600&h=1600"
+        },
+        {
+          "page_number": 6,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/80945/fbca2e4837991c7d1787771000-5.jpg?w=1600&h=1600"
+        }
+      ]
+    }
+  }
+}

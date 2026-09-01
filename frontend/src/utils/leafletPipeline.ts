@@ -65,7 +65,8 @@ const PUBLISHED_KEY = 'wain-awfar.published-leaflets';
 
 /** Deterministic mock OCR blocks per store — simulates reading a weekly leaflet. */
 export function mockExtractOfferBlocks(storeSlug: string): OfferBlock[] {
-  if (storeSlug === 'lulu') {
+  const luluStyle = storeSlug === 'lulu' || storeSlug === 'danube' || storeSlug === 'othaim';
+  if (luluStyle) {
     return [
       {
         rawText: 'Almarai Full Fat Milk 2L 10.50',

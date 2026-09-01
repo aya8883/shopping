@@ -6,17 +6,23 @@ import IconButton from '@mui/material/IconButton';
 import Button from '@mui/material/Button';
 import Chip from '@mui/material/Chip';
 import Paper from '@mui/material/Paper';
+import Tooltip from '@mui/material/Tooltip';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import AutoStoriesOutlinedIcon from '@mui/icons-material/AutoStoriesOutlined';
+import AddShoppingCartOutlinedIcon from '@mui/icons-material/AddShoppingCartOutlined';
 import { useTranslation } from 'react-i18next';
+import type { LeafletHotspot } from '../data/leafletHotspots';
+import { useAppContext } from '../contexts/AppContext';
+import { formatSar } from '../utils/pricing';
 
 export type LeafletPage = {
   id: string;
   page_number: number;
   image_url?: string | null;
   processing_status?: string | null;
+  hotspots?: LeafletHotspot[];
 };
 
 export function LeafletViewer({
@@ -24,15 +30,21 @@ export function LeafletViewer({
   sourceUrl,
   storeName,
   accentColor = '#0D9488',
+  getQuantity,
+  onHotspotClick,
 }: {
   pages: LeafletPage[];
   sourceUrl?: string | null;
   storeName: string;
   accentColor?: string;
+  getQuantity?: (productId: string) => number;
+  onHotspotClick?: (hotspot: LeafletHotspot) => void;
 }) {
   const { t } = useTranslation();
+  const { locale } = useAppContext();
   const sorted = [...pages].sort((a, b) => a.page_number - b.page_number);
   const [pageIndex, setPageIndex] = useState(0);
+  const [hoverId, setHoverId] = useState<string | null>(null);
 
   useEffect(() => {
     setPageIndex(0);
@@ -67,6 +79,8 @@ export function LeafletViewer({
   const page = sorted[Math.min(pageIndex, sorted.length - 1)];
   const canPrev = pageIndex > 0;
   const canNext = pageIndex < sorted.length - 1;
+  const hotspots = page.hotspots ?? [];
+  const interactive = Boolean(onHotspotClick && hotspots.length);
 
   return (
     <Stack spacing={1.5}>
@@ -91,12 +105,7 @@ export function LeafletViewer({
           >
             <AutoStoriesOutlinedIcon sx={{ fontSize: 16 }} />
           </Box>
-          <Typography
-            variant="subtitle2"
-            fontWeight={800}
-            noWrap
-            sx={{ minWidth: 0 }}
-          >
+          <Typography variant="subtitle2" fontWeight={800} noWrap sx={{ minWidth: 0 }}>
             {t('offers.leafletPages', { store: storeName })}
           </Typography>
         </Stack>
@@ -108,6 +117,19 @@ export function LeafletViewer({
           useFlexGap
           sx={{ justifyContent: { xs: 'flex-start', sm: 'flex-end' } }}
         >
+          {interactive ? (
+            <Chip
+              size="small"
+              icon={<AddShoppingCartOutlinedIcon sx={{ fontSize: 14 }} />}
+              label={t('offers.tapLeafletHint')}
+              sx={{
+                height: 26,
+                bgcolor: 'rgba(255,255,255,0.95)',
+                fontWeight: 700,
+                '& .MuiChip-label': { px: 1, fontSize: '0.72rem' },
+              }}
+            />
+          ) : null}
           <Chip
             size="small"
             label={t('offers.pageOf', {
@@ -154,21 +176,99 @@ export function LeafletViewer({
           boxShadow: `0 14px 32px ${accentColor}1f`,
         }}
       >
-        <Box
-          component="img"
-          key={page.id}
-          src={page.image_url ?? undefined}
-          alt={`${storeName} leaflet page ${page.page_number}`}
-          className="animate-fade-in"
-          sx={{
-            display: 'block',
-            width: '100%',
-            maxHeight: { xs: 420, sm: 560 },
-            objectFit: 'contain',
-            mx: 'auto',
-            bgcolor: '#fff',
-          }}
-        />
+        <Box sx={{ position: 'relative', lineHeight: 0 }}>
+          <Box
+            component="img"
+            key={page.id}
+            src={page.image_url ?? undefined}
+            alt={`${storeName} leaflet page ${page.page_number}`}
+            className="animate-fade-in"
+            sx={{
+              display: 'block',
+              width: '100%',
+              maxHeight: { xs: 420, sm: 560 },
+              objectFit: 'contain',
+              mx: 'auto',
+              bgcolor: '#fff',
+            }}
+          />
+
+          {interactive
+            ? hotspots.map((hotspot) => {
+                const name =
+                  locale === 'ar' ? hotspot.product.name_ar : hotspot.product.name_en;
+                const qty = getQuantity?.(hotspot.product.id) ?? 0;
+                const hovered = hoverId === hotspot.id;
+
+                return (
+                  <Tooltip
+                    key={hotspot.id}
+                    title={
+                      <Stack spacing={0.25}>
+                        <Typography variant="caption" fontWeight={800}>
+                          {name}
+                        </Typography>
+                        <Typography variant="caption">
+                          {formatSar(hotspot.offer_price, locale)}
+                          {hotspot.regular_price
+                            ? ` · ${formatSar(hotspot.regular_price, locale)}`
+                            : ''}
+                        </Typography>
+                        <Typography variant="caption">{t('offers.tapToAdd', { name })}</Typography>
+                      </Stack>
+                    }
+                    arrow
+                    placement="top"
+                  >
+                    <Box
+                      component="button"
+                      type="button"
+                      aria-label={t('offers.tapToAdd', { name })}
+                      onClick={() => onHotspotClick?.(hotspot)}
+                      onMouseEnter={() => setHoverId(hotspot.id)}
+                      onMouseLeave={() => setHoverId(null)}
+                      sx={{
+                        position: 'absolute',
+                        left: `${hotspot.x}%`,
+                        top: `${hotspot.y}%`,
+                        width: `${hotspot.w}%`,
+                        height: `${hotspot.h}%`,
+                        p: 0,
+                        border: '2px solid',
+                        borderColor: hovered ? accentColor : 'rgba(245,196,0,0.55)',
+                        borderRadius: 1,
+                        bgcolor: hovered ? 'rgba(245,196,0,0.22)' : 'rgba(245,196,0,0.08)',
+                        cursor: 'pointer',
+                        transition: 'background-color 120ms ease, border-color 120ms ease',
+                        '&:hover': {
+                          bgcolor: 'rgba(245,196,0,0.28)',
+                          borderColor: accentColor,
+                        },
+                      }}
+                    >
+                      {qty > 0 ? (
+                        <Chip
+                          size="small"
+                          label={`×${qty}`}
+                          sx={{
+                            position: 'absolute',
+                            top: 4,
+                            insetInlineEnd: 4,
+                            height: 22,
+                            bgcolor: accentColor,
+                            color: accentColor === '#F5C400' ? '#1A1A1A' : '#fff',
+                            fontWeight: 800,
+                            pointerEvents: 'none',
+                            '& .MuiChip-label': { px: 0.75, fontSize: '0.7rem' },
+                          }}
+                        />
+                      ) : null}
+                    </Box>
+                  </Tooltip>
+                );
+              })
+            : null}
+        </Box>
 
         <IconButton
           size="small"
@@ -185,6 +285,7 @@ export function LeafletViewer({
             bgcolor: 'rgba(255,255,255,0.95)',
             color: accentColor,
             boxShadow: '0 4px 12px rgba(15,61,58,0.14)',
+            zIndex: 2,
             '&:hover': { bgcolor: '#fff' },
             '&.Mui-disabled': { bgcolor: 'rgba(255,255,255,0.55)' },
             '& .MuiSvgIcon-root': { fontSize: 18 },
@@ -207,6 +308,7 @@ export function LeafletViewer({
             bgcolor: 'rgba(255,255,255,0.95)',
             color: accentColor,
             boxShadow: '0 4px 12px rgba(15,61,58,0.14)',
+            zIndex: 2,
             '&:hover': { bgcolor: '#fff' },
             '&.Mui-disabled': { bgcolor: 'rgba(255,255,255,0.55)' },
             '& .MuiSvgIcon-root': { fontSize: 18 },

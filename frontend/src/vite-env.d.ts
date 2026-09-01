@@ -1,5 +1,10 @@
 /// <reference types="vite/client" />
 
+declare module '*.json' {
+  const value: Record<string, unknown>;
+  export default value;
+}
+
 interface ImportMetaEnv {
   readonly VITE_APP_NAME: string;
   readonly VITE_APP_NAME_AR: string;

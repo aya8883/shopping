@@ -3,6 +3,13 @@ import cors from 'cors';
 import { createOCRProvider } from './ocr.js';
 import { matchOfferBlocks, type CatalogProduct } from './match.js';
 import { checkFreshness } from './freshness.js';
+import { fetchFullFlyerCatalog, sliceCatalogPages } from './fetch/fullflyer.js';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const sourcesPath = path.resolve(__dirname, '../../../data/leaflet-sources.json');
 
 const app = express();
 const port = Number(process.env.LEAFLET_SERVICE_PORT ?? 3010);
@@ -13,6 +20,51 @@ app.use(express.json({ limit: '2mb' }));
 
 app.get('/health', (_req, res) => {
   res.json({ ok: true, ocr: process.env.OCR_PROVIDER ?? 'mock' });
+});
+
+/**
+ * Fetch real weekly leaflet pages from configured FullFlyer catalog URLs.
+ * Optional ?slug=carrefour to fetch one store; otherwise all stores in leaflet-sources.json.
+ */
+app.get('/v1/leaflets/fetch', async (req, res) => {
+  try {
+    const slugFilter = typeof req.query.slug === 'string' ? req.query.slug : null;
+    const maxPages = Number(req.query.pages ?? 6);
+    const raw = await fs.readFile(sourcesPath, 'utf8');
+    const sources = JSON.parse(raw) as {
+      attribution?: string;
+      stores: Record<string, { fullflyerUrl: string; officialUrl?: string; title_en?: string; title_ar?: string }>;
+    };
+
+    const entries = Object.entries(sources.stores).filter(([slug]) => !slugFilter || slug === slugFilter);
+    const results: Record<string, unknown> = {};
+
+    for (const [slug, cfg] of entries) {
+      try {
+        const catalog = await fetchFullFlyerCatalog(cfg.fullflyerUrl);
+        results[slug] = {
+          ...cfg,
+          catalog_id: catalog.catalog_id,
+          start_date: catalog.start_date,
+          end_date: catalog.end_date,
+          title_en: cfg.title_en ?? catalog.title_en,
+          page_count: catalog.page_count,
+          pages: sliceCatalogPages(catalog, maxPages),
+        };
+      } catch (err) {
+        results[slug] = { ...cfg, error: String(err) };
+      }
+    }
+
+    res.json({
+      fetchedAt: new Date().toISOString(),
+      attribution: sources.attribution,
+      stores: results,
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'leaflet_fetch_failed' });
+  }
 });
 
 /**
@@ -35,8 +87,9 @@ app.post('/v1/ingest', async (req, res) => {
       endDate?: string;
     };
 
+    const knownStores = ['carrefour', 'lulu', 'panda', 'danube', 'tamimi', 'othaim'];
     const blocks =
-      supermarketSlug === 'lulu' || supermarketSlug === 'carrefour'
+      knownStores.includes(supermarketSlug)
         ? await ocr.extractOfferBlocksForStore(supermarketSlug)
         : await ocr.extractOfferBlocks({ fileUrl });
 
@@ -70,11 +123,6 @@ app.post('/v1/freshness', (req, res) => {
   res.json(checkFreshness(stores, leaflets, today));
 });
 
-/**
- * Placeholder for Hasura admin publish. When HASURA_GRAPHQL_ADMIN_SECRET + URL
- * are set, a future step can insert leaflets/offers via GraphQL. For now returns
- * the payload the admin UI (or a job) should persist.
- */
 app.post('/v1/publish-payload', (req, res) => {
   res.json({
     mode: process.env.HASURA_GRAPHQL_ADMIN_SECRET ? 'hasura-ready' : 'local-only',

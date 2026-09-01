@@ -126,6 +126,15 @@ const LULU_BLOCKS: OfferBlock[] = [
   },
 ];
 
+const STORE_BLOCKS: Record<string, OfferBlock[]> = {
+  carrefour: CARREFOUR_BLOCKS,
+  lulu: LULU_BLOCKS,
+  panda: CARREFOUR_BLOCKS,
+  danube: LULU_BLOCKS,
+  tamimi: CARREFOUR_BLOCKS,
+  othaim: LULU_BLOCKS,
+};
+
 export class MockOCRProvider implements OCRProvider {
   async extractText(): Promise<string> {
     return 'Almarai Full Fat Milk 2L\n9.95 SAR\nCarrefour Weekly Offers';
@@ -136,7 +145,7 @@ export class MockOCRProvider implements OCRProvider {
   }
 
   async extractOfferBlocksForStore(storeSlug: string): Promise<OfferBlock[]> {
-    return storeSlug === 'lulu' ? LULU_BLOCKS : CARREFOUR_BLOCKS;
+    return STORE_BLOCKS[storeSlug] ?? CARREFOUR_BLOCKS;
   }
 
   async extractProductInformation(input: { text: string }): Promise<OfferBlock[]> {
