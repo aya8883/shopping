@@ -60,10 +60,16 @@ curl http://localhost:3010/health
 Pull actual promotion sheet images from public FullFlyer/ilofo catalogs:
 
 ```powershell
-npm run sync:leaflets
+npm run sync:real-data
 ```
 
-This writes `frontend/public/data/leaflet-manifest.json` with CDN page URLs (6 pages per store). The Offers page uses these automatically in mock mode.
+This discovers the latest FullFlyer catalog per store, then writes `frontend/src/data/leaflet-manifest.json` with CDN page URLs. See also [real-data.md](./real-data.md).
+
+Legacy sync only:
+
+```powershell
+npm run sync:leaflets
+```
 
 Optional — cache images locally:
 

@@ -1,13 +1,14 @@
 {
-  "syncedAt": "2026-09-01T11:12:06.105Z",
-  "attribution": "Leaflet page images sourced from public FullFlyer/ilofo catalogs; verify store ToS before production.",
+  "syncedAt": "2026-09-01T18:45:00.362Z",
+  "attribution": "Weekly flyer images from FullFlyer/ilofo (store-published catalogs) and Panda via 3orod.net. Product grid prices in catalog.ts are illustrative until retailer feeds are connected. Verify ToS before production.",
   "stores": {
     "carrefour": {
       "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/carrefour/catalogs/79807-pdf",
       "officialUrl": "https://www.carrefourksa.com/mafsau/en/c/Offers",
-      "title_en": "Back to School Deals",
+      "title_en": "Back to School Deals in Carrefour Saudi Arabia from 12 to 18 August 2026",
       "title_ar": "عروض العودة للمدرسة",
       "catalog_id": "79807",
+      "discoveredAt": "2026-09-01T18:44:18.354Z",
       "start_date": "2026-08-11",
       "end_date": "2026-08-17",
       "pages": [
@@ -38,37 +39,38 @@
       ]
     },
     "lulu": {
-      "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/lulu/catalogs/80531-pdf",
+      "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/lulu/catalogs/81223-pdf",
       "officialUrl": "https://www.luluhypermarket.com/en-sa/promotions",
-      "title_en": "Back to School",
+      "title_en": "Opening Deals in Lulu Saudi Arabia from 31 August to 3 September 2026",
       "title_ar": "العودة للمدرسة",
-      "catalog_id": "80531",
-      "start_date": "2026-08-18",
-      "end_date": "2026-08-31",
+      "catalog_id": "81223",
+      "discoveredAt": "2026-09-01T18:44:18.354Z",
+      "start_date": "2026-08-30",
+      "end_date": "2026-09-02",
       "pages": [
         {
           "page_number": 1,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/80531/16cda29a25398cb11787272188-0.jpg?w=1600&h=1600"
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81223/39f9ec63b0f95e811788088757-0.jpg?w=1600&h=1600"
         },
         {
           "page_number": 2,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/80531/16cda29a25398cb11787272188-1.jpg?w=1600&h=1600"
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81223/39f9ec63b0f95e811788088757-1.jpg?w=1600&h=1600"
         },
         {
           "page_number": 3,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/80531/16cda29a25398cb11787272188-2.jpg?w=1600&h=1600"
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81223/39f9ec63b0f95e811788088757-2.jpg?w=1600&h=1600"
         },
         {
           "page_number": 4,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/80531/16cda29a25398cb11787272188-3.jpg?w=1600&h=1600"
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81223/39f9ec63b0f95e811788088757-3.jpg?w=1600&h=1600"
         },
         {
           "page_number": 5,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/80531/16cda29a25398cb11787272188-4.jpg?w=1600&h=1600"
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81223/39f9ec63b0f95e811788088757-4.jpg?w=1600&h=1600"
         },
         {
           "page_number": 6,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/80531/16cda29a25398cb11787272188-5.jpg?w=1600&h=1600"
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81223/39f9ec63b0f95e811788088757-5.jpg?w=1600&h=1600"
         }
       ]
     },
@@ -77,57 +79,59 @@
       "officialUrl": "https://www.panda.com.sa/en/offers",
       "title_en": "Weekly Offers — Back to School",
       "title_ar": "عروض الأسبوع — العودة للمدرسة",
-      "catalog_id": "panda-weekly-2026-08-26",
-      "start_date": "2026-08-26",
-      "end_date": "2026-09-01",
       "pages": [
         {
           "page_number": 1,
           "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/08/panda-weekly-26-august-1-september-2026-scaled.jpg"
         }
-      ]
+      ],
+      "start_date": "2026-08-26",
+      "end_date": "2026-09-01",
+      "page_source": "official_override"
     },
     "danube": {
-      "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/danube/catalogs/81132-pdf",
+      "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/danube/catalogs/81133-pdf",
       "officialUrl": "https://www.danube.sa/en/offers",
-      "title_en": "Back to School Deals",
+      "title_en": "Major Season Deals in Danube Saudi Arabia from 26 August to 8 September 2026",
       "title_ar": "عروض العودة للمدرسة",
-      "catalog_id": "81132",
+      "catalog_id": "81133",
+      "discoveredAt": "2026-09-01T18:44:18.354Z",
       "start_date": "2026-08-25",
       "end_date": "2026-09-07",
       "pages": [
         {
           "page_number": 1,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81132/527d2ae9f80ff90a1787936851-0.jpg?w=1600&h=1600"
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81133/e031592e9c4b5dea1787936966-0.jpg?w=1600&h=1600"
         },
         {
           "page_number": 2,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81132/527d2ae9f80ff90a1787936851-1.jpg?w=1600&h=1600"
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81133/e031592e9c4b5dea1787936966-1.jpg?w=1600&h=1600"
         },
         {
           "page_number": 3,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81132/527d2ae9f80ff90a1787936851-2.jpg?w=1600&h=1600"
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81133/e031592e9c4b5dea1787936966-2.jpg?w=1600&h=1600"
         },
         {
           "page_number": 4,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81132/527d2ae9f80ff90a1787936851-3.jpg?w=1600&h=1600"
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81133/e031592e9c4b5dea1787936966-3.jpg?w=1600&h=1600"
         },
         {
           "page_number": 5,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81132/527d2ae9f80ff90a1787936851-4.jpg?w=1600&h=1600"
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81133/e031592e9c4b5dea1787936966-4.jpg?w=1600&h=1600"
         },
         {
           "page_number": 6,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81132/527d2ae9f80ff90a1787936851-5.jpg?w=1600&h=1600"
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81133/e031592e9c4b5dea1787936966-5.jpg?w=1600&h=1600"
         }
       ]
     },
     "tamimi": {
       "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/tamimi-markets/catalogs/80960-pdf",
       "officialUrl": "https://www.tamimimarkets.com/",
-      "title_en": "Weekly Offers",
+      "title_en": "Back to School Deals in Tamimi markets Saudi Arabia from 26 August to 1 September 2026",
       "title_ar": "عروض الأسبوع",
       "catalog_id": "80960",
+      "discoveredAt": "2026-09-01T18:44:18.354Z",
       "start_date": "2026-08-25",
       "end_date": "2026-08-31",
       "pages": [
@@ -160,7 +164,7 @@
     "othaim": {
       "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/othaim-markets/catalogs/80945-pdf",
       "officialUrl": "https://www.othaimmarkets.com/",
-      "title_en": "Savings Offers",
+      "title_en": "Al Tawfeer School Offers",
       "title_ar": "عروض التوفير",
       "catalog_id": "80945",
       "start_date": "2026-08-25",

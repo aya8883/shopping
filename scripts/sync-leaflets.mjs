@@ -120,6 +120,17 @@ const manifest = {
 for (const [slug, cfg] of Object.entries(sources.stores)) {
   process.stdout.write(`Fetching ${slug}… `);
   try {
+    if (cfg.pages?.length) {
+      const pages = await maybeDownload(slug, cfg.pages);
+      manifest.stores[slug] = {
+        ...cfg,
+        pages,
+        page_source: 'official_override',
+      };
+      console.log(`${pages.length} pages (manual override)`);
+      continue;
+    }
+
     const res = await fetch(cfg.fullflyerUrl, { headers: { 'User-Agent': 'WainAwfar/1.0 leaflet-sync' } });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const html = await res.text();

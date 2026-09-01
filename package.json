@@ -8,6 +8,8 @@
     "dev:frontend": "npm --prefix frontend run dev",
     "setup": "powershell -ExecutionPolicy Bypass -File ./scripts/setup-dev.ps1",
     "test": "npm --prefix frontend run test",
-    "sync:leaflets": "node scripts/sync-leaflets.mjs"
+    "sync:leaflets": "node scripts/sync-leaflets.mjs",
+    "discover:leaflets": "node scripts/discover-leaflet-catalogs.mjs --write",
+    "sync:real-data": "node scripts/discover-leaflet-catalogs.mjs --write && node scripts/sync-leaflets.mjs"
   }
 }
