@@ -309,8 +309,8 @@ export function OffersPage() {
                   : '0 6px 18px rgba(15,23,42,0.05)',
               }}
             >
-              <Stack direction="row" spacing={1} alignItems="center" sx={{ width: '100%', minWidth: 0 }}>
-                <SupermarketAvatar store={leaflet.supermarket} size="sm" />
+              <Stack direction="row" spacing={1.25} alignItems="center" sx={{ width: '100%', minWidth: 0 }}>
+                <SupermarketAvatar store={leaflet.supermarket} size="md" />
                 <Box sx={{ minWidth: 0, flex: 1 }}>
                   <Typography fontWeight={800} fontSize="0.98rem" noWrap>
                     {name}
@@ -417,6 +417,7 @@ export function OffersPage() {
           productName={betterPrice.productName}
           currentStoreNameEn={active.supermarket.name_en}
           currentStoreNameAr={active.supermarket.name_ar}
+          currentStoreSlug={active.supermarket.slug}
           currentPrice={betterPrice.currentPrice}
           bestStoreSlug={betterPrice.best.supermarketSlug}
           bestStoreNameEn={betterPrice.best.supermarketNameEn}

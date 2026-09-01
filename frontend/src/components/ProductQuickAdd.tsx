@@ -123,6 +123,7 @@ export function ProductQuickAdd({
                       slug: q.supermarketSlug,
                       name_en: q.supermarketNameEn,
                       name_ar: q.supermarketNameAr,
+                      logo_url: null,
                     }}
                     size="sm"
                   />

@@ -5,12 +5,14 @@ import Snackbar from '@mui/material/Snackbar';
 import { useTranslation } from 'react-i18next';
 import { formatSar } from '../utils/pricing';
 import { supermarketShortName } from '../utils/supermarketBranding';
+import { SupermarketAvatar } from './SupermarketMark';
 
 export function BetterPriceSnackbar({
   open,
   productName,
   currentStoreNameEn,
   currentStoreNameAr,
+  currentStoreSlug,
   currentPrice,
   bestStoreSlug,
   bestStoreNameEn,
@@ -24,6 +26,7 @@ export function BetterPriceSnackbar({
   productName: string;
   currentStoreNameEn: string;
   currentStoreNameAr: string;
+  currentStoreSlug?: string;
   currentPrice: number;
   bestStoreSlug: string;
   bestStoreNameEn: string;
@@ -57,13 +60,29 @@ export function BetterPriceSnackbar({
         <Typography variant="body2" sx={{ mt: 0.75, opacity: 0.95 }}>
           {t('offers.foundBetterPrice')}
         </Typography>
-        <Stack spacing={0.25} sx={{ mt: 1 }}>
-          <Typography variant="body2" fontWeight={700}>
-            {bestName} · {formatSar(bestPrice, locale)}
-          </Typography>
-          <Typography variant="body2" sx={{ opacity: 0.9 }}>
-            {currentName} · {formatSar(currentPrice, locale)}
-          </Typography>
+        <Stack spacing={0.75} sx={{ mt: 1 }}>
+          <Stack direction="row" alignItems="center" spacing={1}>
+            <SupermarketAvatar
+              store={{ slug: bestStoreSlug, name_en: bestStoreNameEn, name_ar: bestStoreNameAr }}
+              size="sm"
+            />
+            <Typography variant="body2" fontWeight={700} sx={{ flex: 1 }}>
+              {bestName} · {formatSar(bestPrice, locale)}
+            </Typography>
+          </Stack>
+          <Stack direction="row" alignItems="center" spacing={1}>
+            <SupermarketAvatar
+              store={{
+                slug: currentStoreSlug,
+                name_en: currentStoreNameEn,
+                name_ar: currentStoreNameAr,
+              }}
+              size="sm"
+            />
+            <Typography variant="body2" sx={{ opacity: 0.9, flex: 1 }}>
+              {currentName} · {formatSar(currentPrice, locale)}
+            </Typography>
+          </Stack>
         </Stack>
         <Typography variant="body2" fontWeight={800} sx={{ mt: 0.75 }}>
           {t('offers.saveAmount', { amount: formatSar(savings, locale) })}

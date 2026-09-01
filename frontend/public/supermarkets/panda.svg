@@ -1,4 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img">
-  <rect width="64" height="64" rx="12" fill="#006B3F"/>
-  <text x="32" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#FFFFFF">P</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Panda">
+  <rect width="120" height="120" rx="18" fill="#006B3F"/>
+  <circle cx="44" cy="46" r="10" fill="#fff"/>
+  <circle cx="76" cy="46" r="10" fill="#fff"/>
+  <ellipse cx="60" cy="58" rx="22" ry="18" fill="#fff"/>
+  <circle cx="52" cy="54" r="3.5" fill="#006B3F"/>
+  <circle cx="68" cy="54" r="3.5" fill="#006B3F"/>
+  <ellipse cx="60" cy="62" rx="5" ry="3" fill="#006B3F"/>
+  <text x="60" y="96" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="800" letter-spacing="1" fill="#fff">PANDA</text>
 </svg>
