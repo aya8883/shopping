@@ -1,3 +1,5 @@
+import { storeProductImageUrl } from './storeProductImages';
+
 export type MockSupermarket = {
   id: string;
   name_en: string;
@@ -569,6 +571,7 @@ export function buildMockProducts() {
         is_demo: false,
         start_date: '2026-08-26',
         end_date: '2026-09-08',
+        image_url: storeProductImageUrl(seed.id, store.slug, seed.image_url),
         supermarket: store,
       };
     });
@@ -583,7 +586,7 @@ export function buildMockProducts() {
       package_description_ar: seed.package_description_ar,
       variant_en: seed.variant_en,
       variant_ar: seed.variant_ar,
-      image_url: seed.image_url,
+      image_url: storeProductImageUrl(seed.id, 'carrefour', seed.image_url),
       price_basis: seed.category.slug === 'fruits-vegetables' || seed.category.slug === 'meat-poultry' ? 'kg' : 'package',
       brand: seed.brand,
       category: seed.category,

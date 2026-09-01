@@ -23,6 +23,7 @@ import { WeeklyPromoGrid, type PromoOffer } from '../components/WeeklyPromoGrid'
 import { ProductQuickAdd } from '../components/ProductQuickAdd';
 import { BetterPriceSnackbar } from '../components/BetterPriceSnackbar';
 import type { LeafletOfferHotspot } from '../data/leafletHotspots';
+import { storeProductImageUrl } from '../data/storeProductImages';
 import { getCanonicalProduct, getLeafletHotspots, savingsVsStore } from '../data/leafletHotspots';
 import {
   supermarketBrandColors,
@@ -167,7 +168,7 @@ export function OffersPage() {
       regular_price: offer.regular_price != null ? Number(offer.regular_price) : null,
       description_en: descEn,
       description_ar: descAr,
-      image_url: offer.product.image_url,
+      image_url: offer.image_url ?? offer.product.image_url,
     });
     setToastName(locale === 'ar' ? offer.product.name_ar : offer.product.name_en);
   };
@@ -191,7 +192,11 @@ export function OffersPage() {
       regular_price: hotspot.oldPrice ?? null,
       description_en: `${hotspot.unit} · ${active.supermarket.name_en}`,
       description_ar: `${hotspot.unitAr} · ${active.supermarket.name_ar}`,
-      image_url: canonical?.image_url,
+      image_url: storeProductImageUrl(
+        hotspot.productId,
+        active.supermarket.slug,
+        canonical?.image_url,
+      ),
       quantity,
     });
 

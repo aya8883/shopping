@@ -117,6 +117,7 @@ export function getMockCurrentLeaflets() {
             effective_price: o.effective_price,
             currency: o.currency,
             is_demo: o.is_demo,
+            image_url: o.image_url,
             promotion_description_en: o.promotion_description_en ?? 'Weekly offer',
             promotion_description_ar: o.promotion_description_ar ?? 'عرض الأسبوع',
             product: {
@@ -125,7 +126,7 @@ export function getMockCurrentLeaflets() {
               name_ar: p.name_ar,
               size_value: p.size_value,
               size_unit: p.size_unit,
-              image_url: p.image_url,
+              image_url: o.image_url ?? p.image_url,
               package_description_en: p.package_description_en,
               package_description_ar: p.package_description_ar,
               brand: p.brand,

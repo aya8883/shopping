@@ -10,6 +10,7 @@
     "test": "npm --prefix frontend run test",
     "sync:leaflets": "node scripts/sync-leaflets.mjs",
     "discover:leaflets": "node scripts/discover-leaflet-catalogs.mjs --write",
-    "sync:real-data": "node scripts/discover-leaflet-catalogs.mjs --write && node scripts/sync-leaflets.mjs"
+    "sync:real-data": "node scripts/discover-leaflet-catalogs.mjs --write && node scripts/sync-leaflets.mjs",
+    "sync:product-images": "node scripts/sync-store-product-images.mjs"
   }
 }

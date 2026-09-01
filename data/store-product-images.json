@@ -1,0 +1,27 @@
+{
+  "attribution": "Product photos sourced from Carrefour KSA official promotion CDN (stinstoreinnovation.blob.core.windows.net) and Panda weekly leaflet crops where available.",
+  "carrefourCdnBase": "https://stinstoreinnovation.blob.core.windows.net/instore/instore-promotions/category-images",
+  "categoryImages": {
+    "dairy": "5_F1040000_Milk_Food_and_Juices_aec8e6fe0a.png",
+    "meat-poultry": "Beef_2x_d91d522a59.png",
+    "rice-grains": "33_F1701200_Rice_Pasta_and_Pulses_b57cac34e2.png",
+    "cooking-oil": "18_F1714000_Tins_Jars_and_Packets_bc4d6770b2.png",
+    "beverages": "7_F1520000_Juices_22e654e745.png",
+    "fruits-vegetables": "Driscoll_2x_6bab8c4c8f.png",
+    "cleaning": "84_NF_8010000_Bathroom_and_Laundry_5f5a2319bc.png",
+    "personal-care": "64_NF_2100000_Toiletries_and_Perfumes_aac9f62ec1.png",
+    "baby": "52_F1010000_Baby_Healthcare_350f114e5b.png",
+    "frozen-food": "24_F1200900_Organic_Frozen_Products_f4170e011f.png",
+    "canned-food": "18_F1714000_Tins_Jars_and_Packets_bc4d6770b2.png",
+    "snacks": "15_F1610500_Croissants_Pastries_and_Cakes_1c3d0192cc.png"
+  },
+  "productOverrides": {
+    "44444444-4444-4444-4444-444444444032": "Chicken_2x_619c630943.png",
+    "44444444-4444-4444-4444-444444444022": "Chicken_2x_619c630943.png",
+    "banana-1kg": "Driscoll_2x_6bab8c4c8f.png",
+    "tomato-1kg": "070222_uae_web_freshfood_l1_2in1_2x_2db6d59d75.png",
+    "veal-1kg": "Beef_2x_d91d522a59.png",
+    "sadia-chicken-1300g-x3": "Chicken_2x_619c630943.png"
+  },
+  "stores": ["carrefour", "lulu", "panda", "danube", "tamimi", "othaim"]
+}
