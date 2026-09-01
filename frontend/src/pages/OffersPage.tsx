@@ -23,7 +23,7 @@ import { WeeklyPromoGrid, type PromoOffer } from '../components/WeeklyPromoGrid'
 import { ProductQuickAdd } from '../components/ProductQuickAdd';
 import { BetterPriceSnackbar } from '../components/BetterPriceSnackbar';
 import type { LeafletOfferHotspot } from '../data/leafletHotspots';
-import { getCanonicalProduct, savingsVsStore } from '../data/leafletHotspots';
+import { getCanonicalProduct, getLeafletHotspots, savingsVsStore } from '../data/leafletHotspots';
 import {
   supermarketBrandColors,
   supermarketShortName,
@@ -117,6 +117,19 @@ export function OffersPage() {
     if (!active) return '';
     return t('offers.offerCount', { count: active.offers.length });
   }, [active, t]);
+
+  /** Apollo query omits hotspots until Hasura schema adds them — load from local/mock data. */
+  const leafletPages = useMemo((): LeafletPage[] => {
+    if (!active?.pages?.length) return [];
+    const slug = active.supermarket.slug;
+    return active.pages.map((page) => ({
+      ...page,
+      hotspots:
+        page.hotspots?.length
+          ? page.hotspots
+          : getLeafletHotspots(slug, page.page_number),
+    }));
+  }, [active]);
 
   const addPromoToBasket = (offer: PromoOffer) => {
     if (!active) return;
@@ -373,7 +386,7 @@ export function OffersPage() {
           </Stack>
 
           <LeafletViewer
-            pages={active.pages ?? []}
+            pages={leafletPages}
             sourceUrl={active.source_url}
             storeName={supermarketShortName(active.supermarket, locale)}
             accentColor={accent.chip}

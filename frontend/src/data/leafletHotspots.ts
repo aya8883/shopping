@@ -145,12 +145,12 @@ export function saveHotspots(storeSlug: string, pages: LeafletHotspotPage[]) {
 }
 
 export function getLeafletHotspots(storeSlug: string, pageNumber: number): LeafletOfferHotspot[] {
-  const stored = readStoredHotspots()[storeSlug] ?? [];
-  const staticPages = STATIC_HOTSPOTS[storeSlug] ?? [];
-  const page =
-    stored.find((p) => p.page_number === pageNumber) ??
-    staticPages.find((p) => p.page_number === pageNumber);
-  return page?.hotspots ?? [];
+  const staticPage = STATIC_HOTSPOTS[storeSlug]?.find((p) => p.page_number === pageNumber);
+  const storedPage = readStoredHotspots()[storeSlug]?.find((p) => p.page_number === pageNumber);
+  const merged = new Map<string, LeafletOfferHotspot>();
+  for (const h of staticPage?.hotspots ?? []) merged.set(h.productId, h);
+  for (const h of storedPage?.hotspots ?? []) merged.set(h.productId, h);
+  return Array.from(merged.values());
 }
 
 /** @deprecated use LeafletOfferHotspot */

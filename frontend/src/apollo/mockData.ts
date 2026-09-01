@@ -161,7 +161,15 @@ export function getMockCurrentLeaflets() {
     if (!overlay.length) return seeded;
     return mockSupermarkets.map((store) => {
       const published = overlay.find((l) => l.supermarket?.id === store.id);
-      return published ?? seeded.find((l) => l.supermarket.id === store.id)!;
+      const seed = seeded.find((l) => l.supermarket.id === store.id)!;
+      if (!published) return seed;
+      return {
+        ...published,
+        pages: (published.pages?.length ? published.pages : seed.pages).map((p) => ({
+          ...p,
+          hotspots: getLeafletHotspots(store.slug, p.page_number),
+        })),
+      };
     });
   } catch {
     return seeded;

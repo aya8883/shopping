@@ -98,16 +98,16 @@ export function LeafletViewer({
           border: `1px solid ${accentColor}33`,
         }}
       >
-        <Box sx={{ position: 'relative', lineHeight: 0 }}>
+        <Box sx={{ position: 'relative', lineHeight: 0, userSelect: 'none' }}>
           <Box
             component="img"
             src={page.image_url ?? undefined}
             alt={`${storeName} leaflet page ${page.page_number}`}
+            draggable={false}
             sx={{
               display: 'block',
               width: '100%',
-              maxHeight: { xs: 420, sm: 560 },
-              objectFit: 'contain',
+              height: 'auto',
               mx: 'auto',
               bgcolor: '#fff',
             }}
@@ -129,7 +129,6 @@ export function LeafletViewer({
                     onMouseEnter={() => setActiveId(hotspot.id)}
                     onMouseLeave={() => setActiveId(null)}
                     onTouchStart={() => setActiveId(hotspot.id)}
-                    onTouchEnd={() => setActiveId(null)}
                     sx={{
                       position: 'absolute',
                       left: `${hotspot.x}%`,
@@ -137,12 +136,15 @@ export function LeafletViewer({
                       width: `${hotspot.width}%`,
                       height: `${hotspot.height}%`,
                       p: 0,
+                      m: 0,
+                      zIndex: 1,
                       border: '2px solid',
                       borderColor: active ? '#FACC15' : 'transparent',
                       borderRadius: 2,
                       bgcolor: active ? 'rgba(250,204,21,0.12)' : 'transparent',
                       cursor: 'pointer',
                       transition: 'border-color 120ms ease, background-color 120ms ease',
+                      WebkitTapHighlightColor: 'transparent',
                       '&:hover': {
                         borderColor: '#FACC15',
                         bgcolor: 'rgba(250,204,21,0.12)',
