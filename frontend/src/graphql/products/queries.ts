@@ -149,7 +149,7 @@ export const GET_SUPERMARKETS = gql`
 export const GET_BEST_DEALS = gql`
   query GetBestDeals($limit: Int = 8) {
     supermarket_offers(
-      where: { active: { _eq: true }, is_demo: { _eq: true } }
+      where: { active: { _eq: true } }
       order_by: { offer_price: asc }
       limit: $limit
     ) {

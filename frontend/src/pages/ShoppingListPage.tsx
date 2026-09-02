@@ -25,6 +25,9 @@ import {
   type OptimizeBasketResult,
 } from '../utils/basket';
 import { formatSar } from '../utils/pricing';
+import { SupermarketFilter } from '../components/SupermarketFilter';
+import { SupermarketAvatar } from '../components/SupermarketMark';
+import { supermarketShortName } from '../utils/supermarketBranding';
 
 export function ShoppingListPage() {
   const { t } = useTranslation();
@@ -32,6 +35,7 @@ export function ShoppingListPage() {
   const { items, setQuantity, removeItem, clearBasket } = useBasket();
   const [compareResult, setCompareResult] = useState<CompareBasketResult | null>(null);
   const [optimizeResult, setOptimizeResult] = useState<OptimizeBasketResult | null>(null);
+  const [showDetails, setShowDetails] = useState(false);
 
   const ids = useMemo(() => items.map((i) => i.productId), [items]);
 
@@ -46,17 +50,18 @@ export function ShoppingListPage() {
     const result = compareBasket({
       lines: items.map((i) => ({ productId: i.productId, quantity: i.quantity })),
       products,
-      storeIds: selectedSupermarketIds,
+      storeIds: selectedSupermarketIds.length ? selectedSupermarketIds : undefined,
     });
     setCompareResult(result);
     setOptimizeResult(null);
+    setShowDetails(false);
   };
 
   const runOptimize = () => {
     const result = optimizeBasket({
       lines: items.map((i) => ({ productId: i.productId, quantity: i.quantity })),
       products,
-      storeIds: selectedSupermarketIds,
+      storeIds: selectedSupermarketIds.length ? selectedSupermarketIds : undefined,
     });
     setOptimizeResult(result);
     setCompareResult(null);
@@ -65,35 +70,45 @@ export function ShoppingListPage() {
   if (items.length === 0) {
     return (
       <Stack spacing={2} className="pb-4">
-        <Typography variant="h5" fontWeight={700}>
+        <Typography variant="h5" fontWeight={900}>
           {t('list.title')}
         </Typography>
         <Alert severity="info">{t('list.empty')}</Alert>
-        <Button component={RouterLink} to="/plan" variant="contained" size="large">
-          {t('plan.title')}
+        <Button component={RouterLink} to="/search" variant="contained" size="large">
+          {t('list.startAdding')}
         </Button>
         <Button component={RouterLink} to="/offers" variant="outlined">
           {t('list.browseOffers')}
+        </Button>
+        <Button component={RouterLink} to="/plan" variant="text">
+          {t('plan.title')}
         </Button>
       </Stack>
     );
   }
 
+  const rankedStores =
+    compareResult?.stores
+      .filter((s) => s.complete && s.total != null)
+      .sort((a, b) => (a.total ?? 0) - (b.total ?? 0)) ?? [];
+
   return (
     <Stack spacing={2} className="pb-4">
       <Stack direction="row" alignItems="center" justifyContent="space-between" gap={1}>
-        <Typography variant="h5" fontWeight={700}>
-          {t('list.title')}
-        </Typography>
-        <Stack direction="row" spacing={1}>
-          <Button component={RouterLink} to="/plan" size="small">
-            {t('plan.short')}
-          </Button>
-          <Button color="inherit" size="small" onClick={clearBasket}>
-            {t('list.clear')}
-          </Button>
-        </Stack>
+        <Box>
+          <Typography variant="h5" fontWeight={900}>
+            {t('list.title')}
+          </Typography>
+          <Typography color="text.secondary" fontWeight={600}>
+            {t('list.itemCount', { count: items.length })}
+          </Typography>
+        </Box>
+        <Button color="inherit" size="small" onClick={clearBasket}>
+          {t('list.clear')}
+        </Button>
       </Stack>
+
+      <SupermarketFilter dense />
 
       {loading ? <Skeleton variant="rounded" height={160} /> : null}
       {error ? (
@@ -109,7 +124,7 @@ export function ShoppingListPage() {
         </Alert>
       ) : null}
 
-      <Paper variant="outlined">
+      <Paper variant="outlined" sx={{ borderRadius: 3, overflow: 'hidden' }}>
         <Stack divider={<Divider />}>
           {items.map((item) => {
             const name = locale === 'ar' ? item.name_ar : item.name_en;
@@ -118,9 +133,6 @@ export function ShoppingListPage() {
               item.size_value && item.size_unit
                 ? `${item.size_value}${item.size_unit}`
                 : null;
-            const desc = locale === 'ar' ? item.description_ar : item.description_en;
-            const storeName =
-              locale === 'ar' ? item.supermarket_name_ar : item.supermarket_name_en;
             return (
               <Box key={item.productId} sx={{ p: 1.5 }}>
                 <Stack direction="row" alignItems="center" gap={1.25}>
@@ -130,8 +142,8 @@ export function ShoppingListPage() {
                       src={item.image_url}
                       alt=""
                       sx={{
-                        width: 56,
-                        height: 56,
+                        width: 52,
+                        height: 52,
                         borderRadius: 2,
                         objectFit: 'cover',
                         bgcolor: '#F3F4F6',
@@ -149,31 +161,11 @@ export function ShoppingListPage() {
                       {name}
                     </Typography>
                     <Typography variant="body2" color="text.secondary" fontWeight={600}>
-                      {[brand, size, storeName].filter(Boolean).join(' · ')}
+                      {[brand, size].filter(Boolean).join(' · ')}
                     </Typography>
-                    {desc ? (
-                      <Typography variant="caption" color="text.secondary" display="block">
-                        {desc}
-                      </Typography>
-                    ) : null}
                     {item.offer_price != null ? (
-                      <Typography
-                        fontWeight={900}
-                        color="error.main"
-                        fontSize="0.95rem"
-                        sx={{ mt: 0.25 }}
-                      >
+                      <Typography fontWeight={900} color="error.main" fontSize="0.95rem">
                         {formatSar(Number(item.offer_price), locale)}
-                        {item.regular_price != null ? (
-                          <Typography
-                            component="span"
-                            variant="caption"
-                            color="text.secondary"
-                            sx={{ ml: 1, textDecoration: 'line-through' }}
-                          >
-                            {formatSar(Number(item.regular_price), locale)}
-                          </Typography>
-                        ) : null}
                       </Typography>
                     ) : null}
                   </Box>
@@ -211,128 +203,185 @@ export function ShoppingListPage() {
         </Stack>
       </Paper>
 
-      <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1}>
-        <Button
-          variant="contained"
-          size="large"
-          fullWidth
-          disabled={loading || !products.length}
-          onClick={runCompare}
-        >
-          {t('list.compare')}
-        </Button>
-        <Button
-          variant="outlined"
-          size="large"
-          fullWidth
-          disabled={loading || !products.length}
-          onClick={runOptimize}
-        >
-          {t('list.optimize')}
-        </Button>
-      </Stack>
+      <Button
+        variant="contained"
+        size="large"
+        fullWidth
+        disabled={loading || !products.length}
+        onClick={runCompare}
+        sx={{ py: 1.5, fontWeight: 900, fontSize: '1.05rem' }}
+      >
+        {t('list.compare')}
+      </Button>
 
       {compareResult ? (
         <Stack spacing={1.5}>
-          <Typography variant="h6" fontWeight={700}>
-            {t('list.compareResult')}
+          <Typography variant="h6" fontWeight={900}>
+            {t('list.bestOption')}
           </Typography>
-          {compareResult.best ? (
-            <Paper
-              elevation={0}
-              sx={{
-                p: 2,
-                background:
-                  'linear-gradient(135deg, rgba(15,118,110,0.12), rgba(21,128,61,0.10))',
-                border: '1px solid rgba(15,118,110,0.18)',
-              }}
-            >
-              <Typography variant="overline">{t('list.winner')}</Typography>
-              <Typography variant="h5" fontWeight={700}>
-                {locale === 'ar' ? compareResult.best.name_ar : compareResult.best.name_en}
-              </Typography>
-              <Typography variant="h4" color="primary.dark" fontWeight={700}>
-                {formatSar(compareResult.best.total ?? 0, locale)}
-              </Typography>
-              {compareResult.saving > 0 ? (
-                <Chip
-                  sx={{ mt: 1 }}
-                  color="success"
-                  label={`${t('list.youSave')}: ${formatSar(compareResult.saving, locale)}`}
-                />
-              ) : null}
-            </Paper>
+
+          {rankedStores.length ? (
+            <Stack spacing={1.25}>
+              {rankedStores.slice(0, 3).map((store, index) => {
+                const medals = ['🥇', '🥈', '🥉'];
+                const isBest = index === 0;
+                return (
+                  <Paper
+                    key={store.supermarketId}
+                    elevation={0}
+                    sx={{
+                      p: 2,
+                      borderRadius: 3,
+                      bgcolor: isBest ? 'rgba(22,163,74,0.1)' : '#fff',
+                      border: isBest
+                        ? '1px solid rgba(22,163,74,0.3)'
+                        : '1px solid rgba(26,26,26,0.08)',
+                    }}
+                  >
+                    <Stack direction="row" justifyContent="space-between" alignItems="center">
+                      <Stack direction="row" spacing={1.25} alignItems="center">
+                        <Typography fontSize="1.25rem">{medals[index]}</Typography>
+                        <SupermarketAvatar
+                          store={{
+                            slug: store.slug,
+                            name_en: store.name_en,
+                            name_ar: store.name_ar,
+                          }}
+                          size="sm"
+                        />
+                        <Typography fontWeight={900}>
+                          {supermarketShortName(store, locale)}
+                        </Typography>
+                      </Stack>
+                      <Typography variant="h6" fontWeight={900}>
+                        {formatSar(store.total ?? 0, locale)}
+                      </Typography>
+                    </Stack>
+                  </Paper>
+                );
+              })}
+            </Stack>
           ) : (
             <Alert severity="warning">{t('list.incompleteCompare')}</Alert>
           )}
 
-          {compareResult.stores.map((store) => (
-            <Paper key={store.supermarketId} variant="outlined" sx={{ p: 2 }}>
-              <Stack direction="row" justifyContent="space-between" alignItems="flex-start">
-                <div>
-                  <Typography fontWeight={700}>
-                    {locale === 'ar' ? store.name_ar : store.name_en}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {t('list.availability', {
-                      available: store.availableCount,
-                      total: store.totalCount,
-                    })}
-                  </Typography>
-                  {!store.complete ? (
-                    <Chip size="small" color="warning" sx={{ mt: 0.5 }} label={t('list.incomplete')} />
-                  ) : null}
-                </div>
-                <Typography variant="h6" fontWeight={700}>
-                  {store.total != null ? formatSar(store.total, locale) : '—'}
-                </Typography>
-              </Stack>
+          {compareResult.best && compareResult.saving > 0 ? (
+            <Paper
+              elevation={0}
+              sx={{
+                p: 2.25,
+                borderRadius: 3,
+                textAlign: 'center',
+                bgcolor: '#FEF3C7',
+                border: '1px solid rgba(245,196,0,0.45)',
+              }}
+            >
+              <Typography fontWeight={800} color="text.secondary">
+                {t('list.youCanSave')}
+              </Typography>
+              <Typography variant="h4" fontWeight={900} color="warning.dark" sx={{ my: 0.5 }}>
+                {formatSar(compareResult.saving, locale)}
+              </Typography>
+              <Typography fontWeight={700}>
+                {t('list.byShoppingAt', {
+                  store: supermarketShortName(compareResult.best, locale),
+                })}
+              </Typography>
+              <Button sx={{ mt: 1.5 }} onClick={() => setShowDetails((v) => !v)}>
+                {showDetails ? t('list.hideDetails') : t('list.showDetails')}
+              </Button>
             </Paper>
-          ))}
+          ) : null}
+
+          {showDetails
+            ? compareResult.stores.map((store) => (
+                <Paper key={store.supermarketId} variant="outlined" sx={{ p: 2, borderRadius: 3 }}>
+                  <Stack direction="row" justifyContent="space-between" alignItems="flex-start">
+                    <div>
+                      <Typography fontWeight={800}>
+                        {locale === 'ar' ? store.name_ar : store.name_en}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        {t('list.availability', {
+                          available: store.availableCount,
+                          total: store.totalCount,
+                        })}
+                      </Typography>
+                    </div>
+                    <Typography fontWeight={900}>
+                      {store.total != null ? formatSar(store.total, locale) : '—'}
+                    </Typography>
+                  </Stack>
+                </Paper>
+              ))
+            : null}
+
+          <Button
+            variant="outlined"
+            size="large"
+            fullWidth
+            disabled={loading || !products.length}
+            onClick={runOptimize}
+          >
+            {t('list.smarterBasket')}
+          </Button>
         </Stack>
       ) : null}
 
       {optimizeResult ? (
         <Stack spacing={1.5}>
-          <Typography variant="h6" fontWeight={700}>
-            {t('list.optimizeResult')}
+          <Typography variant="h6" fontWeight={900}>
+            {t('list.smarterBasketTitle')}
           </Typography>
           <Paper
             elevation={0}
             sx={{
-              p: 2,
+              p: 2.25,
+              borderRadius: 3,
               background:
-                'linear-gradient(135deg, rgba(15,118,110,0.12), rgba(194,65,12,0.08))',
+                'linear-gradient(135deg, rgba(15,118,110,0.12), rgba(245,196,0,0.12))',
               border: '1px solid rgba(15,118,110,0.18)',
             }}
           >
-            <Typography variant="overline">{t('list.mixedBasket')}</Typography>
-            <Typography variant="h4" color="primary.dark" fontWeight={700}>
-              {formatSar(optimizeResult.total, locale)}
+            <Typography fontWeight={800} sx={{ mb: 1 }}>
+              {t('list.buyFrom')}
             </Typography>
+            {optimizeResult.byStore.map((store) => (
+              <Stack
+                key={store.supermarketId}
+                direction="row"
+                justifyContent="space-between"
+                sx={{ py: 0.75 }}
+              >
+                <Typography fontWeight={700}>
+                  {supermarketShortName(store, locale)} · {t('list.productsCount', { count: store.lines.length })}
+                </Typography>
+                <Typography fontWeight={800}>{formatSar(store.subtotal, locale)}</Typography>
+              </Stack>
+            ))}
+            <Divider sx={{ my: 1.5 }} />
+            <Stack direction="row" justifyContent="space-between">
+              <Typography fontWeight={900}>{t('list.grandTotal')}</Typography>
+              <Typography variant="h5" fontWeight={900} color="primary.dark">
+                {formatSar(optimizeResult.total, locale)}
+              </Typography>
+            </Stack>
             {optimizeResult.savingVsBestSingleStore > 0 ? (
               <Chip
-                sx={{ mt: 1 }}
+                sx={{ mt: 1.5, fontWeight: 800 }}
                 color="success"
                 label={`${t('list.youSaveVsSingle')}: ${formatSar(optimizeResult.savingVsBestSingleStore, locale)}`}
               />
             ) : null}
-            {optimizeResult.missingProductIds.length ? (
-              <Alert severity="warning" sx={{ mt: 1.5 }}>
-                {t('list.missingInOptimize', {
-                  count: optimizeResult.missingProductIds.length,
-                })}
-              </Alert>
-            ) : null}
           </Paper>
 
           {optimizeResult.byStore.map((store) => (
-            <Paper key={store.supermarketId} variant="outlined" sx={{ p: 2 }}>
+            <Paper key={store.supermarketId} variant="outlined" sx={{ p: 2, borderRadius: 3 }}>
               <Stack direction="row" justifyContent="space-between" sx={{ mb: 1 }}>
-                <Typography fontWeight={700}>
+                <Typography fontWeight={800}>
                   {locale === 'ar' ? store.name_ar : store.name_en}
                 </Typography>
-                <Typography fontWeight={700}>{formatSar(store.subtotal, locale)}</Typography>
+                <Typography fontWeight={800}>{formatSar(store.subtotal, locale)}</Typography>
               </Stack>
               <Stack spacing={0.75}>
                 {store.lines.map((line) => (
@@ -345,7 +394,7 @@ export function ShoppingListPage() {
                     <Typography variant="body2">
                       {(locale === 'ar' ? line.name_ar : line.name_en) + ` ×${line.quantity}`}
                     </Typography>
-                    <Typography variant="body2" fontWeight={600}>
+                    <Typography variant="body2" fontWeight={700}>
                       {formatSar(line.lineTotal, locale)}
                     </Typography>
                   </Stack>

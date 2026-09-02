@@ -183,10 +183,11 @@ export function compareBasket(params: {
     .sort((a, b) => (a.total ?? 0) - (b.total ?? 0));
 
   const best = completeStores[0];
-  const second = completeStores[1];
+  const worst = completeStores[completeStores.length - 1];
+  // Savings vs the most expensive complete single-store basket (matches "وفر ١٤" UX).
   const saving =
-    best?.total != null && second?.total != null
-      ? roundMoney(second.total - best.total)
+    best?.total != null && worst?.total != null && completeStores.length > 1
+      ? roundMoney(worst.total - best.total)
       : 0;
 
   return { stores, best, saving };

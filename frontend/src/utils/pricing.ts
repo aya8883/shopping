@@ -92,8 +92,9 @@ export function compareProductOffers(offers: OfferLike[]): ComparisonResult {
     .sort((a, b) => a.effective - b.effective);
 
   const best = scored[0];
-  const second = scored[1];
-  const saving = best && second ? roundMoney(second.effective - best.effective) : 0;
+  const worst = scored[scored.length - 1];
+  const saving =
+    best && worst && scored.length > 1 ? roundMoney(worst.effective - best.effective) : 0;
 
   return { offers: scored, best, saving };
 }

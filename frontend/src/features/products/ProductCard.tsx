@@ -17,7 +17,9 @@ export interface ProductCardProduct {
   name_ar: string;
   size_value?: number | null;
   size_unit?: string | null;
+  image_url?: string | null;
   brand?: { name_en: string; name_ar: string } | null;
+  category?: { id?: string; name_en?: string; name_ar?: string; slug?: string } | null;
   offers?: Array<{
     id: string;
     offer_price: number;

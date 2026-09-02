@@ -1,7 +1,7 @@
 {
   "app": {
     "name": "وين أوفر؟",
-    "slogan": "قارن. وفر. تسوق بذكاء.",
+    "slogan": "ابنِ سلتك. قارن. وفّر.",
     "city": "الرياض",
     "currency": "ر.س",
     "demoBadge": "أسعار تجريبية"
@@ -12,6 +12,7 @@
     "compare": "قارن",
     "offers": "العروض",
     "myList": "قائمتي",
+    "basket": "سلتي",
     "profile": "حسابي"
   },
   "plan": {
@@ -63,36 +64,51 @@
     "openProduct": "التفاصيل"
   },
   "home": {
-    "headline": "أسعار أوضح، تسوق أذكى",
-    "subtitle": "قارن أسعار السوبرماركت واعرف وين توفر أكثر.",
-    "searchPlaceholder": "ابحث عن منتجات أو ماركات…",
+    "headline": "وفّر أكثر في مشترياتك",
+    "subtitle": "أضف منتجاتك وسنقارن أسعارها بين المتاجر",
+    "searchPlaceholder": "ابحث عن منتج أو علامة تجارية",
     "categories": "تصفح الأقسام",
     "allCategories": "الكل",
     "viewAll": "عرض الكل",
-    "bestDeals": "أفضل عروض اليوم",
+    "viewAllOffers": "عرض كل العروض",
+    "bestDeals": "أفضل التخفيضات اليوم",
     "popular": "منتجات شائعة",
     "leaflets": "عروض الأسبوع",
     "validationTitle": "تحقق مقارنة الأسعار",
     "startComparing": "ابدأ المقارنة",
+    "startBasket": "ابدأ بناء السلة",
     "savingsTitle": "توفيرك حتى الآن",
     "productsCompared": "{{count}} منتج تمت مقارنته",
-    "cheapestOften": "الأرخص غالباً"
+    "cheapestOften": "الأرخص غالباً",
+    "yourBasket": "سلتك",
+    "basketCount": "لديك {{count}} منتجات",
+    "expectedBest": "أفضل سعر متوقع",
+    "expectedSaving": "التوفير المتوقع",
+    "openSmartBasket": "عرض السلة الذكية"
   },
   "search": {
     "title": "بحث",
-    "placeholder": "حليب، مراعي، milk…",
+    "placeholder": "طماطم، حليب، مراعي…",
     "noResults": "لا توجد نتائج",
-    "hint": "ابحث بالعربي أو الإنجليزي"
+    "hint": "ابحث بالعربي أو الإنجليزي — منتج واحد وأسعار كل المتاجر",
+    "filterAll": "الكل",
+    "sortCheapest": "الأقل سعراً ↓"
   },
   "product": {
     "bestPrice": "أفضل سعر",
-    "youSave": "توفر",
+    "bestPriceToday": "أفضل سعر اليوم",
+    "youSave": "وفر",
+    "saveUpTo": "وفر حتى",
+    "updatedToday": "آخر تحديث: اليوم",
     "regular": "السعر العادي",
     "unitPrice": "سعر الوحدة",
     "addToList": "أضف للقائمة",
     "addToListAgain": "أضف مرة أخرى ({{count}} في القائمة)",
     "addedToList": "تمت الإضافة إلى قائمتك",
-    "comparePrices": "قارن الأسعار",
+    "addToBasket": "أضف إلى سلتي",
+    "addToBasketAgain": "أضف مرة أخرى ({{count}} في السلة)",
+    "addedToBasket": "تمت الإضافة إلى سلتك",
+    "comparePrices": "مقارنة الأسعار",
     "compareStores": "المتاجر للمقارنة",
     "selectAllStores": "تحديد الكل",
     "clearStores": "مسح",
@@ -135,12 +151,24 @@
     "comingSoon": "الفلاتر والترتيب في مرحلة لاحقة."
   },
   "list": {
-    "title": "قائمتي",
-    "empty": "ابدأ بإضافة المنتجات إلى قائمتك.",
+    "title": "سلتي",
+    "empty": "أضف منتجاتك ثم قارن المتاجر لتعرف وين توفر أكثر.",
+    "startAdding": "ابحث عن منتجات",
     "browseOffers": "تصفح عروض الأسبوع",
-    "clear": "مسح القائمة",
-    "compare": "قارن المتاجر",
+    "clear": "مسح السلة",
+    "compare": "قارن سلتي",
     "optimize": "وفر أكثر",
+    "smarterBasket": "السلة الأذكى (من عدة متاجر)",
+    "smarterBasketTitle": "السلة الأذكى",
+    "buyFrom": "اشترِ من",
+    "productsCount": "{{count}} منتجات",
+    "grandTotal": "الإجمالي",
+    "bestOption": "أفضل خيار",
+    "youCanSave": "يمكنك توفير",
+    "byShoppingAt": "بالشراء من {{store}}",
+    "showDetails": "عرض التفاصيل",
+    "hideDetails": "إخفاء التفاصيل",
+    "itemCount": "{{count}} منتجات",
     "compareResult": "مقارنة المتاجر",
     "optimizeResult": "أفضل سلة مختلطة",
     "mixedBasket": "اشترِ من أكثر من متجر",
@@ -149,7 +177,7 @@
     "youSaveVsSingle": "توفير مقابل أفضل متجر واحد",
     "availability": "{{available}} من {{total}} متوفر",
     "incomplete": "غير مكتمل",
-    "incompleteCompare": "لا يوجد متجر لديه كل المنتجات. جرّب وفر أكثر أو أكمل الأسعار.",
+    "incompleteCompare": "لا يوجد متجر لديه كل المنتجات. جرّب السلة الأذكى.",
     "missingInOptimize": "{{count}} منتج بدون سعر في المتاجر المحددة.",
     "phaseNote": "قوائم التسوق وتحسين السلة في المرحلة 4."
   },
@@ -159,7 +187,8 @@
     "signIn": "تسجيل الدخول",
     "signOut": "تسجيل الخروج",
     "anonymous": "تتصفح كزائر — ابحث وقارن مباشرة.",
-    "stores": "السوبرماركت للمقارنة"
+    "stores": "المتاجر للمقارنة",
+    "storesHint": "اختر المتاجر التي تظهر في البحث ومقارنة السلة."
   },
   "admin": {
     "leafletsTitle": "استيراد النشرات",

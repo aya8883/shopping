@@ -35,6 +35,9 @@ export function ProfilePage() {
       </ToggleButtonGroup>
 
       <Typography variant="subtitle2">{t('profile.stores')}</Typography>
+      <Typography variant="body2" color="text.secondary" sx={{ mt: -1 }}>
+        {t('profile.storesHint')}
+      </Typography>
       <SupermarketFilter />
 
       <Button component={RouterLink} to="/admin/leaflets" variant="outlined" size="large">
