@@ -10,7 +10,9 @@
     "test": "npm --prefix frontend run test",
     "sync:leaflets": "node scripts/sync-leaflets.mjs",
     "discover:leaflets": "node scripts/discover-leaflet-catalogs.mjs --write",
-    "sync:real-data": "node scripts/discover-leaflet-catalogs.mjs --write && node scripts/sync-leaflets.mjs",
-    "sync:product-images": "node scripts/sync-store-product-images.mjs"
+    "sync:real-data": "node scripts/sync-all.mjs",
+    "sync:all": "node scripts/sync-all.mjs",
+    "sync:product-images": "node scripts/sync-store-product-images.mjs",
+    "schedule:sync": "powershell -ExecutionPolicy Bypass -File ./scripts/schedule-sync-windows.ps1"
   }
 }

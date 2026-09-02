@@ -45,11 +45,22 @@ Service listens on `http://localhost:3010`.
 
 | Cadence | Action |
 | --- | --- |
+| Every 6 hours | GitHub Actions / Windows task runs `npm run sync:all` (FullFlyer catalogs → manifests) |
 | Daily | Open Admin → check Freshness panel; ingest stores marked missing/expired |
 | Weekly | When new leaflets drop, run OCR + match + Publish for each supermarket |
 | Later | Cron calls `POST /v1/freshness` and alerts Slack/email |
 
-Example daily check (when service is running):
+**Automatic leaflet sync** (discover + manifest):
+
+```powershell
+npm run sync:all
+# GitHub: Actions → Sync weekly leaflets (cron every 6h)
+# Local Windows: npm run schedule:sync
+```
+
+See [real-data.md](./real-data.md#run-every-6-hours-automatic).
+
+Example health check (when processing service is running):
 
 ```powershell
 curl http://localhost:3010/health

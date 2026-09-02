@@ -21,15 +21,17 @@ So: **weekly flyer images are the most reliable “real” data** without a reta
 
 ## What we sync automatically
 
+Official store websites (Carrefour, LuLu, Panda, …) block bots. The reliable public source is **weekly flyer catalogs** on FullFlyer → ilofo CDN (same sheets the stores publish).
+
 ```powershell
-# 1) Find latest catalog ID per store on FullFlyer
-node scripts/discover-leaflet-catalogs.mjs --write
+# Discover latest catalogs + refresh leaflet manifests
+npm run sync:all
 
-# 2) Download page images + write leaflet-manifest.json
-npm run sync:leaflets
-
-# Or both:
+# Same as above (alias)
 npm run sync:real-data
+
+# Optional: also refresh product category images
+node scripts/sync-all.mjs --images
 ```
 
 This updates:
@@ -38,6 +40,40 @@ This updates:
 - `frontend/src/data/leaflet-manifest.json` — page image URLs used on **Offers**
 
 Each store entry also keeps `officialUrl` (link to the retailer’s own promotions page).
+
+## Run every 6 hours (automatic)
+
+### Option A — GitHub Actions (recommended for the repo)
+
+Workflow: [`.github/workflows/sync-leaflets.yml`](../.github/workflows/sync-leaflets.yml)
+
+- **Schedule:** `0 */6 * * *` (every 6 hours UTC)
+- **Manual:** GitHub → **Actions** → **Sync weekly leaflets** → **Run workflow**
+- On change, it commits updated manifests back to the branch
+
+Requires Actions enabled on the repo and write permission for `GITHUB_TOKEN` (default `contents: write` in the workflow).
+
+### Option B — Windows Task Scheduler (this PC)
+
+```powershell
+# Register a task that runs every 6 hours and logs to logs/sync-leaflets.log
+npm run schedule:sync
+
+# Or with product images on each run:
+powershell -ExecutionPolicy Bypass -File .\scripts\schedule-sync-windows.ps1 -WithImages
+
+# Run once now / remove later:
+Start-ScheduledTask -TaskName WainAwfar-SyncLeaflets
+powershell -File .\scripts\schedule-sync-windows.ps1 -Unregister
+```
+
+Your PC must be on (and you logged in) for Interactive tasks. For unattended servers, prefer GitHub Actions or a Linux cron/`systemd` timer calling `node scripts/sync-all.mjs`.
+
+### Option C — Linux cron
+
+```cron
+0 */6 * * * cd /path/to/shopping && /usr/bin/node scripts/sync-all.mjs >> logs/sync-leaflets.log 2>&1
+```
 
 ### Panda note
 
