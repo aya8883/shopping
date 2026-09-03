@@ -16,6 +16,7 @@
 #>
 param(
   [switch]$WithImages,
+  [switch]$WithIngest,
   [switch]$Unregister,
   [string]$TaskName = 'WainAwfar-SyncLeaflets'
 )
@@ -36,9 +37,12 @@ New-Item -ItemType Directory -Force -Path $logDir | Out-Null
 $node = (Get-Command node -ErrorAction Stop).Source
 $script = Join-Path $root 'scripts\sync-all.mjs'
 $extra = if ($WithImages) { ' --images' } else { '' }
+$ingestScript = Join-Path $root 'scripts\ingest-weekly-flyers.mjs'
+$ingest = if ($WithIngest) { " && `"$node`" `"$ingestScript`"" } else { '' }
+$ingestSuffix = if ($WithIngest) { ' && node scripts/ingest-weekly-flyers.mjs' } else { '' }
 
 # Wrap so stdout/stderr append to a log file
-$actionArgs = "/c `"cd /d `"$root`" && `"$node`" `"$script`"$extra >> `"$logFile`" 2>&1`""
+$actionArgs = "/c `"cd /d `"$root`" && `"$node`" `"$script`"$extra$ingest >> `"$logFile`" 2>&1`""
 $action = New-ScheduledTaskAction -Execute 'cmd.exe' -Argument $actionArgs
 
 # Start soon, then every 6 hours indefinitely
@@ -64,7 +68,7 @@ Register-ScheduledTask `
 
 Write-Host "Registered: $TaskName"
 Write-Host "  Runs: every 6 hours (next in ~2 minutes)"
-Write-Host "  Command: node scripts/sync-all.mjs$extra"
+Write-Host "  Command: node scripts/sync-all.mjs$extra$ingestSuffix"
 Write-Host "  Log: $logFile"
 Write-Host ""
 Write-Host "Manage in Task Scheduler, or:"

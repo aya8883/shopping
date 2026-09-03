@@ -58,6 +58,19 @@ npm run sync:all
 # Local Windows: npm run schedule:sync
 ```
 
+**Automatic OCR + ingest into Offers (recommended first stage)**
+
+When both `functions/leaflet-processing` and Hasura are running, persist OCR+matches into:
+`leaflets`, `leaflet_pages`, `supermarket_offers`.
+
+```powershell
+# Run once:
+npm run ingest:leaflets
+
+# Run together with the 6h sync job (Windows):
+powershell -ExecutionPolicy Bypass -File ./scripts/schedule-sync-windows.ps1 -WithIngest
+```
+
 See [real-data.md](./real-data.md#run-every-6-hours-automatic).
 
 Example health check (when processing service is running):
