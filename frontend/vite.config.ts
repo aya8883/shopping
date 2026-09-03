@@ -12,13 +12,14 @@ export default defineConfig({
         name: 'Wain Awfar',
         short_name: 'WainAwfar',
         description: 'Compare supermarket prices in Riyadh',
-        theme_color: '#0F766E',
-        background_color: '#F8FAF9',
+        theme_color: '#F5C400',
+        background_color: '#F4F5F7',
         display: 'standalone',
         orientation: 'portrait',
         start_url: '/',
         lang: 'ar',
         dir: 'rtl',
+        categories: ['shopping', 'lifestyle'],
         icons: [
           {
             src: '/icons/icon-192.png',

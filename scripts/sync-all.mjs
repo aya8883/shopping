@@ -48,4 +48,7 @@ if (withImages) {
   await run(path.join(root, 'scripts/sync-store-product-images.mjs'));
 }
 
+// Always refresh flyer-sourced prices used by Search / Basket in mock mode.
+await run(path.join(root, 'scripts/generate-weekly-offers.mjs'));
+
 console.log(`[sync-all] finished ${new Date().toISOString()}`);

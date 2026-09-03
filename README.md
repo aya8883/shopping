@@ -19,6 +19,7 @@ React (Vite)  →  Apollo GraphQL  →  Hasura  →  PostgreSQL
 Custom Node/TypeScript services under `functions/` are used only where Hasura CRUD is not enough (auth claims, leaflet OCR / ingest, later basket actions).
 
 See [docs/leaflet-ingest.md](docs/leaflet-ingest.md) for weekly promotion ingest and freshness.
+See [docs/pwa-beta.md](docs/pwa-beta.md) for phone install (PWA beta) checklist.
 
 ## Tech stack
 

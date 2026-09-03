@@ -1,4 +1,5 @@
 import { storeProductImageUrl } from './storeProductImages';
+import { weeklyOfferFor, weeklyOfferWindow } from './weeklyOffers';
 
 export type MockSupermarket = {
   id: string;
@@ -550,6 +551,34 @@ export function buildMockProducts() {
   return PRODUCT_SEEDS.map((seed, productIndex) => {
     const productNum = productIndex + 1;
     const offers = mockSupermarkets.map((store, storeIndex) => {
+      const flyer = weeklyOfferFor(seed.id, store.slug);
+      const window = weeklyOfferWindow(store.slug);
+      if (flyer) {
+        const offer_price = round2(flyer.offer_price);
+        const regular_price =
+          flyer.regular_price != null ? round2(Number(flyer.regular_price)) : round2(offer_price * 1.15);
+        return {
+          id: offerId(productNum, storeIndex),
+          offer_price,
+          regular_price,
+          effective_price: offer_price,
+          display_price: offer_price,
+          unit_price: seed.unit_price ?? null,
+          unit_price_unit: seed.unit_price_unit ?? null,
+          promotion_type: 'leaflet_offer',
+          promotion_description_en: flyer.promotion_en ?? 'Weekly offer',
+          promotion_description_ar: flyer.promotion_ar ?? 'عرض الأسبوع',
+          minimum_quantity: 1,
+          currency: 'SAR',
+          city: 'Riyadh',
+          is_demo: false,
+          start_date: window.start_date ?? '2026-08-26',
+          end_date: window.end_date ?? '2026-09-08',
+          image_url: storeProductImageUrl(seed.id, store.slug, seed.image_url),
+          supermarket: store,
+        };
+      }
+
       const delta = STORE_DELTAS[storeIndex] ?? 0;
       const wave = ((productNum + storeIndex) % 5) * 0.1;
       const offer_price = round2(seed.base_offer + delta + wave - (storeIndex === 1 ? 0.5 : 0));
@@ -568,7 +597,7 @@ export function buildMockProducts() {
         minimum_quantity: 1,
         currency: 'SAR',
         city: 'Riyadh',
-        is_demo: false,
+        is_demo: true,
         start_date: '2026-08-26',
         end_date: '2026-09-08',
         image_url: storeProductImageUrl(seed.id, store.slug, seed.image_url),

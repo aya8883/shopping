@@ -7,6 +7,7 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import { useTranslation } from 'react-i18next';
 import { Link as RouterLink } from 'react-router-dom';
 import { SupermarketFilter } from '../components/SupermarketFilter';
+import { InstallAppCard } from '../components/InstallAppCard';
 import { useAppContext } from '../contexts/AppContext';
 import type { AppLocale } from '../config/app';
 
@@ -20,6 +21,8 @@ export function ProfilePage() {
         {t('profile.title')}
       </Typography>
       <Alert severity="info">{t('profile.anonymous')}</Alert>
+
+      <InstallAppCard />
 
       <Typography variant="subtitle2">{t('profile.language')}</Typography>
       <ToggleButtonGroup

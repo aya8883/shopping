@@ -1,0 +1,397 @@
+{
+  "syncedAt": "2026-09-03T18:06:26.211Z",
+  "source": "weekly_flyer_stage1",
+  "attribution": "Flyer-sourced prices from OCR match + curated leaflet hotspots. Replace mock OCR with real vision OCR when ready.",
+  "stores": {
+    "carrefour": {
+      "start_date": "2026-08-11",
+      "end_date": "2026-08-17",
+      "title_en": "Back to School Deals in Carrefour Saudi Arabia from 12 to 18 August 2026",
+      "title_ar": "عروض العودة للمدرسة",
+      "offers": [
+        {
+          "productId": "44444444-4444-4444-4444-444444444001",
+          "offer_price": 9.95,
+          "regular_price": 12.95,
+          "promotion_en": "Weekly leaflet special",
+          "promotion_ar": "عرض الأسبوع",
+          "matchScore": 83,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444004",
+          "offer_price": 27.95,
+          "regular_price": 29.95,
+          "promotion_en": "Pantry deal",
+          "promotion_ar": "عرض الأسبوع",
+          "matchScore": 83,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444003",
+          "offer_price": 34.95,
+          "regular_price": 39.95,
+          "promotion_en": "Weekly offer",
+          "promotion_ar": "عرض الأسبوع",
+          "matchScore": 58,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444005",
+          "offer_price": 41.5,
+          "regular_price": 48,
+          "promotion_en": "Cleaning",
+          "promotion_ar": "عرض الأسبوع",
+          "matchScore": 83,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444034",
+          "offer_price": 8.75,
+          "regular_price": 10.95,
+          "promotion_en": "Care",
+          "promotion_ar": "عرض الأسبوع",
+          "matchScore": 83,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "banana-1kg",
+          "offer_price": 4.99,
+          "regular_price": 6.95,
+          "promotion_en": "Weekly flyer",
+          "promotion_ar": "نشرة الأسبوع",
+          "matchScore": 100,
+          "source": "flyer_hotspot"
+        },
+        {
+          "productId": "tomato-1kg",
+          "offer_price": 3.99,
+          "regular_price": null,
+          "promotion_en": "Weekly flyer",
+          "promotion_ar": "نشرة الأسبوع",
+          "matchScore": 100,
+          "source": "flyer_hotspot"
+        },
+        {
+          "productId": "eggs-30",
+          "offer_price": 17.95,
+          "regular_price": 19.95,
+          "promotion_en": "Weekly flyer",
+          "promotion_ar": "نشرة الأسبوع",
+          "matchScore": 100,
+          "source": "flyer_hotspot"
+        },
+        {
+          "productId": "basmati-rice-10kg",
+          "offer_price": 69.95,
+          "regular_price": 79.95,
+          "promotion_en": "Weekly flyer",
+          "promotion_ar": "نشرة الأسبوع",
+          "matchScore": 100,
+          "source": "flyer_hotspot"
+        }
+      ]
+    },
+    "lulu": {
+      "start_date": "2026-08-30",
+      "end_date": "2026-09-02",
+      "title_en": "Opening Deals in Lulu Saudi Arabia from 31 August to 3 September 2026",
+      "title_ar": "العودة للمدرسة",
+      "offers": [
+        {
+          "productId": "44444444-4444-4444-4444-444444444001",
+          "offer_price": 10.5,
+          "regular_price": 12.5,
+          "promotion_en": "Weekly leaflet special",
+          "promotion_ar": "عرض الأسبوع",
+          "matchScore": 83,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444035",
+          "offer_price": 23.5,
+          "regular_price": 27.95,
+          "promotion_en": "Price drop",
+          "promotion_ar": "عرض الأسبوع",
+          "matchScore": 83,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444003",
+          "offer_price": 36.5,
+          "regular_price": 41,
+          "promotion_en": "Weekly offer",
+          "promotion_ar": "عرض الأسبوع",
+          "matchScore": 58,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444034",
+          "offer_price": 9.25,
+          "regular_price": 10.95,
+          "promotion_en": "Care deals",
+          "promotion_ar": "عرض الأسبوع",
+          "matchScore": 83,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444002",
+          "offer_price": 21.5,
+          "regular_price": 24.95,
+          "promotion_en": "Fresh",
+          "promotion_ar": "عرض الأسبوع",
+          "matchScore": 83,
+          "source": "flyer_ocr"
+        }
+      ]
+    },
+    "panda": {
+      "start_date": "2026-08-26",
+      "end_date": "2026-09-01",
+      "title_en": "Weekly Offers — Back to School",
+      "title_ar": "عروض الأسبوع — العودة للمدرسة",
+      "offers": [
+        {
+          "productId": "44444444-4444-4444-4444-444444444001",
+          "offer_price": 9.95,
+          "regular_price": 12.95,
+          "promotion_en": "Weekly leaflet special",
+          "promotion_ar": "عرض الأسبوع",
+          "matchScore": 83,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444004",
+          "offer_price": 27.95,
+          "regular_price": 29.95,
+          "promotion_en": "Pantry deal",
+          "promotion_ar": "عرض الأسبوع",
+          "matchScore": 83,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444003",
+          "offer_price": 34.95,
+          "regular_price": 39.95,
+          "promotion_en": "Weekly offer",
+          "promotion_ar": "عرض الأسبوع",
+          "matchScore": 58,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444005",
+          "offer_price": 41.5,
+          "regular_price": 48,
+          "promotion_en": "Cleaning",
+          "promotion_ar": "عرض الأسبوع",
+          "matchScore": 83,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444034",
+          "offer_price": 8.75,
+          "regular_price": 10.95,
+          "promotion_en": "Care",
+          "promotion_ar": "عرض الأسبوع",
+          "matchScore": 83,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "veal-1kg",
+          "offer_price": 52.99,
+          "regular_price": null,
+          "promotion_en": "Weekly flyer",
+          "promotion_ar": "نشرة الأسبوع",
+          "matchScore": 100,
+          "source": "flyer_hotspot"
+        },
+        {
+          "productId": "sadia-chicken-1300g-x3",
+          "offer_price": 39.99,
+          "regular_price": 61.5,
+          "promotion_en": "Weekly flyer",
+          "promotion_ar": "نشرة الأسبوع",
+          "matchScore": 100,
+          "source": "flyer_hotspot"
+        },
+        {
+          "productId": "nadec-cheese-500g-x2",
+          "offer_price": 17.99,
+          "regular_price": 31.9,
+          "promotion_en": "Weekly flyer",
+          "promotion_ar": "نشرة الأسبوع",
+          "matchScore": 100,
+          "source": "flyer_hotspot"
+        },
+        {
+          "productId": "cornflakes-1kg",
+          "offer_price": 22.99,
+          "regular_price": 43.95,
+          "promotion_en": "Weekly flyer",
+          "promotion_ar": "نشرة الأسبوع",
+          "matchScore": 100,
+          "source": "flyer_hotspot"
+        }
+      ]
+    },
+    "danube": {
+      "start_date": "2026-08-25",
+      "end_date": "2026-09-07",
+      "title_en": "Major Season Deals in Danube Saudi Arabia from 26 August to 8 September 2026",
+      "title_ar": "عروض العودة للمدرسة",
+      "offers": [
+        {
+          "productId": "44444444-4444-4444-4444-444444444001",
+          "offer_price": 10.5,
+          "regular_price": 12.5,
+          "promotion_en": "Weekly leaflet special",
+          "promotion_ar": "عرض الأسبوع",
+          "matchScore": 83,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444035",
+          "offer_price": 23.5,
+          "regular_price": 27.95,
+          "promotion_en": "Price drop",
+          "promotion_ar": "عرض الأسبوع",
+          "matchScore": 83,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444003",
+          "offer_price": 36.5,
+          "regular_price": 41,
+          "promotion_en": "Weekly offer",
+          "promotion_ar": "عرض الأسبوع",
+          "matchScore": 58,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444034",
+          "offer_price": 9.25,
+          "regular_price": 10.95,
+          "promotion_en": "Care deals",
+          "promotion_ar": "عرض الأسبوع",
+          "matchScore": 83,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444002",
+          "offer_price": 21.5,
+          "regular_price": 24.95,
+          "promotion_en": "Fresh",
+          "promotion_ar": "عرض الأسبوع",
+          "matchScore": 83,
+          "source": "flyer_ocr"
+        }
+      ]
+    },
+    "tamimi": {
+      "start_date": "2026-08-25",
+      "end_date": "2026-08-31",
+      "title_en": "Back to School Deals in Tamimi markets Saudi Arabia from 26 August to 1 September 2026",
+      "title_ar": "عروض الأسبوع",
+      "offers": [
+        {
+          "productId": "44444444-4444-4444-4444-444444444001",
+          "offer_price": 9.95,
+          "regular_price": 12.95,
+          "promotion_en": "Weekly leaflet special",
+          "promotion_ar": "عرض الأسبوع",
+          "matchScore": 83,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444004",
+          "offer_price": 27.95,
+          "regular_price": 29.95,
+          "promotion_en": "Pantry deal",
+          "promotion_ar": "عرض الأسبوع",
+          "matchScore": 83,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444003",
+          "offer_price": 34.95,
+          "regular_price": 39.95,
+          "promotion_en": "Weekly offer",
+          "promotion_ar": "عرض الأسبوع",
+          "matchScore": 58,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444005",
+          "offer_price": 41.5,
+          "regular_price": 48,
+          "promotion_en": "Cleaning",
+          "promotion_ar": "عرض الأسبوع",
+          "matchScore": 83,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444034",
+          "offer_price": 8.75,
+          "regular_price": 10.95,
+          "promotion_en": "Care",
+          "promotion_ar": "عرض الأسبوع",
+          "matchScore": 83,
+          "source": "flyer_ocr"
+        }
+      ]
+    },
+    "othaim": {
+      "start_date": "2026-08-25",
+      "end_date": "2026-08-31",
+      "title_en": "Al Tawfeer School Offers in Othaim Markets Saudi Arabia from 26 August to 1 September 2026",
+      "title_ar": "عروض التوفير",
+      "offers": [
+        {
+          "productId": "44444444-4444-4444-4444-444444444001",
+          "offer_price": 10.5,
+          "regular_price": 12.5,
+          "promotion_en": "Weekly leaflet special",
+          "promotion_ar": "عرض الأسبوع",
+          "matchScore": 83,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444035",
+          "offer_price": 23.5,
+          "regular_price": 27.95,
+          "promotion_en": "Price drop",
+          "promotion_ar": "عرض الأسبوع",
+          "matchScore": 83,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444003",
+          "offer_price": 36.5,
+          "regular_price": 41,
+          "promotion_en": "Weekly offer",
+          "promotion_ar": "عرض الأسبوع",
+          "matchScore": 58,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444034",
+          "offer_price": 9.25,
+          "regular_price": 10.95,
+          "promotion_en": "Care deals",
+          "promotion_ar": "عرض الأسبوع",
+          "matchScore": 83,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444002",
+          "offer_price": 21.5,
+          "regular_price": 24.95,
+          "promotion_en": "Fresh",
+          "promotion_ar": "عرض الأسبوع",
+          "matchScore": 83,
+          "source": "flyer_ocr"
+        }
+      ]
+    }
+  }
+}

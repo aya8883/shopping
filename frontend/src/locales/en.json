@@ -188,7 +188,13 @@
     "signOut": "Sign out",
     "anonymous": "Browsing as guest — search and compare freely.",
     "stores": "Stores to compare",
-    "storesHint": "Choose which supermarkets appear in search and basket comparisons."
+    "storesHint": "Choose which supermarkets appear in search and basket comparisons.",
+    "installTitle": "Install Wain Awfar",
+    "installHint": "Add the app to your home screen for a faster, full-screen shopping experience.",
+    "installCta": "Install app",
+    "installIosHint": "On iPhone, open this site in Safari, then share and Add to Home Screen.",
+    "installIosSteps": "Share → Add to Home Screen",
+    "installBrowserHint": "Open this site in Chrome on your phone to see the Install button."
   },
   "admin": {
     "leafletsTitle": "Leaflet ingest",

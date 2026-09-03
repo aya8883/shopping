@@ -6,6 +6,7 @@
 
 import { mockSupermarkets } from './catalog';
 import { storeProductImageUrl } from './storeProductImages';
+import { weeklyOfferFor } from './weeklyOffers';
 
 export type CanonicalProduct = {
   id: string;
@@ -206,17 +207,21 @@ export function canonicalProductsForCatalog() {
       .map(([slug, pricing]) => {
         const store = mockSupermarkets.find((s) => s.slug === slug);
         if (!store) return null;
+        const flyer = weeklyOfferFor(productId, slug);
+        const offer_price = flyer?.offer_price ?? pricing.price;
+        const regular_price =
+          flyer?.regular_price ?? pricing.oldPrice ?? pricing.price;
         return {
           id: `canonical-offer-${productId}-${slug}`,
-          offer_price: pricing.price,
-          regular_price: pricing.oldPrice ?? pricing.price,
-          effective_price: pricing.price,
-          display_price: pricing.price,
+          offer_price,
+          regular_price,
+          effective_price: offer_price,
+          display_price: offer_price,
           unit_price: null,
           unit_price_unit: null,
           promotion_type: 'leaflet_offer',
-          promotion_description_en: 'Weekly offer',
-          promotion_description_ar: 'عرض الأسبوع',
+          promotion_description_en: flyer?.promotion_en ?? 'Weekly offer',
+          promotion_description_ar: flyer?.promotion_ar ?? 'عرض الأسبوع',
           minimum_quantity: 1,
           currency: 'SAR',
           city: 'Riyadh',
