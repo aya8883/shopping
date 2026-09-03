@@ -19,7 +19,7 @@ Wain Awfar — add milk, rice, chicken; we compare Riyadh stores and show where 
 ٣) شوف الأرخص + كم توفر
 
 تجريبي للرياض — عروض النشرات الأسبوعية  
-[رابط التطبيق]
+https://aya8883.github.io/shopping/
 
 ## Landing blurb (website / bio)
 

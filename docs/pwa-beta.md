@@ -33,9 +33,12 @@ Then restart / rebuild the frontend so it picks up `frontend/src/data/weekly-off
 
 ## Production deploy (required for proper install)
 
-1. Merge `cursor/clickable-leaflet-hotspots` → `main`
-2. Host the `frontend/dist` build on HTTPS (Vercel / Netlify / Cloudflare Pages / nginx)
-3. Open the URL on a phone → Install / Add to Home Screen
+GitHub Pages publishes the PWA on every push to `main`:
+
+**https://aya8883.github.io/shopping/**
+
+1. Merge to `main` (workflow: Deploy GitHub Pages)
+2. Open the URL on a phone → Install / Add to Home Screen
 
 ## Not yet (next after beta)
 
