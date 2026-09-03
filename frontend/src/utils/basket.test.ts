@@ -62,6 +62,45 @@ describe('compareBasket', () => {
     expect(result.best?.slug).toBe('lulu');
     expect(result.best?.total).toBe(36.95);
     expect(result.saving).toBe(0.9);
+    expect(result.bestIsPartial).toBe(false);
+  });
+
+  it('falls back to best partial coverage when no store is complete', () => {
+    const partialProducts = [
+      {
+        id: 'milk',
+        name_en: 'Milk',
+        name_ar: 'حليب',
+        offers: [
+          {
+            id: 'm1',
+            offer_price: 9,
+            supermarket: { id: 'c', name_en: 'Carrefour', name_ar: 'كارفور', slug: 'carrefour' },
+          },
+        ],
+      },
+      {
+        id: 'oil',
+        name_en: 'Oil',
+        name_ar: 'زيت',
+        offers: [
+          {
+            id: 'o1',
+            offer_price: 20,
+            supermarket: { id: 'l', name_en: 'LuLu', name_ar: 'لولو', slug: 'lulu' },
+          },
+        ],
+      },
+    ];
+    const result = compareBasket({
+      lines: [
+        { productId: 'milk', quantity: 1 },
+        { productId: 'oil', quantity: 1 },
+      ],
+      products: partialProducts,
+    });
+    expect(result.bestIsPartial).toBe(true);
+    expect(result.best?.availableCount).toBe(1);
   });
 });
 

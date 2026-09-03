@@ -1,17 +1,25 @@
 {
-  "attribution": "Leaflet page images sourced from public FullFlyer/ilofo catalogs; verify store ToS before production.",
+  "attribution": "Weekly flyer images from FullFlyer/ilofo (store-published catalogs) and Panda via 3orod.net. Product grid prices in catalog.ts are illustrative until retailer feeds are connected. Verify ToS before production.",
   "stores": {
     "carrefour": {
       "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/carrefour/catalogs/79807-pdf",
       "officialUrl": "https://www.carrefourksa.com/mafsau/en/c/Offers",
-      "title_en": "Back to School Deals",
-      "title_ar": "عروض العودة للمدرسة"
+      "title_en": "Back to School Deals in Carrefour Saudi Arabia from 12 to 18 August 2026",
+      "title_ar": "عروض العودة للمدرسة",
+      "catalog_id": "79807",
+      "discoveredAt": "2026-09-02T17:49:44.461Z",
+      "start_date": "2026-08-11",
+      "end_date": "2026-08-17"
     },
     "lulu": {
-      "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/lulu/catalogs/80531-pdf",
+      "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/lulu/catalogs/81223-pdf",
       "officialUrl": "https://www.luluhypermarket.com/en-sa/promotions",
-      "title_en": "Back to School",
-      "title_ar": "العودة للمدرسة"
+      "title_en": "Opening Deals in Lulu Saudi Arabia from 31 August to 3 September 2026",
+      "title_ar": "العودة للمدرسة",
+      "catalog_id": "81223",
+      "discoveredAt": "2026-09-02T17:49:44.461Z",
+      "start_date": "2026-08-30",
+      "end_date": "2026-09-02"
     },
     "panda": {
       "fullflyerUrl": "https://3orod.net/sa/offers/panda-weekly-26-august-1-september-2026/",
@@ -28,22 +36,35 @@
       "end_date": "2026-09-01"
     },
     "danube": {
-      "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/danube/catalogs/81132-pdf",
+      "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/danube/catalogs/81133-pdf",
       "officialUrl": "https://www.danube.sa/en/offers",
-      "title_en": "Back to School Deals",
-      "title_ar": "عروض العودة للمدرسة"
+      "title_en": "Major Season Deals in Danube Saudi Arabia from 26 August to 8 September 2026",
+      "title_ar": "عروض العودة للمدرسة",
+      "catalog_id": "81133",
+      "discoveredAt": "2026-09-02T17:49:44.461Z",
+      "start_date": "2026-08-25",
+      "end_date": "2026-09-07"
     },
     "tamimi": {
       "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/tamimi-markets/catalogs/80960-pdf",
       "officialUrl": "https://www.tamimimarkets.com/",
-      "title_en": "Weekly Offers",
-      "title_ar": "عروض الأسبوع"
+      "title_en": "Back to School Deals in Tamimi markets Saudi Arabia from 26 August to 1 September 2026",
+      "title_ar": "عروض الأسبوع",
+      "catalog_id": "80960",
+      "discoveredAt": "2026-09-02T17:49:44.461Z",
+      "start_date": "2026-08-25",
+      "end_date": "2026-08-31"
     },
     "othaim": {
       "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/othaim-markets/catalogs/80945-pdf",
       "officialUrl": "https://www.othaimmarkets.com/",
-      "title_en": "Savings Offers",
-      "title_ar": "عروض التوفير"
+      "title_en": "Al Tawfeer School Offers in Othaim Markets Saudi Arabia from 26 August to 1 September 2026",
+      "title_ar": "عروض التوفير",
+      "catalog_id": "80945",
+      "start_date": "2026-08-25",
+      "end_date": "2026-08-31",
+      "discoveredAt": "2026-09-02T17:49:44.461Z"
     }
-  }
+  },
+  "discoveredAt": "2026-09-02T17:49:44.461Z"
 }

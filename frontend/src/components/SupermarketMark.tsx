@@ -31,24 +31,26 @@ export function SupermarketAvatar({
     <Avatar
       src={logo ?? undefined}
       alt={store?.name_en ?? store?.name_ar ?? 'supermarket'}
+      imgProps={{
+        style: {
+          objectFit: 'contain',
+          padding: logo ? 3 : 0,
+        },
+      }}
       sx={{
         width: dims.avatar,
         height: dims.avatar,
-        bgcolor: colors.bg,
+        bgcolor: logo ? '#fff' : colors.bg,
         color: colors.fg,
         fontWeight: 800,
         fontSize: dims.avatar * 0.38,
-        border: '1px solid rgba(15, 61, 58, 0.08)',
+        border: '1px solid rgba(15, 61, 58, 0.1)',
         flexShrink: 0,
         overflow: 'hidden',
-        '& img': {
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-        },
+        boxShadow: logo ? '0 1px 4px rgba(15,23,42,0.08)' : 'none',
       }}
     >
-      {initial}
+      {logo ? null : initial}
     </Avatar>
   );
 }

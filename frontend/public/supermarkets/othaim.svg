@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img">
-  <rect width="64" height="64" rx="12" fill="#E65100"/>
-  <text x="32" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#FFFFFF">O</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Othaim Markets">
+  <rect width="120" height="120" rx="18" fill="#E65100"/>
+  <circle cx="60" cy="46" r="18" fill="#fff" opacity="0.15"/>
+  <text x="60" y="54" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="900" fill="#fff">Othaim</text>
+  <text x="60" y="88" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="1.5" fill="#fff">MARKETS</text>
 </svg>

@@ -6,14 +6,12 @@ import IconButton from '@mui/material/IconButton';
 import Button from '@mui/material/Button';
 import Chip from '@mui/material/Chip';
 import Paper from '@mui/material/Paper';
-import Tooltip from '@mui/material/Tooltip';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import AutoStoriesOutlinedIcon from '@mui/icons-material/AutoStoriesOutlined';
-import AddShoppingCartOutlinedIcon from '@mui/icons-material/AddShoppingCartOutlined';
 import { useTranslation } from 'react-i18next';
-import type { LeafletHotspot } from '../data/leafletHotspots';
+import type { LeafletOfferHotspot } from '../data/leafletHotspots';
 import { useAppContext } from '../contexts/AppContext';
 import { formatSar } from '../utils/pricing';
 
@@ -22,7 +20,7 @@ export type LeafletPage = {
   page_number: number;
   image_url?: string | null;
   processing_status?: string | null;
-  hotspots?: LeafletHotspot[];
+  hotspots?: LeafletOfferHotspot[];
 };
 
 export function LeafletViewer({
@@ -31,44 +29,33 @@ export function LeafletViewer({
   storeName,
   accentColor = '#0D9488',
   getQuantity,
-  onHotspotClick,
+  onHotspotSelect,
 }: {
   pages: LeafletPage[];
   sourceUrl?: string | null;
   storeName: string;
   accentColor?: string;
+  /** Uses canonical productId */
   getQuantity?: (productId: string) => number;
-  onHotspotClick?: (hotspot: LeafletHotspot) => void;
+  onHotspotSelect?: (hotspot: LeafletOfferHotspot) => void;
 }) {
   const { t } = useTranslation();
   const { locale } = useAppContext();
   const sorted = [...pages].sort((a, b) => a.page_number - b.page_number);
   const [pageIndex, setPageIndex] = useState(0);
-  const [hoverId, setHoverId] = useState<string | null>(null);
+  const [activeId, setActiveId] = useState<string | null>(null);
 
   useEffect(() => {
     setPageIndex(0);
+    setActiveId(null);
   }, [pages]);
 
   if (!sorted.length) {
     return (
-      <Paper
-        variant="outlined"
-        sx={{
-          p: 3,
-          borderRadius: 4,
-          background: 'linear-gradient(160deg, #fff, rgba(240,253,250,0.8))',
-        }}
-      >
+      <Paper variant="outlined" sx={{ p: 3, borderRadius: 4 }}>
         <Typography color="text.secondary">{t('offers.noPages')}</Typography>
         {sourceUrl ? (
-          <Button
-            href={sourceUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            endIcon={<OpenInNewIcon />}
-            sx={{ mt: 1.5 }}
-          >
+          <Button href={sourceUrl} target="_blank" rel="noopener noreferrer" endIcon={<OpenInNewIcon />} sx={{ mt: 1.5 }}>
             {t('offers.openOfficial')}
           </Button>
         ) : null}
@@ -77,93 +64,30 @@ export function LeafletViewer({
   }
 
   const page = sorted[Math.min(pageIndex, sorted.length - 1)];
-  const canPrev = pageIndex > 0;
-  const canNext = pageIndex < sorted.length - 1;
   const hotspots = page.hotspots ?? [];
-  const interactive = Boolean(onHotspotClick && hotspots.length);
+  const interactive = Boolean(onHotspotSelect && hotspots.length);
 
   return (
     <Stack spacing={1.5}>
-      <Stack
-        direction={{ xs: 'column', sm: 'row' }}
-        alignItems={{ xs: 'stretch', sm: 'center' }}
-        justifyContent="space-between"
-        gap={1}
-      >
-        <Stack direction="row" alignItems="center" spacing={1} sx={{ minWidth: 0 }}>
-          <Box
-            sx={{
-              width: 28,
-              height: 28,
-              borderRadius: 1.5,
-              display: 'grid',
-              placeItems: 'center',
-              bgcolor: `${accentColor}18`,
-              color: accentColor,
-              flexShrink: 0,
-            }}
-          >
-            <AutoStoriesOutlinedIcon sx={{ fontSize: 16 }} />
-          </Box>
-          <Typography variant="subtitle2" fontWeight={800} noWrap sx={{ minWidth: 0 }}>
+      <Stack direction="row" alignItems="center" justifyContent="space-between" flexWrap="wrap" gap={1}>
+        <Stack direction="row" alignItems="center" spacing={1}>
+          <AutoStoriesOutlinedIcon sx={{ fontSize: 18, color: accentColor }} />
+          <Typography variant="subtitle2" fontWeight={800}>
             {t('offers.leafletPages', { store: storeName })}
           </Typography>
         </Stack>
-        <Stack
-          direction="row"
-          spacing={0.75}
-          alignItems="center"
-          flexWrap="wrap"
-          useFlexGap
-          sx={{ justifyContent: { xs: 'flex-start', sm: 'flex-end' } }}
-        >
-          {interactive ? (
-            <Chip
-              size="small"
-              icon={<AddShoppingCartOutlinedIcon sx={{ fontSize: 14 }} />}
-              label={t('offers.tapLeafletHint')}
-              sx={{
-                height: 26,
-                bgcolor: 'rgba(255,255,255,0.95)',
-                fontWeight: 700,
-                '& .MuiChip-label': { px: 1, fontSize: '0.72rem' },
-              }}
-            />
-          ) : null}
-          <Chip
-            size="small"
-            label={t('offers.pageOf', {
-              current: pageIndex + 1,
-              total: sorted.length,
-            })}
-            sx={{
-              height: 26,
-              bgcolor: accentColor,
-              color: '#fff',
-              fontWeight: 800,
-              '& .MuiChip-label': { px: 1, fontSize: '0.72rem' },
-            }}
-          />
-          {sourceUrl ? (
-            <Button
-              size="small"
-              href={sourceUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              endIcon={<OpenInNewIcon sx={{ fontSize: 14 }} />}
-              sx={{
-                fontWeight: 700,
-                minHeight: 28,
-                px: 1,
-                fontSize: '0.75rem',
-                '& .MuiButton-endIcon': { ml: 0.5 },
-              }}
-            >
-              {t('offers.openOfficial')}
-            </Button>
-          ) : null}
-        </Stack>
+        <Chip
+          size="small"
+          label={t('offers.pageOf', { current: pageIndex + 1, total: sorted.length })}
+          sx={{ bgcolor: accentColor, color: '#fff', fontWeight: 800 }}
+        />
       </Stack>
+
+      {interactive ? (
+        <Typography variant="body2" color="text.secondary" fontWeight={600} textAlign="center">
+          {t('offers.tapLeafletHint')}
+        </Typography>
+      ) : null}
 
       <Paper
         elevation={0}
@@ -172,22 +96,18 @@ export function LeafletViewer({
           overflow: 'hidden',
           borderRadius: 3,
           border: `1px solid ${accentColor}33`,
-          background: `linear-gradient(180deg, ${accentColor}12, rgba(255,255,255,0.95) 28%)`,
-          boxShadow: `0 14px 32px ${accentColor}1f`,
         }}
       >
-        <Box sx={{ position: 'relative', lineHeight: 0 }}>
+        <Box sx={{ position: 'relative', lineHeight: 0, userSelect: 'none' }}>
           <Box
             component="img"
-            key={page.id}
             src={page.image_url ?? undefined}
             alt={`${storeName} leaflet page ${page.page_number}`}
-            className="animate-fade-in"
+            draggable={false}
             sx={{
               display: 'block',
               width: '100%',
-              maxHeight: { xs: 420, sm: 560 },
-              objectFit: 'contain',
+              height: 'auto',
               mx: 'auto',
               bgcolor: '#fff',
             }}
@@ -195,76 +115,80 @@ export function LeafletViewer({
 
           {interactive
             ? hotspots.map((hotspot) => {
-                const name =
-                  locale === 'ar' ? hotspot.product.name_ar : hotspot.product.name_en;
-                const qty = getQuantity?.(hotspot.product.id) ?? 0;
-                const hovered = hoverId === hotspot.id;
+                const name = locale === 'ar' ? hotspot.nameAr : hotspot.name;
+                const qty = getQuantity?.(hotspot.productId) ?? 0;
+                const active = activeId === hotspot.id;
 
                 return (
-                  <Tooltip
+                  <Box
                     key={hotspot.id}
-                    title={
-                      <Stack spacing={0.25}>
-                        <Typography variant="caption" fontWeight={800}>
-                          {name}
-                        </Typography>
-                        <Typography variant="caption">
-                          {formatSar(hotspot.offer_price, locale)}
-                          {hotspot.regular_price
-                            ? ` · ${formatSar(hotspot.regular_price, locale)}`
-                            : ''}
-                        </Typography>
-                        <Typography variant="caption">{t('offers.tapToAdd', { name })}</Typography>
-                      </Stack>
-                    }
-                    arrow
-                    placement="top"
+                    component="button"
+                    type="button"
+                    aria-label={`${t('offers.tapToAdd', { name })} · ${formatSar(hotspot.price, locale)}`}
+                    onClick={() => onHotspotSelect?.(hotspot)}
+                    onMouseEnter={() => setActiveId(hotspot.id)}
+                    onMouseLeave={() => setActiveId(null)}
+                    onTouchStart={() => setActiveId(hotspot.id)}
+                    sx={{
+                      position: 'absolute',
+                      left: `${hotspot.x}%`,
+                      top: `${hotspot.y}%`,
+                      width: `${hotspot.width}%`,
+                      height: `${hotspot.height}%`,
+                      p: 0,
+                      m: 0,
+                      zIndex: 1,
+                      border: '2px solid',
+                      borderColor: active ? '#FACC15' : 'transparent',
+                      borderRadius: 2,
+                      bgcolor: active ? 'rgba(250,204,21,0.12)' : 'transparent',
+                      cursor: 'pointer',
+                      transition: 'border-color 120ms ease, background-color 120ms ease',
+                      WebkitTapHighlightColor: 'transparent',
+                      '&:hover': {
+                        borderColor: '#FACC15',
+                        bgcolor: 'rgba(250,204,21,0.12)',
+                      },
+                    }}
                   >
-                    <Box
-                      component="button"
-                      type="button"
-                      aria-label={t('offers.tapToAdd', { name })}
-                      onClick={() => onHotspotClick?.(hotspot)}
-                      onMouseEnter={() => setHoverId(hotspot.id)}
-                      onMouseLeave={() => setHoverId(null)}
-                      sx={{
-                        position: 'absolute',
-                        left: `${hotspot.x}%`,
-                        top: `${hotspot.y}%`,
-                        width: `${hotspot.w}%`,
-                        height: `${hotspot.h}%`,
-                        p: 0,
-                        border: '2px solid',
-                        borderColor: hovered ? accentColor : 'rgba(245,196,0,0.55)',
-                        borderRadius: 1,
-                        bgcolor: hovered ? 'rgba(245,196,0,0.22)' : 'rgba(245,196,0,0.08)',
-                        cursor: 'pointer',
-                        transition: 'background-color 120ms ease, border-color 120ms ease',
-                        '&:hover': {
-                          bgcolor: 'rgba(245,196,0,0.28)',
-                          borderColor: accentColor,
-                        },
-                      }}
-                    >
-                      {qty > 0 ? (
-                        <Chip
-                          size="small"
-                          label={`×${qty}`}
-                          sx={{
-                            position: 'absolute',
-                            top: 4,
-                            insetInlineEnd: 4,
-                            height: 22,
-                            bgcolor: accentColor,
-                            color: accentColor === '#F5C400' ? '#1A1A1A' : '#fff',
-                            fontWeight: 800,
-                            pointerEvents: 'none',
-                            '& .MuiChip-label': { px: 0.75, fontSize: '0.7rem' },
-                          }}
-                        />
-                      ) : null}
-                    </Box>
-                  </Tooltip>
+                    {active ? (
+                      <Box
+                        sx={{
+                          position: 'absolute',
+                          bottom: 6,
+                          insetInlineStart: '50%',
+                          transform: 'translateX(-50%)',
+                          px: 1,
+                          py: 0.35,
+                          borderRadius: 1,
+                          bgcolor: 'rgba(0,0,0,0.78)',
+                          color: '#fff',
+                          whiteSpace: 'nowrap',
+                          pointerEvents: 'none',
+                        }}
+                      >
+                        <Typography variant="caption" fontWeight={800}>
+                          {formatSar(hotspot.price, locale)}
+                        </Typography>
+                      </Box>
+                    ) : null}
+                    {qty > 0 ? (
+                      <Chip
+                        size="small"
+                        label={`×${qty}`}
+                        sx={{
+                          position: 'absolute',
+                          top: 4,
+                          insetInlineEnd: 4,
+                          height: 22,
+                          bgcolor: accentColor,
+                          color: accentColor === '#F5C400' ? '#1A1A1A' : '#fff',
+                          fontWeight: 800,
+                          pointerEvents: 'none',
+                        }}
+                      />
+                    ) : null}
+                  </Box>
                 );
               })
             : null}
@@ -272,90 +196,21 @@ export function LeafletViewer({
 
         <IconButton
           size="small"
-          aria-label={t('offers.prevPage')}
-          disabled={!canPrev}
+          disabled={pageIndex <= 0}
           onClick={() => setPageIndex((i) => Math.max(0, i - 1))}
-          sx={{
-            position: 'absolute',
-            top: '50%',
-            left: 6,
-            transform: 'translateY(-50%)',
-            width: 32,
-            height: 32,
-            bgcolor: 'rgba(255,255,255,0.95)',
-            color: accentColor,
-            boxShadow: '0 4px 12px rgba(15,61,58,0.14)',
-            zIndex: 2,
-            '&:hover': { bgcolor: '#fff' },
-            '&.Mui-disabled': { bgcolor: 'rgba(255,255,255,0.55)' },
-            '& .MuiSvgIcon-root': { fontSize: 18 },
-          }}
+          sx={{ position: 'absolute', top: '50%', left: 6, transform: 'translateY(-50%)', bgcolor: '#fff', zIndex: 2 }}
         >
           <ChevronLeftIcon />
         </IconButton>
         <IconButton
           size="small"
-          aria-label={t('offers.nextPage')}
-          disabled={!canNext}
+          disabled={pageIndex >= sorted.length - 1}
           onClick={() => setPageIndex((i) => Math.min(sorted.length - 1, i + 1))}
-          sx={{
-            position: 'absolute',
-            top: '50%',
-            right: 6,
-            transform: 'translateY(-50%)',
-            width: 32,
-            height: 32,
-            bgcolor: 'rgba(255,255,255,0.95)',
-            color: accentColor,
-            boxShadow: '0 4px 12px rgba(15,61,58,0.14)',
-            zIndex: 2,
-            '&:hover': { bgcolor: '#fff' },
-            '&.Mui-disabled': { bgcolor: 'rgba(255,255,255,0.55)' },
-            '& .MuiSvgIcon-root': { fontSize: 18 },
-          }}
+          sx={{ position: 'absolute', top: '50%', right: 6, transform: 'translateY(-50%)', bgcolor: '#fff', zIndex: 2 }}
         >
           <ChevronRightIcon />
         </IconButton>
       </Paper>
-
-      <Stack direction="row" spacing={1} justifyContent="center" flexWrap="wrap" useFlexGap>
-        {sorted.map((p, index) => {
-          const selected = index === pageIndex;
-          return (
-            <Box
-              key={p.id}
-              component="button"
-              type="button"
-              onClick={() => setPageIndex(index)}
-              aria-label={t('offers.goToPage', { page: p.page_number })}
-              aria-current={selected ? 'true' : undefined}
-              sx={{
-                border: selected ? '2px solid' : '1px solid',
-                borderColor: selected ? accentColor : 'rgba(15,118,110,0.14)',
-                borderRadius: 1.5,
-                p: 0.25,
-                bgcolor: '#fff',
-                cursor: 'pointer',
-                width: 48,
-                height: 64,
-                overflow: 'hidden',
-                boxShadow: selected
-                  ? `0 8px 16px ${accentColor}33`
-                  : '0 3px 10px rgba(15,61,58,0.06)',
-                transform: selected ? 'translateY(-1px)' : 'none',
-                transition: 'transform 160ms ease, box-shadow 160ms ease',
-              }}
-            >
-              <Box
-                component="img"
-                src={p.image_url ?? undefined}
-                alt=""
-                sx={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-              />
-            </Box>
-          );
-        })}
-      </Stack>
     </Stack>
   );
 }

@@ -2,7 +2,10 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
+const base = process.env.VITE_BASE || '/';
+
 export default defineConfig({
+  base,
   plugins: [
     react(),
     VitePWA({
@@ -12,28 +15,30 @@ export default defineConfig({
         name: 'Wain Awfar',
         short_name: 'WainAwfar',
         description: 'Compare supermarket prices in Riyadh',
-        theme_color: '#0F766E',
-        background_color: '#F8FAF9',
+        theme_color: '#F5C400',
+        background_color: '#F4F5F7',
         display: 'standalone',
         orientation: 'portrait',
-        start_url: '/',
+        start_url: './',
+        scope: './',
         lang: 'ar',
         dir: 'rtl',
+        categories: ['shopping', 'lifestyle'],
         icons: [
           {
-            src: '/icons/icon-192.png',
+            src: 'icons/icon-192.png',
             sizes: '192x192',
             type: 'image/png',
           },
           {
-            src: '/icons/icon-512.png',
+            src: 'icons/icon-512.png',
             sizes: '512x512',
             type: 'image/png',
           },
         ],
       },
       workbox: {
-        navigateFallback: '/index.html',
+        navigateFallback: 'index.html',
         runtimeCaching: [
           {
             urlPattern: ({ url }) => url.pathname.includes('/v1/graphql'),

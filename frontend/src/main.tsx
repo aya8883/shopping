@@ -17,6 +17,9 @@ import { BasketProvider } from './contexts/BasketContext';
 import { createAppTheme } from './theme';
 import App from './App';
 
+const routerBasename =
+  import.meta.env.BASE_URL === '/' ? undefined : import.meta.env.BASE_URL.replace(/\/$/, '');
+
 initSuperTokens();
 
 const rtlCache = createCache({
@@ -47,7 +50,10 @@ function ThemedApp() {
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <SuperTokensWrapper>
-      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <BrowserRouter
+        basename={routerBasename}
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      >
         <ApolloProvider client={apolloClient}>
           <AppProvider>
             <BasketProvider>

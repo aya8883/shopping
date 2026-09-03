@@ -7,6 +7,7 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import { useTranslation } from 'react-i18next';
 import { Link as RouterLink } from 'react-router-dom';
 import { SupermarketFilter } from '../components/SupermarketFilter';
+import { InstallAppCard } from '../components/InstallAppCard';
 import { useAppContext } from '../contexts/AppContext';
 import type { AppLocale } from '../config/app';
 
@@ -20,6 +21,8 @@ export function ProfilePage() {
         {t('profile.title')}
       </Typography>
       <Alert severity="info">{t('profile.anonymous')}</Alert>
+
+      <InstallAppCard />
 
       <Typography variant="subtitle2">{t('profile.language')}</Typography>
       <ToggleButtonGroup
@@ -35,10 +38,16 @@ export function ProfilePage() {
       </ToggleButtonGroup>
 
       <Typography variant="subtitle2">{t('profile.stores')}</Typography>
+      <Typography variant="body2" color="text.secondary" sx={{ mt: -1 }}>
+        {t('profile.storesHint')}
+      </Typography>
       <SupermarketFilter />
 
       <Button component={RouterLink} to="/admin/leaflets" variant="outlined" size="large">
         {t('admin.leafletsTitle')}
+      </Button>
+      <Button component={RouterLink} to="/admin/hotspots" variant="outlined" size="large">
+        {t('admin.hotspotsTitle')}
       </Button>
 
       <Button component={RouterLink} to="/auth" variant="contained" size="large">

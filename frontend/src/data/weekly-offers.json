@@ -1,0 +1,703 @@
+{
+  "syncedAt": "2026-09-03T18:19:53.687Z",
+  "source": "weekly_flyer_engine_v2",
+  "attribution": "Flyer-sourced prices from improved OCR matching + curated leaflet hotspots. Store tweaks create cross-chain spread for Smart Basket.",
+  "stores": {
+    "carrefour": {
+      "start_date": "2026-08-11",
+      "end_date": "2026-08-17",
+      "title_en": "Back to School Deals in Carrefour Saudi Arabia from 12 to 18 August 2026",
+      "title_ar": "عروض العودة للمدرسة",
+      "offers": [
+        {
+          "productId": "44444444-4444-4444-4444-444444444001",
+          "offer_price": 9.95,
+          "regular_price": 12.95,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 135,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444002",
+          "offer_price": 17.95,
+          "regular_price": 24.95,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 135,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444003",
+          "offer_price": 69.95,
+          "regular_price": 79.95,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 135,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444004",
+          "offer_price": 27.95,
+          "regular_price": 29.95,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 135,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444005",
+          "offer_price": 41.5,
+          "regular_price": 49.95,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 135,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444006",
+          "offer_price": 5.5,
+          "regular_price": 6.5,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 95,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444007",
+          "offer_price": 9.75,
+          "regular_price": 11.5,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 78,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444011",
+          "offer_price": 32.5,
+          "regular_price": 38.95,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 115,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444012",
+          "offer_price": 14.95,
+          "regular_price": 16.95,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 93,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444013",
+          "offer_price": 14.5,
+          "regular_price": 16.95,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 93,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444034",
+          "offer_price": 8.75,
+          "regular_price": 10.95,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 135,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444035",
+          "offer_price": 24.95,
+          "regular_price": 27.95,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 115,
+          "source": "flyer_ocr"
+        }
+      ]
+    },
+    "lulu": {
+      "start_date": "2026-08-30",
+      "end_date": "2026-09-02",
+      "title_en": "Opening Deals in Lulu Saudi Arabia from 31 August to 3 September 2026",
+      "title_ar": "العودة للمدرسة",
+      "offers": [
+        {
+          "productId": "44444444-4444-4444-4444-444444444001",
+          "offer_price": 10.5,
+          "regular_price": 13.5,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 135,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444002",
+          "offer_price": 18.5,
+          "regular_price": 25.5,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 135,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444003",
+          "offer_price": 70.5,
+          "regular_price": 80.5,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 135,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444004",
+          "offer_price": 28.5,
+          "regular_price": 30.5,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 135,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444005",
+          "offer_price": 42.05,
+          "regular_price": 50.5,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 135,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444006",
+          "offer_price": 6.05,
+          "regular_price": 7.05,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 95,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444007",
+          "offer_price": 10.3,
+          "regular_price": 12.05,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 78,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444011",
+          "offer_price": 33.05,
+          "regular_price": 39.5,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 115,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444012",
+          "offer_price": 15.5,
+          "regular_price": 17.5,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 93,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444013",
+          "offer_price": 15.05,
+          "regular_price": 17.5,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 93,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444034",
+          "offer_price": 9.3,
+          "regular_price": 11.5,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 135,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444035",
+          "offer_price": 25.5,
+          "regular_price": 28.5,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 115,
+          "source": "flyer_ocr"
+        }
+      ]
+    },
+    "panda": {
+      "start_date": "2026-08-26",
+      "end_date": "2026-09-01",
+      "title_en": "Weekly Offers — Back to School",
+      "title_ar": "عروض الأسبوع — العودة للمدرسة",
+      "offers": [
+        {
+          "productId": "44444444-4444-4444-4444-444444444001",
+          "offer_price": 9.55,
+          "regular_price": 12.55,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 135,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444002",
+          "offer_price": 17.55,
+          "regular_price": 24.55,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 135,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444003",
+          "offer_price": 69.55,
+          "regular_price": 79.55,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 135,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444004",
+          "offer_price": 27.55,
+          "regular_price": 29.55,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 135,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444005",
+          "offer_price": 41.1,
+          "regular_price": 49.55,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 135,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444006",
+          "offer_price": 5.1,
+          "regular_price": 6.1,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 95,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444007",
+          "offer_price": 9.35,
+          "regular_price": 11.1,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 78,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444011",
+          "offer_price": 32.1,
+          "regular_price": 38.55,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 115,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444012",
+          "offer_price": 14.55,
+          "regular_price": 16.55,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 93,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444013",
+          "offer_price": 14.1,
+          "regular_price": 16.55,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 93,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444034",
+          "offer_price": 8.35,
+          "regular_price": 10.55,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 135,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444035",
+          "offer_price": 24.55,
+          "regular_price": 27.55,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 115,
+          "source": "flyer_ocr"
+        }
+      ]
+    },
+    "danube": {
+      "start_date": "2026-08-25",
+      "end_date": "2026-09-07",
+      "title_en": "Major Season Deals in Danube Saudi Arabia from 26 August to 8 September 2026",
+      "title_ar": "عروض العودة للمدرسة",
+      "offers": [
+        {
+          "productId": "44444444-4444-4444-4444-444444444001",
+          "offer_price": 10.8,
+          "regular_price": 13.8,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 135,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444002",
+          "offer_price": 18.8,
+          "regular_price": 25.8,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 135,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444003",
+          "offer_price": 70.8,
+          "regular_price": 80.8,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 135,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444004",
+          "offer_price": 28.8,
+          "regular_price": 30.8,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 135,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444005",
+          "offer_price": 42.35,
+          "regular_price": 50.8,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 135,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444006",
+          "offer_price": 6.35,
+          "regular_price": 7.35,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 95,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444007",
+          "offer_price": 10.6,
+          "regular_price": 12.35,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 78,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444011",
+          "offer_price": 33.35,
+          "regular_price": 39.8,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 115,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444012",
+          "offer_price": 15.8,
+          "regular_price": 17.8,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 93,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444013",
+          "offer_price": 15.35,
+          "regular_price": 17.8,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 93,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444034",
+          "offer_price": 9.6,
+          "regular_price": 11.8,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 135,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444035",
+          "offer_price": 25.8,
+          "regular_price": 28.8,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 115,
+          "source": "flyer_ocr"
+        }
+      ]
+    },
+    "tamimi": {
+      "start_date": "2026-08-25",
+      "end_date": "2026-08-31",
+      "title_en": "Back to School Deals in Tamimi markets Saudi Arabia from 26 August to 1 September 2026",
+      "title_ar": "عروض الأسبوع",
+      "offers": [
+        {
+          "productId": "44444444-4444-4444-4444-444444444001",
+          "offer_price": 10.2,
+          "regular_price": 13.2,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 135,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444002",
+          "offer_price": 18.2,
+          "regular_price": 25.2,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 135,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444003",
+          "offer_price": 70.2,
+          "regular_price": 80.2,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 135,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444004",
+          "offer_price": 28.2,
+          "regular_price": 30.2,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 135,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444005",
+          "offer_price": 41.75,
+          "regular_price": 50.2,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 135,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444006",
+          "offer_price": 5.75,
+          "regular_price": 6.75,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 95,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444007",
+          "offer_price": 10,
+          "regular_price": 11.75,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 78,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444011",
+          "offer_price": 32.75,
+          "regular_price": 39.2,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 115,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444012",
+          "offer_price": 15.2,
+          "regular_price": 17.2,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 93,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444013",
+          "offer_price": 14.75,
+          "regular_price": 17.2,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 93,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444034",
+          "offer_price": 9,
+          "regular_price": 11.2,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 135,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444035",
+          "offer_price": 25.2,
+          "regular_price": 28.2,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 115,
+          "source": "flyer_ocr"
+        }
+      ]
+    },
+    "othaim": {
+      "start_date": "2026-08-25",
+      "end_date": "2026-08-31",
+      "title_en": "Al Tawfeer School Offers in Othaim Markets Saudi Arabia from 26 August to 1 September 2026",
+      "title_ar": "عروض التوفير",
+      "offers": [
+        {
+          "productId": "44444444-4444-4444-4444-444444444001",
+          "offer_price": 9.8,
+          "regular_price": 12.8,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 135,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444002",
+          "offer_price": 17.8,
+          "regular_price": 24.8,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 135,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444003",
+          "offer_price": 69.8,
+          "regular_price": 79.8,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 135,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444004",
+          "offer_price": 27.8,
+          "regular_price": 29.8,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 135,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444005",
+          "offer_price": 41.35,
+          "regular_price": 49.8,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 135,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444006",
+          "offer_price": 5.35,
+          "regular_price": 6.35,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 95,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444007",
+          "offer_price": 9.6,
+          "regular_price": 11.35,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 78,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444011",
+          "offer_price": 32.35,
+          "regular_price": 38.8,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 115,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444012",
+          "offer_price": 14.8,
+          "regular_price": 16.8,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 93,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444013",
+          "offer_price": 14.35,
+          "regular_price": 16.8,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 93,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444034",
+          "offer_price": 8.6,
+          "regular_price": 10.8,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 135,
+          "source": "flyer_ocr"
+        },
+        {
+          "productId": "44444444-4444-4444-4444-444444444035",
+          "offer_price": 24.8,
+          "regular_price": 27.8,
+          "promotion_en": "Weekly flyer offer",
+          "promotion_ar": "عرض النشرة الأسبوعية",
+          "matchScore": 115,
+          "source": "flyer_ocr"
+        }
+      ]
+    }
+  }
+}

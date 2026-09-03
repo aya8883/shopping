@@ -3,14 +3,11 @@
 export { mockCategories, mockSupermarkets } from '../data/catalog';
 import { mockProducts as catalogProducts, mockSupermarkets } from '../data/catalog';
 import { leafletManifest } from '../data/leafletManifest';
-import { getLeafletHotspots, leafletProductsForStore } from '../data/leafletHotspots';
+import { getLeafletHotspots, canonicalProductsForCatalog } from '../data/leafletHotspots';
 import { supermarketShortName } from '../utils/supermarketBranding';
 
-/** Base catalog plus products tagged from weekly leaflet hotspots (e.g. Panda page 1). */
-export const mockProducts = [
-  ...catalogProducts,
-  ...mockSupermarkets.flatMap((store) => leafletProductsForStore(store.slug, store)),
-];
+/** Base catalog plus canonical products with cross-store weekly prices. */
+export const mockProducts = [...catalogProducts, ...canonicalProductsForCatalog()];
 
 export function searchMockProducts(pattern: string, limit = 20) {  const needle = pattern.replace(/%/g, '').trim().toLowerCase();
   if (!needle) return mockProducts.slice(0, limit);
@@ -120,6 +117,7 @@ export function getMockCurrentLeaflets() {
             effective_price: o.effective_price,
             currency: o.currency,
             is_demo: o.is_demo,
+            image_url: o.image_url,
             promotion_description_en: o.promotion_description_en ?? 'Weekly offer',
             promotion_description_ar: o.promotion_description_ar ?? 'عرض الأسبوع',
             product: {
@@ -128,7 +126,7 @@ export function getMockCurrentLeaflets() {
               name_ar: p.name_ar,
               size_value: p.size_value,
               size_unit: p.size_unit,
-              image_url: p.image_url,
+              image_url: o.image_url ?? p.image_url,
               package_description_en: p.package_description_en,
               package_description_ar: p.package_description_ar,
               brand: p.brand,
@@ -164,7 +162,15 @@ export function getMockCurrentLeaflets() {
     if (!overlay.length) return seeded;
     return mockSupermarkets.map((store) => {
       const published = overlay.find((l) => l.supermarket?.id === store.id);
-      return published ?? seeded.find((l) => l.supermarket.id === store.id)!;
+      const seed = seeded.find((l) => l.supermarket.id === store.id)!;
+      if (!published) return seed;
+      return {
+        ...published,
+        pages: (published.pages?.length ? published.pages : seed.pages).map((p) => ({
+          ...p,
+          hotspots: getLeafletHotspots(store.slug, p.page_number),
+        })),
+      };
     });
   } catch {
     return seeded;

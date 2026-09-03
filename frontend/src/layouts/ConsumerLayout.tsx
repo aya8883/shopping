@@ -1,16 +1,12 @@
-import { useState } from 'react';
-import { Outlet, Link as RouterLink, useNavigate } from 'react-router-dom';
+import { Outlet, Link as RouterLink, useNavigate, useLocation } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import IconButton from '@mui/material/IconButton';
-import TextField from '@mui/material/TextField';
-import InputAdornment from '@mui/material/InputAdornment';
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
-import SearchIcon from '@mui/icons-material/Search';
 import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
 import { useTranslation } from 'react-i18next';
 import { MobileBottomNavigation } from '../components/MobileBottomNavigation';
@@ -20,9 +16,10 @@ import { appConfig } from '../config/app';
 export function ConsumerLayout() {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const location = useLocation();
   const { city, locale } = useAppContext();
   const brand = locale === 'ar' ? appConfig.nameAr : appConfig.name;
-  const [query, setQuery] = useState('');
+  const hideChromeSearch = location.pathname === '/' || location.pathname.startsWith('/search');
 
   return (
     <Box className="min-h-screen pb-28" sx={{ bgcolor: 'background.default' }}>
@@ -39,11 +36,9 @@ export function ConsumerLayout() {
         <Toolbar
           className="mx-auto w-full max-w-app md:max-w-desktop"
           sx={{
-            minHeight: 64,
-            gap: 1.25,
+            minHeight: 56,
+            gap: 1,
             px: { xs: 1.5, sm: 2 },
-            flexWrap: 'wrap',
-            py: 1,
           }}
         >
           <Stack
@@ -52,81 +47,77 @@ export function ConsumerLayout() {
             spacing={0.75}
             component={RouterLink}
             to="/"
-            sx={{ textDecoration: 'none', color: 'inherit', flexShrink: 0 }}
+            sx={{ textDecoration: 'none', color: 'inherit', flexShrink: 0, minWidth: 0 }}
           >
             <Box
               sx={{
-                width: 34,
-                height: 34,
+                width: 32,
+                height: 32,
                 borderRadius: 2,
                 display: 'grid',
                 placeItems: 'center',
                 bgcolor: 'primary.main',
                 color: 'primary.contrastText',
+                flexShrink: 0,
               }}
             >
-              <LightbulbOutlinedIcon sx={{ fontSize: 20 }} />
+              <LightbulbOutlinedIcon sx={{ fontSize: 18 }} />
             </Box>
-            <Box sx={{ minWidth: 0 }}>
-              <Typography
-                sx={{
-                  fontWeight: 900,
-                  fontSize: '1.15rem',
-                  lineHeight: 1.1,
-                  color: 'text.primary',
-                }}
-              >
-                {brand}
-              </Typography>
-              <Typography variant="caption" color="text.secondary" noWrap>
-                {locale === 'ar' ? appConfig.sloganAr : appConfig.slogan}
-              </Typography>
-            </Box>
+            <Typography
+              sx={{
+                fontWeight: 900,
+                fontSize: '1.05rem',
+                lineHeight: 1.1,
+                color: 'text.primary',
+              }}
+              noWrap
+            >
+              {brand}
+            </Typography>
           </Stack>
 
-          <TextField
-            size="small"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' && query.trim()) {
-                navigate(`/search?q=${encodeURIComponent(query.trim())}`);
-              }
-            }}
-            placeholder={t('home.searchPlaceholder')}
-            sx={{
-              flex: '1 1 180px',
-              minWidth: 140,
-              maxWidth: 420,
-              mx: 'auto',
-              '& .MuiOutlinedInput-root': {
-                height: 42,
-              },
-            }}
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <SearchIcon sx={{ fontSize: 20, color: 'text.secondary' }} />
-                </InputAdornment>
-              ),
-            }}
-          />
+          <Box sx={{ flex: 1 }} />
 
           <Stack direction="row" alignItems="center" spacing={0.5} sx={{ flexShrink: 0 }}>
+            {!hideChromeSearch ? (
+              <Box
+                onClick={() => navigate('/search')}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') navigate('/search');
+                }}
+                sx={{
+                  display: { xs: 'none', sm: 'flex' },
+                  alignItems: 'center',
+                  gap: 0.5,
+                  px: 1.25,
+                  height: 34,
+                  borderRadius: 999,
+                  bgcolor: '#F3F4F6',
+                  fontWeight: 700,
+                  fontSize: '0.8rem',
+                  cursor: 'pointer',
+                  color: 'text.secondary',
+                }}
+              >
+                {t('home.searchPlaceholder')}
+              </Box>
+            ) : null}
             <Box
               sx={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: 0.5,
-                px: 1.25,
-                height: 36,
+                gap: 0.4,
+                px: 1.1,
+                height: 34,
                 borderRadius: 999,
                 bgcolor: '#F3F4F6',
                 fontWeight: 700,
-                fontSize: '0.85rem',
+                fontSize: '0.8rem',
               }}
             >
-              <PlaceOutlinedIcon sx={{ fontSize: 18, color: 'primary.dark' }} />
+              <PlaceOutlinedIcon sx={{ fontSize: 16, color: 'primary.dark' }} />
               {city === 'Riyadh' ? t('app.city') : city}
             </Box>
             <IconButton
@@ -134,7 +125,7 @@ export function ConsumerLayout() {
               to="/profile"
               size="small"
               aria-label={t('nav.profile')}
-              sx={{ bgcolor: '#F3F4F6', width: 36, height: 36 }}
+              sx={{ bgcolor: '#F3F4F6', width: 34, height: 34 }}
             >
               <PersonOutlineOutlinedIcon fontSize="small" />
             </IconButton>

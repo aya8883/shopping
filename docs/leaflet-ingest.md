@@ -45,11 +45,35 @@ Service listens on `http://localhost:3010`.
 
 | Cadence | Action |
 | --- | --- |
+| Every 6 hours | GitHub Actions / Windows task runs `npm run sync:all` (FullFlyer catalogs → manifests) |
 | Daily | Open Admin → check Freshness panel; ingest stores marked missing/expired |
 | Weekly | When new leaflets drop, run OCR + match + Publish for each supermarket |
 | Later | Cron calls `POST /v1/freshness` and alerts Slack/email |
 
-Example daily check (when service is running):
+**Automatic leaflet sync** (discover + manifest):
+
+```powershell
+npm run sync:all
+# GitHub: Actions → Sync weekly leaflets (cron every 6h)
+# Local Windows: npm run schedule:sync
+```
+
+**Automatic OCR + ingest into Offers (recommended first stage)**
+
+When both `functions/leaflet-processing` and Hasura are running, persist OCR+matches into:
+`leaflets`, `leaflet_pages`, `supermarket_offers`.
+
+```powershell
+# Run once:
+npm run ingest:leaflets
+
+# Run together with the 6h sync job (Windows):
+powershell -ExecutionPolicy Bypass -File ./scripts/schedule-sync-windows.ps1 -WithIngest
+```
+
+See [real-data.md](./real-data.md#run-every-6-hours-automatic).
+
+Example health check (when processing service is running):
 
 ```powershell
 curl http://localhost:3010/health
@@ -60,10 +84,16 @@ curl http://localhost:3010/health
 Pull actual promotion sheet images from public FullFlyer/ilofo catalogs:
 
 ```powershell
-npm run sync:leaflets
+npm run sync:real-data
 ```
 
-This writes `frontend/public/data/leaflet-manifest.json` with CDN page URLs (6 pages per store). The Offers page uses these automatically in mock mode.
+This discovers the latest FullFlyer catalog per store, then writes `frontend/src/data/leaflet-manifest.json` with CDN page URLs. See also [real-data.md](./real-data.md).
+
+Legacy sync only:
+
+```powershell
+npm run sync:leaflets
+```
 
 Optional — cache images locally:
 

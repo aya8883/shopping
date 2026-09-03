@@ -13,6 +13,7 @@ export type PromoOffer = {
   offer_price: number;
   regular_price?: number | null;
   is_demo?: boolean | null;
+  image_url?: string | null;
   promotion_description_en?: string | null;
   promotion_description_ar?: string | null;
   product: {
@@ -82,7 +83,7 @@ export function WeeklyPromoGrid({
               )
             : null;
         const qty = getQuantity(offer.product.id);
-        const image = offer.product.image_url || '/hero-basket.svg';
+        const image = offer.image_url ?? offer.product.image_url ?? '/hero-basket.svg';
 
         return (
           <ButtonBase
