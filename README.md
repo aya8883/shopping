@@ -20,6 +20,7 @@ Custom Node/TypeScript services under `functions/` are used only where Hasura CR
 
 See [docs/leaflet-ingest.md](docs/leaflet-ingest.md) for weekly promotion ingest and freshness.
 See [docs/pwa-beta.md](docs/pwa-beta.md) for phone install (PWA beta) checklist.
+See [docs/launch-copy.md](docs/launch-copy.md) for Arabic/English share posts.
 
 ## Tech stack
 

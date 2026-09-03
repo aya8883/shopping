@@ -77,6 +77,8 @@
     "validationTitle": "تحقق مقارنة الأسعار",
     "startComparing": "ابدأ المقارنة",
     "startBasket": "ابدأ بناء السلة",
+    "betaTag": "تجريبي · الرياض",
+    "sharePitch": "أضف حليب وأرز ودجاج — نقارن المتاجر ونوريك وين توفر.",
     "savingsTitle": "توفيرك حتى الآن",
     "productsCompared": "{{count}} منتج تمت مقارنته",
     "cheapestOften": "الأرخص غالباً",
@@ -178,6 +180,7 @@
     "availability": "{{available}} من {{total}} متوفر",
     "incomplete": "غير مكتمل",
     "incompleteCompare": "لا يوجد متجر لديه كل المنتجات. جرّب السلة الأذكى.",
+    "partialBestHint": "ما في متجر فيه كل الأصناف حالياً — الترتيب يعرض أفضل تغطية وسعر للمنتجات المتوفرة.",
     "missingInOptimize": "{{count}} منتج بدون سعر في المتاجر المحددة.",
     "phaseNote": "قوائم التسوق وتحسين السلة في المرحلة 4."
   },

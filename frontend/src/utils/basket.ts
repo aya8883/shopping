@@ -54,8 +54,12 @@ export interface StoreBasketResult {
 
 export interface CompareBasketResult {
   stores: StoreBasketResult[];
+  /** Best complete single-store basket, or best partial if none are complete. */
   best?: StoreBasketResult;
+  runnerUp?: StoreBasketResult;
   saving: Money;
+  /** True when best store is missing some basket items. */
+  bestIsPartial: boolean;
 }
 
 export interface OptimizedLine {
@@ -178,19 +182,38 @@ export function compareBasket(params: {
     };
   });
 
-  const completeStores = stores
-    .filter((s) => s.complete && s.total != null)
-    .sort((a, b) => (a.total ?? 0) - (b.total ?? 0));
+  const ranked = [...stores]
+    .filter((s) => s.total != null && s.availableCount > 0)
+    .sort((a, b) => {
+      if (a.complete !== b.complete) return a.complete ? -1 : 1;
+      if (b.availableCount !== a.availableCount) return b.availableCount - a.availableCount;
+      return (a.total ?? 0) - (b.total ?? 0);
+    });
 
-  const best = completeStores[0];
-  const worst = completeStores[completeStores.length - 1];
-  // Savings vs the most expensive complete single-store basket (matches "وفر ١٤" UX).
+  const best = ranked[0];
+  const peerPool = ranked.filter(
+    (s) =>
+      s.complete === best?.complete &&
+      s.availableCount === best?.availableCount &&
+      s.total != null,
+  );
+  const worstPeer = peerPool.length
+    ? [...peerPool].sort((a, b) => (b.total ?? 0) - (a.total ?? 0))[0]
+    : undefined;
+  const runnerUp = ranked.find((s) => s.supermarketId !== best?.supermarketId);
+
   const saving =
-    best?.total != null && worst?.total != null && completeStores.length > 1
-      ? roundMoney(worst.total - best.total)
+    best?.total != null && worstPeer?.total != null && peerPool.length > 1
+      ? roundMoney(worstPeer.total - best.total)
       : 0;
 
-  return { stores, best, saving };
+  return {
+    stores,
+    best,
+    runnerUp,
+    saving,
+    bestIsPartial: Boolean(best && !best.complete),
+  };
 }
 
 export function optimizeBasket(params: {

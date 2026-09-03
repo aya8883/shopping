@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import Stack from '@mui/material/Stack';
@@ -47,6 +47,7 @@ export function ShoppingListPage() {
   const products = data?.products ?? [];
 
   const runCompare = () => {
+    if (!products.length || !items.length) return;
     const result = compareBasket({
       lines: items.map((i) => ({ productId: i.productId, quantity: i.quantity })),
       products,
@@ -64,8 +65,14 @@ export function ShoppingListPage() {
       storeIds: selectedSupermarketIds.length ? selectedSupermarketIds : undefined,
     });
     setOptimizeResult(result);
-    setCompareResult(null);
   };
+
+  // Auto-run comparison when basket or prices change — Smart Basket engine.
+  useEffect(() => {
+    if (loading || !products.length || !items.length) return;
+    runCompare();
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- recompute on data identity
+  }, [loading, products, items, selectedSupermarketIds]);
 
   if (items.length === 0) {
     return (
@@ -89,8 +96,12 @@ export function ShoppingListPage() {
 
   const rankedStores =
     compareResult?.stores
-      .filter((s) => s.complete && s.total != null)
-      .sort((a, b) => (a.total ?? 0) - (b.total ?? 0)) ?? [];
+      .filter((s) => s.total != null && s.availableCount > 0)
+      .sort((a, b) => {
+        if (a.complete !== b.complete) return a.complete ? -1 : 1;
+        if (b.availableCount !== a.availableCount) return b.availableCount - a.availableCount;
+        return (a.total ?? 0) - (b.total ?? 0);
+      }) ?? [];
 
   return (
     <Stack spacing={2} className="pb-4">
@@ -220,10 +231,14 @@ export function ShoppingListPage() {
             {t('list.bestOption')}
           </Typography>
 
+          {compareResult.bestIsPartial ? (
+            <Alert severity="info">{t('list.partialBestHint')}</Alert>
+          ) : null}
+
           {rankedStores.length ? (
             <Stack spacing={1.25}>
-              {rankedStores.slice(0, 3).map((store, index) => {
-                const medals = ['🥇', '🥈', '🥉'];
+              {rankedStores.slice(0, 4).map((store, index) => {
+                const medals = ['🥇', '🥈', '🥉', '•'];
                 const isBest = index === 0;
                 return (
                   <Paper
@@ -249,9 +264,19 @@ export function ShoppingListPage() {
                           }}
                           size="sm"
                         />
-                        <Typography fontWeight={900}>
-                          {supermarketShortName(store, locale)}
-                        </Typography>
+                        <Box>
+                          <Typography fontWeight={900}>
+                            {supermarketShortName(store, locale)}
+                          </Typography>
+                          {!store.complete ? (
+                            <Typography variant="caption" color="warning.main" fontWeight={700}>
+                              {t('list.availability', {
+                                available: store.availableCount,
+                                total: store.totalCount,
+                              })}
+                            </Typography>
+                          ) : null}
+                        </Box>
                       </Stack>
                       <Typography variant="h6" fontWeight={900}>
                         {formatSar(store.total ?? 0, locale)}

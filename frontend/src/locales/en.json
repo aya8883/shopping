@@ -77,6 +77,8 @@
     "validationTitle": "Price comparison check",
     "startComparing": "Start comparing",
     "startBasket": "Start building your basket",
+    "betaTag": "Beta · Riyadh",
+    "sharePitch": "Add milk, rice, chicken — we compare stores and show where you save.",
     "savingsTitle": "Your savings so far",
     "productsCompared": "{{count}} products compared",
     "cheapestOften": "Cheapest store often",
@@ -178,6 +180,7 @@
     "availability": "{{available}} of {{total}} available",
     "incomplete": "Incomplete",
     "incompleteCompare": "No store has every item. Try the smarter mixed basket.",
+    "partialBestHint": "No store has every item yet — ranking shows the best coverage and price among available items.",
     "missingInOptimize": "{{count}} item(s) have no price in selected stores.",
     "phaseNote": "Shopping lists and basket optimization ship in Phase 4."
   },

@@ -131,8 +131,23 @@ export function HomePage() {
         >
           {t('home.headline')}
         </Typography>
+        <Typography
+          variant="caption"
+          fontWeight={800}
+          sx={{
+            display: 'inline-block',
+            px: 1,
+            py: 0.35,
+            mb: 1,
+            borderRadius: 999,
+            bgcolor: 'rgba(26,26,26,0.08)',
+            color: '#1A1A1A',
+          }}
+        >
+          {t('home.betaTag')}
+        </Typography>
         <Typography sx={{ color: 'rgba(26,26,26,0.72)', fontWeight: 600, mb: 2.25, maxWidth: 340, mx: 'auto' }}>
-          {t('home.subtitle')}
+          {t('home.sharePitch')}
         </Typography>
         <Button
           variant="contained"
