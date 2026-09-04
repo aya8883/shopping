@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-09-02T17:49:44.613Z",
+  "syncedAt": "2026-09-04T03:29:11.137Z",
   "attribution": "Weekly flyer images from FullFlyer/ilofo (store-published catalogs) and Panda via 3orod.net. Product grid prices in catalog.ts are illustrative until retailer feeds are connected. Verify ToS before production.",
   "stores": {
     "carrefour": {
@@ -11,32 +11,8 @@
       "discoveredAt": "2026-09-02T17:49:44.461Z",
       "start_date": "2026-08-11",
       "end_date": "2026-08-17",
-      "pages": [
-        {
-          "page_number": 1,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/79807/0a02dfd5fcd8a9911786551453-0.jpg?w=1600&h=1600"
-        },
-        {
-          "page_number": 2,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/79807/0a02dfd5fcd8a9911786551453-1.jpg?w=1600&h=1600"
-        },
-        {
-          "page_number": 3,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/79807/0a02dfd5fcd8a9911786551453-2.jpg?w=1600&h=1600"
-        },
-        {
-          "page_number": 4,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/79807/0a02dfd5fcd8a9911786551453-3.jpg?w=1600&h=1600"
-        },
-        {
-          "page_number": 5,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/79807/0a02dfd5fcd8a9911786551453-4.jpg?w=1600&h=1600"
-        },
-        {
-          "page_number": 6,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/79807/0a02dfd5fcd8a9911786551453-5.jpg?w=1600&h=1600"
-        }
-      ]
+      "error": "HTTP 403",
+      "pages": []
     },
     "lulu": {
       "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/lulu/catalogs/81223-pdf",
@@ -47,32 +23,8 @@
       "discoveredAt": "2026-09-02T17:49:44.461Z",
       "start_date": "2026-08-30",
       "end_date": "2026-09-02",
-      "pages": [
-        {
-          "page_number": 1,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81223/39f9ec63b0f95e811788088757-0.jpg?w=1600&h=1600"
-        },
-        {
-          "page_number": 2,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81223/39f9ec63b0f95e811788088757-1.jpg?w=1600&h=1600"
-        },
-        {
-          "page_number": 3,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81223/39f9ec63b0f95e811788088757-2.jpg?w=1600&h=1600"
-        },
-        {
-          "page_number": 4,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81223/39f9ec63b0f95e811788088757-3.jpg?w=1600&h=1600"
-        },
-        {
-          "page_number": 5,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81223/39f9ec63b0f95e811788088757-4.jpg?w=1600&h=1600"
-        },
-        {
-          "page_number": 6,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81223/39f9ec63b0f95e811788088757-5.jpg?w=1600&h=1600"
-        }
-      ]
+      "error": "HTTP 403",
+      "pages": []
     },
     "panda": {
       "fullflyerUrl": "https://3orod.net/sa/offers/panda-weekly-26-august-1-september-2026/",
@@ -98,32 +50,8 @@
       "discoveredAt": "2026-09-02T17:49:44.461Z",
       "start_date": "2026-08-25",
       "end_date": "2026-09-07",
-      "pages": [
-        {
-          "page_number": 1,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81133/e031592e9c4b5dea1787936966-0.jpg?w=1600&h=1600"
-        },
-        {
-          "page_number": 2,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81133/e031592e9c4b5dea1787936966-1.jpg?w=1600&h=1600"
-        },
-        {
-          "page_number": 3,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81133/e031592e9c4b5dea1787936966-2.jpg?w=1600&h=1600"
-        },
-        {
-          "page_number": 4,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81133/e031592e9c4b5dea1787936966-3.jpg?w=1600&h=1600"
-        },
-        {
-          "page_number": 5,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81133/e031592e9c4b5dea1787936966-4.jpg?w=1600&h=1600"
-        },
-        {
-          "page_number": 6,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81133/e031592e9c4b5dea1787936966-5.jpg?w=1600&h=1600"
-        }
-      ]
+      "error": "HTTP 403",
+      "pages": []
     },
     "tamimi": {
       "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/tamimi-markets/catalogs/80960-pdf",
@@ -134,32 +62,8 @@
       "discoveredAt": "2026-09-02T17:49:44.461Z",
       "start_date": "2026-08-25",
       "end_date": "2026-08-31",
-      "pages": [
-        {
-          "page_number": 1,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/80960/e46bfded82cdee771787775359-0.jpg?w=1600&h=1600"
-        },
-        {
-          "page_number": 2,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/80960/e46bfded82cdee771787775359-1.jpg?w=1600&h=1600"
-        },
-        {
-          "page_number": 3,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/80960/e46bfded82cdee771787775359-2.jpg?w=1600&h=1600"
-        },
-        {
-          "page_number": 4,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/80960/e46bfded82cdee771787775359-3.jpg?w=1600&h=1600"
-        },
-        {
-          "page_number": 5,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/80960/e46bfded82cdee771787775359-4.jpg?w=1600&h=1600"
-        },
-        {
-          "page_number": 6,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/80960/e46bfded82cdee771787775359-5.jpg?w=1600&h=1600"
-        }
-      ]
+      "error": "HTTP 403",
+      "pages": []
     },
     "othaim": {
       "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/othaim-markets/catalogs/80945-pdf",
@@ -170,32 +74,8 @@
       "start_date": "2026-08-25",
       "end_date": "2026-08-31",
       "discoveredAt": "2026-09-02T17:49:44.461Z",
-      "pages": [
-        {
-          "page_number": 1,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/80945/fbca2e4837991c7d1787771000-0.jpg?w=1600&h=1600"
-        },
-        {
-          "page_number": 2,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/80945/fbca2e4837991c7d1787771000-1.jpg?w=1600&h=1600"
-        },
-        {
-          "page_number": 3,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/80945/fbca2e4837991c7d1787771000-2.jpg?w=1600&h=1600"
-        },
-        {
-          "page_number": 4,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/80945/fbca2e4837991c7d1787771000-3.jpg?w=1600&h=1600"
-        },
-        {
-          "page_number": 5,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/80945/fbca2e4837991c7d1787771000-4.jpg?w=1600&h=1600"
-        },
-        {
-          "page_number": 6,
-          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/80945/fbca2e4837991c7d1787771000-5.jpg?w=1600&h=1600"
-        }
-      ]
+      "error": "HTTP 403",
+      "pages": []
     }
   }
 }
