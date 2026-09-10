@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-09-03T18:19:53.687Z",
+  "syncedAt": "2026-09-10T19:25:50.860Z",
   "source": "weekly_flyer_engine_v2",
   "attribution": "Flyer-sourced prices from improved OCR matching + curated leaflet hotspots. Store tweaks create cross-chain spread for Smart Basket.",
   "stores": {
@@ -120,10 +120,10 @@
       ]
     },
     "lulu": {
-      "start_date": "2026-08-30",
-      "end_date": "2026-09-02",
-      "title_en": "Opening Deals in Lulu Saudi Arabia from 31 August to 3 September 2026",
-      "title_ar": "العودة للمدرسة",
+      "start_date": "2026-09-02",
+      "end_date": "2026-09-15",
+      "title_en": "Digital Savings in Lulu Saudi Arabia from 2 to 15 September 2026",
+      "title_ar": "عروض التوفير الرقمية",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -236,10 +236,10 @@
       ]
     },
     "panda": {
-      "start_date": "2026-08-26",
-      "end_date": "2026-09-01",
-      "title_en": "Weekly Offers — Back to School",
-      "title_ar": "عروض الأسبوع — العودة للمدرسة",
+      "start_date": "2026-09-09",
+      "end_date": "2026-09-15",
+      "title_en": "Weekly Offers — 9 to 15 September 2026",
+      "title_ar": "عروض الأسبوع — ٩ إلى ١٥ سبتمبر ٢٠٢٦",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -354,7 +354,7 @@
     "danube": {
       "start_date": "2026-08-25",
       "end_date": "2026-09-07",
-      "title_en": "Major Season Deals in Danube Saudi Arabia from 26 August to 8 September 2026",
+      "title_en": "Back to School Deals in Danube Saudi Arabia from 26 August to 8 September 2026",
       "title_ar": "عروض العودة للمدرسة",
       "offers": [
         {
@@ -468,9 +468,9 @@
       ]
     },
     "tamimi": {
-      "start_date": "2026-08-25",
-      "end_date": "2026-08-31",
-      "title_en": "Back to School Deals in Tamimi markets Saudi Arabia from 26 August to 1 September 2026",
+      "start_date": "2026-09-01",
+      "end_date": "2026-09-07",
+      "title_en": "Back to School Deals in Tamimi markets Saudi Arabia from 2 to 8 September 2026",
       "title_ar": "عروض الأسبوع",
       "offers": [
         {
@@ -584,9 +584,9 @@
       ]
     },
     "othaim": {
-      "start_date": "2026-08-25",
-      "end_date": "2026-08-31",
-      "title_en": "Al Tawfeer School Offers in Othaim Markets Saudi Arabia from 26 August to 1 September 2026",
+      "start_date": "2026-09-08",
+      "end_date": "2026-09-14",
+      "title_en": "Bargain Deals in Othaim Markets Saudi Arabia from 9 to 15 September 2026",
       "title_ar": "عروض التوفير",
       "offers": [
         {

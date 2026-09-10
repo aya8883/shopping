@@ -34,7 +34,11 @@ const OFFICIAL_URLS = {
 
 function parseDisplayDate(raw) {
   const d = new Date(raw);
-  return Number.isNaN(d.getTime()) ? undefined : d.toISOString().slice(0, 10);
+  if (Number.isNaN(d.getTime())) return undefined;
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${y}-${m}-${day}`;
 }
 
 async function fetchHtml(url) {
@@ -54,8 +58,24 @@ async function inspectCatalog(listingPath, catalogId) {
   const title = html.match(/<h1[^>]*>([^<]+)/i)?.[1]?.trim() ?? '';
   const startRaw = html.match(/Start date<\/td>\s*<td[^>]*>\s*([^<]+)/i)?.[1]?.trim();
   const endRaw = html.match(/End date<\/td>\s*<td[^>]*>\s*([^<]+)/i)?.[1]?.trim();
-  const pageMatches = [...html.matchAll(new RegExp(`catalogs/img/${catalogId}/[^"'\\s]+-(\\d+)\\.(?:jpg|jpeg|png|webp)`, 'gi'))];
-  const pageCount = new Set(pageMatches.map((m) => m[1])).size;
+  // Older catalogs use hash-N.jpg; newer ones use unique hashes without a page suffix.
+  const numbered = [
+    ...html.matchAll(
+      new RegExp(`catalogs/img/${catalogId}/[^"'\\s]+-(\\d+)\\.(?:jpg|jpeg|png|webp)`, 'gi'),
+    ),
+  ];
+  const anyImgs = [
+    ...html.matchAll(
+      new RegExp(
+        `cdn\\.ilofo\\.com/storage/catalogs/img/${catalogId}/([^"'\\s?]+)\\.(?:jpg|jpeg|png|webp)`,
+        'gi',
+      ),
+    ),
+  ];
+  const pageCount = Math.max(
+    new Set(numbered.map((m) => m[1])).size,
+    new Set(anyImgs.map((m) => m[1].toLowerCase())).size,
+  );
   const start_date = startRaw ? parseDisplayDate(startRaw) : undefined;
   const end_date = endRaw ? parseDisplayDate(endRaw) : undefined;
 
@@ -71,13 +91,15 @@ async function inspectCatalog(listingPath, catalogId) {
 }
 
 function scoreCatalog(c, today) {
-  if (c.is_bidder || c.page_count < 3) return -1;
-  let score = c.page_count * 2;
+  if (c.is_bidder || c.page_count < 1) return -1;
+  let score = Math.min(c.page_count, 40) * 2;
   if (/cash\s*&\s*carry/i.test(c.title_en)) score -= 300;
   if (c.start_date && c.end_date) {
     if (c.start_date <= today && c.end_date >= today) score += 1000;
     else if (c.end_date >= today) score += 200;
     else score -= 50;
+    // Prefer the most recent active window when several catalogs are current.
+    score += Number(c.end_date.replaceAll('-', '')) / 1e6;
   }
   return score;
 }
@@ -152,8 +174,10 @@ if (write) {
       sources.stores[slug].pages = prev.pages;
       sources.stores[slug].fullflyerUrl = prev.fullflyerUrl ?? sel.fullflyerUrl;
       sources.stores[slug].title_en = prev.title_en ?? sel.title_en;
+      sources.stores[slug].title_ar = prev.title_ar;
       sources.stores[slug].start_date = prev.start_date ?? sel.start_date;
       sources.stores[slug].end_date = prev.end_date ?? sel.end_date;
+      delete sources.stores[slug].catalog_id;
       continue;
     }
   }

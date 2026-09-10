@@ -44,6 +44,7 @@ jobs:
           git add data/leaflet-sources.json \
             frontend/src/data/leaflet-manifest.json \
             frontend/public/data/leaflet-manifest.json \
+            frontend/src/data/weekly-offers.json \
             frontend/src/data/product-images-manifest.json \
             frontend/public/products/stores || true
           if git diff --staged --quiet; then
