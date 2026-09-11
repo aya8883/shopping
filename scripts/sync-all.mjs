@@ -8,7 +8,7 @@
  * Usage:
  *   node scripts/sync-all.mjs
  *   node scripts/sync-all.mjs --images
- *   node scripts/sync-all.mjs --download --pages=8
+ *   node scripts/sync-all.mjs --no-download --pages=8
  *   node scripts/sync-all.mjs --allow-stale   # skip freshness exit code
  */
 import { spawn } from 'node:child_process';
@@ -20,7 +20,7 @@ const root = path.resolve(__dirname, '..');
 
 const args = process.argv.slice(2);
 const withImages = args.includes('--images');
-const download = args.includes('--download');
+const noDownload = args.includes('--no-download');
 const allowStale = args.includes('--allow-stale');
 const pagesArg = args.find((a) => a.startsWith('--pages='));
 
@@ -43,7 +43,7 @@ console.log(`[sync-all] started ${new Date().toISOString()}`);
 await run(path.join(root, 'scripts/discover-leaflet-catalogs.mjs'), ['--write']);
 
 const leafletArgs = [];
-if (download) leafletArgs.push('--download=true');
+if (noDownload) leafletArgs.push('--no-download');
 if (pagesArg) leafletArgs.push(pagesArg);
 await run(path.join(root, 'scripts/sync-leaflets.mjs'), leafletArgs);
 
