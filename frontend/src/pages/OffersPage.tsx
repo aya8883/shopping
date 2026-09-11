@@ -375,6 +375,15 @@ export function OffersPage() {
             </Stack>
           </Box>
 
+          <LeafletViewer
+            pages={leafletPages}
+            sourceUrl={active.source_url}
+            storeName={supermarketShortName(active.supermarket, locale)}
+            accentColor={accent.chip}
+            getQuantity={getQuantity}
+            onHotspotSelect={setSelectedHotspot}
+          />
+
           <Stack spacing={1.25}>
             <Typography variant="h6" fontWeight={900}>
               {t('offers.clickablePromos')}
@@ -389,15 +398,6 @@ export function OffersPage() {
               onAdd={addPromoToBasket}
             />
           </Stack>
-
-          <LeafletViewer
-            pages={leafletPages}
-            sourceUrl={active.source_url}
-            storeName={supermarketShortName(active.supermarket, locale)}
-            accentColor={accent.chip}
-            getQuantity={getQuantity}
-            onHotspotSelect={setSelectedHotspot}
-          />
 
           <ProductQuickAdd
             hotspot={selectedHotspot}
