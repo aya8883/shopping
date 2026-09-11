@@ -1,3 +1,5 @@
+import { assetUrl } from './assetUrl';
+
 export type SupermarketLike = {
   id?: string;
   slug?: string | null;
@@ -47,9 +49,10 @@ export function supermarketSlug(store?: SupermarketLike | null): string {
 }
 
 export function supermarketLogoUrl(store?: SupermarketLike | null): string | null {
-  if (store?.logo_url) return store.logo_url;
+  if (store?.logo_url) return assetUrl(store.logo_url);
   const slug = supermarketSlug(store);
-  return FALLBACK_LOGOS[slug] ?? null;
+  const fallback = FALLBACK_LOGOS[slug];
+  return fallback ? assetUrl(fallback) : null;
 }
 
 export function supermarketShortName(

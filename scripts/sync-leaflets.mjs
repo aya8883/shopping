@@ -2,7 +2,10 @@
  * Fetch real weekly leaflet page images from FullFlyer/ilofo CDN
  * and write frontend/public/data/leaflet-manifest.json
  *
- * Usage: node scripts/sync-leaflets.mjs [--pages=6] [--download]
+ * Usage: node scripts/sync-leaflets.mjs [--pages=6] [--download] [--no-download]
+ *
+ * Downloads page images into public/leaflets by default so GitHub Pages is not
+ * blocked by third-party hotlink protection (e.g. 3orod.net).
  */
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -22,7 +25,7 @@ const args = Object.fromEntries(
   }),
 );
 const maxPages = Number(args.pages ?? 6);
-const download = args.download === 'true';
+const download = args['no-download'] === 'true' ? false : args.download !== 'false';
 
 function decodeHtml(s) {
   return s.replace(/&amp;/g, '&');
@@ -98,11 +101,19 @@ async function maybeDownload(slug, pages) {
   await fs.mkdir(dir, { recursive: true });
   const localPages = [];
   for (const page of pages) {
-    const ext = page.image_url.includes('.webp') ? 'webp' : 'jpg';
+    const url = page.image_url;
+    const extMatch = url.match(/\.(webp|jpe?g|png)(?:\?|$)/i);
+    const ext = (extMatch?.[1] ?? 'jpg').toLowerCase().replace('jpeg', 'jpg');
     const filename = `page-${page.page_number}.${ext}`;
     const dest = path.join(dir, filename);
-    const res = await fetch(page.image_url);
-    if (!res.ok) throw new Error(`download_failed ${slug} page ${page.page_number}`);
+    const res = await fetch(url, {
+      headers: {
+        'User-Agent': 'WainAwfar/1.0 leaflet-sync',
+        Accept: 'image/*,*/*',
+      },
+      redirect: 'follow',
+    });
+    if (!res.ok) throw new Error(`download_failed ${slug} page ${page.page_number} HTTP ${res.status}`);
     const buf = Buffer.from(await res.arrayBuffer());
     await fs.writeFile(dest, buf);
     localPages.push({ ...page, image_url: `/leaflets/${slug}/${filename}` });

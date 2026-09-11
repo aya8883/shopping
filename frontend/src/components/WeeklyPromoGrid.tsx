@@ -114,6 +114,7 @@ export function WeeklyPromoGrid({
                 component="img"
                 src={image}
                 alt={name}
+                referrerPolicy="no-referrer"
                 sx={{
                   display: 'block',
                   width: '100%',

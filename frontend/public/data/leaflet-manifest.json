@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-09-11T20:39:23.400Z",
+  "syncedAt": "2026-09-11T20:40:51.596Z",
   "attribution": "Weekly flyer images from FullFlyer/ilofo when current; otherwise 3orod.net store weeklies. Product grid prices remain illustrative until retailer feeds are connected.",
   "stores": {
     "carrefour": {
@@ -13,15 +13,15 @@
       "pages": [
         {
           "page_number": 1,
-          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/09/carrefour-9-15-september-2026-1200x1572.jpg"
+          "image_url": "/leaflets/carrefour/page-1.jpg"
         },
         {
           "page_number": 2,
-          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/09/carrefour-9-15-september-2026-3-782x1024.jpg"
+          "image_url": "/leaflets/carrefour/page-2.jpg"
         },
         {
           "page_number": 3,
-          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/09/carrefour-9-15-september-2026-2-819x1024.jpg"
+          "image_url": "/leaflets/carrefour/page-3.jpg"
         }
       ],
       "page_source": "official_override"
@@ -37,11 +37,11 @@
       "pages": [
         {
           "page_number": 1,
-          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/09/lulu-9-15-september-2026-1200x1571.jpg"
+          "image_url": "/leaflets/lulu/page-1.jpg"
         },
         {
           "page_number": 2,
-          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/09/lulu-9-15-september-2026-2-819x1024.jpg"
+          "image_url": "/leaflets/lulu/page-2.jpg"
         }
       ],
       "page_source": "official_override"
@@ -57,7 +57,7 @@
       "pages": [
         {
           "page_number": 1,
-          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/09/panda-weekly-9-15-september-2026-1200x1572.jpg"
+          "image_url": "/leaflets/panda/page-1.jpg"
         }
       ],
       "page_source": "official_override"
@@ -73,15 +73,15 @@
       "pages": [
         {
           "page_number": 1,
-          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/09/danube-9-15-september-2026-1200x1200.jpg"
+          "image_url": "/leaflets/danube/page-1.jpg"
         },
         {
           "page_number": 2,
-          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/09/danube-9-15-september-2026-3-1024x1024.jpg"
+          "image_url": "/leaflets/danube/page-2.jpg"
         },
         {
           "page_number": 3,
-          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/09/danube-9-15-september-2026-2-1024x1024.jpg"
+          "image_url": "/leaflets/danube/page-3.jpg"
         }
       ],
       "page_source": "official_override"
@@ -97,19 +97,19 @@
       "pages": [
         {
           "page_number": 1,
-          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/09/tamimi-markets-9-15-september-2026-1200x1651.jpg"
+          "image_url": "/leaflets/tamimi/page-1.jpg"
         },
         {
           "page_number": 2,
-          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/09/tamimi-markets-9-15-september-2026-6-819x1024.jpg"
+          "image_url": "/leaflets/tamimi/page-2.jpg"
         },
         {
           "page_number": 3,
-          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/09/tamimi-markets-9-15-september-2026-5-744x1024.jpg"
+          "image_url": "/leaflets/tamimi/page-3.jpg"
         },
         {
           "page_number": 4,
-          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/09/tamimi-markets-9-15-september-2026-4-745x1024.jpg"
+          "image_url": "/leaflets/tamimi/page-4.jpg"
         }
       ],
       "page_source": "official_override"
@@ -125,7 +125,7 @@
       "pages": [
         {
           "page_number": 1,
-          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/09/othaim-corner-9-15-september-2026-1200x1580.jpg"
+          "image_url": "/leaflets/othaim/page-1.jpg"
         }
       ],
       "page_source": "official_override"

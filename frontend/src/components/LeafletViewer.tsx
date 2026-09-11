@@ -105,6 +105,7 @@ export function LeafletViewer({
             src={assetUrl(page.image_url) || undefined}
             alt={`${storeName} leaflet page ${page.page_number}`}
             draggable={false}
+            referrerPolicy="no-referrer"
             sx={{
               display: 'block',
               width: '100%',

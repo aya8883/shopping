@@ -112,6 +112,7 @@ export function DealCard({ offer }: { offer: DealOffer }) {
             src={imageSrc}
             alt=""
             loading="lazy"
+            referrerPolicy="no-referrer"
             sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
           />
         ) : (
