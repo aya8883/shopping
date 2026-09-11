@@ -7,7 +7,7 @@
       "title_ar": "عروض كارفور — 2026-09-09 إلى 2026-09-15",
       "start_date": "2026-09-09",
       "end_date": "2026-09-15",
-      "discoveredAt": "2026-09-11T16:34:03.372Z",
+      "discoveredAt": "2026-09-11T20:39:23.367Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/carrefour-9-15-september-2026/",
       "pages": [
         {
@@ -27,13 +27,23 @@
     },
     "lulu": {
       "officialUrl": "https://www.luluhypermarket.com/en-sa/promotions",
-      "title_en": "Saudi Shopping Festival in Lulu Saudi Arabia from 9 to 15 September 2026",
+      "title_en": "Lulu 9 15 September 2026",
       "title_ar": "عروض لولو — 2026-09-09 إلى 2026-09-15",
       "start_date": "2026-09-09",
       "end_date": "2026-09-15",
-      "discoveredAt": "2026-09-11T16:34:03.372Z",
-      "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/lulu/catalogs/81997-pdf",
-      "catalog_id": "81997"
+      "discoveredAt": "2026-09-11T20:39:23.367Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/lulu-9-15-september-2026/",
+      "pages": [
+        {
+          "page_number": 1,
+          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/09/lulu-9-15-september-2026-1200x1571.jpg"
+        },
+        {
+          "page_number": 2,
+          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/09/lulu-9-15-september-2026-2-819x1024.jpg"
+        }
+      ],
+      "page_source": "3orod"
     },
     "panda": {
       "officialUrl": "https://www.panda.com.sa/en/offers",
@@ -41,7 +51,7 @@
       "title_ar": "عروض بنده — 2026-09-09 إلى 2026-09-15",
       "start_date": "2026-09-09",
       "end_date": "2026-09-15",
-      "discoveredAt": "2026-09-11T16:34:03.372Z",
+      "discoveredAt": "2026-09-11T20:39:23.367Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/panda-weekly-9-15-september-2026/",
       "pages": [
         {
@@ -57,7 +67,7 @@
       "title_ar": "عروض الدانوب — 2026-09-09 إلى 2026-09-15",
       "start_date": "2026-09-09",
       "end_date": "2026-09-15",
-      "discoveredAt": "2026-09-11T16:34:03.372Z",
+      "discoveredAt": "2026-09-11T20:39:23.367Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/danube-9-15-september-2026/",
       "pages": [
         {
@@ -81,7 +91,7 @@
       "title_ar": "عروض التميمي — 2026-09-09 إلى 2026-09-15",
       "start_date": "2026-09-09",
       "end_date": "2026-09-15",
-      "discoveredAt": "2026-09-11T16:34:03.372Z",
+      "discoveredAt": "2026-09-11T20:39:23.367Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/tamimi-markets-9-15-september-2026/",
       "pages": [
         {
@@ -105,14 +115,20 @@
     },
     "othaim": {
       "officialUrl": "https://www.othaimmarkets.com/",
-      "title_en": "Bargain Deals in Othaim Markets Saudi Arabia from 9 to 15 September 2026",
+      "title_en": "Othaim Corner 9 15 September 2026",
       "title_ar": "عروض العثيم — 2026-09-09 إلى 2026-09-15",
       "start_date": "2026-09-09",
       "end_date": "2026-09-15",
-      "discoveredAt": "2026-09-11T16:34:03.372Z",
-      "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/othaim-markets/catalogs/81839-pdf",
-      "catalog_id": "81839"
+      "discoveredAt": "2026-09-11T20:39:23.367Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/othaim-corner-9-15-september-2026/",
+      "pages": [
+        {
+          "page_number": 1,
+          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/09/othaim-corner-9-15-september-2026-1200x1580.jpg"
+        }
+      ],
+      "page_source": "3orod"
     }
   },
-  "discoveredAt": "2026-09-11T16:34:03.372Z"
+  "discoveredAt": "2026-09-11T20:39:23.367Z"
 }

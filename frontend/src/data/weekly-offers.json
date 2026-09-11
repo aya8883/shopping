@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-09-11T16:34:15.350Z",
+  "syncedAt": "2026-09-11T20:39:23.511Z",
   "source": "weekly_flyer_engine_v2",
   "attribution": "Flyer-sourced prices from improved OCR matching + curated leaflet hotspots. Store tweaks create cross-chain spread for Smart Basket.",
   "stores": {
@@ -122,7 +122,7 @@
     "lulu": {
       "start_date": "2026-09-09",
       "end_date": "2026-09-15",
-      "title_en": "Saudi Shopping Festival in Lulu Saudi Arabia from 9 to 15 September 2026",
+      "title_en": "Lulu 9 15 September 2026",
       "title_ar": "عروض لولو — 2026-09-09 إلى 2026-09-15",
       "offers": [
         {
@@ -586,7 +586,7 @@
     "othaim": {
       "start_date": "2026-09-09",
       "end_date": "2026-09-15",
-      "title_en": "Bargain Deals in Othaim Markets Saudi Arabia from 9 to 15 September 2026",
+      "title_en": "Othaim Corner 9 15 September 2026",
       "title_ar": "عروض العثيم — 2026-09-09 إلى 2026-09-15",
       "offers": [
         {
