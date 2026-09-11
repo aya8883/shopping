@@ -17,6 +17,7 @@ import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import { useTranslation } from 'react-i18next';
 import { useBasket } from '../contexts/BasketContext';
 import { useAppContext } from '../contexts/AppContext';
+import { assetUrl } from '../utils/assetUrl';
 import { GET_PRODUCTS_FOR_BASKET } from '../graphql/products/basket';
 import {
   compareBasket,
@@ -150,7 +151,7 @@ export function ShoppingListPage() {
                   {item.image_url ? (
                     <Box
                       component="img"
-                      src={item.image_url}
+                      src={assetUrl(item.image_url)}
                       alt=""
                       sx={{
                         width: 52,

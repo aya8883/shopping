@@ -42,6 +42,7 @@ export function getMockBestDeals(limit = 8) {
           name_ar: p.name_ar,
           size_value: p.size_value,
           size_unit: p.size_unit,
+          image_url: o.image_url ?? p.image_url,
           brand: p.brand,
         },
         supermarket: o.supermarket,

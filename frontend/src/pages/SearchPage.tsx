@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import TextField from '@mui/material/TextField';
@@ -26,7 +26,29 @@ export function SearchPage() {
   const [params, setParams] = useSearchParams();
   const q = params.get('q') ?? '';
   const category = params.get('category') ?? '';
+  const [draft, setDraft] = useState(q);
   const [storeFilter, setStoreFilter] = useState<string | 'all'>('all');
+
+  useEffect(() => {
+    setDraft(q);
+  }, [q]);
+
+  useEffect(() => {
+    const trimmed = draft.trim();
+    if (trimmed === q.trim()) return;
+    const id = window.setTimeout(() => {
+      setParams(
+        (prev) => {
+          const next = new URLSearchParams(prev);
+          if (trimmed) next.set('q', trimmed);
+          else next.delete('q');
+          return next;
+        },
+        { replace: true },
+      );
+    }, 250);
+    return () => window.clearTimeout(id);
+  }, [draft, q, setParams]);
 
   const searchPattern = useMemo(() => {
     const trimmed = q.trim();
@@ -91,13 +113,8 @@ export function SearchPage() {
       <TextField
         fullWidth
         autoFocus
-        value={q}
-        onChange={(e) => {
-          const next = new URLSearchParams(params);
-          if (e.target.value) next.set('q', e.target.value);
-          else next.delete('q');
-          setParams(next);
-        }}
+        value={draft}
+        onChange={(e) => setDraft(e.target.value)}
         placeholder={t('search.placeholder')}
         InputProps={{
           startAdornment: (

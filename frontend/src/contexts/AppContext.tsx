@@ -12,6 +12,8 @@ import { appConfig, type AppLocale } from '../config/app';
 
 const STORAGE_KEY = 'wain-awfar.selected-supermarket-ids';
 const MAX_STORES_KEY = 'wain-awfar.max-store-count';
+/** One-time migration away from the old default of max=2 (Carrefour+LuLu only). */
+const MAX_STORES_MIGRATION_KEY = 'wain-awfar.max-stores-v2';
 
 interface AppContextValue {
   locale: AppLocale;
@@ -30,7 +32,20 @@ interface AppContextValue {
 
 const AppContext = createContext<AppContextValue | null>(null);
 
+function migrateStoreDefaultsOnce() {
+  try {
+    if (localStorage.getItem(MAX_STORES_MIGRATION_KEY)) return;
+    localStorage.setItem(MAX_STORES_MIGRATION_KEY, '1');
+    localStorage.setItem(MAX_STORES_KEY, 'all');
+    // Let SupermarketFilter / ComparePage re-select all stores on next load.
+    localStorage.removeItem(STORAGE_KEY);
+  } catch {
+    /* ignore */
+  }
+}
+
 function readStoredIds(): string[] | null {
+  migrateStoreDefaultsOnce();
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (raw === null) return null;
@@ -42,14 +57,14 @@ function readStoredIds(): string[] | null {
 }
 
 function readMaxStoreCount(): number | null {
+  migrateStoreDefaultsOnce();
   try {
     const raw = localStorage.getItem(MAX_STORES_KEY);
-    if (raw === null) return 2;
-    if (raw === 'all' || raw === '0') return null;
+    if (raw === null || raw === 'all' || raw === '0') return null;
     const n = Number(raw);
-    return Number.isFinite(n) && n > 0 ? n : 2;
+    return Number.isFinite(n) && n > 0 ? n : null;
   } catch {
-    return 2;
+    return null;
   }
 }
 

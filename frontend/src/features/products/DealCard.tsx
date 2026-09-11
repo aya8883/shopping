@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import Chip from '@mui/material/Chip';
 import { useTranslation } from 'react-i18next';
 import { formatSar } from '../../utils/pricing';
+import { assetUrl } from '../../utils/assetUrl';
 import { useAppContext } from '../../contexts/AppContext';
 import { SupermarketAvatar } from '../../components/SupermarketMark';
 import { supermarketShortName } from '../../utils/supermarketBranding';
@@ -20,6 +21,7 @@ export type DealOffer = {
     name_ar: string;
     size_value?: number | null;
     size_unit?: string | null;
+    image_url?: string | null;
     brand?: { name_en: string; name_ar: string } | null;
   };
   supermarket: {
@@ -47,6 +49,7 @@ export function DealCard({ offer }: { offer: DealOffer }) {
             100,
         )
       : null;
+  const imageSrc = assetUrl(offer.product.image_url);
 
   return (
     <Box
@@ -103,9 +106,25 @@ export function DealCard({ offer }: { offer: DealOffer }) {
           overflow: 'hidden',
         }}
       >
-        <Typography fontWeight={900} color="text.secondary" fontSize="0.75rem" textAlign="center" px={0.5}>
-          {name.split(' ').slice(0, 2).join(' ')}
-        </Typography>
+        {imageSrc ? (
+          <Box
+            component="img"
+            src={imageSrc}
+            alt=""
+            loading="lazy"
+            sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          />
+        ) : (
+          <Typography
+            fontWeight={900}
+            color="text.secondary"
+            fontSize="0.75rem"
+            textAlign="center"
+            px={0.5}
+          >
+            {name.split(' ').slice(0, 2).join(' ')}
+          </Typography>
+        )}
       </Box>
 
       <Stack spacing={0.5} sx={{ minWidth: 0, flex: 1, pr: 0.5 }}>

@@ -163,6 +163,7 @@ export const GET_BEST_DEALS = gql`
         name_ar
         size_value
         size_unit
+        image_url
         brand {
           name_en
           name_ar

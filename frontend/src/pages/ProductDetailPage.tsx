@@ -13,6 +13,7 @@ import Divider from '@mui/material/Divider';
 import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { GET_PRODUCT_BY_ID } from '../graphql/products/queries';
+import { assetUrl } from '../utils/assetUrl';
 import { useAppContext, filterOffersBySelectedStores } from '../contexts/AppContext';
 import { useBasket } from '../contexts/BasketContext';
 import { compareProductOffers, formatSar, type OfferLike } from '../utils/pricing';
@@ -63,7 +64,7 @@ export function ProductDetailPage() {
         {product.image_url ? (
           <Box
             component="img"
-            src={product.image_url}
+            src={assetUrl(product.image_url)}
             alt=""
             sx={{
               width: 96,

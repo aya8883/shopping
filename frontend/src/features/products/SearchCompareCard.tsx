@@ -17,6 +17,7 @@ import { filterOffersBySelectedStores, useAppContext } from '../../contexts/AppC
 import { useBasket } from '../../contexts/BasketContext';
 import { SupermarketAvatar } from '../../components/SupermarketMark';
 import { supermarketShortName } from '../../utils/supermarketBranding';
+import { assetUrl } from '../../utils/assetUrl';
 import type { ProductCardProduct } from './ProductCard';
 
 export function SearchCompareCard({
@@ -73,7 +74,7 @@ export function SearchCompareCard({
         {product.image_url ? (
           <Box
             component="img"
-            src={product.image_url}
+            src={assetUrl(product.image_url)}
             alt=""
             sx={{
               width: 64,

@@ -1,14 +1,14 @@
 {
-  "syncedAt": "2026-09-11T16:05:29.857Z",
+  "syncedAt": "2026-09-11T16:34:12.589Z",
   "attribution": "Weekly flyer images from FullFlyer/ilofo when current; otherwise 3orod.net store weeklies. Product grid prices remain illustrative until retailer feeds are connected.",
   "stores": {
     "carrefour": {
       "officialUrl": "https://www.carrefourksa.com/mafsau/en/c/Offers",
       "title_en": "Carrefour 9 15 September 2026",
-      "title_ar": "عروض كارفور السعودية السعودية 9 – 15 سبتمبر 2026",
+      "title_ar": "عروض كارفور — 2026-09-09 إلى 2026-09-15",
       "start_date": "2026-09-09",
       "end_date": "2026-09-15",
-      "discoveredAt": "2026-09-11T16:05:29.822Z",
+      "discoveredAt": "2026-09-11T16:34:03.372Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/carrefour-9-15-september-2026/",
       "pages": [
         {
@@ -28,31 +28,47 @@
     },
     "lulu": {
       "officialUrl": "https://www.luluhypermarket.com/en-sa/promotions",
-      "title_en": "Lulu 9 15 September 2026",
-      "title_ar": "عروض لولو السعودية 9 – 15 سبتمبر 2026",
-      "start_date": "2026-09-09",
-      "end_date": "2026-09-15",
-      "discoveredAt": "2026-09-11T16:05:29.822Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/lulu-9-15-september-2026/",
+      "title_en": "Saudi Shopping Festival in Lulu Saudi Arabia from 9 to 15 September 2026",
+      "title_ar": "عروض لولو — 2026-09-09 إلى 2026-09-15",
+      "start_date": "2026-09-08",
+      "end_date": "2026-09-14",
+      "discoveredAt": "2026-09-11T16:34:03.372Z",
+      "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/lulu/catalogs/81997-pdf",
+      "catalog_id": "81997",
       "pages": [
         {
           "page_number": 1,
-          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/09/lulu-9-15-september-2026-1200x1571.jpg"
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81997/7c305c15d7c0e8fa1789075462.jpg?w=1600&h=1600"
         },
         {
           "page_number": 2,
-          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/09/lulu-9-15-september-2026-2-819x1024.jpg"
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81997/e8509df7b12633eb1789075464.jpg?w=1600&h=1600"
+        },
+        {
+          "page_number": 3,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81997/8e13a0d96ed65dfd1789075467.jpg?w=1600&h=1600"
+        },
+        {
+          "page_number": 4,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81997/f7d0a3b91c7b97001789075469.jpg?w=1600&h=1600"
+        },
+        {
+          "page_number": 5,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81997/8a105d07f38807131789075472.jpg?w=1600&h=1600"
+        },
+        {
+          "page_number": 6,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81997/659c8d9317f36eda1789075474.jpg?w=1600&h=1600"
         }
-      ],
-      "page_source": "official_override"
+      ]
     },
     "panda": {
       "officialUrl": "https://www.panda.com.sa/en/offers",
       "title_en": "Panda Weekly 9 15 September 2026",
-      "title_ar": "عروض بنده الأسبوعية من 9 الى 15 سبتمبر 2026 السعودية",
+      "title_ar": "عروض بنده — 2026-09-09 إلى 2026-09-15",
       "start_date": "2026-09-09",
       "end_date": "2026-09-15",
-      "discoveredAt": "2026-09-11T16:05:29.822Z",
+      "discoveredAt": "2026-09-11T16:34:03.372Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/panda-weekly-9-15-september-2026/",
       "pages": [
         {
@@ -65,10 +81,10 @@
     "danube": {
       "officialUrl": "https://www.danube.sa/en/offers",
       "title_en": "Danube 9 15 September 2026",
-      "title_ar": "عروض الدانوب السعودية 9 – 15 سبتمبر 2026",
+      "title_ar": "عروض الدانوب — 2026-09-09 إلى 2026-09-15",
       "start_date": "2026-09-09",
       "end_date": "2026-09-15",
-      "discoveredAt": "2026-09-11T16:05:29.822Z",
+      "discoveredAt": "2026-09-11T16:34:03.372Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/danube-9-15-september-2026/",
       "pages": [
         {
@@ -89,10 +105,10 @@
     "tamimi": {
       "officialUrl": "https://www.tamimimarkets.com/",
       "title_en": "Tamimi Markets 9 15 September 2026",
-      "title_ar": "عروض أسواق التميمي السعودية 9 – 15 سبتمبر 2026",
+      "title_ar": "عروض التميمي — 2026-09-09 إلى 2026-09-15",
       "start_date": "2026-09-09",
       "end_date": "2026-09-15",
-      "discoveredAt": "2026-09-11T16:05:29.822Z",
+      "discoveredAt": "2026-09-11T16:34:03.372Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/tamimi-markets-9-15-september-2026/",
       "pages": [
         {
@@ -116,19 +132,39 @@
     },
     "othaim": {
       "officialUrl": "https://www.othaimmarkets.com/",
-      "title_en": "Othaim Cash And Carry 3 16 September 2026",
-      "title_ar": "عروض العثيم السعودية كاش آند كاري 3 – 16 سبتمبر 2026",
-      "start_date": "2026-09-03",
-      "end_date": "2026-09-16",
-      "discoveredAt": "2026-09-11T16:05:29.822Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/othaim-cash-and-carry-3-16-september-2026/",
+      "title_en": "Bargain Deals in Othaim Markets Saudi Arabia from 9 to 15 September 2026",
+      "title_ar": "عروض العثيم — 2026-09-09 إلى 2026-09-15",
+      "start_date": "2026-09-08",
+      "end_date": "2026-09-14",
+      "discoveredAt": "2026-09-11T16:34:03.372Z",
+      "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/othaim-markets/catalogs/81839-pdf",
+      "catalog_id": "81839",
       "pages": [
         {
           "page_number": 1,
-          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/09/othaim-cash-and-carry-3-16-september-2026-1200x1628.jpg"
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81839/e5cc54c6fd49a8e61788894028-0.jpg?w=1600&h=1600"
+        },
+        {
+          "page_number": 2,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81839/e5cc54c6fd49a8e61788894028-1.jpg?w=1600&h=1600"
+        },
+        {
+          "page_number": 3,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81839/e5cc54c6fd49a8e61788894028-2.jpg?w=1600&h=1600"
+        },
+        {
+          "page_number": 4,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81839/e5cc54c6fd49a8e61788894028-3.jpg?w=1600&h=1600"
+        },
+        {
+          "page_number": 5,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81839/e5cc54c6fd49a8e61788894028-4.jpg?w=1600&h=1600"
+        },
+        {
+          "page_number": 6,
+          "image_url": "https://cdn.ilofo.com/storage/catalogs/img/81839/e5cc54c6fd49a8e61788894028-5.jpg?w=1600&h=1600"
         }
-      ],
-      "page_source": "official_override"
+      ]
     }
   }
 }

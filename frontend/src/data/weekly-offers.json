@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-09-11T16:05:29.954Z",
+  "syncedAt": "2026-09-11T16:34:15.350Z",
   "source": "weekly_flyer_engine_v2",
   "attribution": "Flyer-sourced prices from improved OCR matching + curated leaflet hotspots. Store tweaks create cross-chain spread for Smart Basket.",
   "stores": {
@@ -7,7 +7,7 @@
       "start_date": "2026-09-09",
       "end_date": "2026-09-15",
       "title_en": "Carrefour 9 15 September 2026",
-      "title_ar": "عروض كارفور السعودية السعودية 9 – 15 سبتمبر 2026",
+      "title_ar": "عروض كارفور — 2026-09-09 إلى 2026-09-15",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -122,8 +122,8 @@
     "lulu": {
       "start_date": "2026-09-09",
       "end_date": "2026-09-15",
-      "title_en": "Lulu 9 15 September 2026",
-      "title_ar": "عروض لولو السعودية 9 – 15 سبتمبر 2026",
+      "title_en": "Saudi Shopping Festival in Lulu Saudi Arabia from 9 to 15 September 2026",
+      "title_ar": "عروض لولو — 2026-09-09 إلى 2026-09-15",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -239,7 +239,7 @@
       "start_date": "2026-09-09",
       "end_date": "2026-09-15",
       "title_en": "Panda Weekly 9 15 September 2026",
-      "title_ar": "عروض بنده الأسبوعية من 9 الى 15 سبتمبر 2026 السعودية",
+      "title_ar": "عروض بنده — 2026-09-09 إلى 2026-09-15",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -355,7 +355,7 @@
       "start_date": "2026-09-09",
       "end_date": "2026-09-15",
       "title_en": "Danube 9 15 September 2026",
-      "title_ar": "عروض الدانوب السعودية 9 – 15 سبتمبر 2026",
+      "title_ar": "عروض الدانوب — 2026-09-09 إلى 2026-09-15",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -471,7 +471,7 @@
       "start_date": "2026-09-09",
       "end_date": "2026-09-15",
       "title_en": "Tamimi Markets 9 15 September 2026",
-      "title_ar": "عروض أسواق التميمي السعودية 9 – 15 سبتمبر 2026",
+      "title_ar": "عروض التميمي — 2026-09-09 إلى 2026-09-15",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -584,10 +584,10 @@
       ]
     },
     "othaim": {
-      "start_date": "2026-09-03",
-      "end_date": "2026-09-16",
-      "title_en": "Othaim Cash And Carry 3 16 September 2026",
-      "title_ar": "عروض العثيم السعودية كاش آند كاري 3 – 16 سبتمبر 2026",
+      "start_date": "2026-09-09",
+      "end_date": "2026-09-15",
+      "title_en": "Bargain Deals in Othaim Markets Saudi Arabia from 9 to 15 September 2026",
+      "title_ar": "عروض العثيم — 2026-09-09 إلى 2026-09-15",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",

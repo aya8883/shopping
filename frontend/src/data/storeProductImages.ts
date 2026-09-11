@@ -1,4 +1,5 @@
 import manifest from './product-images-manifest.json';
+import { assetUrl } from '../utils/assetUrl';
 
 const images = manifest.images as Record<string, string>;
 
@@ -9,7 +10,7 @@ export function storeProductImageUrl(
   fallback?: string | null,
 ): string {
   const key = `${storeSlug}/${productId}`;
-  return images[key] ?? fallback ?? '/hero-basket.svg';
+  return assetUrl(images[key] ?? fallback ?? '/hero-basket.svg');
 }
 
 export const productImagesSyncedAt = manifest.syncedAt;

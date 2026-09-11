@@ -14,6 +14,7 @@ import { useTranslation } from 'react-i18next';
 import type { LeafletOfferHotspot } from '../data/leafletHotspots';
 import { useAppContext } from '../contexts/AppContext';
 import { formatSar } from '../utils/pricing';
+import { assetUrl } from '../utils/assetUrl';
 
 export type LeafletPage = {
   id: string;
@@ -101,7 +102,7 @@ export function LeafletViewer({
         <Box sx={{ position: 'relative', lineHeight: 0, userSelect: 'none' }}>
           <Box
             component="img"
-            src={page.image_url ?? undefined}
+            src={assetUrl(page.image_url) || undefined}
             alt={`${storeName} leaflet page ${page.page_number}`}
             draggable={false}
             sx={{

@@ -170,10 +170,18 @@ async function inspectCatalog(listingPath, catalogId) {
   };
 }
 
+function isCashAndCarry(...parts) {
+  return parts.some(
+    (p) =>
+      typeof p === 'string' &&
+      /cash\s*(&|and)\s*carry|كاش\s*(آند|اند)\s*كاري/i.test(p),
+  );
+}
+
 function scoreFullFlyer(c) {
   if (c.is_bidder || c.page_count < 1) return -1;
+  if (isCashAndCarry(c.title_en, c.title_ar, c.fullflyerUrl)) return -1;
   let score = Math.min(c.page_count, 40) * 2;
-  if (/cash\s*&\s*carry/i.test(c.title_en)) score -= 300;
   if (c.start_date && c.end_date) {
     if (isActive(c.start_date, c.end_date)) score += 1000;
     else if (c.end_date >= today) score += 200;
@@ -237,6 +245,7 @@ function datesFromOfferUrl(offerUrl) {
 
 function score3orod(c) {
   if (!c.pages?.length) return -1;
+  if (isCashAndCarry(c.title_en, c.title_ar, c.offerUrl, c.fullflyerUrl)) return -1;
   let score = c.pages.length * 5;
   if (c.prefer_boost) score += 50;
   if (c.start_date && c.end_date) {
@@ -297,10 +306,7 @@ function pickFlyerImages(html, offerUrl) {
 async function inspect3orodOffer(offerUrl, { prefer = false } = {}) {
   const { html } = await fetchHtml(offerUrl);
   const titleTag = html.match(/<title>([^<]+)/i)?.[1]?.trim() ?? '';
-  const title_ar = titleTag
-    .replace(/\s*-\s*عروض نت.*$/i, '')
-    .replace(/\s+/g, ' ')
-    .trim();
+  const title_ar = cleanScrapedTitleAr(titleTag);
   const dates = datesFromOfferUrl(offerUrl);
   const pages = pickFlyerImages(html, offerUrl);
   const title_en =
@@ -377,6 +383,15 @@ function defaultTitleAr(slug, start, end) {
   return `عروض ${name}`;
 }
 
+function cleanScrapedTitleAr(raw) {
+  if (!raw) return '';
+  return raw
+    .replace(/\s*-\s*عروض نت.*$/i, '')
+    .replace(/السعودية\s+السعودية/g, 'السعودية')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 function pickBest(slug, fullflyer, threeorod) {
   const ff = fullflyer?.selected;
   const t3 = threeorod?.selected;
@@ -394,7 +409,7 @@ function pickBest(slug, fullflyer, threeorod) {
   if (t3Active) {
     return {
       ...t3,
-      title_ar: t3.title_ar || defaultTitleAr(slug, t3.start_date, t3.end_date),
+      title_ar: defaultTitleAr(slug, t3.start_date, t3.end_date),
       reason: '3orod_active',
     };
   }
@@ -405,7 +420,7 @@ function pickBest(slug, fullflyer, threeorod) {
   if (!best) throw new Error('no_source');
   return {
     ...best,
-    title_ar: best.title_ar || defaultTitleAr(slug, best.start_date, best.end_date),
+    title_ar: defaultTitleAr(slug, best.start_date, best.end_date),
     reason: best.source === '3orod' ? '3orod_stale_fallback' : 'fullflyer_stale_fallback',
   };
 }

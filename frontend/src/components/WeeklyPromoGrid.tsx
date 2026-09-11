@@ -6,6 +6,7 @@ import ButtonBase from '@mui/material/ButtonBase';
 import AddShoppingCartOutlinedIcon from '@mui/icons-material/AddShoppingCartOutlined';
 import { useTranslation } from 'react-i18next';
 import { formatSar } from '../utils/pricing';
+import { assetUrl } from '../utils/assetUrl';
 import { useAppContext } from '../contexts/AppContext';
 
 export type PromoOffer = {
@@ -83,7 +84,7 @@ export function WeeklyPromoGrid({
               )
             : null;
         const qty = getQuantity(offer.product.id);
-        const image = offer.image_url ?? offer.product.image_url ?? '/hero-basket.svg';
+        const image = assetUrl(offer.image_url ?? offer.product.image_url ?? '/hero-basket.svg');
 
         return (
           <ButtonBase

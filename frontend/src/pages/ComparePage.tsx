@@ -86,8 +86,11 @@ export function ComparePage() {
   useEffect(() => {
     if (!stores.length) return;
     if (localStorage.getItem('wain-awfar.selected-supermarket-ids') === null) {
-      const n = maxStoreCount ?? Math.min(2, stores.length);
-      setSelectedSupermarketIds(stores.slice(0, n).map((s) => s.id));
+      const ids =
+        maxStoreCount != null
+          ? stores.slice(0, maxStoreCount).map((s) => s.id)
+          : stores.map((s) => s.id);
+      setSelectedSupermarketIds(ids);
     }
   }, [stores, maxStoreCount, setSelectedSupermarketIds]);
 
