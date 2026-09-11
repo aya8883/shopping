@@ -1,13 +1,15 @@
 /**
  * Full refresh of weekly promotion data.
- * 1) Discover latest FullFlyer catalogs per store
+ * 1) Discover latest catalogs (FullFlyer, with 3orod fallback)
  * 2) Sync leaflet page URLs / images into manifests
- * 3) Optionally refresh product category images (--images)
+ * 3) Regenerate weekly offer overlay prices
+ * 4) Fail if any store flyer is expired (so CI surfaces staleness)
  *
  * Usage:
  *   node scripts/sync-all.mjs
  *   node scripts/sync-all.mjs --images
  *   node scripts/sync-all.mjs --download --pages=8
+ *   node scripts/sync-all.mjs --allow-stale   # skip freshness exit code
  */
 import { spawn } from 'node:child_process';
 import path from 'node:path';
@@ -19,6 +21,7 @@ const root = path.resolve(__dirname, '..');
 const args = process.argv.slice(2);
 const withImages = args.includes('--images');
 const download = args.includes('--download');
+const allowStale = args.includes('--allow-stale');
 const pagesArg = args.find((a) => a.startsWith('--pages='));
 
 function run(script, extraArgs = []) {
@@ -50,5 +53,15 @@ if (withImages) {
 
 // Always refresh flyer-sourced prices used by Search / Basket in mock mode.
 await run(path.join(root, 'scripts/generate-weekly-offers.mjs'));
+
+try {
+  await run(path.join(root, 'scripts/check-leaflet-freshness.mjs'), ['--strict']);
+} catch (err) {
+  if (allowStale) {
+    console.warn(`[sync-all] freshness check failed but --allow-stale set: ${err.message}`);
+  } else {
+    throw err;
+  }
+}
 
 console.log(`[sync-all] finished ${new Date().toISOString()}`);

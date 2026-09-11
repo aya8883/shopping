@@ -1,13 +1,13 @@
 {
-  "syncedAt": "2026-09-11T03:36:57.488Z",
+  "syncedAt": "2026-09-11T06:29:54.803Z",
   "source": "weekly_flyer_engine_v2",
   "attribution": "Flyer-sourced prices from improved OCR matching + curated leaflet hotspots. Store tweaks create cross-chain spread for Smart Basket.",
   "stores": {
     "carrefour": {
-      "start_date": "2026-08-11",
-      "end_date": "2026-08-17",
-      "title_en": "Back to School Deals in Carrefour Saudi Arabia from 12 to 18 August 2026",
-      "title_ar": "عروض العودة للمدرسة",
+      "start_date": "2026-09-09",
+      "end_date": "2026-09-15",
+      "title_en": "Carrefour 9 15 September 2026",
+      "title_ar": "عروض كارفور السعودية السعودية 9 – 15 سبتمبر 2026",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -120,10 +120,10 @@
       ]
     },
     "lulu": {
-      "start_date": "2026-09-02",
+      "start_date": "2026-09-09",
       "end_date": "2026-09-15",
-      "title_en": "Digital Savings in Lulu Saudi Arabia from 2 to 15 September 2026",
-      "title_ar": "عروض التوفير الرقمية",
+      "title_en": "Saudi Shopping Festival in Lulu Saudi Arabia from 9 to 15 September 2026",
+      "title_ar": "عروض لولو — 2026-09-09 إلى 2026-09-15",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -238,8 +238,8 @@
     "panda": {
       "start_date": "2026-09-09",
       "end_date": "2026-09-15",
-      "title_en": "Weekly Offers — 9 to 15 September 2026",
-      "title_ar": "عروض الأسبوع — ٩ إلى ١٥ سبتمبر ٢٠٢٦",
+      "title_en": "Panda Weekly 9 15 September 2026",
+      "title_ar": "عروض بنده الأسبوعية من 9 الى 15 سبتمبر 2026 السعودية",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -352,10 +352,10 @@
       ]
     },
     "danube": {
-      "start_date": "2026-08-25",
-      "end_date": "2026-09-07",
-      "title_en": "Back to School Deals in Danube Saudi Arabia from 26 August to 8 September 2026",
-      "title_ar": "عروض العودة للمدرسة",
+      "start_date": "2026-09-09",
+      "end_date": "2026-09-15",
+      "title_en": "Danube 9 15 September 2026",
+      "title_ar": "عروض الدانوب السعودية 9 – 15 سبتمبر 2026",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -468,10 +468,10 @@
       ]
     },
     "tamimi": {
-      "start_date": "2026-09-01",
-      "end_date": "2026-09-07",
-      "title_en": "Back to School Deals in Tamimi markets Saudi Arabia from 2 to 8 September 2026",
-      "title_ar": "عروض الأسبوع",
+      "start_date": "2026-09-09",
+      "end_date": "2026-09-15",
+      "title_en": "Tamimi Markets 9 15 September 2026",
+      "title_ar": "عروض أسواق التميمي السعودية 9 – 15 سبتمبر 2026",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -584,10 +584,10 @@
       ]
     },
     "othaim": {
-      "start_date": "2026-09-08",
-      "end_date": "2026-09-14",
+      "start_date": "2026-09-09",
+      "end_date": "2026-09-15",
       "title_en": "Bargain Deals in Othaim Markets Saudi Arabia from 9 to 15 September 2026",
-      "title_ar": "عروض التوفير",
+      "title_ar": "عروض العثيم — 2026-09-09 إلى 2026-09-15",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",

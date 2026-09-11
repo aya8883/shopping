@@ -13,6 +13,7 @@
     "sync:real-data": "node scripts/sync-all.mjs",
     "sync:all": "node scripts/sync-all.mjs",
     "sync:product-images": "node scripts/sync-store-product-images.mjs",
+    "check:leaflets": "node scripts/check-leaflet-freshness.mjs --strict",
     "ingest:leaflets": "node scripts/ingest-weekly-flyers.mjs",
     "generate:offers": "node scripts/generate-weekly-offers.mjs",
     "schedule:sync": "powershell -ExecutionPolicy Bypass -File ./scripts/schedule-sync-windows.ps1"

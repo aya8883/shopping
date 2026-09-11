@@ -21,14 +21,21 @@ So: **weekly flyer images are the most reliable “real” data** without a reta
 
 ## What we sync automatically
 
-Official store websites (Carrefour, LuLu, Panda, …) block bots. The reliable public source is **weekly flyer catalogs** on FullFlyer → ilofo CDN (same sheets the stores publish).
+Official store websites (Carrefour, LuLu, Panda, …) block bots. Discovery therefore:
+
+1. Prefers a **FullFlyer/ilofo** catalog whose dates cover today  
+2. Falls back to **3orod.net** store weeklies (image override) when FullFlyer is missing or expired  
+3. Fails `npm run sync:all` / the 6-hour GitHub Action if any store is still expired after refresh  
 
 ```powershell
-# Discover latest catalogs + refresh leaflet manifests
+# Discover latest catalogs + refresh leaflet manifests + freshness check
 npm run sync:all
 
 # Same as above (alias)
 npm run sync:real-data
+
+# Freshness only
+npm run check:leaflets
 
 # Optional: also refresh product category images
 node scripts/sync-all.mjs --images
@@ -36,9 +43,8 @@ node scripts/sync-all.mjs --images
 
 This updates:
 
-- `data/leaflet-sources.json` — latest `fullflyerUrl`, dates, titles
+- `data/leaflet-sources.json` — latest catalog / 3orod offer URL, dates, titles
 - `frontend/src/data/leaflet-manifest.json` — page image URLs used on **Offers**
-
 Each store entry also keeps `officialUrl` (link to the retailer’s own promotions page).
 
 ## Run every 6 hours (automatic)

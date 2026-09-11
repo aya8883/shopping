@@ -1,5 +1,6 @@
-# Refresh weekly flyer catalogs every 6 hours from FullFlyer/ilofo
-# (official store sites block scrapers; flyers are the reliable public source).
+# Refresh weekly flyer catalogs every 6 hours.
+# Discovery uses FullFlyer when current, otherwise 3orod.net store weeklies.
+# sync-all fails the job if any store flyer is still expired after refresh.
 #
 # Manual run: Actions → "Sync weekly leaflets" → Run workflow
 name: Sync weekly leaflets
@@ -12,6 +13,10 @@ on:
     inputs:
       with_images:
         description: Also refresh product category images
+        type: boolean
+        default: false
+      allow_stale:
+        description: Skip the final freshness failure (still commits best-effort data)
         type: boolean
         default: false
 
@@ -31,11 +36,13 @@ jobs:
           node-version: '20'
 
       - name: Discover + sync leaflets
-        run: node scripts/sync-all.mjs
-
-      - name: Sync product images
-        if: ${{ github.event_name == 'workflow_dispatch' && inputs.with_images }}
-        run: node scripts/sync-store-product-images.mjs
+        run: |
+          EXTRA=""
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.with_images }}" = "true" ]; then
+            EXTRA="--images"
+          fi
+          # Always persist best-effort catalogs, then fail separately if still stale.
+          node scripts/sync-all.mjs --allow-stale $EXTRA
 
       - name: Commit if changed
         run: |
@@ -53,3 +60,7 @@ jobs:
             git commit -m "chore: refresh weekly leaflets ($(date -u +%Y-%m-%dT%H:%MZ))"
             git push
           fi
+
+      - name: Freshness check
+        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.allow_stale) }}
+        run: node scripts/check-leaflet-freshness.mjs --strict
