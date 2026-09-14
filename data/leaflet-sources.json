@@ -7,7 +7,7 @@
       "title_ar": "عروض كارفور — 2026-09-09 إلى 2026-09-15",
       "start_date": "2026-09-09",
       "end_date": "2026-09-15",
-      "discoveredAt": "2026-09-13T20:30:00.566Z",
+      "discoveredAt": "2026-09-14T03:57:27.315Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/carrefour-9-15-september-2026/",
       "pages": [
         {
@@ -31,7 +31,7 @@
       "title_ar": "عروض لولو — 2026-09-09 إلى 2026-09-15",
       "start_date": "2026-09-09",
       "end_date": "2026-09-15",
-      "discoveredAt": "2026-09-13T20:30:00.566Z",
+      "discoveredAt": "2026-09-14T03:57:27.315Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/lulu-9-15-september-2026/",
       "pages": [
         {
@@ -51,7 +51,7 @@
       "title_ar": "عروض بنده — 2026-09-09 إلى 2026-09-15",
       "start_date": "2026-09-09",
       "end_date": "2026-09-15",
-      "discoveredAt": "2026-09-13T20:30:00.566Z",
+      "discoveredAt": "2026-09-14T03:57:27.315Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/panda-weekly-9-15-september-2026/",
       "pages": [
         {
@@ -67,7 +67,7 @@
       "title_ar": "عروض الدانوب — 2026-09-09 إلى 2026-09-15",
       "start_date": "2026-09-09",
       "end_date": "2026-09-15",
-      "discoveredAt": "2026-09-13T20:30:00.566Z",
+      "discoveredAt": "2026-09-14T03:57:27.316Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/danube-9-15-september-2026/",
       "pages": [
         {
@@ -91,7 +91,7 @@
       "title_ar": "عروض التميمي — 2026-09-09 إلى 2026-09-15",
       "start_date": "2026-09-09",
       "end_date": "2026-09-15",
-      "discoveredAt": "2026-09-13T20:30:00.566Z",
+      "discoveredAt": "2026-09-14T03:57:27.316Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/tamimi-markets-9-15-september-2026/",
       "pages": [
         {
@@ -105,6 +105,10 @@
         {
           "page_number": 3,
           "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/09/tamimi-markets-9-15-september-2026-5-744x1024.jpg"
+        },
+        {
+          "page_number": 4,
+          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/09/tamimi-markets-9-15-september-2026-4-745x1024.jpg"
         }
       ],
       "page_source": "3orod"
@@ -115,7 +119,7 @@
       "title_ar": "عروض العثيم — 2026-09-09 إلى 2026-09-15",
       "start_date": "2026-09-09",
       "end_date": "2026-09-15",
-      "discoveredAt": "2026-09-13T20:30:00.566Z",
+      "discoveredAt": "2026-09-14T03:57:27.316Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/othaim-corner-9-15-september-2026/",
       "pages": [
         {
@@ -126,5 +130,5 @@
       "page_source": "3orod"
     }
   },
-  "discoveredAt": "2026-09-13T20:30:00.566Z"
+  "discoveredAt": "2026-09-14T03:57:27.316Z"
 }
