@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-09-14T12:09:47.798Z",
+  "syncedAt": "2026-09-14T21:38:26.947Z",
   "attribution": "Weekly flyer images from FullFlyer/ilofo when current; otherwise 3orod.net store weeklies. Product grid prices remain illustrative until retailer feeds are connected.",
   "stores": {
     "carrefour": {
@@ -8,7 +8,7 @@
       "title_ar": "عروض كارفور — 2026-09-09 إلى 2026-09-15",
       "start_date": "2026-09-09",
       "end_date": "2026-09-15",
-      "discoveredAt": "2026-09-14T12:09:47.762Z",
+      "discoveredAt": "2026-09-14T21:38:26.913Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/carrefour-9-15-september-2026/",
       "pages": [
         {
@@ -28,16 +28,20 @@
     },
     "lulu": {
       "officialUrl": "https://www.luluhypermarket.com/en-sa/promotions",
-      "title_en": "Lulu 13 21 September 2026",
-      "title_ar": "عروض لولو — 2026-09-13 إلى 2026-09-21",
-      "start_date": "2026-09-13",
-      "end_date": "2026-09-21",
-      "discoveredAt": "2026-09-14T12:09:47.762Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/lulu-13-21-september-2026/",
+      "title_en": "Lulu 9 15 September 2026",
+      "title_ar": "عروض لولو — 2026-09-09 إلى 2026-09-15",
+      "start_date": "2026-09-09",
+      "end_date": "2026-09-15",
+      "discoveredAt": "2026-09-14T21:38:26.913Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/lulu-9-15-september-2026/",
       "pages": [
         {
           "page_number": 1,
           "image_url": "/leaflets/lulu/page-1.jpg"
+        },
+        {
+          "page_number": 2,
+          "image_url": "/leaflets/lulu/page-2.jpg"
         }
       ],
       "page_source": "official_override"
@@ -48,7 +52,7 @@
       "title_ar": "عروض بنده — 2026-09-09 إلى 2026-09-15",
       "start_date": "2026-09-09",
       "end_date": "2026-09-15",
-      "discoveredAt": "2026-09-14T12:09:47.762Z",
+      "discoveredAt": "2026-09-14T21:38:26.913Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/panda-weekly-9-15-september-2026/",
       "pages": [
         {
@@ -64,7 +68,7 @@
       "title_ar": "عروض الدانوب — 2026-09-09 إلى 2026-09-15",
       "start_date": "2026-09-09",
       "end_date": "2026-09-15",
-      "discoveredAt": "2026-09-14T12:09:47.762Z",
+      "discoveredAt": "2026-09-14T21:38:26.914Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/danube-9-15-september-2026/",
       "pages": [
         {
@@ -88,7 +92,7 @@
       "title_ar": "عروض التميمي — 2026-09-09 إلى 2026-09-15",
       "start_date": "2026-09-09",
       "end_date": "2026-09-15",
-      "discoveredAt": "2026-09-14T12:09:47.762Z",
+      "discoveredAt": "2026-09-14T21:38:26.914Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/tamimi-markets-9-15-september-2026/",
       "pages": [
         {
@@ -106,6 +110,10 @@
         {
           "page_number": 4,
           "image_url": "/leaflets/tamimi/page-4.jpg"
+        },
+        {
+          "page_number": 5,
+          "image_url": "/leaflets/tamimi/page-5.jpg"
         }
       ],
       "page_source": "official_override"
@@ -116,7 +124,7 @@
       "title_ar": "عروض العثيم — 2026-09-09 إلى 2026-09-15",
       "start_date": "2026-09-09",
       "end_date": "2026-09-15",
-      "discoveredAt": "2026-09-14T12:09:47.762Z",
+      "discoveredAt": "2026-09-14T21:38:26.914Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/othaim-corner-9-15-september-2026/",
       "pages": [
         {
