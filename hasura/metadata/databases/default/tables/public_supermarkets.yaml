@@ -17,6 +17,13 @@ array_relationships:
         table:
           name: supermarket_branches
           schema: public
+  - name: leaflets
+    using:
+      foreign_key_constraint_on:
+        column: supermarket_id
+        table:
+          name: leaflets
+          schema: public
 select_permissions:
   - role: anonymous
     permission:

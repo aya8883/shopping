@@ -18,10 +18,11 @@
  *   node scripts/ingest-weekly-flyers.mjs --dry-run
  */
 
+import { fileURLToPath } from 'node:url';
 import fs from 'node:fs';
 import path from 'node:path';
 
-const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
 function loadDotEnv(envPath) {
   if (!fs.existsSync(envPath)) return;

@@ -1,0 +1,30 @@
+# Production-lean overlay for the backend stack.
+# Usage:
+#   docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d postgres supertokens-db supertokens hasura auth-service leaflet-processing
+#   npm run backend:seed
+
+services:
+  hasura:
+    environment:
+      HASURA_GRAPHQL_ENABLE_CONSOLE: "false"
+      HASURA_GRAPHQL_DEV_MODE: "false"
+      HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup,http-log,webhook-log
+      HASURA_GRAPHQL_CORS_DOMAIN: ${HASURA_GRAPHQL_CORS_DOMAIN:-https://aya8883.github.io}
+
+  auth-service:
+    build:
+      context: ./functions/auth-service
+      dockerfile: Dockerfile
+      target: production
+    environment:
+      COOKIE_SECURE: "true"
+      COOKIE_SAME_SITE: ${COOKIE_SAME_SITE:-none}
+      CORS_ORIGIN: ${AUTH_SERVICE_CORS_ORIGIN:-https://aya8883.github.io}
+
+  leaflet-processing:
+    environment:
+      AUTH_SERVICE_CORS_ORIGIN: ${AUTH_SERVICE_CORS_ORIGIN:-https://aya8883.github.io}
+
+  frontend:
+    profiles:
+      - never

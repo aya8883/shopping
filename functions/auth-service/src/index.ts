@@ -7,11 +7,16 @@ import { middleware, errorHandler } from 'supertokens-node/framework/express/ind
 import { Pool } from 'pg';
 
 const port = Number(process.env.PORT ?? 3001);
-const corsOrigin = process.env.CORS_ORIGIN ?? 'http://localhost:5173';
+const corsOrigins = String(process.env.CORS_ORIGIN ?? 'http://localhost:5173')
+  .split(',')
+  .map((s) => s.trim())
+  .filter(Boolean);
 const connectionURI = process.env.SUPERTOKENS_CONNECTION_URI ?? 'http://localhost:3567';
 const apiDomain = process.env.API_DOMAIN ?? 'http://localhost:3001';
 const websiteDomain = process.env.WEBSITE_DOMAIN ?? 'http://localhost:5173';
 const appName = process.env.SUPERTOKENS_APP_NAME ?? 'Wain Awfar';
+const cookieSecure = process.env.COOKIE_SECURE === 'true';
+const cookieSameSite = (process.env.COOKIE_SAME_SITE ?? 'lax') as 'lax' | 'none' | 'strict';
 const databaseUrl =
   process.env.DATABASE_URL ??
   'postgres://wain_awfar:wain_awfar_dev_password@localhost:5432/wain_awfar';
@@ -104,6 +109,8 @@ supertokens.init({
       },
     }),
     Session.init({
+      cookieSecure,
+      cookieSameSite,
       exposeAccessTokenToFrontendInCookieBasedAuth: true,
       override: {
         functions: (originalImplementation) => ({
@@ -128,7 +135,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: corsOrigin,
+    origin: corsOrigins.length === 1 ? corsOrigins[0] : corsOrigins,
     allowedHeaders: ['content-type', ...supertokens.getAllCORSHeaders()],
     credentials: true,
   }),
@@ -136,8 +143,13 @@ app.use(
 
 app.use(middleware());
 
-app.get('/health', (_req, res) => {
-  res.json({ ok: true, service: 'auth-service' });
+app.get('/health', async (_req, res) => {
+  try {
+    await pool.query('SELECT 1');
+    res.json({ ok: true, service: 'auth-service', db: true });
+  } catch (err) {
+    res.status(503).json({ ok: false, service: 'auth-service', db: false, error: String(err) });
+  }
 });
 
 app.use(errorHandler());

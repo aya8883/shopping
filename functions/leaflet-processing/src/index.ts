@@ -9,13 +9,23 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const sourcesPath = path.resolve(__dirname, '../../../data/leaflet-sources.json');
+const sourcesPath =
+  process.env.LEAFLET_SOURCES_PATH ??
+  path.resolve(__dirname, '../../../data/leaflet-sources.json');
+
+function parseOrigins(raw: string) {
+  const list = String(raw)
+    .split(',')
+    .map((s) => s.trim())
+    .filter(Boolean);
+  return list.length <= 1 ? list[0] ?? true : list;
+}
 
 const app = express();
 const port = Number(process.env.LEAFLET_SERVICE_PORT ?? 3010);
 const ocr = createOCRProvider();
 
-app.use(cors({ origin: process.env.AUTH_SERVICE_CORS_ORIGIN ?? 'http://localhost:5173' }));
+app.use(cors({ origin: parseOrigins(process.env.AUTH_SERVICE_CORS_ORIGIN ?? 'http://localhost:5173') }));
 app.use(express.json({ limit: '2mb' }));
 
 app.get('/health', (_req, res) => {
