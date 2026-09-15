@@ -38,13 +38,15 @@ export default defineConfig({
         ],
       },
       workbox: {
+        // Bump when product art mapping changes so stale PWA caches drop wrong photos.
+        cacheId: 'wain-awfar-v3-product-art',
         navigateFallback: 'index.html',
         runtimeCaching: [
           {
             urlPattern: ({ url }) => url.pathname.includes('/v1/graphql'),
             handler: 'NetworkFirst',
             options: {
-              cacheName: 'graphql-cache',
+              cacheName: 'graphql-cache-v3',
               networkTimeoutSeconds: 5,
             },
           },

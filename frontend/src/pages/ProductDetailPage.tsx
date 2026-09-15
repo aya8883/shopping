@@ -13,7 +13,7 @@ import Divider from '@mui/material/Divider';
 import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { GET_PRODUCT_BY_ID } from '../graphql/products/queries';
-import { assetUrl } from '../utils/assetUrl';
+import { resolveProductImage } from '../utils/productImage';
 import { useAppContext, filterOffersBySelectedStores } from '../contexts/AppContext';
 import { useBasket } from '../contexts/BasketContext';
 import { compareProductOffers, formatSar, type OfferLike } from '../utils/pricing';
@@ -61,21 +61,20 @@ export function ProductDetailPage() {
   return (
     <Stack spacing={2.25} className="pb-4">
       <Stack direction="row" spacing={2} alignItems="flex-start">
-        {product.image_url ? (
-          <Box
-            component="img"
-            src={assetUrl(product.image_url)}
-            alt=""
-            sx={{
-              width: 96,
-              height: 96,
-              borderRadius: 3,
-              objectFit: 'cover',
-              bgcolor: '#F3F4F6',
-              flexShrink: 0,
-            }}
-          />
-        ) : null}
+        <Box
+          component="img"
+          src={resolveProductImage(product.id, product.image_url)}
+          alt=""
+          sx={{
+            width: 96,
+            height: 96,
+            borderRadius: 3,
+            objectFit: 'contain',
+            bgcolor: '#F3F4F6',
+            flexShrink: 0,
+            p: 1,
+          }}
+        />
         <Box sx={{ minWidth: 0 }}>
           <Typography variant="h5" fontWeight={900} lineHeight={1.25}>
             {name}

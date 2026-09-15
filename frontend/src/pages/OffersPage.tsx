@@ -32,7 +32,6 @@ import { ProductQuickAdd } from '../components/ProductQuickAdd';
 import { BetterPriceSnackbar } from '../components/BetterPriceSnackbar';
 import { DealCard, type DealOffer } from '../features/products/DealCard';
 import type { LeafletOfferHotspot } from '../data/leafletHotspots';
-import { storeProductImageUrl } from '../data/storeProductImages';
 import { flyerProductsForStore, getCanonicalProduct, getLeafletHotspots, savingsVsStore } from '../data/leafletHotspots';
 import {
   supermarketBrandColors,
@@ -41,6 +40,7 @@ import {
 import { flyerFreshnessLabel } from '../utils/flyerFreshness';
 import { formatSar } from '../utils/pricing';
 import { assetUrl } from '../utils/assetUrl';
+import { resolveProductImage } from '../utils/productImage';
 type Leaflet = {
   id: string;
   title_en: string;
@@ -268,11 +268,7 @@ export function OffersPage() {
       regular_price: hotspot.oldPrice ?? null,
       description_en: `${hotspot.unit} · ${active.supermarket.name_en}`,
       description_ar: `${hotspot.unitAr} · ${active.supermarket.name_ar}`,
-      image_url: storeProductImageUrl(
-        hotspot.productId,
-        active.supermarket.slug,
-        canonical?.image_url,
-      ),
+      image_url: resolveProductImage(hotspot.productId, canonical?.image_url),
       quantity,
     });
 
@@ -713,9 +709,8 @@ export function OffersPage() {
                 {filteredFlyerProducts.map((hotspot) => {
                   const name = locale === 'ar' ? hotspot.nameAr : hotspot.name;
                   const qty = getQuantity(hotspot.productId);
-                  const img = storeProductImageUrl(
+                  const img = resolveProductImage(
                     hotspot.productId,
-                    active.supermarket.slug,
                     getCanonicalProduct(hotspot.productId)?.image_url,
                   );
                   return (
@@ -746,7 +741,7 @@ export function OffersPage() {
                         {img ? (
                           <Box
                             component="img"
-                            src={assetUrl(img) || undefined}
+                            src={img || undefined}
                             alt=""
                             sx={{ width: '100%', height: '100%', objectFit: 'contain', p: 0.5 }}
                           />

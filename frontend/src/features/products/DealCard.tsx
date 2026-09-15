@@ -5,10 +5,10 @@ import Typography from '@mui/material/Typography';
 import Chip from '@mui/material/Chip';
 import { useTranslation } from 'react-i18next';
 import { formatSar } from '../../utils/pricing';
-import { assetUrl } from '../../utils/assetUrl';
 import { useAppContext } from '../../contexts/AppContext';
 import { SupermarketAvatar } from '../../components/SupermarketMark';
 import { supermarketShortName } from '../../utils/supermarketBranding';
+import { isProductIllustration, resolveProductImage } from '../../utils/productImage';
 
 export type DealOffer = {
   id: string;
@@ -49,8 +49,8 @@ export function DealCard({ offer }: { offer: DealOffer }) {
             100,
         )
       : null;
-  const imageSrc = assetUrl(offer.product.image_url);
-  const isIllustration = /\.svg(\?|$)/i.test(imageSrc ?? '');
+  const imageSrc = resolveProductImage(offer.product.id, offer.product.image_url);
+  const isIllustration = isProductIllustration(imageSrc);
 
   return (
     <Box

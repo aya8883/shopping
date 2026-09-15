@@ -5,7 +5,6 @@
  */
 
 import { mockSupermarkets } from './catalog';
-import { storeProductImageUrl } from './storeProductImages';
 import { weeklyOfferFor } from './weeklyOffers';
 
 export type CanonicalProduct = {
@@ -357,7 +356,7 @@ export function canonicalProductsForCatalog() {
           is_demo: false,
           start_date: '2026-08-26',
           end_date: '2026-09-08',
-          image_url: storeProductImageUrl(productId, slug, canonical.image_url),
+          image_url: canonical.image_url,
           supermarket: store,
         };
       })
@@ -376,7 +375,7 @@ export function canonicalProductsForCatalog() {
         package_description_ar: canonical.unit_label_ar,
         variant_en: canonical.brand_en ?? '',
         variant_ar: canonical.brand_ar ?? '',
-        image_url: storeProductImageUrl(productId, 'carrefour', canonical.image_url),
+        image_url: canonical.image_url,
         price_basis: canonical.size_unit === 'kg' ? 'kg' : 'package',
         brand: {
           id: `brand-${productId}`,
