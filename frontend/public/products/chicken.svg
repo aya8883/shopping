@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Chicken">
+  <rect width="120" height="120" rx="16" fill="#FFEDD5"/>
+  <ellipse cx="60" cy="64" rx="32" ry="26" fill="#FB923C"/>
+  <ellipse cx="48" cy="48" rx="10" ry="8" fill="#FDBA74"/>
+  <ellipse cx="72" cy="50" rx="9" ry="7" fill="#FDBA74"/>
+  <circle cx="78" cy="40" r="6" fill="#F97316"/>
+</svg>

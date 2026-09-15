@@ -23,12 +23,12 @@ export type CanonicalProduct = {
 };
 
 export const CANONICAL_PRODUCTS: CanonicalProduct[] = [
-  { id: 'banana-1kg', name_en: 'Banana', name_ar: 'موز', size_value: 1, size_unit: 'kg', unit_label_en: '1 kg', unit_label_ar: '1 كجم', category_slug: 'fruits-vegetables', image_url: '/products/eggs.svg' },
-  { id: 'tomato-1kg', name_en: 'Tomato', name_ar: 'طماطم', size_value: 1, size_unit: 'kg', unit_label_en: '1 kg', unit_label_ar: '1 كجم', category_slug: 'fruits-vegetables', image_url: '/products/eggs.svg' },
-  { id: 'veal-1kg', name_en: 'Local Veal Boneless', name_ar: 'عجل محلي بدون عظم', size_value: 1, size_unit: 'kg', unit_label_en: 'per kg', unit_label_ar: 'بالكيلو', category_slug: 'meat-poultry', image_url: '/products/eggs.svg' },
-  { id: 'sadia-chicken-1300g-x3', name_en: 'Sadia Frozen Chicken 1300g x3', name_ar: 'دجاج ساديا مجمد 1300جم ×3', brand_en: 'Sadia', brand_ar: 'ساديا', size_value: 3, size_unit: 'piece', unit_label_en: '3×1300g', unit_label_ar: '3×1300 جم', category_slug: 'frozen-food', image_url: '/products/eggs.svg' },
+  { id: 'banana-1kg', name_en: 'Banana', name_ar: 'موز', size_value: 1, size_unit: 'kg', unit_label_en: '1 kg', unit_label_ar: '1 كجم', category_slug: 'fruits-vegetables', image_url: '/products/produce.svg' },
+  { id: 'tomato-1kg', name_en: 'Tomato', name_ar: 'طماطم', size_value: 1, size_unit: 'kg', unit_label_en: '1 kg', unit_label_ar: '1 كجم', category_slug: 'fruits-vegetables', image_url: '/products/produce.svg' },
+  { id: 'veal-1kg', name_en: 'Local Veal Boneless', name_ar: 'عجل محلي بدون عظم', size_value: 1, size_unit: 'kg', unit_label_en: 'per kg', unit_label_ar: 'بالكيلو', category_slug: 'meat-poultry', image_url: '/products/chicken.svg' },
+  { id: 'sadia-chicken-1300g-x3', name_en: 'Sadia Frozen Chicken 1300g x3', name_ar: 'دجاج ساديا مجمد 1300جم ×3', brand_en: 'Sadia', brand_ar: 'ساديا', size_value: 3, size_unit: 'piece', unit_label_en: '3×1300g', unit_label_ar: '3×1300 جم', category_slug: 'frozen-food', image_url: '/products/chicken.svg' },
   { id: 'eggs-30', name_en: 'Fresh Eggs 30 Pack', name_ar: 'بيض طازج 30', size_value: 30, size_unit: 'piece', unit_label_en: '30 eggs', unit_label_ar: '30 بيضة', category_slug: 'dairy', image_url: '/products/eggs.svg' },
-  { id: 'nadec-cheese-500g-x2', name_en: 'Nadec Cheese Cream Spread 500g x2', name_ar: 'جبنة نادك كريمية 500جم ×2', brand_en: 'Nadec', brand_ar: 'نادك', size_value: 2, size_unit: 'piece', unit_label_en: '2×500g', unit_label_ar: '2×500 جم', category_slug: 'dairy', image_url: '/products/milk.svg' },
+  { id: 'nadec-cheese-500g-x2', name_en: 'Nadec Cheese Cream Spread 500g x2', name_ar: 'جبنة نادك كريمية 500جم ×2', brand_en: 'Nadec', brand_ar: 'نادك', size_value: 2, size_unit: 'piece', unit_label_en: '2×500g', unit_label_ar: '2×500 جم', category_slug: 'dairy', image_url: '/products/labneh.svg' },
   { id: 'cornflakes-1kg', name_en: "Kellogg's Corn Flakes 1kg", name_ar: 'كورن فلكس 1كجم', brand_en: "Kellogg's", brand_ar: 'كيلogg\'s', size_value: 1, size_unit: 'kg', unit_label_en: '1 kg', unit_label_ar: '1 كجم', category_slug: 'rice-grains', image_url: '/products/rice.svg' },
   { id: 'basmati-rice-10kg', name_en: 'Basmati Rice 10kg', name_ar: 'أرز بسمتي 10كجم', size_value: 10, size_unit: 'kg', unit_label_en: '10 kg', unit_label_ar: '10 كجم', category_slug: 'rice-grains', image_url: '/products/rice.svg' },
   { id: 'anchor-milk-powder-1.8kg', name_en: 'Anchor Milk Powder 1.8kg', name_ar: 'حليب Anchor بودرة 1.8كجم', brand_en: 'Anchor', brand_ar: 'Anchor', size_value: 1.8, size_unit: 'kg', unit_label_en: '1.8 kg', unit_label_ar: '1.8 كجم', category_slug: 'dairy', image_url: '/products/milk.svg' },
@@ -242,10 +242,8 @@ export function getLeafletHotspots(storeSlug: string, pageNumber: number): Leafl
   const merged = new Map<string, LeafletOfferHotspot>();
   for (const h of staticPage?.hotspots ?? []) merged.set(h.productId, h);
   for (const h of storedPage?.hotspots ?? []) merged.set(h.productId, h);
-  if (merged.size > 0) return Array.from(merged.values());
-  // No manual annotation: expose tappable regions from known weekly prices (page 1 only).
-  if (pageNumber === 1) return buildFallbackHotspots(storeSlug);
-  return [];
+  // Only annotated regions — never invent a fake grid over the flyer image.
+  return Array.from(merged.values());
 }
 
 /** 3×3-ish grid from catalog prices when the flyer has no annotated hotspots yet. */
@@ -279,10 +277,10 @@ export function buildFallbackHotspots(storeSlug: string): LeafletOfferHotspot[] 
   });
 }
 
-/** Flat list of addable flyer products for the strip under the viewer. */
+/** Flat list of addable flyer products for the strip under the viewer (not overlaid on the page). */
 export function flyerProductsForStore(storeSlug: string): LeafletOfferHotspot[] {
-  const fromPage1 = getLeafletHotspots(storeSlug, 1);
-  if (fromPage1.length) return fromPage1;
+  const annotated = getLeafletHotspots(storeSlug, 1);
+  if (annotated.length) return annotated;
   return buildFallbackHotspots(storeSlug);
 }
 

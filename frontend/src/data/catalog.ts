@@ -1,4 +1,3 @@
-import { storeProductImageUrl } from './storeProductImages';
 import { weeklyOfferFor, weeklyOfferWindow } from './weeklyOffers';
 
 export type MockSupermarket = {
@@ -280,7 +279,7 @@ const PRODUCT_SEEDS: ProductSeed[] = [
     package_description_ar: 'علبة 400 جرام',
     variant_en: 'Original',
     variant_ar: 'أصلي',
-    image_url: '/products/milk.svg',
+    image_url: '/products/labneh.svg',
     brand: brands.almarai,
     category: cat('dairy'),
     base_offer: 8.95,
@@ -328,7 +327,7 @@ const PRODUCT_SEEDS: ProductSeed[] = [
     package_description_ar: '6×330 مل',
     variant_en: 'Classic',
     variant_ar: 'كلاسيك',
-    image_url: '/products/tide.svg',
+    image_url: '/products/soda.svg',
     brand: brands.pepsi,
     category: cat('beverages'),
     base_offer: 12.95,
@@ -344,7 +343,7 @@ const PRODUCT_SEEDS: ProductSeed[] = [
     package_description_ar: '6×330 مل',
     variant_en: 'Classic',
     variant_ar: 'كلاسيك',
-    image_url: '/products/tide.svg',
+    image_url: '/products/soda.svg',
     brand: brands.cocaCola,
     category: cat('beverages'),
     base_offer: 13.25,
@@ -440,7 +439,7 @@ const PRODUCT_SEEDS: ProductSeed[] = [
     package_description_ar: '1 كجم',
     variant_en: 'Whole',
     variant_ar: 'كامل',
-    image_url: '/products/eggs.svg',
+    image_url: '/products/chicken.svg',
     brand: brands.generic,
     category: cat('frozen-food'),
     base_offer: 14.95,
@@ -472,7 +471,7 @@ const PRODUCT_SEEDS: ProductSeed[] = [
     package_description_ar: 'كرتون 1 لتر',
     variant_en: 'Fresh',
     variant_ar: 'طازج',
-    image_url: '/products/milk.svg',
+    image_url: '/products/soda.svg',
     brand: brands.almarai,
     category: cat('beverages'),
     base_offer: 7.95,
@@ -488,7 +487,7 @@ const PRODUCT_SEEDS: ProductSeed[] = [
     package_description_ar: '24×330 مل',
     variant_en: 'Still',
     variant_ar: 'مياه عادية',
-    image_url: '/products/tide.svg',
+    image_url: '/products/water.svg',
     brand: brands.generic,
     category: cat('beverages'),
     base_offer: 8.95,
@@ -504,7 +503,7 @@ const PRODUCT_SEEDS: ProductSeed[] = [
     package_description_ar: 'بالكيلو',
     variant_en: 'Fresh',
     variant_ar: 'طازج',
-    image_url: '/products/eggs.svg',
+    image_url: '/products/produce.svg',
     brand: brands.generic,
     category: cat('fruits-vegetables'),
     base_offer: 4.95,
@@ -520,7 +519,7 @@ const PRODUCT_SEEDS: ProductSeed[] = [
     package_description_ar: 'بالكيلو',
     variant_en: 'Fresh',
     variant_ar: 'طازج',
-    image_url: '/products/eggs.svg',
+    image_url: '/products/chicken.svg',
     brand: brands.generic,
     category: cat('meat-poultry'),
     base_offer: 22.95,
@@ -601,7 +600,7 @@ export function buildMockProducts() {
           is_demo: false,
           start_date: window.start_date ?? '2026-08-26',
           end_date: window.end_date ?? '2026-09-08',
-          image_url: storeProductImageUrl(seed.id, store.slug, seed.image_url),
+          image_url: seed.image_url,
           supermarket: store,
         };
       }
@@ -627,7 +626,7 @@ export function buildMockProducts() {
         is_demo: true,
         start_date: '2026-08-26',
         end_date: '2026-09-08',
-        image_url: storeProductImageUrl(seed.id, store.slug, seed.image_url),
+        image_url: seed.image_url,
         supermarket: store,
       };
     });
@@ -642,7 +641,7 @@ export function buildMockProducts() {
       package_description_ar: seed.package_description_ar,
       variant_en: seed.variant_en,
       variant_ar: seed.variant_ar,
-      image_url: storeProductImageUrl(seed.id, 'carrefour', seed.image_url),
+      image_url: seed.image_url,
       price_basis: seed.category.slug === 'fruits-vegetables' || seed.category.slug === 'meat-poultry' ? 'kg' : 'package',
       brand: seed.brand,
       category: seed.category,

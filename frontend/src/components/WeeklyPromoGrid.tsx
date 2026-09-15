@@ -84,7 +84,8 @@ export function WeeklyPromoGrid({
               )
             : null;
         const qty = getQuantity(offer.product.id);
-        const image = assetUrl(offer.image_url ?? offer.product.image_url ?? '/hero-basket.svg');
+        const image = assetUrl(offer.product.image_url ?? offer.image_url ?? '/hero-basket.svg');
+        const isIllustration = /\.svg(\?|$)/i.test(image);
 
         return (
           <ButtonBase
@@ -119,7 +120,8 @@ export function WeeklyPromoGrid({
                   display: 'block',
                   width: '100%',
                   aspectRatio: '1 / 1',
-                  objectFit: 'cover',
+                  objectFit: isIllustration ? 'contain' : 'cover',
+                  p: isIllustration ? 1.5 : 0,
                 }}
               />
               {discount ? (

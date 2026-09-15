@@ -50,6 +50,7 @@ export function DealCard({ offer }: { offer: DealOffer }) {
         )
       : null;
   const imageSrc = assetUrl(offer.product.image_url);
+  const isIllustration = /\.svg(\?|$)/i.test(imageSrc ?? '');
 
   return (
     <Box
@@ -113,7 +114,12 @@ export function DealCard({ offer }: { offer: DealOffer }) {
             alt=""
             loading="lazy"
             referrerPolicy="no-referrer"
-            sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            sx={{
+              width: '100%',
+              height: '100%',
+              objectFit: isIllustration ? 'contain' : 'cover',
+              p: isIllustration ? 0.75 : 0,
+            }}
           />
         ) : (
           <Typography
