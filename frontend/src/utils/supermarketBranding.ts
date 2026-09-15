@@ -15,6 +15,9 @@ const FALLBACK_LOGOS: Record<string, string> = {
   danube: '/supermarkets/danube.svg',
   tamimi: '/supermarkets/tamimi.svg',
   othaim: '/supermarkets/othaim.svg',
+  nesto: '/supermarkets/nesto.svg',
+  farm: '/supermarkets/farm.svg',
+  bindawood: '/supermarkets/bindawood.svg',
 };
 
 const SHORT_EN: Record<string, string> = {
@@ -24,6 +27,9 @@ const SHORT_EN: Record<string, string> = {
   danube: 'Danube',
   tamimi: 'Tamimi',
   othaim: 'Othaim',
+  nesto: 'Nesto',
+  farm: 'Farm',
+  bindawood: 'BinDawood',
 };
 
 const SHORT_AR: Record<string, string> = {
@@ -33,6 +39,9 @@ const SHORT_AR: Record<string, string> = {
   danube: 'الدانوب',
   tamimi: 'التميمي',
   othaim: 'العثيم',
+  nesto: 'نستو',
+  farm: 'المزرعة',
+  bindawood: 'بن داود',
 };
 
 const BRAND_COLORS: Record<string, { bg: string; fg: string }> = {
@@ -42,6 +51,9 @@ const BRAND_COLORS: Record<string, { bg: string; fg: string }> = {
   danube: { bg: '#C8102E', fg: '#FFFFFF' },
   tamimi: { bg: '#1B5E20', fg: '#FFD54F' },
   othaim: { bg: '#E65100', fg: '#FFFFFF' },
+  nesto: { bg: '#E30613', fg: '#FFFFFF' },
+  farm: { bg: '#2E7D32', fg: '#FFFFFF' },
+  bindawood: { bg: '#6A1B9A', fg: '#FFFFFF' },
 };
 
 export function supermarketSlug(store?: SupermarketLike | null): string {

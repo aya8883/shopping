@@ -27,6 +27,9 @@ const LISTINGS = {
   danube: { path: 'danube', listing: 'https://www.fullflyer.com/sa-en-offers/danube/catalogs' },
   tamimi: { path: 'tamimi-markets', listing: 'https://www.fullflyer.com/sa-en-offers/tamimi-markets/catalogs' },
   othaim: { path: 'othaim-markets', listing: 'https://www.fullflyer.com/sa-en-offers/othaim-markets/catalogs' },
+  nesto: { path: 'nesto', listing: 'https://www.fullflyer.com/sa-en-offers/nesto/catalogs' },
+  farm: { path: 'farm-markets', listing: 'https://www.fullflyer.com/sa-en-offers/farm-markets/catalogs' },
+  bindawood: { path: 'bin-dawood', listing: 'https://www.fullflyer.com/sa-en-offers/bin-dawood/catalogs' },
 };
 
 const OFFICIAL_URLS = {
@@ -36,6 +39,9 @@ const OFFICIAL_URLS = {
   danube: 'https://www.danube.sa/en/offers',
   tamimi: 'https://www.tamimimarkets.com/',
   othaim: 'https://www.othaimmarkets.com/',
+  nesto: 'https://www.nestohypermarket.com/',
+  farm: 'https://www.farm.com.sa/',
+  bindawood: 'https://www.bindawood.com/',
 };
 
 const STORE_NAME_AR = {
@@ -45,6 +51,9 @@ const STORE_NAME_AR = {
   danube: 'الدانوب',
   tamimi: 'التميمي',
   othaim: 'العثيم',
+  nesto: 'نستو',
+  farm: 'المزرعة',
+  bindawood: 'بن داود',
 };
 
 /** 3orod listing pages to scrape for current weeklies. */
@@ -85,6 +94,26 @@ const THREEOROD = {
   othaim: {
     seeds: ['https://3orod.net/sa/store/othaim/', 'https://3orod.net/sa/?s=othaim'],
     match: /\/offers\/othaim-/i,
+  },
+  nesto: {
+    seeds: ['https://3orod.net/sa/store/nesto/', 'https://3orod.net/sa/?s=nesto'],
+    match: /\/offers\/nesto-/i,
+  },
+  farm: {
+    seeds: [
+      'https://3orod.net/sa/?s=almazraah',
+      'https://3orod.net/sa/?s=farm',
+      'https://3orod.net/sa/?s=%D8%A7%D9%84%D9%85%D8%B2%D8%B1%D8%B9%D8%A9',
+    ],
+    match: /\/offers\/(?:farm|almazraah|almzraa)/i,
+  },
+  bindawood: {
+    seeds: [
+      'https://3orod.net/sa/?s=bin+dawood',
+      'https://3orod.net/sa/?s=bindawood',
+      'https://3orod.net/sa/?s=%D8%A8%D9%86+%D8%AF%D8%A7%D9%88%D8%AF',
+    ],
+    match: /\/offers\/(?:bin-?dawood|bindawood)/i,
   },
 };
 

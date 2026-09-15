@@ -8,7 +8,10 @@ INSERT INTO supermarkets (id, name_en, name_ar, slug, website_url, active, count
   ('11111111-1111-1111-1111-111111111003', 'Panda Hypermarket', 'بنده', 'panda', 'https://www.panda.com.sa', TRUE, 'SA'),
   ('11111111-1111-1111-1111-111111111004', 'Danube', 'الدانوب', 'danube', 'https://www.danube.sa', TRUE, 'SA'),
   ('11111111-1111-1111-1111-111111111005', 'Tamimi Markets', 'أسواق التميمي', 'tamimi', 'https://www.tamimimarkets.com', TRUE, 'SA'),
-  ('11111111-1111-1111-1111-111111111006', 'Othaim Markets', 'أسواق العثيم', 'othaim', 'https://www.othaimmarkets.com', TRUE, 'SA')
+  ('11111111-1111-1111-1111-111111111006', 'Othaim Markets', 'أسواق العثيم', 'othaim', 'https://www.othaimmarkets.com', TRUE, 'SA'),
+  ('11111111-1111-1111-1111-111111111007', 'Nesto Hypermarket', 'نستو', 'nesto', 'https://www.nestohypermarket.com', TRUE, 'SA'),
+  ('11111111-1111-1111-1111-111111111008', 'Farm Superstores', 'المزرعة', 'farm', 'https://www.farm.com.sa', TRUE, 'SA'),
+  ('11111111-1111-1111-1111-111111111009', 'BinDawood', 'بن داود', 'bindawood', 'https://www.bindawood.com', TRUE, 'SA')
 ON CONFLICT (id) DO NOTHING;
 
 -- Brands

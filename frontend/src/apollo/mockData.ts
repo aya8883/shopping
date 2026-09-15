@@ -101,7 +101,13 @@ function leafletPagesFromManifest(slug: string, leafletId: string, fallbackCount
 export function getMockCurrentLeaflets() {
   const week = thisWeekRange();
 
-  const seeded = mockSupermarkets.map((store, index) => {
+  /** Only show stores that have a real downloaded flyer this week. */
+  const storesWithFlyers = mockSupermarkets.filter((store) => {
+    const pages = (leafletManifest.stores as Record<string, ManifestStore>)[store.slug]?.pages;
+    return Boolean(pages?.some((p) => /\.(jpe?g|png|webp)$/i.test(p.image_url ?? '')));
+  });
+
+  const seeded = storesWithFlyers.map((store, index) => {
     const leafletId = `66666666-6666-6666-6666-6666666660${String(index + 1).padStart(2, '0')}`;
     const manifestStore = (leafletManifest.stores as Record<string, ManifestStore>)[store.slug];
     const shortEn = supermarketShortName(store, 'en');
@@ -161,7 +167,7 @@ export function getMockCurrentLeaflets() {
     const parsed = JSON.parse(raw) as { leaflets?: typeof seeded };
     const overlay = Array.isArray(parsed.leaflets) ? parsed.leaflets : [];
     if (!overlay.length) return seeded;
-    return mockSupermarkets.map((store) => {
+    return storesWithFlyers.map((store) => {
       const published = overlay.find((l) => l.supermarket?.id === store.id);
       const seed = seeded.find((l) => l.supermarket.id === store.id)!;
       if (!published) return seed;

@@ -8,13 +8,21 @@ import Alert from '@mui/material/Alert';
 import Box from '@mui/material/Box';
 import ButtonBase from '@mui/material/ButtonBase';
 import Snackbar from '@mui/material/Snackbar';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import TextField from '@mui/material/TextField';
+import InputAdornment from '@mui/material/InputAdornment';
 import LocalOfferOutlinedIcon from '@mui/icons-material/LocalOfferOutlined';
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
+import AutoStoriesOutlinedIcon from '@mui/icons-material/AutoStoriesOutlined';
+import TrendingUpOutlinedIcon from '@mui/icons-material/TrendingUpOutlined';
+import SearchIcon from '@mui/icons-material/Search';
 import { useTranslation } from 'react-i18next';
 import { format, parseISO } from 'date-fns';
 import { arSA, enUS } from 'date-fns/locale';
 import { GET_CURRENT_LEAFLETS } from '../graphql/leaflets/queries';
+import { GET_BEST_DEALS } from '../graphql/products/queries';
 import { useAppContext } from '../contexts/AppContext';
 import { useBasket } from '../contexts/BasketContext';
 import { SupermarketAvatar } from '../components/SupermarketMark';
@@ -22,14 +30,17 @@ import { LeafletViewer, type LeafletPage } from '../components/LeafletViewer';
 import { WeeklyPromoGrid, type PromoOffer } from '../components/WeeklyPromoGrid';
 import { ProductQuickAdd } from '../components/ProductQuickAdd';
 import { BetterPriceSnackbar } from '../components/BetterPriceSnackbar';
+import { DealCard, type DealOffer } from '../features/products/DealCard';
 import type { LeafletOfferHotspot } from '../data/leafletHotspots';
 import { storeProductImageUrl } from '../data/storeProductImages';
-import { getCanonicalProduct, getLeafletHotspots, savingsVsStore } from '../data/leafletHotspots';
+import { flyerProductsForStore, getCanonicalProduct, getLeafletHotspots, savingsVsStore } from '../data/leafletHotspots';
 import {
   supermarketBrandColors,
   supermarketShortName,
 } from '../utils/supermarketBranding';
-
+import { flyerFreshnessLabel } from '../utils/flyerFreshness';
+import { formatSar } from '../utils/pricing';
+import { assetUrl } from '../utils/assetUrl';
 type Leaflet = {
   id: string;
   title_en: string;
@@ -64,38 +75,23 @@ function formatRange(start: string, end: string, locale: string): string {
 }
 
 function storeAccent(slug?: string | null) {
-  if (slug === 'carrefour') {
-    return {
-      soft: 'linear-gradient(145deg, rgba(11,61,145,0.12), rgba(227,6,19,0.08) 55%, rgba(255,255,255,0.9))',
-      ring: 'rgba(11,61,145,0.35)',
-      chip: '#0B3D91',
-    };
-  }
-  if (slug === 'lulu') {
-    return {
-      soft: 'linear-gradient(145deg, rgba(11,122,62,0.14), rgba(245,197,24,0.18) 55%, rgba(255,255,255,0.9))',
-      ring: 'rgba(11,122,62,0.35)',
-      chip: '#0B7A3E',
-    };
-  }
-  if (slug === 'panda') {
-    return {
-      soft: 'linear-gradient(145deg, rgba(0,107,63,0.14), rgba(255,255,255,0.92) 60%)',
-      ring: 'rgba(0,107,63,0.35)',
-      chip: '#006B3F',
-    };
-  }
+  const brand = supermarketBrandColors({ slug: slug ?? '' });
+  const soft = `linear-gradient(145deg, ${brand.bg}22, rgba(255,255,255,0.95) 60%)`;
   return {
-    soft: 'linear-gradient(145deg, rgba(245,196,0,0.18), rgba(255,255,255,0.95))',
-    ring: 'rgba(245,196,0,0.45)',
-    chip: '#F5C400',
+    soft,
+    ring: `${brand.bg}55`,
+    chip: brand.bg,
+    fg: brand.fg,
   };
 }
 
 export function OffersPage() {
   const { t } = useTranslation();
-  const { locale } = useAppContext();
+  const { locale, selectedSupermarketIds } = useAppContext();
   const { addItem, getQuantity } = useBasket();
+  const [viewMode, setViewMode] = useState<'flyers' | 'deals'>('flyers');
+  const [dealSort, setDealSort] = useState<'latest' | 'savings'>('savings');
+  const [searchQuery, setSearchQuery] = useState('');
   const [tab, setTab] = useState(0);
   const [selectedHotspot, setSelectedHotspot] = useState<LeafletOfferHotspot | null>(null);
   const [toastName, setToastName] = useState<string | null>(null);
@@ -109,6 +105,9 @@ export function OffersPage() {
   const { data, loading, error } = useQuery(GET_CURRENT_LEAFLETS, {
     variables: { today: todayIso() },
   });
+  const { data: dealsData, loading: dealsLoading } = useQuery(GET_BEST_DEALS, {
+    variables: { limit: 48 },
+  });
 
   const leaflets: Leaflet[] = data?.leaflets ?? [];
   const active = leaflets[tab] ?? leaflets[0];
@@ -118,6 +117,66 @@ export function OffersPage() {
     if (!active) return '';
     return t('offers.offerCount', { count: active.offers.length });
   }, [active, t]);
+
+  const trendingDeals = useMemo(() => {
+    const offers = (dealsData?.supermarket_offers ?? []) as DealOffer[];
+    const scoped = selectedSupermarketIds.length
+      ? offers.filter((o) => selectedSupermarketIds.includes(o.supermarket.id))
+      : offers;
+    const needle = searchQuery.trim().toLowerCase();
+    const filtered = needle
+      ? scoped.filter((o) => {
+          const hay = [
+            o.product.name_en,
+            o.product.name_ar,
+            o.product.brand?.name_en,
+            o.product.brand?.name_ar,
+            o.supermarket.name_en,
+            o.supermarket.name_ar,
+          ]
+            .filter(Boolean)
+            .join(' ')
+            .toLowerCase();
+          return hay.includes(needle);
+        })
+      : scoped;
+
+    const withSavings = filtered.map((o) => {
+      const regular = o.regular_price != null ? Number(o.regular_price) : null;
+      const offer = Number(o.offer_price);
+      const savings =
+        regular != null && regular > offer ? regular - offer : 0;
+      const pct = regular != null && regular > 0 ? savings / regular : 0;
+      return { offer: o, savings, pct };
+    });
+
+    withSavings.sort((a, b) =>
+      dealSort === 'savings'
+        ? b.pct - a.pct || b.savings - a.savings
+        : a.offer.id.localeCompare(b.offer.id),
+    );
+    return withSavings.map((x) => x.offer).slice(0, 24);
+  }, [dealsData, selectedSupermarketIds, searchQuery, dealSort]);
+
+  const filteredActiveOffers = useMemo(() => {
+    if (!active) return [];
+    const needle = searchQuery.trim().toLowerCase();
+    if (!needle) return active.offers;
+    return active.offers.filter((o) => {
+      const hay = [
+        o.product.name_en,
+        o.product.name_ar,
+        o.product.brand?.name_en,
+        o.product.brand?.name_ar,
+        o.promotion_description_en,
+        o.promotion_description_ar,
+      ]
+        .filter(Boolean)
+        .join(' ')
+        .toLowerCase();
+      return hay.includes(needle);
+    });
+  }, [active, searchQuery]);
 
   /** Apollo query omits hotspots until Hasura schema adds them — load from local/mock data. */
   const leafletPages = useMemo((): LeafletPage[] => {
@@ -132,6 +191,23 @@ export function OffersPage() {
     }));
   }, [active]);
 
+  const flyerProducts = useMemo(() => {
+    if (!active) return [];
+    return flyerProductsForStore(active.supermarket.slug);
+  }, [active]);
+
+  const filteredFlyerProducts = useMemo(() => {
+    const needle = searchQuery.trim().toLowerCase();
+    if (!needle) return flyerProducts;
+    return flyerProducts.filter((h) =>
+      `${h.name} ${h.nameAr}`.toLowerCase().includes(needle),
+    );
+  }, [flyerProducts, searchQuery]);
+
+  const freshness = useMemo(() => {
+    if (!active) return null;
+    return flyerFreshnessLabel(active.end_date, t);
+  }, [active, t]);
   const addPromoToBasket = (offer: PromoOffer) => {
     if (!active) return;
     const descEn = [
@@ -287,44 +363,258 @@ export function OffersPage() {
         </Typography>
       </Box>
 
+      <Tabs
+        value={viewMode}
+        onChange={(_e, value: 'flyers' | 'deals') => setViewMode(value)}
+        variant="fullWidth"
+        sx={{
+          minHeight: 48,
+          bgcolor: '#fff',
+          borderRadius: 3,
+          border: '1px solid rgba(26,26,26,0.08)',
+          '& .MuiTab-root': { fontWeight: 800, textTransform: 'none', minHeight: 48 },
+          '& .Mui-selected': { color: '#1A1A1A' },
+          '& .MuiTabs-indicator': { height: 3, borderRadius: 2, bgcolor: '#F5C400' },
+        }}
+      >
+        <Tab
+          value="flyers"
+          icon={<AutoStoriesOutlinedIcon sx={{ fontSize: 18 }} />}
+          iconPosition="start"
+          label={t('offers.tabFlyers')}
+        />
+        <Tab
+          value="deals"
+          icon={<TrendingUpOutlinedIcon sx={{ fontSize: 18 }} />}
+          iconPosition="start"
+          label={t('offers.tabDeals')}
+        />
+      </Tabs>
+
+      <TextField
+        fullWidth
+        size="small"
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        placeholder={t('offers.searchPlaceholder')}
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <SearchIcon fontSize="small" />
+            </InputAdornment>
+          ),
+        }}
+        sx={{
+          bgcolor: '#fff',
+          borderRadius: 3,
+          '& .MuiOutlinedInput-root': { borderRadius: 3 },
+        }}
+      />
+
+      {viewMode === 'deals' ? (
+        <Stack spacing={1.5} className="animate-soft-rise">
+          <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap">
+            <Chip
+              clickable
+              label={t('offers.sortSavings')}
+              onClick={() => setDealSort('savings')}
+              sx={{
+                fontWeight: 800,
+                bgcolor: dealSort === 'savings' ? '#F5C400' : '#fff',
+                border: '1px solid rgba(26,26,26,0.1)',
+              }}
+            />
+            <Chip
+              clickable
+              label={t('offers.sortLatest')}
+              onClick={() => setDealSort('latest')}
+              sx={{
+                fontWeight: 800,
+                bgcolor: dealSort === 'latest' ? '#F5C400' : '#fff',
+                border: '1px solid rgba(26,26,26,0.1)',
+              }}
+            />
+          </Stack>
+          <Typography variant="h6" fontWeight={900}>
+            {t('offers.trendingTitle')}
+          </Typography>
+          <Typography variant="body2" color="text.secondary" fontWeight={600}>
+            {t('offers.trendingHint')}
+          </Typography>
+          {dealsLoading ? (
+            <Stack spacing={1.25}>
+              <Skeleton variant="rounded" height={88} sx={{ borderRadius: 3 }} />
+              <Skeleton variant="rounded" height={88} sx={{ borderRadius: 3 }} />
+            </Stack>
+          ) : trendingDeals.length ? (
+            <Stack spacing={1.25}>
+              {trendingDeals.map((offer) => (
+                <DealCard key={offer.id} offer={offer} />
+              ))}
+            </Stack>
+          ) : (
+            <Alert severity="info">{t('offers.noDealMatches')}</Alert>
+          )}
+        </Stack>
+      ) : (
+        <>
+      <Typography variant="overline" fontWeight={800} color="text.secondary">
+        {t('offers.storesStrip')}
+      </Typography>
+      <Stack
+        direction="row"
+        spacing={1}
+        sx={{
+          overflowX: 'auto',
+          pb: 0.5,
+          mx: -0.5,
+          px: 0.5,
+          WebkitOverflowScrolling: 'touch',
+        }}
+      >
+        {leaflets.map((leaflet, index) => {
+          const selected = index === tab;
+          const colors = supermarketBrandColors(leaflet.supermarket);
+          const name = supermarketShortName(leaflet.supermarket, locale);
+          const cardFresh = flyerFreshnessLabel(leaflet.end_date, t);
+          return (
+            <ButtonBase
+              key={`strip-${leaflet.id}`}
+              onClick={() => setTab(index)}
+              aria-pressed={selected}
+              sx={{
+                flex: '0 0 auto',
+                minWidth: 92,
+                borderRadius: 3,
+                px: 1.25,
+                py: 1,
+                border: '2px solid',
+                borderColor: selected ? colors.bg : 'rgba(26,26,26,0.08)',
+                bgcolor: selected ? `${colors.bg}14` : '#fff',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: 0.5,
+              }}
+            >
+              <SupermarketAvatar store={leaflet.supermarket} size="sm" />
+              <Typography fontWeight={800} fontSize="0.72rem" noWrap sx={{ maxWidth: 84 }}>
+                {name}
+              </Typography>
+              {cardFresh ? (
+                <Typography
+                  variant="caption"
+                  fontWeight={800}
+                  sx={{
+                    color:
+                      cardFresh.tone === 'error'
+                        ? '#B91C1C'
+                        : cardFresh.tone === 'warning'
+                          ? '#D97706'
+                          : '#15803D',
+                    fontSize: '0.62rem',
+                  }}
+                >
+                  {cardFresh.label}
+                </Typography>
+              ) : null}
+            </ButtonBase>
+          );
+        })}
+      </Stack>
+
       <Stack direction="row" spacing={1.25} useFlexGap flexWrap="wrap">
         {leaflets.map((leaflet, index) => {
           const selected = index === tab;
           const colors = supermarketBrandColors(leaflet.supermarket);
           const name = supermarketShortName(leaflet.supermarket, locale);
+          const cardFresh = flyerFreshnessLabel(leaflet.end_date, t);
+          const cover = leaflet.pages?.[0]?.image_url;
           return (
             <ButtonBase
               key={leaflet.id}
               onClick={() => setTab(index)}
               aria-pressed={selected}
               sx={{
-                flex: '1 1 140px',
-                maxWidth: '100%',
+                flex: '1 1 160px',
+                maxWidth: { xs: '100%', sm: 220 },
                 borderRadius: 3,
-                p: 1.25,
                 overflow: 'hidden',
                 textAlign: 'start',
                 border: '2px solid',
                 borderColor: selected ? colors.bg : 'rgba(26,26,26,0.08)',
-                background: selected
-                  ? `linear-gradient(145deg, ${colors.bg}18, #fff 70%)`
-                  : '#fff',
+                background: '#fff',
                 boxShadow: selected
-                  ? `0 12px 28px ${colors.bg}33`
-                  : '0 6px 18px rgba(15,23,42,0.05)',
+                  ? `0 14px 32px ${colors.bg}40`
+                  : '0 6px 18px rgba(15,23,42,0.06)',
+                display: 'block',
               }}
             >
-              <Stack direction="row" spacing={1.25} alignItems="center" sx={{ width: '100%', minWidth: 0 }}>
-                <SupermarketAvatar store={leaflet.supermarket} size="md" />
-                <Box sx={{ minWidth: 0, flex: 1 }}>
-                  <Typography fontWeight={800} fontSize="0.98rem" noWrap>
-                    {name}
-                  </Typography>
-                  <Typography variant="caption" color="text.secondary" fontWeight={600} noWrap>
-                    {t('offers.offerCount', { count: leaflet.offers.length })}
-                  </Typography>
+              <Box
+                sx={{
+                  position: 'relative',
+                  height: 88,
+                  background: `linear-gradient(145deg, ${colors.bg}33, #f8fafc)`,
+                  overflow: 'hidden',
+                }}
+              >
+                {cover ? (
+                  <Box
+                    component="img"
+                    src={assetUrl(cover) || undefined}
+                    alt=""
+                    referrerPolicy="no-referrer"
+                    sx={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      objectPosition: 'top',
+                      opacity: 0.92,
+                    }}
+                  />
+                ) : null}
+                <Box
+                  sx={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: `linear-gradient(180deg, transparent 40%, ${colors.bg}cc)`,
+                  }}
+                />
+                <Box sx={{ position: 'absolute', top: 8, insetInlineStart: 8 }}>
+                  <SupermarketAvatar store={leaflet.supermarket} size="sm" />
                 </Box>
-              </Stack>
+                {cardFresh ? (
+                  <Chip
+                    size="small"
+                    label={cardFresh.label}
+                    sx={{
+                      position: 'absolute',
+                      top: 8,
+                      insetInlineEnd: 8,
+                      height: 22,
+                      fontWeight: 800,
+                      fontSize: '0.7rem',
+                      bgcolor:
+                        cardFresh.tone === 'error'
+                          ? '#B91C1C'
+                          : cardFresh.tone === 'warning'
+                            ? '#D97706'
+                            : '#15803D',
+                      color: '#fff',
+                    }}
+                  />
+                ) : null}
+              </Box>
+              <Box sx={{ p: 1.25 }}>
+                <Typography fontWeight={800} fontSize="0.98rem" noWrap>
+                  {name}
+                </Typography>
+                <Typography variant="caption" color="text.secondary" fontWeight={600} display="block" noWrap>
+                  {t('offers.offerCount', { count: leaflet.offers.length })}
+                  {' · '}
+                  {formatRange(leaflet.start_date, leaflet.end_date, locale)}
+                </Typography>
+              </Box>
             </ButtonBase>
           );
         })}
@@ -348,6 +638,23 @@ export function OffersPage() {
                   {locale === 'ar' ? active.title_ar : active.title_en}
                 </Typography>
                 <Stack direction="row" flexWrap="wrap" useFlexGap spacing={0.75} sx={{ mt: 1 }}>
+                  {freshness ? (
+                    <Chip
+                      size="small"
+                      label={freshness.label}
+                      sx={{
+                        height: 28,
+                        fontWeight: 800,
+                        bgcolor:
+                          freshness.tone === 'error'
+                            ? '#B91C1C'
+                            : freshness.tone === 'warning'
+                              ? '#D97706'
+                              : '#15803D',
+                        color: '#fff',
+                      }}
+                    />
+                  ) : null}
                   <Chip
                     size="small"
                     icon={<CalendarMonthOutlinedIcon sx={{ fontSize: 16 }} />}
@@ -366,7 +673,7 @@ export function OffersPage() {
                     sx={{
                       height: 28,
                       bgcolor: accent.chip,
-                      color: accent.chip === '#F5C400' ? '#1A1A1A' : '#fff',
+                      color: accent.fg ?? (accent.chip === '#F5C400' ? '#1A1A1A' : '#fff'),
                       fontWeight: 800,
                     }}
                   />
@@ -384,6 +691,95 @@ export function OffersPage() {
             onHotspotSelect={setSelectedHotspot}
           />
 
+          {filteredFlyerProducts.length ? (
+            <Stack spacing={1.25}>
+              <Typography variant="h6" fontWeight={900}>
+                {t('offers.addFromFlyer')}
+              </Typography>
+              <Typography variant="body2" color="text.secondary" fontWeight={600}>
+                {t('offers.addFromFlyerHint')}
+              </Typography>
+              <Stack
+                direction="row"
+                spacing={1.25}
+                sx={{
+                  overflowX: 'auto',
+                  pb: 0.5,
+                  mx: -0.5,
+                  px: 0.5,
+                  WebkitOverflowScrolling: 'touch',
+                }}
+              >
+                {filteredFlyerProducts.map((hotspot) => {
+                  const name = locale === 'ar' ? hotspot.nameAr : hotspot.name;
+                  const qty = getQuantity(hotspot.productId);
+                  const img = storeProductImageUrl(
+                    hotspot.productId,
+                    active.supermarket.slug,
+                    getCanonicalProduct(hotspot.productId)?.image_url,
+                  );
+                  return (
+                    <ButtonBase
+                      key={hotspot.id}
+                      onClick={() => setSelectedHotspot(hotspot)}
+                      sx={{
+                        flex: '0 0 128px',
+                        borderRadius: 3,
+                        border: '1px solid',
+                        borderColor: 'rgba(26,26,26,0.1)',
+                        bgcolor: '#fff',
+                        p: 1,
+                        textAlign: 'start',
+                        display: 'block',
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          position: 'relative',
+                          height: 72,
+                          borderRadius: 2,
+                          bgcolor: 'rgba(15,23,42,0.04)',
+                          mb: 1,
+                          overflow: 'hidden',
+                        }}
+                      >
+                        {img ? (
+                          <Box
+                            component="img"
+                            src={assetUrl(img) || undefined}
+                            alt=""
+                            sx={{ width: '100%', height: '100%', objectFit: 'contain', p: 0.5 }}
+                          />
+                        ) : null}
+                        {qty > 0 ? (
+                          <Chip
+                            size="small"
+                            label={`×${qty}`}
+                            sx={{
+                              position: 'absolute',
+                              top: 4,
+                              insetInlineEnd: 4,
+                              height: 20,
+                              bgcolor: accent.chip,
+                              color: accent.fg ?? '#fff',
+                              fontWeight: 800,
+                            }}
+                          />
+                        ) : null}
+                      </Box>
+                      <Typography fontWeight={800} fontSize="0.78rem" noWrap>
+                        {name}
+                      </Typography>
+                      <Typography fontWeight={900} fontSize="0.85rem" color="primary.main">
+                        {formatSar(hotspot.price, locale)}
+                      </Typography>
+                    </ButtonBase>
+                  );
+                })}
+              </Stack>
+            </Stack>
+          ) : null}
+
           <Stack spacing={1.25}>
             <Typography variant="h6" fontWeight={900}>
               {t('offers.clickablePromos')}
@@ -391,12 +787,16 @@ export function OffersPage() {
             <Typography variant="body2" color="text.secondary" fontWeight={600}>
               {t('offers.clickablePromosHint')}
             </Typography>
-            <WeeklyPromoGrid
-              offers={active.offers}
-              accentColor="#F5C400"
-              getQuantity={getQuantity}
-              onAdd={addPromoToBasket}
-            />
+            {filteredActiveOffers.length ? (
+              <WeeklyPromoGrid
+                offers={filteredActiveOffers}
+                accentColor="#F5C400"
+                getQuantity={getQuantity}
+                onAdd={addPromoToBasket}
+              />
+            ) : (
+              <Alert severity="info">{t('offers.noDealMatches')}</Alert>
+            )}
           </Stack>
 
           <ProductQuickAdd
@@ -408,6 +808,8 @@ export function OffersPage() {
           />
         </Stack>
       ) : null}
+        </>
+      )}
 
       <Snackbar
         open={Boolean(toastName)}

@@ -39,10 +39,50 @@ export function getCanonicalProduct(id: string): CanonicalProduct | undefined {
 }
 
 export const CANONICAL_STORE_PRICES: Record<string, Record<string, { price: number; oldPrice?: number | null }>> = {
-  'banana-1kg': { carrefour: { price: 4.99, oldPrice: 6.95 }, panda: { price: 4.5, oldPrice: 5.99 }, danube: { price: 5.75, oldPrice: 6.5 }, othaim: { price: 5.25 }, lulu: { price: 5.1 }, tamimi: { price: 5.5 } },
-  'tomato-1kg': { carrefour: { price: 3.99 }, panda: { price: 3.99 }, danube: { price: 3.49 }, othaim: { price: 4.1 }, lulu: { price: 3.75 }, tamimi: { price: 4.5 } },
-  'eggs-30': { carrefour: { price: 17.95, oldPrice: 19.95 }, panda: { price: 12.99, oldPrice: 22.95 }, danube: { price: 15.5 }, othaim: { price: 14.95 }, lulu: { price: 15.95, oldPrice: 18.95 }, tamimi: { price: 16.25 } },
-  'basmati-rice-10kg': { carrefour: { price: 69.95, oldPrice: 79.95 }, panda: { price: 54.99, oldPrice: 95 }, danube: { price: 72.5 }, othaim: { price: 68.0 }, lulu: { price: 74.95 }, tamimi: { price: 71.0 } },
+  'banana-1kg': {
+    carrefour: { price: 4.99, oldPrice: 6.95 },
+    panda: { price: 4.5, oldPrice: 5.99 },
+    danube: { price: 5.75, oldPrice: 6.5 },
+    othaim: { price: 5.25 },
+    lulu: { price: 5.1 },
+    tamimi: { price: 5.5 },
+    nesto: { price: 5.35 },
+    farm: { price: 4.75 },
+    bindawood: { price: 5.45 },
+  },
+  'tomato-1kg': {
+    carrefour: { price: 3.99 },
+    panda: { price: 3.99 },
+    danube: { price: 3.49 },
+    othaim: { price: 4.1 },
+    lulu: { price: 3.75 },
+    tamimi: { price: 4.5 },
+    nesto: { price: 4.25 },
+    farm: { price: 3.65 },
+    bindawood: { price: 4.35 },
+  },
+  'eggs-30': {
+    carrefour: { price: 17.95, oldPrice: 19.95 },
+    panda: { price: 12.99, oldPrice: 22.95 },
+    danube: { price: 15.5 },
+    othaim: { price: 14.95 },
+    lulu: { price: 15.95, oldPrice: 18.95 },
+    tamimi: { price: 16.25 },
+    nesto: { price: 15.75 },
+    farm: { price: 14.5 },
+    bindawood: { price: 16.5 },
+  },
+  'basmati-rice-10kg': {
+    carrefour: { price: 69.95, oldPrice: 79.95 },
+    panda: { price: 54.99, oldPrice: 95 },
+    danube: { price: 72.5 },
+    othaim: { price: 68.0 },
+    lulu: { price: 74.95 },
+    tamimi: { price: 71.0 },
+    nesto: { price: 70.5 },
+    farm: { price: 66.95 },
+    bindawood: { price: 73.25 },
+  },
   'veal-1kg': {
     panda: { price: 52.99 },
     carrefour: { price: 54.95, oldPrice: 59.95 },
@@ -50,6 +90,9 @@ export const CANONICAL_STORE_PRICES: Record<string, Record<string, { price: numb
     danube: { price: 55.9 },
     othaim: { price: 52.5 },
     tamimi: { price: 54.0 },
+    nesto: { price: 53.95 },
+    farm: { price: 51.9 },
+    bindawood: { price: 55.25 },
   },
   'sadia-chicken-1300g-x3': {
     panda: { price: 39.99, oldPrice: 61.5 },
@@ -58,6 +101,9 @@ export const CANONICAL_STORE_PRICES: Record<string, Record<string, { price: numb
     danube: { price: 43.75 },
     othaim: { price: 40.95 },
     tamimi: { price: 42.25 },
+    nesto: { price: 41.75 },
+    farm: { price: 40.25 },
+    bindawood: { price: 43.5 },
   },
   'nadec-cheese-500g-x2': {
     panda: { price: 17.99, oldPrice: 31.9 },
@@ -66,6 +112,9 @@ export const CANONICAL_STORE_PRICES: Record<string, Record<string, { price: numb
     danube: { price: 19.25 },
     othaim: { price: 17.75 },
     tamimi: { price: 18.75 },
+    nesto: { price: 18.25 },
+    farm: { price: 17.5 },
+    bindawood: { price: 19.0 },
   },
   'cornflakes-1kg': {
     panda: { price: 22.99, oldPrice: 43.95 },
@@ -74,6 +123,9 @@ export const CANONICAL_STORE_PRICES: Record<string, Record<string, { price: numb
     danube: { price: 25.0 },
     othaim: { price: 22.5 },
     tamimi: { price: 24.25 },
+    nesto: { price: 23.75 },
+    farm: { price: 22.25 },
+    bindawood: { price: 24.75 },
   },
   'anchor-milk-powder-1.8kg': {
     panda: { price: 39.99, oldPrice: 104.5 },
@@ -82,6 +134,9 @@ export const CANONICAL_STORE_PRICES: Record<string, Record<string, { price: numb
     danube: { price: 43.0 },
     othaim: { price: 40.5 },
     tamimi: { price: 42.0 },
+    nesto: { price: 41.75 },
+    farm: { price: 39.5 },
+    bindawood: { price: 43.25 },
   },
 };
 
@@ -187,7 +242,48 @@ export function getLeafletHotspots(storeSlug: string, pageNumber: number): Leafl
   const merged = new Map<string, LeafletOfferHotspot>();
   for (const h of staticPage?.hotspots ?? []) merged.set(h.productId, h);
   for (const h of storedPage?.hotspots ?? []) merged.set(h.productId, h);
-  return Array.from(merged.values());
+  if (merged.size > 0) return Array.from(merged.values());
+  // No manual annotation: expose tappable regions from known weekly prices (page 1 only).
+  if (pageNumber === 1) return buildFallbackHotspots(storeSlug);
+  return [];
+}
+
+/** 3×3-ish grid from catalog prices when the flyer has no annotated hotspots yet. */
+export function buildFallbackHotspots(storeSlug: string): LeafletOfferHotspot[] {
+  const entries = Object.entries(CANONICAL_STORE_PRICES)
+    .map(([productId, byStore]) => {
+      const pricing = byStore[storeSlug];
+      if (!pricing) return null;
+      const flyer = weeklyOfferFor(productId, storeSlug);
+      return {
+        productId,
+        price: flyer?.offer_price ?? pricing.price,
+        oldPrice: flyer?.regular_price ?? pricing.oldPrice ?? null,
+      };
+    })
+    .filter((x): x is NonNullable<typeof x> => x != null)
+    .slice(0, 9);
+
+  const cols = 3;
+  const gap = 1.5;
+  const cellW = (100 - gap * (cols + 1)) / cols;
+  const rows = Math.ceil(entries.length / cols) || 1;
+  const cellH = Math.min(28, (100 - 12 - gap * (rows + 1)) / rows);
+
+  return entries.map((entry, index) => {
+    const col = index % cols;
+    const row = Math.floor(index / cols);
+    const x = gap + col * (cellW + gap);
+    const y = 11 + row * (cellH + gap);
+    return gridCell(entry.productId, storeSlug, entry.price, entry.oldPrice, x, y, cellW, cellH);
+  });
+}
+
+/** Flat list of addable flyer products for the strip under the viewer. */
+export function flyerProductsForStore(storeSlug: string): LeafletOfferHotspot[] {
+  const fromPage1 = getLeafletHotspots(storeSlug, 1);
+  if (fromPage1.length) return fromPage1;
+  return buildFallbackHotspots(storeSlug);
 }
 
 /** @deprecated use LeafletOfferHotspot */

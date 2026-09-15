@@ -54,6 +54,9 @@ const STORE_PRICE_TWEAK = {
   danube: 0.85,
   tamimi: 0.25,
   othaim: -0.15,
+  nesto: 0.35,
+  farm: -0.25,
+  bindawood: 0.45,
 };
 
 function round2(n) {

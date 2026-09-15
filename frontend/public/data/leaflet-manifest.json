@@ -1,15 +1,16 @@
 {
-  "syncedAt": "2026-09-15T11:21:00.870Z",
+  "syncedAt": "2026-09-15T14:50:50.586Z",
   "attribution": "Weekly flyer images from FullFlyer/ilofo when current; otherwise 3orod.net store weeklies. Product grid prices remain illustrative until retailer feeds are connected.",
   "stores": {
     "carrefour": {
       "officialUrl": "https://www.carrefourksa.com/mafsau/en/c/Offers",
-      "title_en": "Carrefour 9 15 September 2026",
+      "title_en": "Hello, in fives. in Carrefour Saudi Arabia from 9 to 15 September 2026",
       "title_ar": "عروض كارفور — 2026-09-09 إلى 2026-09-15",
       "start_date": "2026-09-09",
       "end_date": "2026-09-15",
-      "discoveredAt": "2026-09-15T11:21:00.838Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/carrefour-9-15-september-2026/",
+      "discoveredAt": "2026-09-15T14:50:37.269Z",
+      "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/carrefour/catalogs/82068-pdf",
+      "catalog_id": "82068",
       "pages": [
         {
           "page_number": 1,
@@ -22,18 +23,22 @@
         {
           "page_number": 3,
           "image_url": "/leaflets/carrefour/page-3.jpg"
+        },
+        {
+          "page_number": 4,
+          "image_url": "/leaflets/carrefour/page-4.jpg"
         }
-      ],
-      "page_source": "official_override"
+      ]
     },
     "lulu": {
       "officialUrl": "https://www.luluhypermarket.com/en-sa/promotions",
-      "title_en": "Lulu 9 15 September 2026",
-      "title_ar": "عروض لولو — 2026-09-09 إلى 2026-09-15",
-      "start_date": "2026-09-09",
-      "end_date": "2026-09-15",
-      "discoveredAt": "2026-09-15T11:21:00.838Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/lulu-9-15-september-2026/",
+      "title_en": "Deals Opened in Lulu Saudi Arabia from 10 to 16 September 2026",
+      "title_ar": "عروض لولو — 2026-09-10 إلى 2026-09-16",
+      "start_date": "2026-09-10",
+      "end_date": "2026-09-16",
+      "discoveredAt": "2026-09-15T14:50:37.269Z",
+      "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/lulu/catalogs/82072-pdf",
+      "catalog_id": "82072",
       "pages": [
         {
           "page_number": 1,
@@ -42,9 +47,16 @@
         {
           "page_number": 2,
           "image_url": "/leaflets/lulu/page-2.jpg"
+        },
+        {
+          "page_number": 3,
+          "image_url": "/leaflets/lulu/page-3.jpg"
+        },
+        {
+          "page_number": 4,
+          "image_url": "/leaflets/lulu/page-4.jpg"
         }
-      ],
-      "page_source": "official_override"
+      ]
     },
     "panda": {
       "officialUrl": "https://www.panda.com.sa/en/offers",
@@ -52,7 +64,7 @@
       "title_ar": "عروض بنده — 2026-09-09 إلى 2026-09-15",
       "start_date": "2026-09-09",
       "end_date": "2026-09-15",
-      "discoveredAt": "2026-09-15T11:21:00.838Z",
+      "discoveredAt": "2026-09-15T14:50:37.269Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/panda-weekly-9-15-september-2026/",
       "pages": [
         {
@@ -64,12 +76,13 @@
     },
     "danube": {
       "officialUrl": "https://www.danube.sa/en/offers",
-      "title_en": "Danube 9 15 September 2026",
-      "title_ar": "عروض الدانوب — 2026-09-09 إلى 2026-09-15",
+      "title_en": "Best Offers in Danube Saudi Arabia from 9 to 22 September 2026",
+      "title_ar": "عروض الدانوب — 2026-09-09 إلى 2026-09-22",
       "start_date": "2026-09-09",
-      "end_date": "2026-09-15",
-      "discoveredAt": "2026-09-15T11:21:00.838Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/danube-9-15-september-2026/",
+      "end_date": "2026-09-22",
+      "discoveredAt": "2026-09-15T14:50:37.269Z",
+      "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/danube/catalogs/82164-pdf",
+      "catalog_id": "82164",
       "pages": [
         {
           "page_number": 1,
@@ -82,18 +95,22 @@
         {
           "page_number": 3,
           "image_url": "/leaflets/danube/page-3.jpg"
+        },
+        {
+          "page_number": 4,
+          "image_url": "/leaflets/danube/page-4.jpg"
         }
-      ],
-      "page_source": "official_override"
+      ]
     },
     "tamimi": {
       "officialUrl": "https://www.tamimimarkets.com/",
-      "title_en": "Tamimi Markets 9 15 September 2026",
+      "title_en": "SAUDI NATIONAL DAY in Tamimi markets Saudi Arabia from 9 to 15 September 2026",
       "title_ar": "عروض التميمي — 2026-09-09 إلى 2026-09-15",
       "start_date": "2026-09-09",
       "end_date": "2026-09-15",
-      "discoveredAt": "2026-09-15T11:21:00.838Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/tamimi-markets-9-15-september-2026/",
+      "discoveredAt": "2026-09-15T14:50:37.269Z",
+      "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/tamimi-markets/catalogs/82082-pdf",
+      "catalog_id": "82082",
       "pages": [
         {
           "page_number": 1,
@@ -110,29 +127,120 @@
         {
           "page_number": 4,
           "image_url": "/leaflets/tamimi/page-4.jpg"
-        },
-        {
-          "page_number": 5,
-          "image_url": "/leaflets/tamimi/page-5.jpg"
         }
-      ],
-      "page_source": "official_override"
+      ]
     },
     "othaim": {
       "officialUrl": "https://www.othaimmarkets.com/",
-      "title_en": "Othaim Corner 9 15 September 2026",
+      "title_en": "Bargain Deals in Othaim Markets Saudi Arabia from 9 to 15 September 2026",
       "title_ar": "عروض العثيم — 2026-09-09 إلى 2026-09-15",
       "start_date": "2026-09-09",
       "end_date": "2026-09-15",
-      "discoveredAt": "2026-09-15T11:21:00.838Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/othaim-corner-9-15-september-2026/",
+      "discoveredAt": "2026-09-15T14:50:37.269Z",
+      "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/othaim-markets/catalogs/81839-pdf",
+      "catalog_id": "81839",
       "pages": [
         {
           "page_number": 1,
           "image_url": "/leaflets/othaim/page-1.jpg"
+        },
+        {
+          "page_number": 2,
+          "image_url": "/leaflets/othaim/page-2.jpg"
+        },
+        {
+          "page_number": 3,
+          "image_url": "/leaflets/othaim/page-3.jpg"
+        },
+        {
+          "page_number": 4,
+          "image_url": "/leaflets/othaim/page-4.jpg"
         }
-      ],
-      "page_source": "official_override"
+      ]
+    },
+    "nesto": {
+      "officialUrl": "https://www.nestohypermarket.com/",
+      "title_en": "Top 20 in Nesto Saudi Arabia from 9 to 15 September 2026",
+      "title_ar": "عروض نستو — 2026-09-09 إلى 2026-09-15",
+      "start_date": "2026-09-09",
+      "end_date": "2026-09-15",
+      "discoveredAt": "2026-09-15T14:50:37.269Z",
+      "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/nesto/catalogs/81830-pdf",
+      "catalog_id": "81830",
+      "pages": [
+        {
+          "page_number": 1,
+          "image_url": "/leaflets/nesto/page-1.jpg"
+        },
+        {
+          "page_number": 2,
+          "image_url": "/leaflets/nesto/page-2.jpg"
+        },
+        {
+          "page_number": 3,
+          "image_url": "/leaflets/nesto/page-3.jpg"
+        },
+        {
+          "page_number": 4,
+          "image_url": "/leaflets/nesto/page-4.jpg"
+        }
+      ]
+    },
+    "farm": {
+      "officialUrl": "https://www.farm.com.sa/",
+      "title_en": "Home Care. in Farm markets Saudi Arabia from 9 to 15 September 2026",
+      "title_ar": "عروض المزرعة — 2026-09-09 إلى 2026-09-15",
+      "start_date": "2026-09-09",
+      "end_date": "2026-09-15",
+      "discoveredAt": "2026-09-15T14:50:37.269Z",
+      "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/farm-markets/catalogs/82065-pdf",
+      "catalog_id": "82065",
+      "pages": [
+        {
+          "page_number": 1,
+          "image_url": "/leaflets/farm/page-1.jpg"
+        },
+        {
+          "page_number": 2,
+          "image_url": "/leaflets/farm/page-2.jpg"
+        },
+        {
+          "page_number": 3,
+          "image_url": "/leaflets/farm/page-3.jpg"
+        },
+        {
+          "page_number": 4,
+          "image_url": "/leaflets/farm/page-4.jpg"
+        }
+      ]
+    },
+    "bindawood": {
+      "officialUrl": "https://www.bindawood.com/",
+      "title_en": "Our Ezzna offers with our generosity in Bin Dawood Saudi Arabia from 9 to 22 September 2026",
+      "title_ar": "عروض بن داود — 2026-09-09 إلى 2026-09-22",
+      "start_date": "2026-09-09",
+      "end_date": "2026-09-22",
+      "discoveredAt": "2026-09-15T14:50:37.269Z",
+      "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/bin-dawood/catalogs/82174-pdf",
+      "catalog_id": "82174",
+      "pages": [
+        {
+          "page_number": 1,
+          "image_url": "/leaflets/bindawood/page-1.jpg"
+        },
+        {
+          "page_number": 2,
+          "image_url": "/leaflets/bindawood/page-2.jpg"
+        },
+        {
+          "page_number": 3,
+          "image_url": "/leaflets/bindawood/page-3.jpg"
+        },
+        {
+          "page_number": 4,
+          "image_url": "/leaflets/bindawood/page-4.jpg"
+        }
+      ]
     }
   }
 }

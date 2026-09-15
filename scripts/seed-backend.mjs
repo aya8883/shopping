@@ -111,6 +111,9 @@ async function main() {
     danube: '/supermarkets/danube.svg',
     tamimi: '/supermarkets/tamimi.svg',
     othaim: '/supermarkets/othaim.svg',
+    nesto: '/supermarkets/nesto.svg',
+    farm: '/supermarkets/farm.svg',
+    bindawood: '/supermarkets/bindawood.svg',
   };
   for (const [slug, logo] of Object.entries(logos)) {
     const id = storeBySlug.get(slug);

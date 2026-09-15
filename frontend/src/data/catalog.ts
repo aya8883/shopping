@@ -66,6 +66,33 @@ export const mockSupermarkets: MockSupermarket[] = [
     website_url: 'https://www.othaimmarkets.com',
     promotions_url: 'https://www.othaimmarkets.com/',
   },
+  {
+    id: '11111111-1111-1111-1111-111111111007',
+    name_en: 'Nesto Hypermarket',
+    name_ar: 'نستو',
+    slug: 'nesto',
+    logo_url: '/supermarkets/nesto.svg',
+    website_url: 'https://www.nestohypermarket.com',
+    promotions_url: 'https://www.nestohypermarket.com/',
+  },
+  {
+    id: '11111111-1111-1111-1111-111111111008',
+    name_en: 'Farm Superstores',
+    name_ar: 'المزرعة',
+    slug: 'farm',
+    logo_url: '/supermarkets/farm.svg',
+    website_url: 'https://www.farm.com.sa',
+    promotions_url: 'https://www.farm.com.sa/',
+  },
+  {
+    id: '11111111-1111-1111-1111-111111111009',
+    name_en: 'BinDawood',
+    name_ar: 'بن داود',
+    slug: 'bindawood',
+    logo_url: '/supermarkets/bindawood.svg',
+    website_url: 'https://www.bindawood.com',
+    promotions_url: 'https://www.bindawood.com/',
+  },
 ];
 
 export const mockCategories = [
@@ -536,7 +563,7 @@ const PRODUCT_SEEDS: ProductSeed[] = [
 ];
 
 /** Store-index price deltas (SAR) — creates realistic spread per chain. */
-const STORE_DELTAS = [0, 0.55, -0.35, 0.25, -0.15, 0.4];
+const STORE_DELTAS = [0, 0.55, -0.35, 0.25, -0.15, 0.4, 0.3, -0.2, 0.5];
 
 function offerId(productNum: number, storeIndex: number): string {
   const seq = productNum * 100 + storeIndex + 1;

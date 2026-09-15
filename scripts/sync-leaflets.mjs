@@ -31,6 +31,20 @@ function decodeHtml(s) {
   return s.replace(/&amp;/g, '&');
 }
 
+function toIsoDate(raw) {
+  if (!raw) return undefined;
+  const text = String(raw).trim();
+  const already = text.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (already) return `${already[1]}-${already[2]}-${already[3]}`;
+  const d = new Date(text);
+  if (Number.isNaN(d.getTime())) return undefined;
+  // Local calendar date — avoid UTC day-shift from midnight parses.
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${y}-${m}-${day}`;
+}
+
 function parseFullFlyerCatalogHtml(html, sourceUrl) {
   const catalogId =
     sourceUrl.match(/catalogs\/(\d+)-pdf/i)?.[1] ??
@@ -82,15 +96,12 @@ function parseFullFlyerCatalogHtml(html, sourceUrl) {
     }));
   }
 
-  const start_date = startRaw && !Number.isNaN(Date.parse(startRaw)) ? new Date(startRaw).toISOString().slice(0, 10) : undefined;
-  const end_date = endRaw && !Number.isNaN(Date.parse(endRaw)) ? new Date(endRaw).toISOString().slice(0, 10) : undefined;
-
   return {
     catalog_id: catalogId,
     source_url: sourceUrl,
     title_en: title,
-    start_date,
-    end_date,
+    start_date: toIsoDate(startRaw),
+    end_date: toIsoDate(endRaw),
     pages: pages.slice(0, maxPages),
   };
 }
@@ -152,8 +163,9 @@ for (const [slug, cfg] of Object.entries(sources.stores)) {
       catalog_id: parsed.catalog_id,
       fullflyerUrl: cfg.fullflyerUrl,
       title_en: cfg.title_en ?? parsed.title_en,
-      start_date: parsed.start_date,
-      end_date: parsed.end_date,
+      // Prefer discovery dates (already validated against “today”).
+      start_date: cfg.start_date ?? parsed.start_date,
+      end_date: cfg.end_date ?? parsed.end_date,
       pages,
     };
     console.log(`${pages.length} pages (catalog ${parsed.catalog_id})`);
