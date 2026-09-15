@@ -23,8 +23,8 @@ export type CanonicalProduct = {
 };
 
 export const CANONICAL_PRODUCTS: CanonicalProduct[] = [
-  { id: 'banana-1kg', name_en: 'Banana', name_ar: 'موز', size_value: 1, size_unit: 'kg', unit_label_en: '1 kg', unit_label_ar: '1 كجم', category_slug: 'fruits-vegetables', image_url: '/products/produce.svg' },
-  { id: 'tomato-1kg', name_en: 'Tomato', name_ar: 'طماطم', size_value: 1, size_unit: 'kg', unit_label_en: '1 kg', unit_label_ar: '1 كجم', category_slug: 'fruits-vegetables', image_url: '/products/produce.svg' },
+  { id: 'banana-1kg', name_en: 'Banana', name_ar: 'موز', size_value: 1, size_unit: 'kg', unit_label_en: '1 kg', unit_label_ar: '1 كجم', category_slug: 'fruits-vegetables', image_url: '/products/banana.svg' },
+  { id: 'tomato-1kg', name_en: 'Tomato', name_ar: 'طماطم', size_value: 1, size_unit: 'kg', unit_label_en: '1 kg', unit_label_ar: '1 كجم', category_slug: 'fruits-vegetables', image_url: '/products/tomato.svg' },
   { id: 'veal-1kg', name_en: 'Local Veal Boneless', name_ar: 'عجل محلي بدون عظم', size_value: 1, size_unit: 'kg', unit_label_en: 'per kg', unit_label_ar: 'بالكيلو', category_slug: 'meat-poultry', image_url: '/products/chicken.svg' },
   { id: 'sadia-chicken-1300g-x3', name_en: 'Sadia Frozen Chicken 1300g x3', name_ar: 'دجاج ساديا مجمد 1300جم ×3', brand_en: 'Sadia', brand_ar: 'ساديا', size_value: 3, size_unit: 'piece', unit_label_en: '3×1300g', unit_label_ar: '3×1300 جم', category_slug: 'frozen-food', image_url: '/products/chicken.svg' },
   { id: 'eggs-30', name_en: 'Fresh Eggs 30 Pack', name_ar: 'بيض طازج 30', size_value: 30, size_unit: 'piece', unit_label_en: '30 eggs', unit_label_ar: '30 بيضة', category_slug: 'dairy', image_url: '/products/eggs.svg' },
