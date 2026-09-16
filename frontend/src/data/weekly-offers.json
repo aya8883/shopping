@@ -1,13 +1,13 @@
 {
-  "syncedAt": "2026-09-15T21:00:38.046Z",
+  "syncedAt": "2026-09-16T03:55:00.826Z",
   "source": "weekly_flyer_engine_v2",
   "attribution": "Flyer-sourced prices from improved OCR matching + curated leaflet hotspots. Store tweaks create cross-chain spread for Smart Basket.",
   "stores": {
     "carrefour": {
       "start_date": "2026-09-09",
       "end_date": "2026-09-15",
-      "title_en": "Carrefour 9 15 September 2026",
-      "title_ar": "عروض كارفور — 2026-09-09 إلى 2026-09-15",
+      "title_en": "Carrefour 7 September 2026",
+      "title_ar": "عروض كارفور",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -120,10 +120,10 @@
       ]
     },
     "lulu": {
-      "start_date": "2026-09-09",
-      "end_date": "2026-09-15",
-      "title_en": "Lulu 9 15 September 2026",
-      "title_ar": "عروض لولو — 2026-09-09 إلى 2026-09-15",
+      "start_date": "2026-09-13",
+      "end_date": "2026-09-21",
+      "title_en": "Lulu 13 21 September 2026",
+      "title_ar": "عروض لولو — 2026-09-13 إلى 2026-09-21",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -468,10 +468,10 @@
       ]
     },
     "tamimi": {
-      "start_date": "2026-09-09",
-      "end_date": "2026-09-15",
-      "title_en": "Tamimi Markets 9 15 September 2026",
-      "title_ar": "عروض التميمي — 2026-09-09 إلى 2026-09-15",
+      "start_date": "2026-09-16",
+      "end_date": "2026-09-22",
+      "title_en": "Tamimi Markets 16 22 September 2026",
+      "title_ar": "عروض التميمي — 2026-09-16 إلى 2026-09-22",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -584,10 +584,10 @@
       ]
     },
     "othaim": {
-      "start_date": "2026-09-09",
-      "end_date": "2026-09-15",
-      "title_en": "Othaim Corner 9 15 September 2026",
-      "title_ar": "عروض العثيم — 2026-09-09 إلى 2026-09-15",
+      "start_date": "2026-09-16",
+      "end_date": "2026-09-22",
+      "title_en": "Othaim 16 22 September 2026",
+      "title_ar": "عروض العثيم — 2026-09-16 إلى 2026-09-22",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",

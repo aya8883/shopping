@@ -1,47 +1,35 @@
 {
-  "syncedAt": "2026-09-15T21:00:35.259Z",
+  "syncedAt": "2026-09-16T03:54:52.239Z",
   "attribution": "Weekly flyer images from FullFlyer/ilofo when current; otherwise 3orod.net store weeklies. Product grid prices remain illustrative until retailer feeds are connected.",
   "stores": {
     "carrefour": {
       "officialUrl": "https://www.carrefourksa.com/mafsau/en/c/Offers",
-      "title_en": "Carrefour 9 15 September 2026",
-      "title_ar": "عروض كارفور — 2026-09-09 إلى 2026-09-15",
+      "title_en": "Carrefour 7 September 2026",
+      "title_ar": "عروض كارفور",
       "start_date": "2026-09-09",
       "end_date": "2026-09-15",
-      "discoveredAt": "2026-09-15T21:00:35.224Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/carrefour-9-15-september-2026/",
+      "discoveredAt": "2026-09-16T03:54:52.206Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/carrefour-7-september-2026/",
       "pages": [
         {
           "page_number": 1,
           "image_url": "/leaflets/carrefour/page-1.jpg"
-        },
-        {
-          "page_number": 2,
-          "image_url": "/leaflets/carrefour/page-2.jpg"
-        },
-        {
-          "page_number": 3,
-          "image_url": "/leaflets/carrefour/page-3.jpg"
         }
       ],
       "page_source": "official_override"
     },
     "lulu": {
       "officialUrl": "https://www.luluhypermarket.com/en-sa/promotions",
-      "title_en": "Lulu 9 15 September 2026",
-      "title_ar": "عروض لولو — 2026-09-09 إلى 2026-09-15",
-      "start_date": "2026-09-09",
-      "end_date": "2026-09-15",
-      "discoveredAt": "2026-09-15T21:00:35.224Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/lulu-9-15-september-2026/",
+      "title_en": "Lulu 13 21 September 2026",
+      "title_ar": "عروض لولو — 2026-09-13 إلى 2026-09-21",
+      "start_date": "2026-09-13",
+      "end_date": "2026-09-21",
+      "discoveredAt": "2026-09-16T03:54:52.206Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/lulu-13-21-september-2026/",
       "pages": [
         {
           "page_number": 1,
           "image_url": "/leaflets/lulu/page-1.jpg"
-        },
-        {
-          "page_number": 2,
-          "image_url": "/leaflets/lulu/page-2.jpg"
         }
       ],
       "page_source": "official_override"
@@ -52,7 +40,7 @@
       "title_ar": "عروض بنده — 2026-09-09 إلى 2026-09-15",
       "start_date": "2026-09-09",
       "end_date": "2026-09-15",
-      "discoveredAt": "2026-09-15T21:00:35.224Z",
+      "discoveredAt": "2026-09-16T03:54:52.206Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/panda-weekly-9-15-september-2026/",
       "pages": [
         {
@@ -88,48 +76,36 @@
     },
     "tamimi": {
       "officialUrl": "https://www.tamimimarkets.com/",
-      "title_en": "Tamimi Markets 9 15 September 2026",
-      "title_ar": "عروض التميمي — 2026-09-09 إلى 2026-09-15",
-      "start_date": "2026-09-09",
-      "end_date": "2026-09-15",
-      "discoveredAt": "2026-09-15T21:00:35.224Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/tamimi-markets-9-15-september-2026/",
+      "title_en": "Tamimi Markets 16 22 September 2026",
+      "title_ar": "عروض التميمي — 2026-09-16 إلى 2026-09-22",
+      "start_date": "2026-09-16",
+      "end_date": "2026-09-22",
+      "discoveredAt": "2026-09-16T03:54:52.206Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/tamimi-markets-16-22-september-2026/",
       "pages": [
         {
           "page_number": 1,
           "image_url": "/leaflets/tamimi/page-1.jpg"
-        },
-        {
-          "page_number": 2,
-          "image_url": "/leaflets/tamimi/page-2.jpg"
-        },
-        {
-          "page_number": 3,
-          "image_url": "/leaflets/tamimi/page-3.jpg"
-        },
-        {
-          "page_number": 4,
-          "image_url": "/leaflets/tamimi/page-4.jpg"
-        },
-        {
-          "page_number": 5,
-          "image_url": "/leaflets/tamimi/page-5.jpg"
         }
       ],
       "page_source": "official_override"
     },
     "othaim": {
       "officialUrl": "https://www.othaimmarkets.com/",
-      "title_en": "Othaim Corner 9 15 September 2026",
-      "title_ar": "عروض العثيم — 2026-09-09 إلى 2026-09-15",
-      "start_date": "2026-09-09",
-      "end_date": "2026-09-15",
-      "discoveredAt": "2026-09-15T21:00:35.224Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/othaim-corner-9-15-september-2026/",
+      "title_en": "Othaim 16 22 September 2026",
+      "title_ar": "عروض العثيم — 2026-09-16 إلى 2026-09-22",
+      "start_date": "2026-09-16",
+      "end_date": "2026-09-22",
+      "discoveredAt": "2026-09-16T03:54:52.206Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/othaim-16-22-september-2026/",
       "pages": [
         {
           "page_number": 1,
           "image_url": "/leaflets/othaim/page-1.jpg"
+        },
+        {
+          "page_number": 2,
+          "image_url": "/leaflets/othaim/page-2.jpg"
         }
       ],
       "page_source": "official_override"
@@ -140,7 +116,7 @@
       "title_ar": "عروض نستو — 2026-09-15 إلى 2026-09-22",
       "start_date": "2026-09-15",
       "end_date": "2026-09-22",
-      "discoveredAt": "2026-09-15T21:00:35.224Z",
+      "discoveredAt": "2026-09-16T03:54:52.206Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/nesto-saudi-national-day-offers-sanaya-2-15-22-september-2026/",
       "pages": [
         {
@@ -156,7 +132,7 @@
       "title_ar": "عروض المزرعة — 2026-09-16 إلى 2026-09-22",
       "start_date": "2026-09-16",
       "end_date": "2026-09-22",
-      "discoveredAt": "2026-09-15T21:00:35.224Z",
+      "discoveredAt": "2026-09-16T03:54:52.206Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/farm-superstores-weekly-16-22-september-2026/",
       "pages": [
         {
@@ -172,7 +148,7 @@
       "title_ar": "عروض بن داود — 2026-09-09 إلى 2026-09-22",
       "start_date": "2026-09-09",
       "end_date": "2026-09-22",
-      "discoveredAt": "2026-09-15T21:00:35.224Z",
+      "discoveredAt": "2026-09-16T03:54:52.206Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/bindawood-western-region-9-22-september-2026/",
       "pages": [
         {
