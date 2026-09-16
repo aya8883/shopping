@@ -184,10 +184,8 @@ export function OffersPage() {
     const slug = active.supermarket.slug;
     return active.pages.map((page) => ({
       ...page,
-      hotspots:
-        page.hotspots?.length
-          ? page.hotspots
-          : getLeafletHotspots(slug, page.page_number),
+      // Never reuse baked-in guessed hotspots — they don't match the printed flyer.
+      hotspots: getLeafletHotspots(slug, page.page_number),
     }));
   }, [active]);
 

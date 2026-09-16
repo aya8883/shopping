@@ -200,22 +200,13 @@ function gridCell(
   };
 }
 
-/** Panda weekly page 1 — 3×3 grid (manual annotation MVP) */
-const PANDA_PAGE1: LeafletOfferHotspot[] = [
-  gridCell('veal-1kg', 'panda', 52.99, null, 1, 11, 31, 28),
-  gridCell('tomato-1kg', 'panda', 3.99, null, 34, 11, 31, 28),
-  gridCell('banana-1kg', 'panda', 4.99, null, 67, 11, 31, 28),
-  gridCell('sadia-chicken-1300g-x3', 'panda', 39.99, 61.5, 1, 39, 31, 28),
-  gridCell('eggs-30', 'panda', 12.99, 22.95, 34, 39, 31, 28),
-  gridCell('nadec-cheese-500g-x2', 'panda', 17.99, 31.9, 67, 39, 31, 28),
-  gridCell('cornflakes-1kg', 'panda', 22.99, 43.95, 1, 67, 31, 28),
-  gridCell('basmati-rice-10kg', 'panda', 54.99, 95, 34, 67, 31, 28),
-  gridCell('anchor-milk-powder-1.8kg', 'panda', 39.99, 104.5, 67, 67, 31, 28),
-];
-
-const STATIC_HOTSPOTS: Record<string, LeafletHotspotPage[]> = {
-  panda: [{ page_number: 1, hotspots: PANDA_PAGE1 }],
-};
+/**
+ * Do not overlay guessed regions on flyer photos.
+ * A 3×3 catalog grid was opening the wrong product (e.g. Anchor milk
+ * when the shopper tapped dishwashing liquid printed on the page).
+ * Only admin-saved regions marked verified may be tappable.
+ */
+const STATIC_HOTSPOTS: Record<string, LeafletHotspotPage[]> = {};
 
 type StoredHotspots = Record<string, LeafletHotspotPage[]>;
 
@@ -240,8 +231,10 @@ export function getLeafletHotspots(storeSlug: string, pageNumber: number): Leafl
   const storedPage = readStoredHotspots()[storeSlug]?.find((p) => p.page_number === pageNumber);
   const merged = new Map<string, LeafletOfferHotspot>();
   for (const h of staticPage?.hotspots ?? []) merged.set(h.productId, h);
-  for (const h of storedPage?.hotspots ?? []) merged.set(h.productId, h);
-  // Only annotated regions — never invent a fake grid over the flyer image.
+  // Ignore old guessed grids saved in the browser; only verified boxes.
+  for (const h of storedPage?.hotspots ?? []) {
+    if ((h as LeafletOfferHotspot & { verified?: boolean }).verified) merged.set(h.productId, h);
+  }
   return Array.from(merged.values());
 }
 
