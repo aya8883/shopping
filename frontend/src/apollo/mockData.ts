@@ -134,7 +134,7 @@ export function getMockCurrentLeaflets() {
               name_ar: p.name_ar,
               size_value: p.size_value,
               size_unit: p.size_unit,
-              image_url: o.image_url ?? p.image_url,
+              image_url: p.image_url,
               package_description_en: p.package_description_en,
               package_description_ar: p.package_description_ar,
               brand: p.brand,

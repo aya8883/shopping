@@ -38,8 +38,11 @@ export default defineConfig({
         ],
       },
       workbox: {
-        // Bump when product art mapping changes so stale PWA caches drop wrong photos.
-        cacheId: 'wain-awfar-v3-product-art',
+        cacheId: 'wain-awfar-v4-matched-images',
+        skipWaiting: true,
+        clientsClaim: true,
+        cleanupOutdatedCaches: true,
+        importScripts: ['sw-activate.js'],
         navigateFallback: 'index.html',
         runtimeCaching: [
           {
