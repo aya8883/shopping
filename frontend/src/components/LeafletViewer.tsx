@@ -141,7 +141,7 @@ export function LeafletViewer({
                       m: 0,
                       zIndex: 1,
                       border: '2px solid',
-                      borderColor: active ? '#FACC15' : 'transparent',
+                      borderColor: active ? '#FACC15' : 'rgba(250,204,21,0.55)',
                       borderRadius: 2,
                       bgcolor: active ? 'rgba(250,204,21,0.12)' : 'transparent',
                       cursor: 'pointer',

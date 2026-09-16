@@ -201,12 +201,53 @@ function gridCell(
 }
 
 /**
- * Do not overlay guessed regions on flyer photos.
- * A 3×3 catalog grid was opening the wrong product (e.g. Anchor milk
- * when the shopper tapped dishwashing liquid printed on the page).
- * Only admin-saved regions marked verified may be tappable.
+ * Product cards on the printed flyer. Each box is one white rectangle,
+ * and the name/price are what is printed inside that rectangle — not a guessed catalog item.
  */
-const STATIC_HOTSPOTS: Record<string, LeafletHotspotPage[]> = {};
+function printedCard(
+  store: string,
+  id: string,
+  name: string,
+  nameAr: string,
+  price: number,
+  oldPrice: number | null,
+  unit: string,
+  unitAr: string,
+  x: number,
+  y: number,
+  width: number,
+  height: number,
+): LeafletOfferHotspot {
+  return {
+    id: `${store}-card-${id}`,
+    productId: `${store}-card-${id}`,
+    name,
+    nameAr,
+    price,
+    oldPrice,
+    unit,
+    unitAr,
+    supermarket: store,
+    x,
+    y,
+    width,
+    height,
+  };
+}
+
+/** Panda page 1 — 2 columns × 3 rows, measured from the flyer image (1200×1571). */
+const PANDA_PAGE1_CARDS: LeafletOfferHotspot[] = [
+  printedCard('panda', 'skittles', "M&M's / Skittles Minis", 'شوكولاتة مينيز إم آند إمز / سكيتلز', 5, 11.98, '30.6g', '30.6 جم', 4.2, 32.6, 45.6, 21.4),
+  printedCard('panda', 'mandarin', 'South African Mandarins', 'يوسفي جنوب أفريقي', 5, 10.49, '1.5 kg', '1.5 كجم', 50.8, 32.6, 45.6, 21.4),
+  printedCard('panda', 'treva-pasta', 'Treva Pasta', 'مكرونة تريفا', 5, 9.98, '400g', '400 جم', 4.2, 54.2, 45.6, 21.6),
+  printedCard('panda', 'luna-milk', 'Luna Evaporated Milk', 'حليب مبخر لونا', 5, 7, '170g', '170 جم', 50.8, 54.2, 45.6, 21.6),
+  printedCard('panda', 'coopoliva', 'Coopoliva Olives', 'زيتون كوبوليفا', 5, 8.5, '75/100g', '75/100 جم', 4.2, 75.9, 45.6, 21.4),
+  printedCard('panda', 'finah-flour', 'Finah Bakery Flour', 'طحين المخبوزات فينه', 5, 14.99, '10 kg', '10 كجم', 50.8, 75.9, 45.6, 21.4),
+];
+
+const STATIC_HOTSPOTS: Record<string, LeafletHotspotPage[]> = {
+  panda: [{ page_number: 1, hotspots: PANDA_PAGE1_CARDS }],
+};
 
 type StoredHotspots = Record<string, LeafletHotspotPage[]>;
 
