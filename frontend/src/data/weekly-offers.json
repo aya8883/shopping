@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-09-17T11:14:33.848Z",
+  "syncedAt": "2026-09-17T16:31:00.200Z",
   "source": "weekly_flyer_engine_v2",
   "attribution": "Flyer-sourced prices from improved OCR matching + curated leaflet hotspots. Store tweaks create cross-chain spread for Smart Basket.",
   "stores": {
@@ -352,10 +352,10 @@
       ]
     },
     "danube": {
-      "start_date": "2026-09-09",
-      "end_date": "2026-09-15",
-      "title_en": "Danube 9 15 September 2026",
-      "title_ar": "عروض الدانوب — 2026-09-09 إلى 2026-09-15",
+      "start_date": "2026-09-16",
+      "end_date": "2026-09-22",
+      "title_en": "Danube Western Region Weekly 16 22 September 2026",
+      "title_ar": "عروض الدانوب — 2026-09-16 إلى 2026-09-22",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -584,10 +584,10 @@
       ]
     },
     "othaim": {
-      "start_date": "2026-09-16",
+      "start_date": "2026-09-17",
       "end_date": "2026-09-22",
-      "title_en": "Othaim 16 22 September 2026",
-      "title_ar": "عروض العثيم — 2026-09-16 إلى 2026-09-22",
+      "title_en": "Othaim 17 22 September 2026",
+      "title_ar": "عروض العثيم — 2026-09-17 إلى 2026-09-22",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
