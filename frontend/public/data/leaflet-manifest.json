@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-09-19T03:44:37.334Z",
+  "syncedAt": "2026-09-19T10:33:35.846Z",
   "attribution": "Weekly flyer images from FullFlyer/ilofo when current; otherwise 3orod.net store weeklies. Product grid prices remain illustrative until retailer feeds are connected.",
   "stores": {
     "carrefour": {
@@ -8,7 +8,7 @@
       "title_ar": "عروض كارفور — 2026-09-16 إلى 2026-09-22",
       "start_date": "2026-09-16",
       "end_date": "2026-09-22",
-      "discoveredAt": "2026-09-19T03:44:37.299Z",
+      "discoveredAt": "2026-09-19T10:33:35.811Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/carrefour-16-22-september-2026/",
       "pages": [
         {
@@ -36,7 +36,7 @@
       "title_ar": "عروض لولو — 2026-09-16 إلى 2026-09-23",
       "start_date": "2026-09-16",
       "end_date": "2026-09-23",
-      "discoveredAt": "2026-09-19T03:44:37.300Z",
+      "discoveredAt": "2026-09-19T10:33:35.811Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/lulu-16-23-september-2026/",
       "pages": [
         {
@@ -52,7 +52,7 @@
       "title_ar": "عروض بنده — 2026-09-16 إلى 2026-09-22",
       "start_date": "2026-09-16",
       "end_date": "2026-09-22",
-      "discoveredAt": "2026-09-19T03:44:37.300Z",
+      "discoveredAt": "2026-09-19T10:33:35.811Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/panda-weekly-16-22-september-2026/",
       "pages": [
         {
@@ -68,7 +68,7 @@
       "title_ar": "عروض الدانوب — 2026-09-16 إلى 2026-09-22",
       "start_date": "2026-09-16",
       "end_date": "2026-09-22",
-      "discoveredAt": "2026-09-19T03:44:37.300Z",
+      "discoveredAt": "2026-09-19T10:33:35.811Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/danube-western-region-weekly-16-22-september-2026/",
       "pages": [
         {
@@ -84,7 +84,7 @@
       "title_ar": "عروض التميمي — 2026-09-16 إلى 2026-09-22",
       "start_date": "2026-09-16",
       "end_date": "2026-09-22",
-      "discoveredAt": "2026-09-19T03:44:37.300Z",
+      "discoveredAt": "2026-09-19T10:33:35.811Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/tamimi-markets-16-22-september-2026/",
       "pages": [
         {
@@ -96,12 +96,12 @@
     },
     "othaim": {
       "officialUrl": "https://www.othaimmarkets.com/",
-      "title_en": "Othaim 17 22 September 2026",
-      "title_ar": "عروض العثيم — 2026-09-17 إلى 2026-09-22",
-      "start_date": "2026-09-17",
+      "title_en": "Othaim 19 22 September 2026",
+      "title_ar": "عروض العثيم — 2026-09-19 إلى 2026-09-22",
+      "start_date": "2026-09-19",
       "end_date": "2026-09-22",
-      "discoveredAt": "2026-09-19T03:44:37.300Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/othaim-17-22-september-2026/",
+      "discoveredAt": "2026-09-19T10:33:35.811Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/othaim-19-22-september-2026/",
       "pages": [
         {
           "page_number": 1,
@@ -114,10 +114,6 @@
         {
           "page_number": 3,
           "image_url": "/leaflets/othaim/page-3.jpg"
-        },
-        {
-          "page_number": 4,
-          "image_url": "/leaflets/othaim/page-4.jpg"
         }
       ],
       "page_source": "official_override"
@@ -128,7 +124,7 @@
       "title_ar": "عروض نستو — 2026-09-16 إلى 2026-09-22",
       "start_date": "2026-09-16",
       "end_date": "2026-09-22",
-      "discoveredAt": "2026-09-19T03:44:37.300Z",
+      "discoveredAt": "2026-09-19T10:33:35.811Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/nesto-saudi-national-day-offers-villagio-mall-16-22-september-2026/",
       "pages": [
         {
@@ -144,7 +140,7 @@
       "title_ar": "عروض المزرعة — 2026-09-16 إلى 2026-09-23",
       "start_date": "2026-09-16",
       "end_date": "2026-09-23",
-      "discoveredAt": "2026-09-19T03:44:37.300Z",
+      "discoveredAt": "2026-09-19T10:33:35.811Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/farm-superstores-16-23-september-2026/",
       "pages": [
         {
@@ -160,7 +156,7 @@
       "title_ar": "عروض بن داود — 2026-09-16 إلى 2026-09-22",
       "start_date": "2026-09-16",
       "end_date": "2026-09-22",
-      "discoveredAt": "2026-09-19T03:44:37.300Z",
+      "discoveredAt": "2026-09-19T10:33:35.811Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/bindawood-western-region-weekly-offers-16-22-september-2026/",
       "pages": [
         {
