@@ -158,6 +158,13 @@ export type LeafletOfferHotspot = {
   unit: string;
   unitAr: string;
   supermarket: string;
+  /** Optional short description shown to the customer */
+  description_en?: string;
+  description_ar?: string;
+  /** Curated product art when no flyer crop is available */
+  image_url?: string;
+  /** Flyer page to crop using x/y/width/height for the product thumb */
+  flyer_image_url?: string;
   /** Position inside leaflet image (% of width/height) */
   x: number;
   y: number;
@@ -193,6 +200,9 @@ function gridCell(
     unit: canonical.unit_label_en,
     unitAr: canonical.unit_label_ar,
     supermarket,
+    description_en: canonical.unit_label_en,
+    description_ar: canonical.unit_label_ar,
+    image_url: canonical.image_url,
     x,
     y,
     width,
@@ -217,6 +227,9 @@ function printedCard(
   y: number,
   width: number,
   height: number,
+  description_en: string,
+  description_ar: string,
+  flyerPage: string,
 ): LeafletOfferHotspot {
   return {
     id: `${store}-card-${id}`,
@@ -228,6 +241,9 @@ function printedCard(
     unit,
     unitAr,
     supermarket: store,
+    description_en,
+    description_ar,
+    flyer_image_url: flyerPage,
     x,
     y,
     width,
@@ -235,14 +251,112 @@ function printedCard(
   };
 }
 
+const PANDA_PAGE1 = '/leaflets/panda/page-1.jpg';
+
 /** Panda page 1 — 2 columns × 3 rows, measured from the flyer image (1200×1571). */
 const PANDA_PAGE1_CARDS: LeafletOfferHotspot[] = [
-  printedCard('panda', 'skittles', "M&M's / Skittles Minis", 'شوكولاتة مينيز إم آند إمز / سكيتلز', 5, 11.98, '30.6g', '30.6 جم', 4.2, 32.6, 45.6, 21.4),
-  printedCard('panda', 'mandarin', 'South African Mandarins', 'يوسفي جنوب أفريقي', 5, 10.49, '1.5 kg', '1.5 كجم', 50.8, 32.6, 45.6, 21.4),
-  printedCard('panda', 'treva-pasta', 'Treva Pasta', 'مكرونة تريفا', 5, 9.98, '400g', '400 جم', 4.2, 54.2, 45.6, 21.6),
-  printedCard('panda', 'luna-milk', 'Luna Evaporated Milk', 'حليب مبخر لونا', 5, 7, '170g', '170 جم', 50.8, 54.2, 45.6, 21.6),
-  printedCard('panda', 'coopoliva', 'Coopoliva Olives', 'زيتون كوبوليفا', 5, 8.5, '75/100g', '75/100 جم', 4.2, 75.9, 45.6, 21.4),
-  printedCard('panda', 'finah-flour', 'Finah Bakery Flour', 'طحين المخبوزات فينه', 5, 14.99, '10 kg', '10 كجم', 50.8, 75.9, 45.6, 21.4),
+  printedCard(
+    'panda',
+    'skittles',
+    "M&M's / Skittles Minis",
+    'شوكولاتة مينيز إم آند إمز / سكيتلز',
+    5,
+    11.98,
+    '30.6g',
+    '30.6 جم',
+    4.2,
+    32.6,
+    45.6,
+    21.4,
+    'Buy one get one free — candy minis as printed on the flyer.',
+    'اشترِ واحدة واحصل على الثانية مجانًا — شوكولاتة مينيز كما في النشرة.',
+    PANDA_PAGE1,
+  ),
+  printedCard(
+    'panda',
+    'mandarin',
+    'South African Mandarins',
+    'يوسفي جنوب أفريقي',
+    5,
+    10.49,
+    '1.5 kg',
+    '1.5 كجم',
+    50.8,
+    32.6,
+    45.6,
+    21.4,
+    'Fresh South African mandarins, 1.5 kg bag.',
+    'يوسفي طازج من جنوب أفريقيا، كيس 1.5 كجم.',
+    PANDA_PAGE1,
+  ),
+  printedCard(
+    'panda',
+    'treva-pasta',
+    'Treva Pasta',
+    'مكرونة تريفا',
+    5,
+    9.98,
+    '400g ×2',
+    '400 جم ×2',
+    4.2,
+    54.2,
+    45.6,
+    21.6,
+    'Two packs of Treva pasta, 400g each.',
+    'عبوتان مكرونة تريفا، 400 جم لكل عبوة.',
+    PANDA_PAGE1,
+  ),
+  printedCard(
+    'panda',
+    'luna-milk',
+    'Luna Evaporated Milk',
+    'حليب مبخر لونا',
+    5,
+    7,
+    '170g ×2',
+    '170 جم ×2',
+    50.8,
+    54.2,
+    45.6,
+    21.6,
+    'Two cans of Luna evaporated milk, 170g each.',
+    'علبتان حليب مبخر لونا، 170 جم لكل علبة.',
+    PANDA_PAGE1,
+  ),
+  printedCard(
+    'panda',
+    'coopoliva',
+    'Coopoliva Olives',
+    'زيتون كوبوليفا',
+    5,
+    8.5,
+    '75/100g',
+    '75/100 جم',
+    4.2,
+    75.9,
+    45.6,
+    21.4,
+    'Coopoliva olives as printed on the flyer.',
+    'زيتون كوبوليفا كما هو مطبوع في النشرة.',
+    PANDA_PAGE1,
+  ),
+  printedCard(
+    'panda',
+    'finah-flour',
+    'Finah Bakery Flour',
+    'طحين المخبوزات فينه',
+    5,
+    14.99,
+    '10 kg',
+    '10 كجم',
+    50.8,
+    75.9,
+    45.6,
+    21.4,
+    'Finah bakery flour, 10 kg bag.',
+    'طحين المخبوزات فينه، كيس 10 كجم.',
+    PANDA_PAGE1,
+  ),
 ];
 
 const STATIC_HOTSPOTS: Record<string, LeafletHotspotPage[]> = {
@@ -310,11 +424,12 @@ export function buildFallbackHotspots(storeSlug: string): LeafletOfferHotspot[] 
   });
 }
 
-/** Flat list of addable flyer products for the strip under the viewer (not overlaid on the page). */
+/**
+ * Products printed on this store’s flyer (annotated rectangles only).
+ * Do not invent catalog items like rice when the page has no measured boxes.
+ */
 export function flyerProductsForStore(storeSlug: string): LeafletOfferHotspot[] {
-  const annotated = getLeafletHotspots(storeSlug, 1);
-  if (annotated.length) return annotated;
-  return buildFallbackHotspots(storeSlug);
+  return getLeafletHotspots(storeSlug, 1);
 }
 
 /** @deprecated use LeafletOfferHotspot */

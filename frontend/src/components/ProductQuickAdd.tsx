@@ -12,11 +12,12 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import CloseIcon from '@mui/icons-material/Close';
 import { useTranslation } from 'react-i18next';
 import type { LeafletOfferHotspot } from '../data/leafletHotspots';
-import { quotesForProduct } from '../data/leafletHotspots';
+import { getCanonicalProduct, quotesForProduct } from '../data/leafletHotspots';
 import { useAppContext } from '../contexts/AppContext';
 import { formatSar } from '../utils/pricing';
 import { SupermarketAvatar } from './SupermarketMark';
 import { supermarketShortName } from '../utils/supermarketBranding';
+import { FlyerProductThumb } from './FlyerProductThumb';
 
 export function ProductQuickAdd({
   hotspot,
@@ -39,7 +40,16 @@ export function ProductQuickAdd({
 
   const name = locale === 'ar' ? hotspot.nameAr : hotspot.name;
   const unit = locale === 'ar' ? hotspot.unitAr : hotspot.unit;
+  const canonical = getCanonicalProduct(hotspot.productId);
+  const description =
+    (locale === 'ar'
+      ? hotspot.description_ar || canonical?.unit_label_ar
+      : hotspot.description_en || canonical?.unit_label_en) ?? unit;
   const quotes = quotesForProduct(hotspot.productId).sort((a, b) => a.price - b.price);
+  const savings =
+    hotspot.oldPrice && hotspot.oldPrice > hotspot.price
+      ? hotspot.oldPrice - hotspot.price
+      : null;
 
   const handleAdd = () => {
     onAdd(hotspot, quantity);
@@ -57,30 +67,41 @@ export function ProductQuickAdd({
     >
       <DialogContent sx={{ p: 2.25 }}>
         <Stack direction="row" justifyContent="space-between" alignItems="flex-start">
-          <Box sx={{ minWidth: 0, flex: 1, pe: 1 }}>
-            <Typography variant="h6" fontWeight={900} lineHeight={1.25}>
-              {name}
-            </Typography>
-            <Typography variant="body2" color="text.secondary" fontWeight={600} sx={{ mt: 0.5 }}>
-              {unit} · {storeName}
-            </Typography>
-          </Box>
+          <Typography variant="h6" fontWeight={900} lineHeight={1.25} sx={{ pe: 1, flex: 1 }}>
+            {name}
+          </Typography>
           <IconButton size="small" onClick={onClose} aria-label={t('common.close')}>
             <CloseIcon fontSize="small" />
           </IconButton>
         </Stack>
 
+        <Box sx={{ mt: 1.5 }}>
+          <FlyerProductThumb hotspot={hotspot} height={160} alt={name} />
+        </Box>
+
+        <Typography variant="body2" color="text.secondary" fontWeight={600} sx={{ mt: 1.5 }}>
+          {description}
+        </Typography>
+        <Typography variant="caption" color="text.secondary" fontWeight={700} display="block" sx={{ mt: 0.5 }}>
+          {unit} · {storeName}
+        </Typography>
+
         <Stack spacing={0.5} sx={{ mt: 2 }}>
           <Typography variant="caption" color="text.secondary" fontWeight={700}>
             {t('offers.currentPrice')}
           </Typography>
-          <Stack direction="row" alignItems="baseline" spacing={1}>
+          <Stack direction="row" alignItems="baseline" spacing={1} flexWrap="wrap" useFlexGap>
             <Typography variant="h5" fontWeight={900} color="error.main">
               {formatSar(hotspot.price, locale)}
             </Typography>
             {hotspot.oldPrice && hotspot.oldPrice > hotspot.price ? (
               <Typography variant="body2" color="text.secondary" sx={{ textDecoration: 'line-through' }}>
                 {formatSar(hotspot.oldPrice, locale)}
+              </Typography>
+            ) : null}
+            {savings != null ? (
+              <Typography variant="caption" fontWeight={800} color="success.main">
+                {t('offers.saveAmount', { amount: formatSar(savings, locale) })}
               </Typography>
             ) : null}
           </Stack>

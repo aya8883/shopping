@@ -38,7 +38,7 @@ export default defineConfig({
         ],
       },
       workbox: {
-        cacheId: 'wain-awfar-v4-matched-images',
+        cacheId: 'wain-awfar-v5-flyer-first',
         skipWaiting: true,
         clientsClaim: true,
         cleanupOutdatedCaches: true,

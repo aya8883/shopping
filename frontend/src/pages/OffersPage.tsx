@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useQuery } from '@apollo/client';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
@@ -29,6 +29,7 @@ import { SupermarketAvatar } from '../components/SupermarketMark';
 import { LeafletViewer, type LeafletPage } from '../components/LeafletViewer';
 import { WeeklyPromoGrid, type PromoOffer } from '../components/WeeklyPromoGrid';
 import { ProductQuickAdd } from '../components/ProductQuickAdd';
+import { FlyerProductThumb } from '../components/FlyerProductThumb';
 import { BetterPriceSnackbar } from '../components/BetterPriceSnackbar';
 import { DealCard, type DealOffer } from '../features/products/DealCard';
 import type { LeafletOfferHotspot } from '../data/leafletHotspots';
@@ -39,7 +40,6 @@ import {
 } from '../utils/supermarketBranding';
 import { flyerFreshnessLabel } from '../utils/flyerFreshness';
 import { formatSar } from '../utils/pricing';
-import { assetUrl } from '../utils/assetUrl';
 import { resolveProductImage } from '../utils/productImage';
 type Leaflet = {
   id: string;
@@ -93,6 +93,8 @@ export function OffersPage() {
   const [dealSort, setDealSort] = useState<'latest' | 'savings'>('savings');
   const [searchQuery, setSearchQuery] = useState('');
   const [tab, setTab] = useState(0);
+  const flyerSectionRef = useRef<HTMLDivElement | null>(null);
+  const didSelectStoreRef = useRef(false);
   const [selectedHotspot, setSelectedHotspot] = useState<LeafletOfferHotspot | null>(null);
   const [toastName, setToastName] = useState<string | null>(null);
   const [betterPrice, setBetterPrice] = useState<{
@@ -206,6 +208,17 @@ export function OffersPage() {
     if (!active) return null;
     return flyerFreshnessLabel(active.end_date, t);
   }, [active, t]);
+
+  useEffect(() => {
+    if (viewMode !== 'flyers' || !active || !didSelectStoreRef.current) return;
+    flyerSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, [tab, viewMode, active?.id]);
+
+  const selectStore = (index: number) => {
+    didSelectStoreRef.current = true;
+    setTab(index);
+  };
+
   const addPromoToBasket = (offer: PromoOffer) => {
     if (!active) return;
     const descEn = [
@@ -264,9 +277,16 @@ export function OffersPage() {
       supermarket_name_ar: active.supermarket.name_ar,
       offer_price: hotspot.price,
       regular_price: hotspot.oldPrice ?? null,
-      description_en: `${hotspot.unit} · ${active.supermarket.name_en}`,
-      description_ar: `${hotspot.unitAr} · ${active.supermarket.name_ar}`,
-      image_url: resolveProductImage(hotspot.productId, canonical?.image_url),
+      description_en:
+        hotspot.description_en ??
+        `${hotspot.unit} · ${active.supermarket.name_en}`,
+      description_ar:
+        hotspot.description_ar ??
+        `${hotspot.unitAr} · ${active.supermarket.name_ar}`,
+      image_url: resolveProductImage(
+        hotspot.productId,
+        hotspot.image_url ?? hotspot.flyer_image_url ?? canonical?.image_url,
+      ),
       quantity,
     });
 
@@ -474,7 +494,7 @@ export function OffersPage() {
           return (
             <ButtonBase
               key={`strip-${leaflet.id}`}
-              onClick={() => setTab(index)}
+              onClick={() => selectStore(index)}
               aria-pressed={selected}
               sx={{
                 flex: '0 0 auto',
@@ -517,105 +537,13 @@ export function OffersPage() {
         })}
       </Stack>
 
-      <Stack direction="row" spacing={1.25} useFlexGap flexWrap="wrap">
-        {leaflets.map((leaflet, index) => {
-          const selected = index === tab;
-          const colors = supermarketBrandColors(leaflet.supermarket);
-          const name = supermarketShortName(leaflet.supermarket, locale);
-          const cardFresh = flyerFreshnessLabel(leaflet.end_date, t);
-          const cover = leaflet.pages?.[0]?.image_url;
-          return (
-            <ButtonBase
-              key={leaflet.id}
-              onClick={() => setTab(index)}
-              aria-pressed={selected}
-              sx={{
-                flex: '1 1 160px',
-                maxWidth: { xs: '100%', sm: 220 },
-                borderRadius: 3,
-                overflow: 'hidden',
-                textAlign: 'start',
-                border: '2px solid',
-                borderColor: selected ? colors.bg : 'rgba(26,26,26,0.08)',
-                background: '#fff',
-                boxShadow: selected
-                  ? `0 14px 32px ${colors.bg}40`
-                  : '0 6px 18px rgba(15,23,42,0.06)',
-                display: 'block',
-              }}
-            >
-              <Box
-                sx={{
-                  position: 'relative',
-                  height: 88,
-                  background: `linear-gradient(145deg, ${colors.bg}33, #f8fafc)`,
-                  overflow: 'hidden',
-                }}
-              >
-                {cover ? (
-                  <Box
-                    component="img"
-                    src={assetUrl(cover) || undefined}
-                    alt=""
-                    referrerPolicy="no-referrer"
-                    sx={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                      objectPosition: 'top',
-                      opacity: 0.92,
-                    }}
-                  />
-                ) : null}
-                <Box
-                  sx={{
-                    position: 'absolute',
-                    inset: 0,
-                    background: `linear-gradient(180deg, transparent 40%, ${colors.bg}cc)`,
-                  }}
-                />
-                <Box sx={{ position: 'absolute', top: 8, insetInlineStart: 8 }}>
-                  <SupermarketAvatar store={leaflet.supermarket} size="sm" />
-                </Box>
-                {cardFresh ? (
-                  <Chip
-                    size="small"
-                    label={cardFresh.label}
-                    sx={{
-                      position: 'absolute',
-                      top: 8,
-                      insetInlineEnd: 8,
-                      height: 22,
-                      fontWeight: 800,
-                      fontSize: '0.7rem',
-                      bgcolor:
-                        cardFresh.tone === 'error'
-                          ? '#B91C1C'
-                          : cardFresh.tone === 'warning'
-                            ? '#D97706'
-                            : '#15803D',
-                      color: '#fff',
-                    }}
-                  />
-                ) : null}
-              </Box>
-              <Box sx={{ p: 1.25 }}>
-                <Typography fontWeight={800} fontSize="0.98rem" noWrap>
-                  {name}
-                </Typography>
-                <Typography variant="caption" color="text.secondary" fontWeight={600} display="block" noWrap>
-                  {t('offers.offerCount', { count: leaflet.offers.length })}
-                  {' · '}
-                  {formatRange(leaflet.start_date, leaflet.end_date, locale)}
-                </Typography>
-              </Box>
-            </ButtonBase>
-          );
-        })}
-      </Stack>
-
       {active ? (
-        <Stack spacing={2.25} key={active.id} className="animate-soft-rise delay-1">
+        <Stack
+          spacing={2.25}
+          key={active.id}
+          className="animate-soft-rise delay-1"
+          ref={flyerSectionRef}
+        >
           <Box
             sx={{
               p: 2,
@@ -706,17 +634,15 @@ export function OffersPage() {
               >
                 {filteredFlyerProducts.map((hotspot) => {
                   const name = locale === 'ar' ? hotspot.nameAr : hotspot.name;
+                  const desc =
+                    locale === 'ar' ? hotspot.description_ar : hotspot.description_en;
                   const qty = getQuantity(hotspot.productId);
-                  const img = resolveProductImage(
-                    hotspot.productId,
-                    getCanonicalProduct(hotspot.productId)?.image_url,
-                  );
                   return (
                     <ButtonBase
                       key={hotspot.id}
                       onClick={() => setSelectedHotspot(hotspot)}
                       sx={{
-                        flex: '0 0 128px',
+                        flex: '0 0 140px',
                         borderRadius: 3,
                         border: '1px solid',
                         borderColor: 'rgba(26,26,26,0.1)',
@@ -726,24 +652,8 @@ export function OffersPage() {
                         display: 'block',
                       }}
                     >
-                      <Box
-                        sx={{
-                          position: 'relative',
-                          height: 72,
-                          borderRadius: 2,
-                          bgcolor: 'rgba(15,23,42,0.04)',
-                          mb: 1,
-                          overflow: 'hidden',
-                        }}
-                      >
-                        {img ? (
-                          <Box
-                            component="img"
-                            src={img || undefined}
-                            alt=""
-                            sx={{ width: '100%', height: '100%', objectFit: 'contain', p: 0.5 }}
-                          />
-                        ) : null}
+                      <Box sx={{ position: 'relative', mb: 1 }}>
+                        <FlyerProductThumb hotspot={hotspot} height={88} alt={name} />
                         {qty > 0 ? (
                           <Chip
                             size="small"
@@ -763,6 +673,17 @@ export function OffersPage() {
                       <Typography fontWeight={800} fontSize="0.78rem" noWrap>
                         {name}
                       </Typography>
+                      {desc ? (
+                        <Typography
+                          variant="caption"
+                          color="text.secondary"
+                          fontWeight={600}
+                          display="block"
+                          noWrap
+                        >
+                          {desc}
+                        </Typography>
+                      ) : null}
                       <Typography fontWeight={900} fontSize="0.85rem" color="primary.main">
                         {formatSar(hotspot.price, locale)}
                       </Typography>
