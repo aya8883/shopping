@@ -1,15 +1,15 @@
 {
-  "syncedAt": "2026-09-30T04:37:38.719Z",
+  "syncedAt": "2026-09-30T12:09:04.755Z",
   "attribution": "Weekly flyer images from FullFlyer/ilofo when current; otherwise 3orod.net store weeklies. Product grid prices remain illustrative until retailer feeds are connected.",
   "stores": {
     "carrefour": {
       "officialUrl": "https://www.carrefourksa.com/mafsau/en/c/Offers",
-      "title_en": "Carrefour 7 September 2026",
-      "title_ar": "عروض كارفور",
-      "start_date": "2026-09-26",
-      "end_date": "2026-09-29",
-      "discoveredAt": "2026-09-30T04:37:38.684Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/carrefour-7-september-2026/",
+      "title_en": "Carrefour 30 September 6 October 2026",
+      "title_ar": "عروض كارفور — 2026-09-30 إلى 2026-10-06",
+      "start_date": "2026-09-30",
+      "end_date": "2026-10-06",
+      "discoveredAt": "2026-09-30T12:09:04.724Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/carrefour-30-september-6-october-2026/",
       "pages": [
         {
           "page_number": 1,
@@ -24,7 +24,7 @@
       "title_ar": "عروض لولو — 2026-09-30 إلى 2026-10-06",
       "start_date": "2026-09-30",
       "end_date": "2026-10-06",
-      "discoveredAt": "2026-09-30T04:37:38.684Z",
+      "discoveredAt": "2026-09-30T12:09:04.724Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/lulu-30-september-6-october-2026/",
       "pages": [
         {
@@ -38,10 +38,6 @@
         {
           "page_number": 3,
           "image_url": "/leaflets/lulu/page-3.jpg"
-        },
-        {
-          "page_number": 4,
-          "image_url": "/leaflets/lulu/page-4.jpg"
         }
       ],
       "page_source": "official_override"
@@ -52,7 +48,7 @@
       "title_ar": "عروض بنده — 2026-09-30 إلى 2026-10-06",
       "start_date": "2026-09-30",
       "end_date": "2026-10-06",
-      "discoveredAt": "2026-09-30T04:37:38.684Z",
+      "discoveredAt": "2026-09-30T12:09:04.724Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/panda-weekly-30-september-6-october-2026/",
       "pages": [
         {
@@ -64,12 +60,12 @@
     },
     "danube": {
       "officialUrl": "https://www.danube.sa/en/offers",
-      "title_en": "Danube Western Region 23 September 6 October 2026",
-      "title_ar": "عروض الدانوب — 2026-09-23 إلى 2026-10-06",
-      "start_date": "2026-09-23",
+      "title_en": "Danube Western Region Weekly 30 September 6 October 2026",
+      "title_ar": "عروض الدانوب — 2026-09-30 إلى 2026-10-06",
+      "start_date": "2026-09-30",
       "end_date": "2026-10-06",
-      "discoveredAt": "2026-09-30T04:37:38.684Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/danube-western-region-23-september-6-october-2026/",
+      "discoveredAt": "2026-09-30T12:09:04.724Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/danube-western-region-weekly-30-september-6-october-2026/",
       "pages": [
         {
           "page_number": 1,
@@ -84,7 +80,7 @@
       "title_ar": "عروض التميمي — 2026-09-24 إلى 2026-09-30",
       "start_date": "2026-09-24",
       "end_date": "2026-09-30",
-      "discoveredAt": "2026-09-30T04:37:38.684Z",
+      "discoveredAt": "2026-09-30T12:09:04.724Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/tamimi-markets-24-30-september-2026/",
       "pages": [
         {
@@ -100,7 +96,7 @@
       "title_ar": "عروض العثيم — 2026-09-30 إلى 2026-10-06",
       "start_date": "2026-09-30",
       "end_date": "2026-10-06",
-      "discoveredAt": "2026-09-30T04:37:38.684Z",
+      "discoveredAt": "2026-09-30T12:09:04.724Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/othaim-30-september-6-october-2026/",
       "pages": [
         {
@@ -110,18 +106,26 @@
         {
           "page_number": 2,
           "image_url": "/leaflets/othaim/page-2.jpg"
+        },
+        {
+          "page_number": 3,
+          "image_url": "/leaflets/othaim/page-3.jpg"
+        },
+        {
+          "page_number": 4,
+          "image_url": "/leaflets/othaim/page-4.jpg"
         }
       ],
       "page_source": "official_override"
     },
     "nesto": {
       "officialUrl": "https://www.nestohypermarket.com/",
-      "title_en": "Nesto Mega Super Deal At Nesto Sanaya 29 September 6 October 2026",
-      "title_ar": "عروض نستو — 2026-09-29 إلى 2026-10-06",
-      "start_date": "2026-09-29",
+      "title_en": "Nesto Mega Super Deal At Nesto Villagio Mall 30 September 6 October 2026",
+      "title_ar": "عروض نستو — 2026-09-30 إلى 2026-10-06",
+      "start_date": "2026-09-30",
       "end_date": "2026-10-06",
-      "discoveredAt": "2026-09-30T04:37:38.684Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/nesto-mega-super-deal-at-nesto-sanaya-29-september-6-october-2026/",
+      "discoveredAt": "2026-09-30T12:09:04.724Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/nesto-mega-super-deal-at-nesto-villagio-mall-30-september-6-october-2026/",
       "pages": [
         {
           "page_number": 1,
@@ -136,7 +140,7 @@
       "title_ar": "عروض المزرعة — 2026-09-30 إلى 2026-10-06",
       "start_date": "2026-09-30",
       "end_date": "2026-10-06",
-      "discoveredAt": "2026-09-30T04:37:38.684Z",
+      "discoveredAt": "2026-09-30T12:09:04.724Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/farm-superstores-weekly-southern-30-september-6-october-2026/",
       "pages": [
         {
@@ -148,12 +152,12 @@
     },
     "bindawood": {
       "officialUrl": "https://www.bindawood.com/",
-      "title_en": "Bindawood Western Region 23 September 6 October 2026",
-      "title_ar": "عروض بن داود — 2026-09-23 إلى 2026-10-06",
-      "start_date": "2026-09-23",
+      "title_en": "Bindawood Western Region Weekly Offers 30 September 6 October 2026",
+      "title_ar": "عروض بن داود — 2026-09-30 إلى 2026-10-06",
+      "start_date": "2026-09-30",
       "end_date": "2026-10-06",
-      "discoveredAt": "2026-09-30T04:37:38.684Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/bindawood-western-region-23-september-6-october-2026/",
+      "discoveredAt": "2026-09-30T12:09:04.724Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/bindawood-western-region-weekly-offers-30-september-6-october-2026/",
       "pages": [
         {
           "page_number": 1,
