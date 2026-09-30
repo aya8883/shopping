@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-09-30T12:09:06.173Z",
+  "syncedAt": "2026-09-30T22:00:46.402Z",
   "source": "weekly_flyer_engine_v2",
   "attribution": "Flyer-sourced prices from improved OCR matching + curated leaflet hotspots. Store tweaks create cross-chain spread for Smart Basket.",
   "stores": {
@@ -470,8 +470,8 @@
     "tamimi": {
       "start_date": "2026-09-24",
       "end_date": "2026-09-30",
-      "title_en": "Tamimi Markets 24 30 September 2026",
-      "title_ar": "عروض التميمي — 2026-09-24 إلى 2026-09-30",
+      "title_en": "Tamimi Markets 7 September 2026",
+      "title_ar": "عروض التميمي",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
