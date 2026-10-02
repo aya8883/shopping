@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-10-02T12:06:56.683Z",
+  "syncedAt": "2026-10-02T21:58:33.520Z",
   "source": "weekly_flyer_engine_v2",
   "attribution": "Flyer-sourced prices from improved OCR matching + curated leaflet hotspots. Store tweaks create cross-chain spread for Smart Basket.",
   "stores": {
@@ -586,7 +586,7 @@
     "othaim": {
       "start_date": "2026-09-30",
       "end_date": "2026-10-06",
-      "title_en": "Othaim 30 September 6 October 2026",
+      "title_en": "Othaim Corner 30 September 6 October 2026",
       "title_ar": "عروض العثيم — 2026-09-30 إلى 2026-10-06",
       "offers": [
         {
@@ -816,10 +816,10 @@
       ]
     },
     "farm": {
-      "start_date": "2026-10-01",
+      "start_date": "2026-09-30",
       "end_date": "2026-10-06",
-      "title_en": "Farm Superstores 1 6 October 2026",
-      "title_ar": "عروض المزرعة — 2026-10-01 إلى 2026-10-06",
+      "title_en": "Farm Superstores Weekly Southern 30 September 6 October 2026",
+      "title_ar": "عروض المزرعة — 2026-09-30 إلى 2026-10-06",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
