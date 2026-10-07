@@ -3,16 +3,16 @@
   "stores": {
     "carrefour": {
       "officialUrl": "https://www.carrefourksa.com/mafsau/en/c/Offers",
-      "title_en": "Carrefour 7 12 October 2026",
-      "title_ar": "عروض كارفور — 2026-10-07 إلى 2026-10-12",
+      "title_en": "Carrefour 7 13 October 2026",
+      "title_ar": "عروض كارفور — 2026-10-07 إلى 2026-10-13",
       "start_date": "2026-10-07",
-      "end_date": "2026-10-12",
-      "discoveredAt": "2026-10-07T04:56:58.081Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/carrefour-7-12-october-2026/",
+      "end_date": "2026-10-13",
+      "discoveredAt": "2026-10-07T12:53:57.045Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/carrefour-7-13-october-2026/",
       "pages": [
         {
           "page_number": 1,
-          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/10/carrefour-7-12-october-2026-1200x1571.jpg"
+          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/10/carrefour-7-13-october-2026-1200x1571.jpg"
         }
       ],
       "page_source": "3orod"
@@ -23,7 +23,7 @@
       "title_ar": "عروض لولو — 2026-10-07 إلى 2026-10-13",
       "start_date": "2026-10-07",
       "end_date": "2026-10-13",
-      "discoveredAt": "2026-10-07T04:56:58.081Z",
+      "discoveredAt": "2026-10-07T12:53:57.045Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/lulu-7-13-october-2026/",
       "pages": [
         {
@@ -39,7 +39,7 @@
       "title_ar": "عروض بنده — 2026-10-07 إلى 2026-10-13",
       "start_date": "2026-10-07",
       "end_date": "2026-10-13",
-      "discoveredAt": "2026-10-07T04:56:58.081Z",
+      "discoveredAt": "2026-10-07T12:53:57.045Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/panda-weekly-7-13-october-2026/",
       "pages": [
         {
@@ -51,32 +51,32 @@
     },
     "danube": {
       "officialUrl": "https://www.danube.sa/en/offers",
-      "title_en": "Danube Western Region Weekly 30 September 6 October 2026",
-      "title_ar": "عروض الدانوب — 2026-09-30 إلى 2026-10-06",
-      "start_date": "2026-09-30",
-      "end_date": "2026-10-06",
-      "discoveredAt": "2026-10-06T22:29:40.668Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/danube-western-region-weekly-30-september-6-october-2026/",
+      "title_en": "Danube Western Region 7 20 October 2026",
+      "title_ar": "عروض الدانوب — 2026-10-07 إلى 2026-10-20",
+      "start_date": "2026-10-07",
+      "end_date": "2026-10-20",
+      "discoveredAt": "2026-10-07T12:53:57.045Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/danube-western-region-7-20-october-2026/",
       "pages": [
         {
           "page_number": 1,
-          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/09/danube-western-region-weekly-30-september-6-october-2026-1200x1697.jpg"
+          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/10/danube-western-region-7-20-october-2026-1200x1697.jpg"
         }
       ],
       "page_source": "3orod"
     },
     "tamimi": {
       "officialUrl": "https://www.tamimimarkets.com/",
-      "title_en": "Tamimi Markets 7 September 2026",
-      "title_ar": "عروض التميمي",
-      "start_date": "2026-10-04",
-      "end_date": "2026-10-06",
-      "discoveredAt": "2026-10-07T04:56:58.081Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/tamimi-markets-7-september-2026/",
+      "title_en": "Tamimi Markets 7 13 October 2026",
+      "title_ar": "عروض التميمي — 2026-10-07 إلى 2026-10-13",
+      "start_date": "2026-10-07",
+      "end_date": "2026-10-13",
+      "discoveredAt": "2026-10-07T12:53:57.045Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/tamimi-markets-7-13-october-2026/",
       "pages": [
         {
           "page_number": 1,
-          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/09/tamimi-markets-7-september-2026-1200x1500.jpg"
+          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/10/tamimi-markets-7-13-october-2026-1200x1500.jpg"
         }
       ],
       "page_source": "3orod"
@@ -87,7 +87,7 @@
       "title_ar": "عروض العثيم — 2026-10-07 إلى 2026-10-13",
       "start_date": "2026-10-07",
       "end_date": "2026-10-13",
-      "discoveredAt": "2026-10-07T04:56:58.081Z",
+      "discoveredAt": "2026-10-07T12:53:57.045Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/othaim-7-13-october-2026/",
       "pages": [
         {
@@ -96,6 +96,10 @@
         },
         {
           "page_number": 2,
+          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/10/othaim-7-13-october-2026-3-1024x1021.jpg"
+        },
+        {
+          "page_number": 3,
           "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/10/othaim-7-13-october-2026-2-778x1024.jpg"
         }
       ],
@@ -103,16 +107,28 @@
     },
     "nesto": {
       "officialUrl": "https://www.nestohypermarket.com/",
-      "title_en": "Nesto 3 September 21 November 2026",
-      "title_ar": "عروض نستو — 2026-09-03 إلى 2026-11-21",
-      "start_date": "2026-09-03",
-      "end_date": "2026-11-21",
-      "discoveredAt": "2026-10-07T04:56:58.081Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/nesto-3-september-21-november-2026/",
+      "title_en": "Nesto 7 13 October 2026",
+      "title_ar": "عروض نستو — 2026-10-07 إلى 2026-10-13",
+      "start_date": "2026-10-07",
+      "end_date": "2026-10-13",
+      "discoveredAt": "2026-10-07T12:53:57.045Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/nesto-7-13-october-2026/",
       "pages": [
         {
           "page_number": 1,
-          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/09/nesto-3-september-21-november-2026-1200x1662.jpg"
+          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/10/nesto-7-13-october-2026-1200x1662.jpg"
+        },
+        {
+          "page_number": 2,
+          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/10/nesto-7-13-october-2026-6-768x1024.jpg"
+        },
+        {
+          "page_number": 3,
+          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/10/nesto-7-13-october-2026-5-819x1024.jpg"
+        },
+        {
+          "page_number": 4,
+          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/10/nesto-7-13-october-2026-4-768x1024.jpg"
         }
       ],
       "page_source": "3orod"
@@ -123,7 +139,7 @@
       "title_ar": "عروض المزرعة — 2026-10-07 إلى 2026-10-13",
       "start_date": "2026-10-07",
       "end_date": "2026-10-13",
-      "discoveredAt": "2026-10-07T04:56:58.081Z",
+      "discoveredAt": "2026-10-07T12:53:57.045Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/farm-superstores-weekly-southern-7-13-october-2026/",
       "pages": [
         {
@@ -135,20 +151,20 @@
     },
     "bindawood": {
       "officialUrl": "https://www.bindawood.com/",
-      "title_en": "Bindawood Western Region Weekly Offers 30 September 6 October 2026",
-      "title_ar": "عروض بن داود — 2026-09-30 إلى 2026-10-06",
-      "start_date": "2026-09-30",
-      "end_date": "2026-10-06",
-      "discoveredAt": "2026-10-06T22:29:40.668Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/bindawood-western-region-weekly-offers-30-september-6-october-2026/",
+      "title_en": "Bindawood Western Region 7 20 October 2026",
+      "title_ar": "عروض بن داود — 2026-10-07 إلى 2026-10-20",
+      "start_date": "2026-10-07",
+      "end_date": "2026-10-20",
+      "discoveredAt": "2026-10-07T12:53:57.045Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/bindawood-western-region-7-20-october-2026/",
       "pages": [
         {
           "page_number": 1,
-          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/09/bindawood-western-region-weekly-offers-30-september-6-october-2026-1200x1600.jpg"
+          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/10/bindawood-western-region-7-20-october-2026-1200x1600.jpg"
         }
       ],
       "page_source": "3orod"
     }
   },
-  "discoveredAt": "2026-10-07T04:56:58.081Z"
+  "discoveredAt": "2026-10-07T12:53:57.045Z"
 }

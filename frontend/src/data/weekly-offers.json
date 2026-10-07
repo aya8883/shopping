@@ -1,13 +1,13 @@
 {
-  "syncedAt": "2026-10-07T04:57:07.813Z",
+  "syncedAt": "2026-10-07T12:54:08.597Z",
   "source": "weekly_flyer_engine_v2",
   "attribution": "Flyer-sourced prices from improved OCR matching + curated leaflet hotspots. Store tweaks create cross-chain spread for Smart Basket.",
   "stores": {
     "carrefour": {
       "start_date": "2026-10-07",
-      "end_date": "2026-10-12",
-      "title_en": "Carrefour 7 12 October 2026",
-      "title_ar": "عروض كارفور — 2026-10-07 إلى 2026-10-12",
+      "end_date": "2026-10-13",
+      "title_en": "Carrefour 7 13 October 2026",
+      "title_ar": "عروض كارفور — 2026-10-07 إلى 2026-10-13",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -352,10 +352,10 @@
       ]
     },
     "danube": {
-      "start_date": "2026-09-30",
-      "end_date": "2026-10-06",
-      "title_en": "Danube Western Region Weekly 30 September 6 October 2026",
-      "title_ar": "عروض الدانوب — 2026-09-30 إلى 2026-10-06",
+      "start_date": "2026-10-07",
+      "end_date": "2026-10-20",
+      "title_en": "Danube Western Region 7 20 October 2026",
+      "title_ar": "عروض الدانوب — 2026-10-07 إلى 2026-10-20",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -468,10 +468,10 @@
       ]
     },
     "tamimi": {
-      "start_date": "2026-10-04",
-      "end_date": "2026-10-06",
-      "title_en": "Tamimi Markets 7 September 2026",
-      "title_ar": "عروض التميمي",
+      "start_date": "2026-10-07",
+      "end_date": "2026-10-13",
+      "title_en": "Tamimi Markets 7 13 October 2026",
+      "title_ar": "عروض التميمي — 2026-10-07 إلى 2026-10-13",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -700,10 +700,10 @@
       ]
     },
     "nesto": {
-      "start_date": "2026-09-03",
-      "end_date": "2026-11-21",
-      "title_en": "Nesto 3 September 21 November 2026",
-      "title_ar": "عروض نستو — 2026-09-03 إلى 2026-11-21",
+      "start_date": "2026-10-07",
+      "end_date": "2026-10-13",
+      "title_en": "Nesto 7 13 October 2026",
+      "title_ar": "عروض نستو — 2026-10-07 إلى 2026-10-13",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -932,10 +932,10 @@
       ]
     },
     "bindawood": {
-      "start_date": "2026-09-30",
-      "end_date": "2026-10-06",
-      "title_en": "Bindawood Western Region Weekly Offers 30 September 6 October 2026",
-      "title_ar": "عروض بن داود — 2026-09-30 إلى 2026-10-06",
+      "start_date": "2026-10-07",
+      "end_date": "2026-10-20",
+      "title_en": "Bindawood Western Region 7 20 October 2026",
+      "title_ar": "عروض بن داود — 2026-10-07 إلى 2026-10-20",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
