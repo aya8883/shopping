@@ -1,15 +1,15 @@
 {
-  "syncedAt": "2026-10-06T22:29:40.704Z",
+  "syncedAt": "2026-10-07T04:56:58.116Z",
   "attribution": "Weekly flyer images from FullFlyer/ilofo when current; otherwise 3orod.net store weeklies. Product grid prices remain illustrative until retailer feeds are connected.",
   "stores": {
     "carrefour": {
       "officialUrl": "https://www.carrefourksa.com/mafsau/en/c/Offers",
-      "title_en": "Carrefour 30 September 6 October 2026 3",
-      "title_ar": "عروض كارفور — 2026-09-30 إلى 2026-10-06",
-      "start_date": "2026-09-30",
-      "end_date": "2026-10-06",
-      "discoveredAt": "2026-10-06T22:29:40.668Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/carrefour-30-september-6-october-2026-3/",
+      "title_en": "Carrefour 7 12 October 2026",
+      "title_ar": "عروض كارفور — 2026-10-07 إلى 2026-10-12",
+      "start_date": "2026-10-07",
+      "end_date": "2026-10-12",
+      "discoveredAt": "2026-10-07T04:56:58.081Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/carrefour-7-12-october-2026/",
       "pages": [
         {
           "page_number": 1,
@@ -20,12 +20,12 @@
     },
     "lulu": {
       "officialUrl": "https://www.luluhypermarket.com/en-sa/promotions",
-      "title_en": "Lulu 3 13 October 2026",
-      "title_ar": "عروض لولو — 2026-10-03 إلى 2026-10-13",
-      "start_date": "2026-10-03",
+      "title_en": "Lulu 7 13 October 2026",
+      "title_ar": "عروض لولو — 2026-10-07 إلى 2026-10-13",
+      "start_date": "2026-10-07",
       "end_date": "2026-10-13",
-      "discoveredAt": "2026-10-06T22:29:40.668Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/lulu-3-13-october-2026/",
+      "discoveredAt": "2026-10-07T04:56:58.081Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/lulu-7-13-october-2026/",
       "pages": [
         {
           "page_number": 1,
@@ -36,12 +36,12 @@
     },
     "panda": {
       "officialUrl": "https://www.panda.com.sa/en/offers",
-      "title_en": "Panda Weekly 30 September 6 October 2026",
-      "title_ar": "عروض بنده — 2026-09-30 إلى 2026-10-06",
-      "start_date": "2026-09-30",
-      "end_date": "2026-10-06",
-      "discoveredAt": "2026-10-06T22:29:40.668Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/panda-weekly-30-september-6-october-2026/",
+      "title_en": "Panda Weekly 7 13 October 2026",
+      "title_ar": "عروض بنده — 2026-10-07 إلى 2026-10-13",
+      "start_date": "2026-10-07",
+      "end_date": "2026-10-13",
+      "discoveredAt": "2026-10-07T04:56:58.081Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/panda-weekly-7-13-october-2026/",
       "pages": [
         {
           "page_number": 1,
@@ -72,7 +72,7 @@
       "title_ar": "عروض التميمي",
       "start_date": "2026-10-04",
       "end_date": "2026-10-06",
-      "discoveredAt": "2026-10-06T22:29:40.668Z",
+      "discoveredAt": "2026-10-07T04:56:58.081Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/tamimi-markets-7-september-2026/",
       "pages": [
         {
@@ -88,7 +88,7 @@
       "title_ar": "عروض العثيم — 2026-10-07 إلى 2026-10-13",
       "start_date": "2026-10-07",
       "end_date": "2026-10-13",
-      "discoveredAt": "2026-10-06T22:29:40.668Z",
+      "discoveredAt": "2026-10-07T04:56:58.081Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/othaim-7-13-october-2026/",
       "pages": [
         {
@@ -108,7 +108,7 @@
       "title_ar": "عروض نستو — 2026-09-03 إلى 2026-11-21",
       "start_date": "2026-09-03",
       "end_date": "2026-11-21",
-      "discoveredAt": "2026-10-06T22:29:40.668Z",
+      "discoveredAt": "2026-10-07T04:56:58.081Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/nesto-3-september-21-november-2026/",
       "pages": [
         {
@@ -124,7 +124,7 @@
       "title_ar": "عروض المزرعة — 2026-10-07 إلى 2026-10-13",
       "start_date": "2026-10-07",
       "end_date": "2026-10-13",
-      "discoveredAt": "2026-10-06T22:29:40.668Z",
+      "discoveredAt": "2026-10-07T04:56:58.081Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/farm-superstores-weekly-southern-7-13-october-2026/",
       "pages": [
         {
