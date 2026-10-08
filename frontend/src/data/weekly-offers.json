@@ -1,13 +1,13 @@
 {
-  "syncedAt": "2026-10-08T13:03:14.829Z",
+  "syncedAt": "2026-10-08T23:05:25.671Z",
   "source": "weekly_flyer_engine_v2",
   "attribution": "Flyer-sourced prices from improved OCR matching + curated leaflet hotspots. Store tweaks create cross-chain spread for Smart Basket.",
   "stores": {
     "carrefour": {
-      "start_date": "2026-10-07",
+      "start_date": "2026-10-08",
       "end_date": "2026-10-13",
-      "title_en": "Carrefour 7 13 October 2026",
-      "title_ar": "عروض كارفور — 2026-10-07 إلى 2026-10-13",
+      "title_en": "Carrefour 8 13 October 2026",
+      "title_ar": "عروض كارفور — 2026-10-08 إلى 2026-10-13",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
