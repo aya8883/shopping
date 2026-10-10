@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-10-10T12:08:01.096Z",
+  "syncedAt": "2026-10-10T21:20:48.664Z",
   "attribution": "Weekly flyer images from FullFlyer/ilofo when current; otherwise 3orod.net store weeklies. Product grid prices remain illustrative until retailer feeds are connected.",
   "stores": {
     "carrefour": {
@@ -8,7 +8,7 @@
       "title_ar": "عروض كارفور — 2026-10-07 إلى 2026-10-13",
       "start_date": "2026-10-07",
       "end_date": "2026-10-13",
-      "discoveredAt": "2026-10-10T12:08:01.057Z",
+      "discoveredAt": "2026-10-10T21:20:48.631Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/carrefour-7-13-october-2026/",
       "pages": [
         {
@@ -24,20 +24,16 @@
     },
     "lulu": {
       "officialUrl": "https://www.luluhypermarket.com/en-sa/promotions",
-      "title_en": "Lulu 8 13 October 2026",
-      "title_ar": "عروض لولو — 2026-10-08 إلى 2026-10-13",
-      "start_date": "2026-10-08",
+      "title_en": "Lulu 9 13 October 2026",
+      "title_ar": "عروض لولو — 2026-10-09 إلى 2026-10-13",
+      "start_date": "2026-10-09",
       "end_date": "2026-10-13",
-      "discoveredAt": "2026-10-10T12:08:01.057Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/lulu-8-13-october-2026/",
+      "discoveredAt": "2026-10-10T21:20:48.631Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/lulu-9-13-october-2026/",
       "pages": [
         {
           "page_number": 1,
           "image_url": "/leaflets/lulu/page-1.jpg"
-        },
-        {
-          "page_number": 2,
-          "image_url": "/leaflets/lulu/page-2.jpg"
         }
       ],
       "page_source": "official_override"
@@ -48,7 +44,7 @@
       "title_ar": "عروض بنده — 2026-10-07 إلى 2026-10-13",
       "start_date": "2026-10-07",
       "end_date": "2026-10-13",
-      "discoveredAt": "2026-10-10T12:08:01.057Z",
+      "discoveredAt": "2026-10-10T21:20:48.631Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/panda-weekly-7-13-october-2026/",
       "pages": [
         {
@@ -64,7 +60,7 @@
       "title_ar": "عروض الدانوب — 2026-10-07 إلى 2026-10-20",
       "start_date": "2026-10-07",
       "end_date": "2026-10-20",
-      "discoveredAt": "2026-10-10T12:08:01.057Z",
+      "discoveredAt": "2026-10-10T21:20:48.631Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/danube-western-region-7-20-october-2026/",
       "pages": [
         {
@@ -80,7 +76,7 @@
       "title_ar": "عروض التميمي — 2026-10-07 إلى 2026-10-13",
       "start_date": "2026-10-07",
       "end_date": "2026-10-13",
-      "discoveredAt": "2026-10-10T12:08:01.057Z",
+      "discoveredAt": "2026-10-10T21:20:48.631Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/tamimi-markets-7-13-october-2026/",
       "pages": [
         {
@@ -100,7 +96,7 @@
       "title_ar": "عروض العثيم — 2026-10-09 إلى 2026-10-13",
       "start_date": "2026-10-09",
       "end_date": "2026-10-13",
-      "discoveredAt": "2026-10-10T12:08:01.057Z",
+      "discoveredAt": "2026-10-10T21:20:48.631Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/othaim-9-13-october-2026/",
       "pages": [
         {
@@ -120,7 +116,7 @@
       "title_ar": "عروض نستو — 2026-10-07 إلى 2026-10-13",
       "start_date": "2026-10-07",
       "end_date": "2026-10-13",
-      "discoveredAt": "2026-10-10T12:08:01.057Z",
+      "discoveredAt": "2026-10-10T21:20:48.631Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/nesto-october-combo-deals-at-nesto-al-hasa-7-13-october-2026/",
       "pages": [
         {
@@ -136,7 +132,7 @@
       "title_ar": "عروض المزرعة — 2026-10-07 إلى 2026-10-13",
       "start_date": "2026-10-07",
       "end_date": "2026-10-13",
-      "discoveredAt": "2026-10-10T12:08:01.057Z",
+      "discoveredAt": "2026-10-10T21:20:48.631Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/farm-superstores-weekly-southern-7-13-october-2026/",
       "pages": [
         {
@@ -152,7 +148,7 @@
       "title_ar": "عروض بن داود — 2026-10-07 إلى 2026-10-20",
       "start_date": "2026-10-07",
       "end_date": "2026-10-20",
-      "discoveredAt": "2026-10-10T12:08:01.057Z",
+      "discoveredAt": "2026-10-10T21:20:48.631Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/bindawood-western-region-7-20-october-2026/",
       "pages": [
         {
