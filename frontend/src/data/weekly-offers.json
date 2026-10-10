@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-10-10T04:55:06.751Z",
+  "syncedAt": "2026-10-10T12:08:13.365Z",
   "source": "weekly_flyer_engine_v2",
   "attribution": "Flyer-sourced prices from improved OCR matching + curated leaflet hotspots. Store tweaks create cross-chain spread for Smart Basket.",
   "stores": {
@@ -701,9 +701,9 @@
     },
     "nesto": {
       "start_date": "2026-10-07",
-      "end_date": "2026-10-31",
-      "title_en": "Nesto 7 31 October 2026",
-      "title_ar": "عروض نستو — 2026-10-07 إلى 2026-10-31",
+      "end_date": "2026-10-13",
+      "title_en": "Nesto October Combo Deals At Nesto Al Hasa 7 13 October 2026",
+      "title_ar": "عروض نستو — 2026-10-07 إلى 2026-10-13",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
