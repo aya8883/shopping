@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-10-14T16:47:58.252Z",
+  "syncedAt": "2026-10-14T21:24:46.925Z",
   "source": "weekly_flyer_engine_v2",
   "attribution": "Flyer-sourced prices from improved OCR matching + curated leaflet hotspots. Store tweaks create cross-chain spread for Smart Basket.",
   "stores": {
@@ -352,10 +352,10 @@
       ]
     },
     "danube": {
-      "start_date": "2026-10-07",
+      "start_date": "2026-10-14",
       "end_date": "2026-10-20",
-      "title_en": "Danube Western Region 7 20 October 2026",
-      "title_ar": "عروض الدانوب — 2026-10-07 إلى 2026-10-20",
+      "title_en": "Danube Western Region Weekly 14 20 October 2026",
+      "title_ar": "عروض الدانوب — 2026-10-14 إلى 2026-10-20",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -700,10 +700,10 @@
       ]
     },
     "nesto": {
-      "start_date": "2026-10-13",
+      "start_date": "2026-10-14",
       "end_date": "2026-10-20",
-      "title_en": "Nesto Nesto Shopping Festival Sanaya 2 13 20 October 2026",
-      "title_ar": "عروض نستو — 2026-10-13 إلى 2026-10-20",
+      "title_en": "Nesto Nesto Shopping Festival Villagio Mall 14 20 October 2026",
+      "title_ar": "عروض نستو — 2026-10-14 إلى 2026-10-20",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -932,10 +932,10 @@
       ]
     },
     "bindawood": {
-      "start_date": "2026-10-07",
+      "start_date": "2026-10-14",
       "end_date": "2026-10-20",
-      "title_en": "Bindawood Western Region 7 20 October 2026",
-      "title_ar": "عروض بن داود — 2026-10-07 إلى 2026-10-20",
+      "title_en": "Bindawood Western Region Weekly Offers 14 20 October 2026",
+      "title_ar": "عروض بن داود — 2026-10-14 إلى 2026-10-20",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
