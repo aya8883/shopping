@@ -1,13 +1,13 @@
 {
-  "syncedAt": "2026-10-15T16:34:02.239Z",
+  "syncedAt": "2026-10-15T21:05:56.286Z",
   "source": "weekly_flyer_engine_v2",
   "attribution": "Flyer-sourced prices from improved OCR matching + curated leaflet hotspots. Store tweaks create cross-chain spread for Smart Basket.",
   "stores": {
     "carrefour": {
-      "start_date": "2026-10-14",
+      "start_date": "2026-10-15",
       "end_date": "2026-10-20",
-      "title_en": "Carrefour 14 20 October 2026",
-      "title_ar": "عروض كارفور — 2026-10-14 إلى 2026-10-20",
+      "title_en": "Carrefour 15 20 October 2026",
+      "title_ar": "عروض كارفور — 2026-10-15 إلى 2026-10-20",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -120,10 +120,10 @@
       ]
     },
     "lulu": {
-      "start_date": "2026-10-14",
-      "end_date": "2026-10-20",
-      "title_en": "Lulu 14 20 October 2026",
-      "title_ar": "عروض لولو — 2026-10-14 إلى 2026-10-20",
+      "start_date": "2026-10-15",
+      "end_date": "2026-10-17",
+      "title_en": "Lulu 15 17 October 2026",
+      "title_ar": "عروض لولو — 2026-10-15 إلى 2026-10-17",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -584,10 +584,10 @@
       ]
     },
     "othaim": {
-      "start_date": "2026-10-14",
+      "start_date": "2026-10-15",
       "end_date": "2026-10-20",
-      "title_en": "Othaim 14 20 October 2026",
-      "title_ar": "عروض العثيم — 2026-10-14 إلى 2026-10-20",
+      "title_en": "Othaim 15 20 October 2026",
+      "title_ar": "عروض العثيم — 2026-10-15 إلى 2026-10-20",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
