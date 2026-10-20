@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-10-20T11:07:13.587Z",
+  "syncedAt": "2026-10-20T16:33:12.032Z",
   "source": "weekly_flyer_engine_v2",
   "attribution": "Flyer-sourced prices from improved OCR matching + curated leaflet hotspots. Store tweaks create cross-chain spread for Smart Basket.",
   "stores": {
@@ -121,9 +121,9 @@
     },
     "lulu": {
       "start_date": "2026-10-18",
-      "end_date": "2026-10-20",
-      "title_en": "Lulu 18 20 October 2026",
-      "title_ar": "عروض لولو — 2026-10-18 إلى 2026-10-20",
+      "end_date": "2026-10-31",
+      "title_en": "Lulu 18 31 October 2026",
+      "title_ar": "عروض لولو — 2026-10-18 إلى 2026-10-31",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -700,10 +700,10 @@
       ]
     },
     "nesto": {
-      "start_date": "2026-10-14",
-      "end_date": "2026-10-20",
-      "title_en": "Nesto Nesto Shopping Festival Villagio Mall 14 20 October 2026",
-      "title_ar": "عروض نستو — 2026-10-14 إلى 2026-10-20",
+      "start_date": "2026-10-20",
+      "end_date": "2026-10-27",
+      "title_en": "Nesto The Real Half Price Deals Mina 20 27 October 2026",
+      "title_ar": "عروض نستو — 2026-10-20 إلى 2026-10-27",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
