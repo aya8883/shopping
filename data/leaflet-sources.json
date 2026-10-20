@@ -3,36 +3,32 @@
   "stores": {
     "carrefour": {
       "officialUrl": "https://www.carrefourksa.com/mafsau/en/c/Offers",
-      "title_en": "Carrefour 18 20 October 2026",
-      "title_ar": "عروض كارفور — 2026-10-18 إلى 2026-10-20",
+      "title_en": "Carrefour 9 October 2026",
+      "title_ar": "عروض كارفور",
       "start_date": "2026-10-18",
       "end_date": "2026-10-20",
-      "discoveredAt": "2026-10-20T16:33:07.463Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/carrefour-18-20-october-2026/",
+      "discoveredAt": "2026-10-20T21:24:08.178Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/carrefour-9-october-2026/",
       "pages": [
         {
           "page_number": 1,
-          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/10/carrefour-18-20-october-2026-1200x1500.jpg"
-        },
-        {
-          "page_number": 2,
-          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/10/carrefour-18-20-october-2026-2-819x1024.jpg"
+          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/10/carrefour-9-october-2026-1200x1500.jpg"
         }
       ],
       "page_source": "3orod"
     },
     "lulu": {
       "officialUrl": "https://www.luluhypermarket.com/en-sa/promotions",
-      "title_en": "Lulu 18 31 October 2026",
-      "title_ar": "عروض لولو — 2026-10-18 إلى 2026-10-31",
-      "start_date": "2026-10-18",
-      "end_date": "2026-10-31",
-      "discoveredAt": "2026-10-20T16:33:07.463Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/lulu-18-31-october-2026/",
+      "title_en": "Lulu 15 October 2 November 2026",
+      "title_ar": "عروض لولو — 2026-10-15 إلى 2026-11-02",
+      "start_date": "2026-10-15",
+      "end_date": "2026-11-02",
+      "discoveredAt": "2026-10-20T21:24:08.178Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/lulu-15-october-2-november-2026/",
       "pages": [
         {
           "page_number": 1,
-          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/10/lulu-18-31-october-2026-1200x1500.jpg"
+          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/10/lulu-15-october-2-november-2026-1200x1500.jpg"
         }
       ],
       "page_source": "3orod"
@@ -43,7 +39,7 @@
       "title_ar": "عروض بنده — 2026-10-07 إلى 2026-10-13",
       "start_date": "2026-10-07",
       "end_date": "2026-10-13",
-      "discoveredAt": "2026-10-20T16:33:07.463Z",
+      "discoveredAt": "2026-10-20T21:24:08.178Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/panda-weekly-7-13-october-2026/",
       "pages": [
         {
@@ -59,7 +55,7 @@
       "title_ar": "عروض الدانوب — 2026-10-14 إلى 2026-10-20",
       "start_date": "2026-10-14",
       "end_date": "2026-10-20",
-      "discoveredAt": "2026-10-20T16:33:07.463Z",
+      "discoveredAt": "2026-10-20T21:24:08.178Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/danube-western-region-weekly-14-20-october-2026/",
       "pages": [
         {
@@ -71,68 +67,64 @@
     },
     "tamimi": {
       "officialUrl": "https://www.tamimimarkets.com/",
-      "title_en": "Tamimi Markets 17 20 October 2026",
-      "title_ar": "عروض التميمي — 2026-10-17 إلى 2026-10-20",
+      "title_en": "Tamimi Markets 7 September 2026",
+      "title_ar": "عروض التميمي",
       "start_date": "2026-10-17",
       "end_date": "2026-10-20",
-      "discoveredAt": "2026-10-20T16:33:07.463Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/tamimi-markets-17-20-october-2026/",
+      "discoveredAt": "2026-10-20T21:24:08.178Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/tamimi-markets-7-september-2026/",
       "pages": [
         {
           "page_number": 1,
-          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/10/tamimi-markets-17-20-october-2026-1200x1500.jpg"
+          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/09/tamimi-markets-7-september-2026-1200x1500.jpg"
         }
       ],
       "page_source": "3orod"
     },
     "othaim": {
       "officialUrl": "https://www.othaimmarkets.com/",
-      "title_en": "Othaim 18 20 October 2026",
-      "title_ar": "عروض العثيم — 2026-10-18 إلى 2026-10-20",
-      "start_date": "2026-10-18",
-      "end_date": "2026-10-20",
-      "discoveredAt": "2026-10-20T16:33:07.463Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/othaim-18-20-october-2026/",
+      "title_en": "Othaim 17 28 October 2026",
+      "title_ar": "عروض العثيم — 2026-10-17 إلى 2026-10-28",
+      "start_date": "2026-10-17",
+      "end_date": "2026-10-28",
+      "discoveredAt": "2026-10-20T21:24:08.178Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/othaim-17-28-october-2026/",
       "pages": [
         {
           "page_number": 1,
-          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/10/othaim-18-20-october-2026-1200x1200.jpg"
-        },
-        {
-          "page_number": 2,
-          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/10/othaim-18-20-october-2026-2-1024x1024.jpg"
+          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/10/othaim-17-28-october-2026-1200x1628.jpg"
         }
       ],
       "page_source": "3orod"
     },
     "nesto": {
       "officialUrl": "https://www.nestohypermarket.com/",
-      "title_en": "Nesto The Real Half Price Deals Mina 20 27 October 2026",
-      "title_ar": "عروض نستو — 2026-10-20 إلى 2026-10-27",
-      "start_date": "2026-10-20",
-      "end_date": "2026-10-27",
-      "discoveredAt": "2026-10-20T16:33:07.463Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/nesto-the-real-half-price-deals-mina-20-27-october-2026/",
+      "title_en": "Nesto Little Feet Festival At Nesto Al Hasa 14 31 October 2026",
+      "title_ar": "عروض نستو — 2026-10-14 إلى 2026-10-31",
+      "start_date": "2026-10-14",
+      "end_date": "2026-10-31",
+      "discoveredAt": "2026-10-20T21:24:08.178Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/nesto-little-feet-festival-at-nesto-al-hasa-14-31-october-2026/",
       "pages": [
         {
           "page_number": 1,
-          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/10/nesto-the-real-half-price-deals-mina-20-27-october-2026-1200x1662.jpg"
+          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/10/nesto-little-feet-festival-at-nesto-al-hasa-14-31-october-2026-1200x1600.jpg"
         }
       ],
       "page_source": "3orod"
     },
     "farm": {
       "officialUrl": "https://www.farm.com.sa/",
-      "title_en": "Farm Superstores Weekly Southern 14 20 October 2026",
-      "title_ar": "عروض المزرعة — 2026-10-14 إلى 2026-10-20",
-      "start_date": "2026-10-14",
-      "end_date": "2026-10-20",
-      "discoveredAt": "2026-10-20T16:33:07.463Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/farm-superstores-weekly-southern-14-20-october-2026/",
+      "title_en": "Farm Superstores Weekly Southern 21 27 October 2026",
+      "title_ar": "عروض المزرعة — 2026-10-21 إلى 2026-10-27",
+      "start_date": "2026-10-21",
+      "end_date": "2026-10-27",
+      "discoveredAt": "2026-10-20T21:24:08.178Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/farm-superstores-weekly-southern-21-27-october-2026/",
       "pages": [
         {
           "page_number": 1,
-          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/10/farm-superstores-weekly-southern-14-20-october-2026-1200x1596.jpg"
+          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/10/farm-superstores-weekly-southern-21-27-october-2026-1200x1596.jpg"
         }
       ],
       "page_source": "3orod"
@@ -143,7 +135,7 @@
       "title_ar": "عروض بن داود — 2026-10-14 إلى 2026-10-20",
       "start_date": "2026-10-14",
       "end_date": "2026-10-20",
-      "discoveredAt": "2026-10-20T16:33:07.463Z",
+      "discoveredAt": "2026-10-20T21:24:08.178Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/bindawood-western-region-weekly-offers-14-20-october-2026/",
       "pages": [
         {
@@ -154,5 +146,5 @@
       "page_source": "3orod"
     }
   },
-  "discoveredAt": "2026-10-20T16:33:07.463Z"
+  "discoveredAt": "2026-10-20T21:24:08.178Z"
 }
