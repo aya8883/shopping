@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-10-20T21:24:08.209Z",
+  "syncedAt": "2026-10-21T03:47:35.026Z",
   "attribution": "Weekly flyer images from FullFlyer/ilofo when current; otherwise 3orod.net store weeklies. Product grid prices remain illustrative until retailer feeds are connected.",
   "stores": {
     "carrefour": {
@@ -8,7 +8,7 @@
       "title_ar": "عروض كارفور",
       "start_date": "2026-10-18",
       "end_date": "2026-10-20",
-      "discoveredAt": "2026-10-20T21:24:08.178Z",
+      "discoveredAt": "2026-10-21T03:47:34.986Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/carrefour-9-october-2026/",
       "pages": [
         {
@@ -20,16 +20,28 @@
     },
     "lulu": {
       "officialUrl": "https://www.luluhypermarket.com/en-sa/promotions",
-      "title_en": "Lulu 15 October 2 November 2026",
-      "title_ar": "عروض لولو — 2026-10-15 إلى 2026-11-02",
-      "start_date": "2026-10-15",
-      "end_date": "2026-11-02",
-      "discoveredAt": "2026-10-20T21:24:08.178Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/lulu-15-october-2-november-2026/",
+      "title_en": "Lulu 21 27 October 2026",
+      "title_ar": "عروض لولو — 2026-10-21 إلى 2026-10-27",
+      "start_date": "2026-10-21",
+      "end_date": "2026-10-27",
+      "discoveredAt": "2026-10-21T03:47:34.986Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/lulu-21-27-october-2026/",
       "pages": [
         {
           "page_number": 1,
           "image_url": "/leaflets/lulu/page-1.jpg"
+        },
+        {
+          "page_number": 2,
+          "image_url": "/leaflets/lulu/page-2.jpg"
+        },
+        {
+          "page_number": 3,
+          "image_url": "/leaflets/lulu/page-3.jpg"
+        },
+        {
+          "page_number": 4,
+          "image_url": "/leaflets/lulu/page-4.jpg"
         }
       ],
       "page_source": "official_override"
@@ -40,7 +52,7 @@
       "title_ar": "عروض بنده — 2026-10-07 إلى 2026-10-13",
       "start_date": "2026-10-07",
       "end_date": "2026-10-13",
-      "discoveredAt": "2026-10-20T21:24:08.178Z",
+      "discoveredAt": "2026-10-21T03:47:34.986Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/panda-weekly-7-13-october-2026/",
       "pages": [
         {
@@ -72,7 +84,7 @@
       "title_ar": "عروض التميمي",
       "start_date": "2026-10-17",
       "end_date": "2026-10-20",
-      "discoveredAt": "2026-10-20T21:24:08.178Z",
+      "discoveredAt": "2026-10-21T03:47:34.986Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/tamimi-markets-7-september-2026/",
       "pages": [
         {
@@ -84,16 +96,20 @@
     },
     "othaim": {
       "officialUrl": "https://www.othaimmarkets.com/",
-      "title_en": "Othaim 17 28 October 2026",
-      "title_ar": "عروض العثيم — 2026-10-17 إلى 2026-10-28",
-      "start_date": "2026-10-17",
-      "end_date": "2026-10-28",
-      "discoveredAt": "2026-10-20T21:24:08.178Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/othaim-17-28-october-2026/",
+      "title_en": "Othaim 21 27 October 2026",
+      "title_ar": "عروض العثيم — 2026-10-21 إلى 2026-10-27",
+      "start_date": "2026-10-21",
+      "end_date": "2026-10-27",
+      "discoveredAt": "2026-10-21T03:47:34.986Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/othaim-21-27-october-2026/",
       "pages": [
         {
           "page_number": 1,
           "image_url": "/leaflets/othaim/page-1.jpg"
+        },
+        {
+          "page_number": 2,
+          "image_url": "/leaflets/othaim/page-2.jpg"
         }
       ],
       "page_source": "official_override"
@@ -104,7 +120,7 @@
       "title_ar": "عروض نستو — 2026-10-14 إلى 2026-10-31",
       "start_date": "2026-10-14",
       "end_date": "2026-10-31",
-      "discoveredAt": "2026-10-20T21:24:08.178Z",
+      "discoveredAt": "2026-10-21T03:47:34.986Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/nesto-little-feet-festival-at-nesto-al-hasa-14-31-october-2026/",
       "pages": [
         {
@@ -120,7 +136,7 @@
       "title_ar": "عروض المزرعة — 2026-10-21 إلى 2026-10-27",
       "start_date": "2026-10-21",
       "end_date": "2026-10-27",
-      "discoveredAt": "2026-10-20T21:24:08.178Z",
+      "discoveredAt": "2026-10-21T03:47:34.986Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/farm-superstores-weekly-southern-21-27-october-2026/",
       "pages": [
         {
