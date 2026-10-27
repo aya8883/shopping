@@ -1,13 +1,13 @@
 {
-  "syncedAt": "2026-10-27T17:42:25.230Z",
+  "syncedAt": "2026-10-27T22:05:36.754Z",
   "source": "weekly_flyer_engine_v2",
   "attribution": "Flyer-sourced prices from improved OCR matching + curated leaflet hotspots. Store tweaks create cross-chain spread for Smart Basket.",
   "stores": {
     "carrefour": {
-      "start_date": "2026-10-21",
-      "end_date": "2026-11-30",
-      "title_en": "Carrefour 21 October 30 November 2026",
-      "title_ar": "عروض كارفور — 2026-10-21 إلى 2026-11-30",
+      "start_date": "2026-10-25",
+      "end_date": "2026-10-27",
+      "title_en": "Carrefour 25 27 October 2026",
+      "title_ar": "عروض كارفور — 2026-10-25 إلى 2026-10-27",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -120,10 +120,10 @@
       ]
     },
     "lulu": {
-      "start_date": "2026-10-27",
-      "end_date": "2026-11-03",
-      "title_en": "Lulu 27 October 3 November 2026 2",
-      "title_ar": "عروض لولو — 2026-10-27 إلى 2026-11-03",
+      "start_date": "2026-10-24",
+      "end_date": "2026-11-08",
+      "title_en": "Lulu 24 October 8 November 2026",
+      "title_ar": "عروض لولو — 2026-10-24 إلى 2026-11-08",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -468,10 +468,10 @@
       ]
     },
     "tamimi": {
-      "start_date": "2026-10-21",
-      "end_date": "2026-10-27",
-      "title_en": "Tamimi Markets 21 27 October 2026",
-      "title_ar": "عروض التميمي — 2026-10-21 إلى 2026-10-27",
+      "start_date": "2026-10-25",
+      "end_date": "2026-11-01",
+      "title_en": "Tamimi Markets 25 October 1 November 2026",
+      "title_ar": "عروض التميمي — 2026-10-25 إلى 2026-11-01",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -584,10 +584,10 @@
       ]
     },
     "othaim": {
-      "start_date": "2026-10-22",
+      "start_date": "2026-10-21",
       "end_date": "2026-11-03",
-      "title_en": "Othaim 22 October 3 November 2026",
-      "title_ar": "عروض العثيم — 2026-10-22 إلى 2026-11-03",
+      "title_en": "Othaim 21 October 3 November 2026",
+      "title_ar": "عروض العثيم — 2026-10-21 إلى 2026-11-03",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -700,10 +700,10 @@
       ]
     },
     "nesto": {
-      "start_date": "2026-10-20",
-      "end_date": "2026-10-27",
-      "title_en": "Nesto The Real Half Price Deals Mina 20 27 October 2026",
-      "title_ar": "عروض نستو — 2026-10-20 إلى 2026-10-27",
+      "start_date": "2026-10-22",
+      "end_date": "2026-11-10",
+      "title_en": "Nesto 22 October 10 November 2026",
+      "title_ar": "عروض نستو — 2026-10-22 إلى 2026-11-10",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -816,10 +816,10 @@
       ]
     },
     "farm": {
-      "start_date": "2026-10-21",
-      "end_date": "2026-10-27",
-      "title_en": "Farm Superstores Weekly Southern 21 27 October 2026",
-      "title_ar": "عروض المزرعة — 2026-10-21 إلى 2026-10-27",
+      "start_date": "2026-10-28",
+      "end_date": "2026-11-03",
+      "title_en": "Farm Superstores Weekly Southern 28 October 3 November 2026",
+      "title_ar": "عروض المزرعة — 2026-10-28 إلى 2026-11-03",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
