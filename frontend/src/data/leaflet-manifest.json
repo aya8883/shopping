@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-10-28T04:40:19.315Z",
+  "syncedAt": "2026-10-28T12:22:19.546Z",
   "attribution": "Weekly flyer images from FullFlyer/ilofo when current; otherwise 3orod.net store weeklies. Product grid prices remain illustrative until retailer feeds are connected.",
   "stores": {
     "carrefour": {
@@ -8,7 +8,7 @@
       "title_ar": "عروض كارفور — 2026-10-28 إلى 2026-11-03",
       "start_date": "2026-10-28",
       "end_date": "2026-11-03",
-      "discoveredAt": "2026-10-28T04:40:19.279Z",
+      "discoveredAt": "2026-10-28T12:22:19.521Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/carrefour-28-october-3-november-2026/",
       "pages": [
         {
@@ -24,7 +24,7 @@
       "title_ar": "عروض لولو — 2026-10-28 إلى 2026-11-03",
       "start_date": "2026-10-28",
       "end_date": "2026-11-03",
-      "discoveredAt": "2026-10-28T04:40:19.279Z",
+      "discoveredAt": "2026-10-28T12:22:19.521Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/lulu-28-october-3-november-2026/",
       "pages": [
         {
@@ -34,10 +34,6 @@
         {
           "page_number": 2,
           "image_url": "/leaflets/lulu/page-2.jpg"
-        },
-        {
-          "page_number": 3,
-          "image_url": "/leaflets/lulu/page-3.jpg"
         }
       ],
       "page_source": "official_override"
@@ -48,7 +44,7 @@
       "title_ar": "عروض بنده — 2026-10-28 إلى 2026-11-03",
       "start_date": "2026-10-28",
       "end_date": "2026-11-03",
-      "discoveredAt": "2026-10-28T04:40:19.279Z",
+      "discoveredAt": "2026-10-28T12:22:19.521Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/panda-weekly-28-october-3-november-2026/",
       "pages": [
         {
@@ -60,12 +56,12 @@
     },
     "danube": {
       "officialUrl": "https://www.danube.sa/en/offers",
-      "title_en": "Danube Western Region 21 October 3 November 2026",
-      "title_ar": "عروض الدانوب — 2026-10-21 إلى 2026-11-03",
-      "start_date": "2026-10-21",
+      "title_en": "Danube Western Region Weekly 28 October 3 November 2026",
+      "title_ar": "عروض الدانوب — 2026-10-28 إلى 2026-11-03",
+      "start_date": "2026-10-28",
       "end_date": "2026-11-03",
-      "discoveredAt": "2026-10-28T04:40:19.279Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/danube-western-region-21-october-3-november-2026/",
+      "discoveredAt": "2026-10-28T12:22:19.521Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/danube-western-region-weekly-28-october-3-november-2026/",
       "pages": [
         {
           "page_number": 1,
@@ -76,28 +72,44 @@
     },
     "tamimi": {
       "officialUrl": "https://www.tamimimarkets.com/",
-      "title_en": "Tamimi Markets 28 October 4 November 2026",
-      "title_ar": "عروض التميمي — 2026-10-28 إلى 2026-11-04",
+      "title_en": "Tamimi Markets 28 October 3 November 2026",
+      "title_ar": "عروض التميمي — 2026-10-28 إلى 2026-11-03",
       "start_date": "2026-10-28",
-      "end_date": "2026-11-04",
-      "discoveredAt": "2026-10-28T04:40:19.279Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/tamimi-markets-28-october-4-november-2026/",
+      "end_date": "2026-11-03",
+      "discoveredAt": "2026-10-28T12:22:19.521Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/tamimi-markets-28-october-3-november-2026/",
       "pages": [
         {
           "page_number": 1,
           "image_url": "/leaflets/tamimi/page-1.jpg"
+        },
+        {
+          "page_number": 2,
+          "image_url": "/leaflets/tamimi/page-2.jpg"
+        },
+        {
+          "page_number": 3,
+          "image_url": "/leaflets/tamimi/page-3.jpg"
+        },
+        {
+          "page_number": 4,
+          "image_url": "/leaflets/tamimi/page-4.jpg"
+        },
+        {
+          "page_number": 5,
+          "image_url": "/leaflets/tamimi/page-5.jpg"
         }
       ],
       "page_source": "official_override"
     },
     "othaim": {
       "officialUrl": "https://www.othaimmarkets.com/",
-      "title_en": "Othaim 21 October 3 November 2026",
-      "title_ar": "عروض العثيم — 2026-10-21 إلى 2026-11-03",
-      "start_date": "2026-10-21",
+      "title_en": "Othaim 28 October 3 November 2026",
+      "title_ar": "عروض العثيم — 2026-10-28 إلى 2026-11-03",
+      "start_date": "2026-10-28",
       "end_date": "2026-11-03",
-      "discoveredAt": "2026-10-28T04:40:19.279Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/othaim-21-october-3-november-2026/",
+      "discoveredAt": "2026-10-28T12:22:19.521Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/othaim-28-october-3-november-2026/",
       "pages": [
         {
           "page_number": 1,
@@ -112,20 +124,16 @@
     },
     "nesto": {
       "officialUrl": "https://www.nestohypermarket.com/",
-      "title_en": "Nesto 28 October 3 November 2026",
-      "title_ar": "عروض نستو — 2026-10-28 إلى 2026-11-03",
-      "start_date": "2026-10-28",
-      "end_date": "2026-11-03",
-      "discoveredAt": "2026-10-28T04:40:19.279Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/nesto-28-october-3-november-2026/",
+      "title_en": "Nesto 3 September 21 November 2026",
+      "title_ar": "عروض نستو — 2026-09-03 إلى 2026-11-21",
+      "start_date": "2026-09-03",
+      "end_date": "2026-11-21",
+      "discoveredAt": "2026-10-28T12:22:19.521Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/nesto-3-september-21-november-2026/",
       "pages": [
         {
           "page_number": 1,
           "image_url": "/leaflets/nesto/page-1.jpg"
-        },
-        {
-          "page_number": 2,
-          "image_url": "/leaflets/nesto/page-2.jpg"
         }
       ],
       "page_source": "official_override"
@@ -136,7 +144,7 @@
       "title_ar": "عروض المزرعة — 2026-10-28 إلى 2026-11-03",
       "start_date": "2026-10-28",
       "end_date": "2026-11-03",
-      "discoveredAt": "2026-10-28T04:40:19.279Z",
+      "discoveredAt": "2026-10-28T12:22:19.521Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/farm-superstores-weekly-southern-28-october-3-november-2026/",
       "pages": [
         {
@@ -148,12 +156,12 @@
     },
     "bindawood": {
       "officialUrl": "https://www.bindawood.com/",
-      "title_en": "Bindawood Western Region 21 October 3 November 2026",
-      "title_ar": "عروض بن داود — 2026-10-21 إلى 2026-11-03",
-      "start_date": "2026-10-21",
+      "title_en": "Bindawood Western Region Weekly Offers 28 October 3 November 2026",
+      "title_ar": "عروض بن داود — 2026-10-28 إلى 2026-11-03",
+      "start_date": "2026-10-28",
       "end_date": "2026-11-03",
-      "discoveredAt": "2026-10-28T04:40:19.279Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/bindawood-western-region-21-october-3-november-2026/",
+      "discoveredAt": "2026-10-28T12:22:19.521Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/bindawood-western-region-weekly-offers-28-october-3-november-2026/",
       "pages": [
         {
           "page_number": 1,
