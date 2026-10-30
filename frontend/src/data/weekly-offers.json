@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-10-30T12:23:17.654Z",
+  "syncedAt": "2026-10-30T22:03:22.101Z",
   "source": "weekly_flyer_engine_v2",
   "attribution": "Flyer-sourced prices from improved OCR matching + curated leaflet hotspots. Store tweaks create cross-chain spread for Smart Basket.",
   "stores": {
@@ -121,9 +121,9 @@
     },
     "lulu": {
       "start_date": "2026-10-28",
-      "end_date": "2026-11-03",
-      "title_en": "Lulu 28 October 3 November 2026",
-      "title_ar": "عروض لولو — 2026-10-28 إلى 2026-11-03",
+      "end_date": "2026-11-04",
+      "title_en": "Lulu 28 October 4 November 2026",
+      "title_ar": "عروض لولو — 2026-10-28 إلى 2026-11-04",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
