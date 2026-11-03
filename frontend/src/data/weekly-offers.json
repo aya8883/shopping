@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-03T13:51:01.169Z",
+  "syncedAt": "2026-11-03T23:01:25.473Z",
   "source": "weekly_flyer_engine_v2",
   "attribution": "Flyer-sourced prices from improved OCR matching + curated leaflet hotspots. Store tweaks create cross-chain spread for Smart Basket.",
   "stores": {
@@ -469,9 +469,9 @@
     },
     "tamimi": {
       "start_date": "2026-10-28",
-      "end_date": "2026-11-03",
-      "title_en": "Tamimi Markets 28 October 3 November 2026",
-      "title_ar": "عروض التميمي — 2026-10-28 إلى 2026-11-03",
+      "end_date": "2026-11-04",
+      "title_en": "Tamimi Markets 28 October 4 November 2026",
+      "title_ar": "عروض التميمي — 2026-10-28 إلى 2026-11-04",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -586,7 +586,7 @@
     "othaim": {
       "start_date": "2026-10-28",
       "end_date": "2026-11-03",
-      "title_en": "Othaim 28 October 3 November 2026",
+      "title_en": "Othaim Corner 28 October 3 November 2026",
       "title_ar": "عروض العثيم — 2026-10-28 إلى 2026-11-03",
       "offers": [
         {
@@ -700,10 +700,10 @@
       ]
     },
     "nesto": {
-      "start_date": "2026-10-29",
-      "end_date": "2026-11-17",
-      "title_en": "Nesto Hello Winter At Nesto Sanaya 2 29 October 17 November 2026",
-      "title_ar": "عروض نستو — 2026-10-29 إلى 2026-11-17",
+      "start_date": "2026-11-03",
+      "end_date": "2026-11-10",
+      "title_en": "Nesto The Grand Finale Is Here Final Draw Drive Shaqra 3 10 November 2026",
+      "title_ar": "عروض نستو — 2026-11-03 إلى 2026-11-10",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -816,10 +816,10 @@
       ]
     },
     "farm": {
-      "start_date": "2026-10-28",
-      "end_date": "2026-11-03",
-      "title_en": "Farm Superstores Weekly Southern 28 October 3 November 2026",
-      "title_ar": "عروض المزرعة — 2026-10-28 إلى 2026-11-03",
+      "start_date": "2026-11-04",
+      "end_date": "2026-11-10",
+      "title_en": "Farm Superstores Weekly Southern 4 10 November 2026",
+      "title_ar": "عروض المزرعة — 2026-11-04 إلى 2026-11-10",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
