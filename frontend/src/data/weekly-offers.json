@@ -1,13 +1,13 @@
 {
-  "syncedAt": "2026-11-04T05:23:50.045Z",
+  "syncedAt": "2026-11-04T13:59:09.669Z",
   "source": "weekly_flyer_engine_v2",
   "attribution": "Flyer-sourced prices from improved OCR matching + curated leaflet hotspots. Store tweaks create cross-chain spread for Smart Basket.",
   "stores": {
     "carrefour": {
-      "start_date": "2026-10-29",
-      "end_date": "2026-11-05",
-      "title_en": "Carrefour 29 October 5 November 2026",
-      "title_ar": "عروض كارفور — 2026-10-29 إلى 2026-11-05",
+      "start_date": "2026-11-04",
+      "end_date": "2026-11-10",
+      "title_en": "Carrefour 4 10 November 2026",
+      "title_ar": "عروض كارفور — 2026-11-04 إلى 2026-11-10",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -352,10 +352,10 @@
       ]
     },
     "danube": {
-      "start_date": "2026-10-28",
-      "end_date": "2026-11-03",
-      "title_en": "Danube Western Region Weekly 28 October 3 November 2026",
-      "title_ar": "عروض الدانوب — 2026-10-28 إلى 2026-11-03",
+      "start_date": "2026-11-04",
+      "end_date": "2026-11-10",
+      "title_en": "Danube 4 10 November 2026",
+      "title_ar": "عروض الدانوب — 2026-11-04 إلى 2026-11-10",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -468,10 +468,10 @@
       ]
     },
     "tamimi": {
-      "start_date": "2026-10-28",
-      "end_date": "2026-11-04",
-      "title_en": "Tamimi Markets 28 October 4 November 2026",
-      "title_ar": "عروض التميمي — 2026-10-28 إلى 2026-11-04",
+      "start_date": "2026-11-04",
+      "end_date": "2026-11-10",
+      "title_en": "Tamimi Markets 4 10 November 2026",
+      "title_ar": "عروض التميمي — 2026-11-04 إلى 2026-11-10",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
