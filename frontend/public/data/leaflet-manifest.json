@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-04T23:23:33.956Z",
+  "syncedAt": "2026-11-05T05:43:12.559Z",
   "attribution": "Weekly flyer images from FullFlyer/ilofo when current; otherwise 3orod.net store weeklies. Product grid prices remain illustrative until retailer feeds are connected.",
   "stores": {
     "carrefour": {
@@ -8,7 +8,7 @@
       "title_ar": "عروض كارفور — 2026-11-04 إلى 2026-11-10",
       "start_date": "2026-11-04",
       "end_date": "2026-11-10",
-      "discoveredAt": "2026-11-04T23:23:33.921Z",
+      "discoveredAt": "2026-11-05T05:43:12.521Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/carrefour-4-10-november-2026/",
       "pages": [
         {
@@ -24,12 +24,12 @@
     },
     "lulu": {
       "officialUrl": "https://www.luluhypermarket.com/en-sa/promotions",
-      "title_en": "Lulu 4 7 November 2026",
-      "title_ar": "عروض لولو — 2026-11-04 إلى 2026-11-07",
-      "start_date": "2026-11-04",
+      "title_en": "Lulu 5 7 November 2026",
+      "title_ar": "عروض لولو — 2026-11-05 إلى 2026-11-07",
+      "start_date": "2026-11-05",
       "end_date": "2026-11-07",
-      "discoveredAt": "2026-11-04T23:23:33.921Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/lulu-4-7-november-2026/",
+      "discoveredAt": "2026-11-05T05:43:12.521Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/lulu-5-7-november-2026/",
       "pages": [
         {
           "page_number": 1,
@@ -38,10 +38,6 @@
         {
           "page_number": 2,
           "image_url": "/leaflets/lulu/page-2.jpg"
-        },
-        {
-          "page_number": 3,
-          "image_url": "/leaflets/lulu/page-3.jpg"
         }
       ],
       "page_source": "official_override"
@@ -52,7 +48,7 @@
       "title_ar": "عروض بنده — 2026-11-04 إلى 2026-11-10",
       "start_date": "2026-11-04",
       "end_date": "2026-11-10",
-      "discoveredAt": "2026-11-04T23:23:33.921Z",
+      "discoveredAt": "2026-11-05T05:43:12.521Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/panda-weekly-4-10-november-2026/",
       "pages": [
         {
@@ -68,7 +64,7 @@
       "title_ar": "عروض الدانوب — 2026-11-04 إلى 2026-11-17",
       "start_date": "2026-11-04",
       "end_date": "2026-11-17",
-      "discoveredAt": "2026-11-04T23:23:33.921Z",
+      "discoveredAt": "2026-11-05T05:43:12.521Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/danube-western-region-4-17-november-2026/",
       "pages": [
         {
@@ -84,7 +80,7 @@
       "title_ar": "عروض التميمي — 2026-11-04 إلى 2026-11-10",
       "start_date": "2026-11-04",
       "end_date": "2026-11-10",
-      "discoveredAt": "2026-11-04T23:23:33.921Z",
+      "discoveredAt": "2026-11-05T05:43:12.521Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/tamimi-markets-4-10-november-2026/",
       "pages": [
         {
@@ -104,7 +100,7 @@
       "title_ar": "عروض العثيم — 2026-11-04 إلى 2026-11-10",
       "start_date": "2026-11-04",
       "end_date": "2026-11-10",
-      "discoveredAt": "2026-11-04T23:23:33.921Z",
+      "discoveredAt": "2026-11-05T05:43:12.521Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/othaim-4-10-november-2026/",
       "pages": [
         {
@@ -124,7 +120,7 @@
       "title_ar": "عروض نستو — 2026-11-04 إلى 2026-11-10",
       "start_date": "2026-11-04",
       "end_date": "2026-11-10",
-      "discoveredAt": "2026-11-04T23:23:33.921Z",
+      "discoveredAt": "2026-11-05T05:43:12.521Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/nesto-the-grand-finale-is-here-final-draw-drive-villagio-mall-4-10-november-2026/",
       "pages": [
         {
@@ -140,7 +136,7 @@
       "title_ar": "عروض المزرعة — 2026-11-04 إلى 2026-11-10",
       "start_date": "2026-11-04",
       "end_date": "2026-11-10",
-      "discoveredAt": "2026-11-04T23:23:33.921Z",
+      "discoveredAt": "2026-11-05T05:43:12.521Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/farm-superstores-weekly-southern-4-10-november-2026/",
       "pages": [
         {
