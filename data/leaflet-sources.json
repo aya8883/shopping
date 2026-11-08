@@ -7,7 +7,7 @@
       "title_ar": "عروض كارفور — 2026-11-04 إلى 2026-11-10",
       "start_date": "2026-11-04",
       "end_date": "2026-11-10",
-      "discoveredAt": "2026-11-07T21:36:40.019Z",
+      "discoveredAt": "2026-11-08T05:03:00.285Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/carrefour-4-10-november-2026/",
       "pages": [
         {
@@ -23,16 +23,24 @@
     },
     "lulu": {
       "officialUrl": "https://www.luluhypermarket.com/en-sa/promotions",
-      "title_en": "Lulu 5 15 November 2026",
-      "title_ar": "عروض لولو — 2026-11-05 إلى 2026-11-15",
-      "start_date": "2026-11-05",
-      "end_date": "2026-11-15",
-      "discoveredAt": "2026-11-07T21:36:40.020Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/lulu-5-15-november-2026/",
+      "title_en": "Lulu 8 10 November 2026",
+      "title_ar": "عروض لولو — 2026-11-08 إلى 2026-11-10",
+      "start_date": "2026-11-08",
+      "end_date": "2026-11-10",
+      "discoveredAt": "2026-11-08T05:03:00.285Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/lulu-8-10-november-2026/",
       "pages": [
         {
           "page_number": 1,
-          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/11/lulu-5-15-november-2026-1200x1500.jpg"
+          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/11/lulu-8-10-november-2026-1200x1591.jpg"
+        },
+        {
+          "page_number": 2,
+          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/11/lulu-8-10-november-2026-3-819x1024.jpg"
+        },
+        {
+          "page_number": 3,
+          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/11/lulu-8-10-november-2026-2-772x1024.jpg"
         }
       ],
       "page_source": "3orod"
@@ -43,7 +51,7 @@
       "title_ar": "عروض بنده — 2026-11-04 إلى 2026-11-10",
       "start_date": "2026-11-04",
       "end_date": "2026-11-10",
-      "discoveredAt": "2026-11-07T21:36:40.020Z",
+      "discoveredAt": "2026-11-08T05:03:00.285Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/panda-weekly-4-10-november-2026/",
       "pages": [
         {
@@ -59,7 +67,7 @@
       "title_ar": "عروض الدانوب — 2026-11-04 إلى 2026-11-17",
       "start_date": "2026-11-04",
       "end_date": "2026-11-17",
-      "discoveredAt": "2026-11-07T21:36:40.020Z",
+      "discoveredAt": "2026-11-08T05:03:00.285Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/danube-western-region-4-17-november-2026/",
       "pages": [
         {
@@ -75,7 +83,7 @@
       "title_ar": "عروض التميمي — 2026-11-07 إلى 2026-11-14",
       "start_date": "2026-11-07",
       "end_date": "2026-11-14",
-      "discoveredAt": "2026-11-07T21:36:40.020Z",
+      "discoveredAt": "2026-11-08T05:03:00.285Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/tamimi-markets-7-14-november-2026/",
       "pages": [
         {
@@ -95,7 +103,7 @@
       "title_ar": "عروض العثيم — 2026-11-04 إلى 2026-11-10",
       "start_date": "2026-11-04",
       "end_date": "2026-11-10",
-      "discoveredAt": "2026-11-07T21:36:40.020Z",
+      "discoveredAt": "2026-11-08T05:03:00.285Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/othaim-4-10-november-2026/",
       "pages": [
         {
@@ -115,7 +123,7 @@
       "title_ar": "عروض نستو — 2026-11-04 إلى 2026-11-10",
       "start_date": "2026-11-04",
       "end_date": "2026-11-10",
-      "discoveredAt": "2026-11-07T21:36:40.020Z",
+      "discoveredAt": "2026-11-08T05:03:00.285Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/nesto-the-grand-finale-is-here-final-draw-drive-villagio-mall-4-10-november-2026/",
       "pages": [
         {
@@ -131,7 +139,7 @@
       "title_ar": "عروض المزرعة — 2026-11-05 إلى 2026-11-12",
       "start_date": "2026-11-05",
       "end_date": "2026-11-12",
-      "discoveredAt": "2026-11-07T21:36:40.020Z",
+      "discoveredAt": "2026-11-08T05:03:00.285Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/farm-superstores-5-12-november-2026/",
       "pages": [
         {
@@ -158,5 +166,5 @@
       "page_source": "3orod"
     }
   },
-  "discoveredAt": "2026-11-07T21:36:40.020Z"
+  "discoveredAt": "2026-11-08T05:03:00.285Z"
 }
