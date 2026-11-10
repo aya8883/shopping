@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-10T01:23:14.962Z",
+  "syncedAt": "2026-11-10T14:34:05.609Z",
   "attribution": "Weekly flyer images from FullFlyer/ilofo when current; otherwise 3orod.net store weeklies. Product grid prices remain illustrative until retailer feeds are connected.",
   "stores": {
     "carrefour": {
@@ -8,7 +8,7 @@
       "title_ar": "عروض كارفور — 2026-11-04 إلى 2026-11-10",
       "start_date": "2026-11-04",
       "end_date": "2026-11-10",
-      "discoveredAt": "2026-11-10T01:23:14.934Z",
+      "discoveredAt": "2026-11-10T14:34:05.580Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/carrefour-4-10-november-2026/",
       "pages": [
         {
@@ -28,16 +28,12 @@
       "title_ar": "عروض لولو — 2026-11-09 إلى 2026-11-16",
       "start_date": "2026-11-09",
       "end_date": "2026-11-16",
-      "discoveredAt": "2026-11-10T01:23:14.934Z",
+      "discoveredAt": "2026-11-10T14:34:05.580Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/lulu-9-16-november-2026/",
       "pages": [
         {
           "page_number": 1,
           "image_url": "/leaflets/lulu/page-1.jpg"
-        },
-        {
-          "page_number": 2,
-          "image_url": "/leaflets/lulu/page-2.jpg"
         }
       ],
       "page_source": "official_override"
@@ -48,7 +44,7 @@
       "title_ar": "عروض بنده — 2026-11-04 إلى 2026-11-10",
       "start_date": "2026-11-04",
       "end_date": "2026-11-10",
-      "discoveredAt": "2026-11-10T01:23:14.934Z",
+      "discoveredAt": "2026-11-10T14:34:05.580Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/panda-weekly-4-10-november-2026/",
       "pages": [
         {
@@ -64,7 +60,7 @@
       "title_ar": "عروض الدانوب — 2026-11-04 إلى 2026-11-17",
       "start_date": "2026-11-04",
       "end_date": "2026-11-17",
-      "discoveredAt": "2026-11-10T01:23:14.934Z",
+      "discoveredAt": "2026-11-10T14:34:05.580Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/danube-western-region-4-17-november-2026/",
       "pages": [
         {
@@ -80,7 +76,7 @@
       "title_ar": "عروض التميمي — 2026-11-07 إلى 2026-11-14",
       "start_date": "2026-11-07",
       "end_date": "2026-11-14",
-      "discoveredAt": "2026-11-10T01:23:14.934Z",
+      "discoveredAt": "2026-11-10T14:34:05.580Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/tamimi-markets-7-14-november-2026/",
       "pages": [
         {
@@ -100,7 +96,7 @@
       "title_ar": "عروض العثيم — 2026-11-04 إلى 2026-11-10",
       "start_date": "2026-11-04",
       "end_date": "2026-11-10",
-      "discoveredAt": "2026-11-10T01:23:14.934Z",
+      "discoveredAt": "2026-11-10T14:34:05.580Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/othaim-4-10-november-2026/",
       "pages": [
         {
@@ -114,6 +110,10 @@
         {
           "page_number": 3,
           "image_url": "/leaflets/othaim/page-3.jpg"
+        },
+        {
+          "page_number": 4,
+          "image_url": "/leaflets/othaim/page-4.jpg"
         }
       ],
       "page_source": "official_override"
@@ -124,7 +124,7 @@
       "title_ar": "عروض نستو — 2026-11-04 إلى 2026-11-10",
       "start_date": "2026-11-04",
       "end_date": "2026-11-10",
-      "discoveredAt": "2026-11-10T01:23:14.934Z",
+      "discoveredAt": "2026-11-10T14:34:05.580Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/nesto-the-grand-finale-is-here-final-draw-drive-villagio-mall-4-10-november-2026/",
       "pages": [
         {
@@ -140,7 +140,7 @@
       "title_ar": "عروض المزرعة — 2026-11-09 إلى 2026-11-16",
       "start_date": "2026-11-09",
       "end_date": "2026-11-16",
-      "discoveredAt": "2026-11-10T01:23:14.934Z",
+      "discoveredAt": "2026-11-10T14:34:05.580Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/farm-superstores-9-16-november-2026/",
       "pages": [
         {
