@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-10T22:59:21.896Z",
+  "syncedAt": "2026-11-11T05:14:58.963Z",
   "attribution": "Weekly flyer images from FullFlyer/ilofo when current; otherwise 3orod.net store weeklies. Product grid prices remain illustrative until retailer feeds are connected.",
   "stores": {
     "carrefour": {
@@ -8,7 +8,7 @@
       "title_ar": "عروض كارفور — 2026-10-21 إلى 2026-11-30",
       "start_date": "2026-10-21",
       "end_date": "2026-11-30",
-      "discoveredAt": "2026-11-10T22:59:21.868Z",
+      "discoveredAt": "2026-11-11T05:14:58.926Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/carrefour-21-october-30-november-2026/",
       "pages": [
         {
@@ -24,7 +24,7 @@
       "title_ar": "عروض لولو — 2026-10-28 إلى 2026-11-17",
       "start_date": "2026-10-28",
       "end_date": "2026-11-17",
-      "discoveredAt": "2026-11-10T22:59:21.868Z",
+      "discoveredAt": "2026-11-11T05:14:58.926Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/lulu-28-october-17-november-2026/",
       "pages": [
         {
@@ -40,7 +40,7 @@
       "title_ar": "عروض بنده — 2026-11-04 إلى 2026-11-10",
       "start_date": "2026-11-04",
       "end_date": "2026-11-10",
-      "discoveredAt": "2026-11-10T22:59:21.868Z",
+      "discoveredAt": "2026-11-11T05:14:58.926Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/panda-weekly-4-10-november-2026/",
       "pages": [
         {
@@ -56,7 +56,7 @@
       "title_ar": "عروض الدانوب — 2026-11-04 إلى 2026-11-17",
       "start_date": "2026-11-04",
       "end_date": "2026-11-17",
-      "discoveredAt": "2026-11-10T22:59:21.868Z",
+      "discoveredAt": "2026-11-11T05:14:58.926Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/danube-western-region-4-17-november-2026/",
       "pages": [
         {
@@ -72,7 +72,7 @@
       "title_ar": "عروض التميمي — 2026-11-07 إلى 2026-11-14",
       "start_date": "2026-11-07",
       "end_date": "2026-11-14",
-      "discoveredAt": "2026-11-10T22:59:21.868Z",
+      "discoveredAt": "2026-11-11T05:14:58.926Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/tamimi-markets-7-14-november-2026/",
       "pages": [
         {
@@ -88,12 +88,12 @@
     },
     "othaim": {
       "officialUrl": "https://www.othaimmarkets.com/",
-      "title_en": "Othaim Corner 4 10 November 2026",
-      "title_ar": "عروض العثيم — 2026-11-04 إلى 2026-11-10",
-      "start_date": "2026-11-04",
-      "end_date": "2026-11-10",
-      "discoveredAt": "2026-11-10T22:59:21.868Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/othaim-corner-4-10-november-2026/",
+      "title_en": "Othaim Corner 11 17 November 2026",
+      "title_ar": "عروض العثيم — 2026-11-11 إلى 2026-11-17",
+      "start_date": "2026-11-11",
+      "end_date": "2026-11-17",
+      "discoveredAt": "2026-11-11T05:14:58.926Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/othaim-corner-11-17-november-2026/",
       "pages": [
         {
           "page_number": 1,
@@ -108,7 +108,7 @@
       "title_ar": "عروض نستو — 2026-11-05 إلى 2026-11-30",
       "start_date": "2026-11-05",
       "end_date": "2026-11-30",
-      "discoveredAt": "2026-11-10T22:59:21.868Z",
+      "discoveredAt": "2026-11-11T05:14:58.926Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/nesto-5-30-november-2026/",
       "pages": [
         {
@@ -120,12 +120,12 @@
     },
     "farm": {
       "officialUrl": "https://www.farm.com.sa/",
-      "title_en": "Farm Superstores 9 16 November 2026",
-      "title_ar": "عروض المزرعة — 2026-11-09 إلى 2026-11-16",
-      "start_date": "2026-11-09",
-      "end_date": "2026-11-16",
-      "discoveredAt": "2026-11-10T22:59:21.868Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/farm-superstores-9-16-november-2026/",
+      "title_en": "Farm Superstores Weekly Southern 11 17 November 2026",
+      "title_ar": "عروض المزرعة — 2026-11-11 إلى 2026-11-17",
+      "start_date": "2026-11-11",
+      "end_date": "2026-11-17",
+      "discoveredAt": "2026-11-11T05:14:58.926Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/farm-superstores-weekly-southern-11-17-november-2026/",
       "pages": [
         {
           "page_number": 1,
