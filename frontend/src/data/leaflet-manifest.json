@@ -1,78 +1,38 @@
 {
-  "syncedAt": "2026-11-15T05:29:14.626Z",
+  "syncedAt": "2026-11-15T13:40:35.409Z",
   "attribution": "Weekly flyer images from FullFlyer/ilofo when current; otherwise 3orod.net store weeklies. Product grid prices remain illustrative until retailer feeds are connected.",
   "stores": {
     "carrefour": {
       "officialUrl": "https://www.carrefourksa.com/mafsau/en/c/Offers",
-      "title_en": "A Saudi quality that we are proud of in Carrefour Saudi Arabia from 11 to 17 November 2026",
-      "title_ar": "عروض كارفور — 2026-11-11 إلى 2026-11-17",
-      "start_date": "2026-11-11",
-      "end_date": "2026-11-17",
-      "discoveredAt": "2026-11-15T05:29:14.597Z",
-      "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/carrefour/catalogs/87261-pdf",
-      "catalog_id": "87261",
+      "title_en": "Carrefour 21 October 30 November 2026",
+      "title_ar": "عروض كارفور — 2026-10-21 إلى 2026-11-30",
+      "start_date": "2026-10-21",
+      "end_date": "2026-11-30",
+      "discoveredAt": "2026-11-15T13:40:35.375Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/carrefour-21-october-30-november-2026/",
       "pages": [
         {
           "page_number": 1,
           "image_url": "/leaflets/carrefour/page-1.jpg"
-        },
-        {
-          "page_number": 2,
-          "image_url": "/leaflets/carrefour/page-2.jpg"
-        },
-        {
-          "page_number": 3,
-          "image_url": "/leaflets/carrefour/page-3.jpg"
-        },
-        {
-          "page_number": 4,
-          "image_url": "/leaflets/carrefour/page-4.jpg"
-        },
-        {
-          "page_number": 5,
-          "image_url": "/leaflets/carrefour/page-5.jpg"
-        },
-        {
-          "page_number": 6,
-          "image_url": "/leaflets/carrefour/page-6.jpg"
         }
-      ]
+      ],
+      "page_source": "official_override"
     },
     "lulu": {
       "officialUrl": "https://www.luluhypermarket.com/en-sa/promotions",
-      "title_en": "Digital Savings in Lulu Saudi Arabia from 1 to 17 November 2026",
-      "title_ar": "عروض لولو — 2026-11-01 إلى 2026-11-17",
-      "start_date": "2026-11-01",
-      "end_date": "2026-11-17",
-      "discoveredAt": "2026-11-15T05:29:14.597Z",
-      "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/lulu/catalogs/86633-pdf",
-      "catalog_id": "86633",
+      "title_en": "Lulu 15 22 November 2026",
+      "title_ar": "عروض لولو — 2026-11-15 إلى 2026-11-22",
+      "start_date": "2026-11-15",
+      "end_date": "2026-11-22",
+      "discoveredAt": "2026-11-15T13:40:35.375Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/lulu-15-22-november-2026/",
       "pages": [
         {
           "page_number": 1,
-          "image_url": "/leaflets/lulu/page-1.webp"
-        },
-        {
-          "page_number": 2,
-          "image_url": "/leaflets/lulu/page-2.webp"
-        },
-        {
-          "page_number": 3,
-          "image_url": "/leaflets/lulu/page-3.webp"
-        },
-        {
-          "page_number": 4,
-          "image_url": "/leaflets/lulu/page-4.webp"
-        },
-        {
-          "page_number": 5,
-          "image_url": "/leaflets/lulu/page-5.webp"
-        },
-        {
-          "page_number": 6,
-          "image_url": "/leaflets/lulu/page-6.webp"
+          "image_url": "/leaflets/lulu/page-1.jpg"
         }
-      ]
+      ],
+      "page_source": "official_override"
     },
     "panda": {
       "officialUrl": "https://www.panda.com.sa/en/offers",
@@ -80,7 +40,7 @@
       "title_ar": "عروض بنده — 2026-11-04 إلى 2026-11-10",
       "start_date": "2026-11-04",
       "end_date": "2026-11-10",
-      "discoveredAt": "2026-11-15T05:29:14.597Z",
+      "discoveredAt": "2026-11-15T13:40:35.375Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/panda-weekly-4-10-november-2026/",
       "pages": [
         {
@@ -96,7 +56,7 @@
       "title_ar": "عروض الدانوب — 2026-11-11 إلى 2026-11-17",
       "start_date": "2026-11-11",
       "end_date": "2026-11-17",
-      "discoveredAt": "2026-11-15T05:29:14.597Z",
+      "discoveredAt": "2026-11-15T13:40:35.375Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/danube-western-region-weekly-11-17-november-2026/",
       "pages": [
         {
@@ -108,13 +68,12 @@
     },
     "tamimi": {
       "officialUrl": "https://www.tamimimarkets.com/",
-      "title_en": "Weekly Deals in Tamimi markets Saudi Arabia from 11 to 17 November 2026",
+      "title_en": "Tamimi Markets 11 17 November 2026",
       "title_ar": "عروض التميمي — 2026-11-11 إلى 2026-11-17",
       "start_date": "2026-11-11",
       "end_date": "2026-11-17",
-      "discoveredAt": "2026-11-15T05:29:14.597Z",
-      "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/tamimi-markets/catalogs/87585-pdf",
-      "catalog_id": "87585",
+      "discoveredAt": "2026-11-15T13:40:35.375Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/tamimi-markets-11-17-november-2026/",
       "pages": [
         {
           "page_number": 1,
@@ -123,90 +82,50 @@
         {
           "page_number": 2,
           "image_url": "/leaflets/tamimi/page-2.jpg"
-        },
-        {
-          "page_number": 3,
-          "image_url": "/leaflets/tamimi/page-3.jpg"
-        },
-        {
-          "page_number": 4,
-          "image_url": "/leaflets/tamimi/page-4.jpg"
-        },
-        {
-          "page_number": 5,
-          "image_url": "/leaflets/tamimi/page-5.jpg"
-        },
-        {
-          "page_number": 6,
-          "image_url": "/leaflets/tamimi/page-6.jpg"
         }
-      ]
+      ],
+      "page_source": "official_override"
     },
     "othaim": {
       "officialUrl": "https://www.othaimmarkets.com/",
-      "title_en": "We Are the Best Offers in Othaim Markets Saudi Arabia from 11 to 17 November 2026",
-      "title_ar": "عروض العثيم — 2026-11-11 إلى 2026-11-17",
-      "start_date": "2026-11-11",
-      "end_date": "2026-11-17",
-      "discoveredAt": "2026-11-15T05:29:14.597Z",
-      "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/othaim-markets/catalogs/87369-pdf",
-      "catalog_id": "87369",
+      "title_en": "Othaim 12 19 November 2026",
+      "title_ar": "عروض العثيم — 2026-11-12 إلى 2026-11-19",
+      "start_date": "2026-11-12",
+      "end_date": "2026-11-19",
+      "discoveredAt": "2026-11-15T13:40:35.375Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/othaim-12-19-november-2026/",
       "pages": [
         {
           "page_number": 1,
           "image_url": "/leaflets/othaim/page-1.jpg"
-        },
-        {
-          "page_number": 2,
-          "image_url": "/leaflets/othaim/page-2.jpg"
-        },
-        {
-          "page_number": 3,
-          "image_url": "/leaflets/othaim/page-3.jpg"
-        },
-        {
-          "page_number": 4,
-          "image_url": "/leaflets/othaim/page-4.jpg"
-        },
-        {
-          "page_number": 5,
-          "image_url": "/leaflets/othaim/page-5.jpg"
-        },
-        {
-          "page_number": 6,
-          "image_url": "/leaflets/othaim/page-6.jpg"
         }
-      ]
+      ],
+      "page_source": "official_override"
     },
     "nesto": {
       "officialUrl": "https://www.nestohypermarket.com/",
-      "title_en": "Jannat Al-Atour Offers in Nesto Saudi Arabia from 11 to 17 November 2026",
-      "title_ar": "عروض نستو — 2026-11-11 إلى 2026-11-17",
-      "start_date": "2026-11-11",
+      "title_en": "Nesto Hello Winter At Nesto Sanaya 2 29 October 17 November 2026",
+      "title_ar": "عروض نستو — 2026-10-29 إلى 2026-11-17",
+      "start_date": "2026-10-29",
       "end_date": "2026-11-17",
-      "discoveredAt": "2026-11-15T05:29:14.597Z",
-      "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/nesto/catalogs/87590-pdf",
-      "catalog_id": "87590",
+      "discoveredAt": "2026-11-15T13:40:35.375Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/nesto-hello-winter-at-nesto-sanaya-2-29-october-17-november-2026/",
       "pages": [
         {
           "page_number": 1,
           "image_url": "/leaflets/nesto/page-1.jpg"
-        },
-        {
-          "page_number": 2,
-          "image_url": "/leaflets/nesto/page-2.jpg"
         }
-      ]
+      ],
+      "page_source": "official_override"
     },
     "farm": {
       "officialUrl": "https://www.farm.com.sa/",
-      "title_en": "Your luck is with your key. in Farm markets Saudi Arabia from 11 to 17 November 2026",
-      "title_ar": "عروض المزرعة — 2026-11-11 إلى 2026-11-17",
-      "start_date": "2026-11-11",
-      "end_date": "2026-11-17",
-      "discoveredAt": "2026-11-15T05:29:14.597Z",
-      "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/farm-markets/catalogs/87406-pdf",
-      "catalog_id": "87406",
+      "title_en": "Farm Superstores 12 19 November 2026",
+      "title_ar": "عروض المزرعة — 2026-11-12 إلى 2026-11-19",
+      "start_date": "2026-11-12",
+      "end_date": "2026-11-19",
+      "discoveredAt": "2026-11-15T13:40:35.375Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/farm-superstores-12-19-november-2026/",
       "pages": [
         {
           "page_number": 1,
@@ -215,24 +134,9 @@
         {
           "page_number": 2,
           "image_url": "/leaflets/farm/page-2.jpg"
-        },
-        {
-          "page_number": 3,
-          "image_url": "/leaflets/farm/page-3.jpg"
-        },
-        {
-          "page_number": 4,
-          "image_url": "/leaflets/farm/page-4.jpg"
-        },
-        {
-          "page_number": 5,
-          "image_url": "/leaflets/farm/page-5.jpg"
-        },
-        {
-          "page_number": 6,
-          "image_url": "/leaflets/farm/page-6.jpg"
         }
-      ]
+      ],
+      "page_source": "official_override"
     },
     "bindawood": {
       "officialUrl": "https://www.bindawood.com/",
@@ -243,32 +147,8 @@
       "discoveredAt": "2026-11-15T05:29:14.597Z",
       "fullflyerUrl": "https://www.fullflyer.com/sa-en-offers/bin-dawood/catalogs/83859-pdf",
       "catalog_id": "83859",
-      "pages": [
-        {
-          "page_number": 1,
-          "image_url": "/leaflets/bindawood/page-1.webp"
-        },
-        {
-          "page_number": 2,
-          "image_url": "/leaflets/bindawood/page-2.webp"
-        },
-        {
-          "page_number": 3,
-          "image_url": "/leaflets/bindawood/page-3.webp"
-        },
-        {
-          "page_number": 4,
-          "image_url": "/leaflets/bindawood/page-4.webp"
-        },
-        {
-          "page_number": 5,
-          "image_url": "/leaflets/bindawood/page-5.webp"
-        },
-        {
-          "page_number": 6,
-          "image_url": "/leaflets/bindawood/page-6.webp"
-        }
-      ]
+      "error": "HTTP 403",
+      "pages": []
     }
   }
 }

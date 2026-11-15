@@ -1,13 +1,13 @@
 {
-  "syncedAt": "2026-11-15T05:29:24.228Z",
+  "syncedAt": "2026-11-15T13:40:37.512Z",
   "source": "weekly_flyer_engine_v2",
   "attribution": "Flyer-sourced prices from improved OCR matching + curated leaflet hotspots. Store tweaks create cross-chain spread for Smart Basket.",
   "stores": {
     "carrefour": {
-      "start_date": "2026-11-11",
-      "end_date": "2026-11-17",
-      "title_en": "A Saudi quality that we are proud of in Carrefour Saudi Arabia from 11 to 17 November 2026",
-      "title_ar": "عروض كارفور — 2026-11-11 إلى 2026-11-17",
+      "start_date": "2026-10-21",
+      "end_date": "2026-11-30",
+      "title_en": "Carrefour 21 October 30 November 2026",
+      "title_ar": "عروض كارفور — 2026-10-21 إلى 2026-11-30",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -120,10 +120,10 @@
       ]
     },
     "lulu": {
-      "start_date": "2026-11-01",
-      "end_date": "2026-11-17",
-      "title_en": "Digital Savings in Lulu Saudi Arabia from 1 to 17 November 2026",
-      "title_ar": "عروض لولو — 2026-11-01 إلى 2026-11-17",
+      "start_date": "2026-11-15",
+      "end_date": "2026-11-22",
+      "title_en": "Lulu 15 22 November 2026",
+      "title_ar": "عروض لولو — 2026-11-15 إلى 2026-11-22",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -470,7 +470,7 @@
     "tamimi": {
       "start_date": "2026-11-11",
       "end_date": "2026-11-17",
-      "title_en": "Weekly Deals in Tamimi markets Saudi Arabia from 11 to 17 November 2026",
+      "title_en": "Tamimi Markets 11 17 November 2026",
       "title_ar": "عروض التميمي — 2026-11-11 إلى 2026-11-17",
       "offers": [
         {
@@ -584,10 +584,10 @@
       ]
     },
     "othaim": {
-      "start_date": "2026-11-11",
-      "end_date": "2026-11-17",
-      "title_en": "We Are the Best Offers in Othaim Markets Saudi Arabia from 11 to 17 November 2026",
-      "title_ar": "عروض العثيم — 2026-11-11 إلى 2026-11-17",
+      "start_date": "2026-11-12",
+      "end_date": "2026-11-19",
+      "title_en": "Othaim 12 19 November 2026",
+      "title_ar": "عروض العثيم — 2026-11-12 إلى 2026-11-19",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -700,10 +700,10 @@
       ]
     },
     "nesto": {
-      "start_date": "2026-11-11",
+      "start_date": "2026-10-29",
       "end_date": "2026-11-17",
-      "title_en": "Jannat Al-Atour Offers in Nesto Saudi Arabia from 11 to 17 November 2026",
-      "title_ar": "عروض نستو — 2026-11-11 إلى 2026-11-17",
+      "title_en": "Nesto Hello Winter At Nesto Sanaya 2 29 October 17 November 2026",
+      "title_ar": "عروض نستو — 2026-10-29 إلى 2026-11-17",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -816,10 +816,10 @@
       ]
     },
     "farm": {
-      "start_date": "2026-11-11",
-      "end_date": "2026-11-17",
-      "title_en": "Your luck is with your key. in Farm markets Saudi Arabia from 11 to 17 November 2026",
-      "title_ar": "عروض المزرعة — 2026-11-11 إلى 2026-11-17",
+      "start_date": "2026-11-12",
+      "end_date": "2026-11-19",
+      "title_en": "Farm Superstores 12 19 November 2026",
+      "title_ar": "عروض المزرعة — 2026-11-12 إلى 2026-11-19",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
