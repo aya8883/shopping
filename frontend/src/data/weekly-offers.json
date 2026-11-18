@@ -1,13 +1,13 @@
 {
-  "syncedAt": "2026-11-17T15:44:03.641Z",
+  "syncedAt": "2026-11-18T00:45:06.462Z",
   "source": "weekly_flyer_engine_v2",
   "attribution": "Flyer-sourced prices from improved OCR matching + curated leaflet hotspots. Store tweaks create cross-chain spread for Smart Basket.",
   "stores": {
     "carrefour": {
-      "start_date": "2026-10-21",
-      "end_date": "2026-11-30",
-      "title_en": "Carrefour 21 October 30 November 2026",
-      "title_ar": "عروض كارفور — 2026-10-21 إلى 2026-11-30",
+      "start_date": "2026-11-18",
+      "end_date": "2026-11-24",
+      "title_en": "Carrefour 18 24 November 2026",
+      "title_ar": "عروض كارفور — 2026-11-18 إلى 2026-11-24",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -120,10 +120,10 @@
       ]
     },
     "lulu": {
-      "start_date": "2026-11-15",
-      "end_date": "2026-11-30",
-      "title_en": "Lulu 15 30 November 2026",
-      "title_ar": "عروض لولو — 2026-11-15 إلى 2026-11-30",
+      "start_date": "2026-11-18",
+      "end_date": "2026-11-24",
+      "title_en": "Lulu 18 24 November 2026",
+      "title_ar": "عروض لولو — 2026-11-18 إلى 2026-11-24",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -236,10 +236,10 @@
       ]
     },
     "panda": {
-      "start_date": "2026-11-04",
-      "end_date": "2026-11-10",
-      "title_en": "Panda Weekly 4 10 November 2026",
-      "title_ar": "عروض بنده — 2026-11-04 إلى 2026-11-10",
+      "start_date": "2026-11-18",
+      "end_date": "2026-11-24",
+      "title_en": "Panda Weekly 18 24 November 2026",
+      "title_ar": "عروض بنده — 2026-11-18 إلى 2026-11-24",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -468,10 +468,10 @@
       ]
     },
     "tamimi": {
-      "start_date": "2026-11-11",
-      "end_date": "2026-11-17",
-      "title_en": "Tamimi Markets 11 17 November 2026",
-      "title_ar": "عروض التميمي — 2026-11-11 إلى 2026-11-17",
+      "start_date": "2026-11-18",
+      "end_date": "2026-11-24",
+      "title_en": "Tamimi Markets 18 24 November 2026",
+      "title_ar": "عروض التميمي — 2026-11-18 إلى 2026-11-24",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -584,10 +584,10 @@
       ]
     },
     "othaim": {
-      "start_date": "2026-11-11",
-      "end_date": "2026-11-17",
-      "title_en": "Othaim Corner 11 17 November 2026",
-      "title_ar": "عروض العثيم — 2026-11-11 إلى 2026-11-17",
+      "start_date": "2026-11-18",
+      "end_date": "2026-11-24",
+      "title_en": "Othaim Corner 18 24 November 2026",
+      "title_ar": "عروض العثيم — 2026-11-18 إلى 2026-11-24",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -700,10 +700,10 @@
       ]
     },
     "nesto": {
-      "start_date": "2026-10-29",
-      "end_date": "2026-11-17",
-      "title_en": "Nesto Hello Winter At Nesto Sanaya 2 29 October 17 November 2026",
-      "title_ar": "عروض نستو — 2026-10-29 إلى 2026-11-17",
+      "start_date": "2026-11-05",
+      "end_date": "2026-11-30",
+      "title_en": "Nesto 5 30 November 2026",
+      "title_ar": "عروض نستو — 2026-11-05 إلى 2026-11-30",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -816,10 +816,10 @@
       ]
     },
     "farm": {
-      "start_date": "2026-11-12",
-      "end_date": "2026-11-19",
-      "title_en": "Farm Superstores 12 19 November 2026",
-      "title_ar": "عروض المزرعة — 2026-11-12 إلى 2026-11-19",
+      "start_date": "2026-11-18",
+      "end_date": "2026-11-24",
+      "title_en": "Farm Superstores Weekly Southern 18 24 November 2026",
+      "title_ar": "عروض المزرعة — 2026-11-18 إلى 2026-11-24",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",

@@ -1,47 +1,59 @@
 {
-  "syncedAt": "2026-11-17T15:43:55.910Z",
+  "syncedAt": "2026-11-18T00:44:52.916Z",
   "attribution": "Weekly flyer images from FullFlyer/ilofo when current; otherwise 3orod.net store weeklies. Product grid prices remain illustrative until retailer feeds are connected.",
   "stores": {
     "carrefour": {
       "officialUrl": "https://www.carrefourksa.com/mafsau/en/c/Offers",
-      "title_en": "Carrefour 21 October 30 November 2026",
-      "title_ar": "عروض كارفور — 2026-10-21 إلى 2026-11-30",
-      "start_date": "2026-10-21",
-      "end_date": "2026-11-30",
-      "discoveredAt": "2026-11-17T15:43:55.879Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/carrefour-21-october-30-november-2026/",
+      "title_en": "Carrefour 18 24 November 2026",
+      "title_ar": "عروض كارفور — 2026-11-18 إلى 2026-11-24",
+      "start_date": "2026-11-18",
+      "end_date": "2026-11-24",
+      "discoveredAt": "2026-11-18T00:44:52.882Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/carrefour-18-24-november-2026/",
       "pages": [
         {
           "page_number": 1,
           "image_url": "/leaflets/carrefour/page-1.jpg"
+        },
+        {
+          "page_number": 2,
+          "image_url": "/leaflets/carrefour/page-2.jpg"
         }
       ],
       "page_source": "official_override"
     },
     "lulu": {
       "officialUrl": "https://www.luluhypermarket.com/en-sa/promotions",
-      "title_en": "Lulu 15 30 November 2026",
-      "title_ar": "عروض لولو — 2026-11-15 إلى 2026-11-30",
-      "start_date": "2026-11-15",
-      "end_date": "2026-11-30",
-      "discoveredAt": "2026-11-17T15:43:55.879Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/lulu-15-30-november-2026/",
+      "title_en": "Lulu 18 24 November 2026",
+      "title_ar": "عروض لولو — 2026-11-18 إلى 2026-11-24",
+      "start_date": "2026-11-18",
+      "end_date": "2026-11-24",
+      "discoveredAt": "2026-11-18T00:44:52.882Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/lulu-18-24-november-2026/",
       "pages": [
         {
           "page_number": 1,
           "image_url": "/leaflets/lulu/page-1.jpg"
+        },
+        {
+          "page_number": 2,
+          "image_url": "/leaflets/lulu/page-2.jpg"
+        },
+        {
+          "page_number": 3,
+          "image_url": "/leaflets/lulu/page-3.jpg"
         }
       ],
       "page_source": "official_override"
     },
     "panda": {
       "officialUrl": "https://www.panda.com.sa/en/offers",
-      "title_en": "Panda Weekly 4 10 November 2026",
-      "title_ar": "عروض بنده — 2026-11-04 إلى 2026-11-10",
-      "start_date": "2026-11-04",
-      "end_date": "2026-11-10",
-      "discoveredAt": "2026-11-17T15:43:55.879Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/panda-weekly-4-10-november-2026/",
+      "title_en": "Panda Weekly 18 24 November 2026",
+      "title_ar": "عروض بنده — 2026-11-18 إلى 2026-11-24",
+      "start_date": "2026-11-18",
+      "end_date": "2026-11-24",
+      "discoveredAt": "2026-11-18T00:44:52.882Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/panda-weekly-18-24-november-2026/",
       "pages": [
         {
           "page_number": 1,
@@ -68,32 +80,28 @@
     },
     "tamimi": {
       "officialUrl": "https://www.tamimimarkets.com/",
-      "title_en": "Tamimi Markets 11 17 November 2026",
-      "title_ar": "عروض التميمي — 2026-11-11 إلى 2026-11-17",
-      "start_date": "2026-11-11",
-      "end_date": "2026-11-17",
-      "discoveredAt": "2026-11-17T15:43:55.879Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/tamimi-markets-11-17-november-2026/",
+      "title_en": "Tamimi Markets 18 24 November 2026",
+      "title_ar": "عروض التميمي — 2026-11-18 إلى 2026-11-24",
+      "start_date": "2026-11-18",
+      "end_date": "2026-11-24",
+      "discoveredAt": "2026-11-18T00:44:52.882Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/tamimi-markets-18-24-november-2026/",
       "pages": [
         {
           "page_number": 1,
           "image_url": "/leaflets/tamimi/page-1.jpg"
-        },
-        {
-          "page_number": 2,
-          "image_url": "/leaflets/tamimi/page-2.jpg"
         }
       ],
       "page_source": "official_override"
     },
     "othaim": {
       "officialUrl": "https://www.othaimmarkets.com/",
-      "title_en": "Othaim Corner 11 17 November 2026",
-      "title_ar": "عروض العثيم — 2026-11-11 إلى 2026-11-17",
-      "start_date": "2026-11-11",
-      "end_date": "2026-11-17",
-      "discoveredAt": "2026-11-17T15:43:55.879Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/othaim-corner-11-17-november-2026/",
+      "title_en": "Othaim Corner 18 24 November 2026",
+      "title_ar": "عروض العثيم — 2026-11-18 إلى 2026-11-24",
+      "start_date": "2026-11-18",
+      "end_date": "2026-11-24",
+      "discoveredAt": "2026-11-18T00:44:52.882Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/othaim-corner-18-24-november-2026/",
       "pages": [
         {
           "page_number": 1,
@@ -104,12 +112,12 @@
     },
     "nesto": {
       "officialUrl": "https://www.nestohypermarket.com/",
-      "title_en": "Nesto Hello Winter At Nesto Sanaya 2 29 October 17 November 2026",
-      "title_ar": "عروض نستو — 2026-10-29 إلى 2026-11-17",
-      "start_date": "2026-10-29",
-      "end_date": "2026-11-17",
-      "discoveredAt": "2026-11-17T15:43:55.879Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/nesto-hello-winter-at-nesto-sanaya-2-29-october-17-november-2026/",
+      "title_en": "Nesto 5 30 November 2026",
+      "title_ar": "عروض نستو — 2026-11-05 إلى 2026-11-30",
+      "start_date": "2026-11-05",
+      "end_date": "2026-11-30",
+      "discoveredAt": "2026-11-18T00:44:52.882Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/nesto-5-30-november-2026/",
       "pages": [
         {
           "page_number": 1,
@@ -120,12 +128,12 @@
     },
     "farm": {
       "officialUrl": "https://www.farm.com.sa/",
-      "title_en": "Farm Superstores 12 19 November 2026",
-      "title_ar": "عروض المزرعة — 2026-11-12 إلى 2026-11-19",
-      "start_date": "2026-11-12",
-      "end_date": "2026-11-19",
-      "discoveredAt": "2026-11-17T15:43:55.879Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/farm-superstores-12-19-november-2026/",
+      "title_en": "Farm Superstores Weekly Southern 18 24 November 2026",
+      "title_ar": "عروض المزرعة — 2026-11-18 إلى 2026-11-24",
+      "start_date": "2026-11-18",
+      "end_date": "2026-11-24",
+      "discoveredAt": "2026-11-18T00:44:52.882Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/farm-superstores-weekly-southern-18-24-november-2026/",
       "pages": [
         {
           "page_number": 1,
