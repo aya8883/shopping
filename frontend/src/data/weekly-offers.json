@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-18T00:45:06.462Z",
+  "syncedAt": "2026-11-18T15:22:09.651Z",
   "source": "weekly_flyer_engine_v2",
   "attribution": "Flyer-sourced prices from improved OCR matching + curated leaflet hotspots. Store tweaks create cross-chain spread for Smart Basket.",
   "stores": {
@@ -121,9 +121,9 @@
     },
     "lulu": {
       "start_date": "2026-11-18",
-      "end_date": "2026-11-24",
-      "title_en": "Lulu 18 24 November 2026",
-      "title_ar": "عروض لولو — 2026-11-18 إلى 2026-11-24",
+      "end_date": "2026-11-25",
+      "title_en": "Lulu 18 25 November 2026",
+      "title_ar": "عروض لولو — 2026-11-18 إلى 2026-11-25",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -352,10 +352,10 @@
       ]
     },
     "danube": {
-      "start_date": "2026-11-11",
-      "end_date": "2026-11-17",
-      "title_en": "Danube Western Region Weekly 11 17 November 2026",
-      "title_ar": "عروض الدانوب — 2026-11-11 إلى 2026-11-17",
+      "start_date": "2026-11-18",
+      "end_date": "2026-12-01",
+      "title_en": "Danube Western Region 18 November 1 December 2026",
+      "title_ar": "عروض الدانوب — 2026-11-18 إلى 2026-12-01",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
