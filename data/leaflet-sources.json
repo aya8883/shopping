@@ -3,40 +3,40 @@
   "stores": {
     "carrefour": {
       "officialUrl": "https://www.carrefourksa.com/mafsau/en/c/Offers",
-      "title_en": "Carrefour 18 24 November 2026",
-      "title_ar": "عروض كارفور — 2026-11-18 إلى 2026-11-24",
-      "start_date": "2026-11-18",
-      "end_date": "2026-11-24",
-      "discoveredAt": "2026-11-19T07:15:32.196Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/carrefour-18-24-november-2026/",
+      "title_en": "Carrefour 19 26 November 2026",
+      "title_ar": "عروض كارفور — 2026-11-19 إلى 2026-11-26",
+      "start_date": "2026-11-19",
+      "end_date": "2026-11-26",
+      "discoveredAt": "2026-11-19T20:12:55.155Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/carrefour-19-26-november-2026/",
       "pages": [
         {
           "page_number": 1,
-          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/11/carrefour-18-24-november-2026-1200x1500.jpg"
+          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/11/carrefour-19-26-november-2026-1200x1594.jpg"
         },
         {
           "page_number": 2,
-          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/11/carrefour-18-24-november-2026-2-782x1024.jpg"
+          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/11/carrefour-19-26-november-2026-3-823x1024.jpg"
+        },
+        {
+          "page_number": 3,
+          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/11/carrefour-19-26-november-2026-2-819x1024.jpg"
         }
       ],
       "page_source": "3orod"
     },
     "lulu": {
       "officialUrl": "https://www.luluhypermarket.com/en-sa/promotions",
-      "title_en": "Lulu 18 25 November 2026",
-      "title_ar": "عروض لولو — 2026-11-18 إلى 2026-11-25",
+      "title_en": "Lulu 18 November 1 December 2026",
+      "title_ar": "عروض لولو — 2026-11-18 إلى 2026-12-01",
       "start_date": "2026-11-18",
-      "end_date": "2026-11-25",
-      "discoveredAt": "2026-11-19T07:15:32.196Z",
-      "fullflyerUrl": "https://3orod.net/sa/offers/lulu-18-25-november-2026/",
+      "end_date": "2026-12-01",
+      "discoveredAt": "2026-11-19T20:12:55.155Z",
+      "fullflyerUrl": "https://3orod.net/sa/offers/lulu-18-november-1-december-2026/",
       "pages": [
         {
           "page_number": 1,
-          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/11/lulu-18-25-november-2026-1200x1200.jpg"
-        },
-        {
-          "page_number": 2,
-          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/11/lulu-18-25-november-2026-2-819x1024.jpg"
+          "image_url": "https://3orod.net/sa/wp-content/uploads/sites/2/2026/11/lulu-18-november-1-december-2026-1200x1200.jpg"
         }
       ],
       "page_source": "3orod"
@@ -47,7 +47,7 @@
       "title_ar": "عروض بنده — 2026-11-18 إلى 2026-11-24",
       "start_date": "2026-11-18",
       "end_date": "2026-11-24",
-      "discoveredAt": "2026-11-19T07:15:32.196Z",
+      "discoveredAt": "2026-11-19T20:12:55.155Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/panda-weekly-18-24-november-2026/",
       "pages": [
         {
@@ -63,7 +63,7 @@
       "title_ar": "عروض الدانوب — 2026-11-18 إلى 2026-12-01",
       "start_date": "2026-11-18",
       "end_date": "2026-12-01",
-      "discoveredAt": "2026-11-19T07:15:32.196Z",
+      "discoveredAt": "2026-11-19T20:12:55.155Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/danube-western-region-18-november-1-december-2026/",
       "pages": [
         {
@@ -79,7 +79,7 @@
       "title_ar": "عروض التميمي — 2026-11-18 إلى 2026-11-24",
       "start_date": "2026-11-18",
       "end_date": "2026-11-24",
-      "discoveredAt": "2026-11-19T07:15:32.196Z",
+      "discoveredAt": "2026-11-19T20:12:55.155Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/tamimi-markets-18-24-november-2026/",
       "pages": [
         {
@@ -99,7 +99,7 @@
       "title_ar": "عروض العثيم — 2026-11-18 إلى 2026-11-24",
       "start_date": "2026-11-18",
       "end_date": "2026-11-24",
-      "discoveredAt": "2026-11-19T07:15:32.196Z",
+      "discoveredAt": "2026-11-19T20:12:55.155Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/othaim-corner-18-24-november-2026/",
       "pages": [
         {
@@ -115,7 +115,7 @@
       "title_ar": "عروض نستو — 2026-11-05 إلى 2026-11-30",
       "start_date": "2026-11-05",
       "end_date": "2026-11-30",
-      "discoveredAt": "2026-11-19T07:15:32.196Z",
+      "discoveredAt": "2026-11-19T20:12:55.155Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/nesto-5-30-november-2026/",
       "pages": [
         {
@@ -131,7 +131,7 @@
       "title_ar": "عروض المزرعة — 2026-11-19 إلى 2026-11-26",
       "start_date": "2026-11-19",
       "end_date": "2026-11-26",
-      "discoveredAt": "2026-11-19T07:15:32.196Z",
+      "discoveredAt": "2026-11-19T20:12:55.155Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/farm-superstores-19-26-november-2026-2/",
       "pages": [
         {
@@ -147,7 +147,7 @@
       "title_ar": "عروض بن داود — 2026-11-18 إلى 2026-11-24",
       "start_date": "2026-11-18",
       "end_date": "2026-11-24",
-      "discoveredAt": "2026-11-19T07:15:32.196Z",
+      "discoveredAt": "2026-11-19T20:12:55.155Z",
       "fullflyerUrl": "https://3orod.net/sa/offers/bindawood-western-region-weekly-offers-18-24-november-2026/",
       "pages": [
         {
@@ -158,5 +158,5 @@
       "page_source": "3orod"
     }
   },
-  "discoveredAt": "2026-11-19T07:15:32.196Z"
+  "discoveredAt": "2026-11-19T20:12:55.155Z"
 }
