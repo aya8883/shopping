@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-18T15:22:09.651Z",
+  "syncedAt": "2026-11-19T00:03:33.773Z",
   "source": "weekly_flyer_engine_v2",
   "attribution": "Flyer-sourced prices from improved OCR matching + curated leaflet hotspots. Store tweaks create cross-chain spread for Smart Basket.",
   "stores": {
@@ -932,10 +932,10 @@
       ]
     },
     "bindawood": {
-      "start_date": "2026-09-30",
-      "end_date": "2026-10-06",
-      "title_en": "Best Deals in Bin Dawood Saudi Arabia from 30 September to 6 October 2026",
-      "title_ar": "عروض بن داود — 2026-09-30 إلى 2026-10-06",
+      "start_date": "2026-11-18",
+      "end_date": "2026-11-24",
+      "title_en": "Bindawood Western Region Weekly Offers 18 24 November 2026",
+      "title_ar": "عروض بن داود — 2026-11-18 إلى 2026-11-24",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
