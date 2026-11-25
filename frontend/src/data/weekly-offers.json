@@ -1,13 +1,13 @@
 {
-  "syncedAt": "2026-11-25T07:35:56.557Z",
+  "syncedAt": "2026-11-25T21:21:28.474Z",
   "source": "weekly_flyer_engine_v2",
   "attribution": "Flyer-sourced prices from improved OCR matching + curated leaflet hotspots. Store tweaks create cross-chain spread for Smart Basket.",
   "stores": {
     "carrefour": {
-      "start_date": "2026-11-19",
-      "end_date": "2026-11-26",
-      "title_en": "Carrefour 19 26 November 2026",
-      "title_ar": "عروض كارفور — 2026-11-19 إلى 2026-11-26",
+      "start_date": "2026-11-25",
+      "end_date": "2026-12-01",
+      "title_en": "Carrefour 25 November 1 December 2026",
+      "title_ar": "عروض كارفور — 2026-11-25 إلى 2026-12-01",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -121,9 +121,9 @@
     },
     "lulu": {
       "start_date": "2026-11-25",
-      "end_date": "2026-12-01",
-      "title_en": "Lulu 25 November 1 December 2026",
-      "title_ar": "عروض لولو — 2026-11-25 إلى 2026-12-01",
+      "end_date": "2026-12-05",
+      "title_en": "Lulu 25 November 5 December 2026",
+      "title_ar": "عروض لولو — 2026-11-25 إلى 2026-12-05",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -352,10 +352,10 @@
       ]
     },
     "danube": {
-      "start_date": "2026-11-18",
+      "start_date": "2026-11-25",
       "end_date": "2026-12-01",
-      "title_en": "Danube Western Region 18 November 1 December 2026",
-      "title_ar": "عروض الدانوب — 2026-11-18 إلى 2026-12-01",
+      "title_en": "Danube Western Region Weekly 25 November 1 December 2026",
+      "title_ar": "عروض الدانوب — 2026-11-25 إلى 2026-12-01",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -586,7 +586,7 @@
     "othaim": {
       "start_date": "2026-11-25",
       "end_date": "2026-12-01",
-      "title_en": "Othaim Corner 25 November 1 December 2026",
+      "title_en": "Othaim 25 November 1 December 2026",
       "title_ar": "عروض العثيم — 2026-11-25 إلى 2026-12-01",
       "offers": [
         {
@@ -932,10 +932,10 @@
       ]
     },
     "bindawood": {
-      "start_date": "2026-11-18",
-      "end_date": "2026-11-24",
-      "title_en": "Bindawood Western Region Weekly Offers 18 24 November 2026",
-      "title_ar": "عروض بن داود — 2026-11-18 إلى 2026-11-24",
+      "start_date": "2026-11-25",
+      "end_date": "2026-12-01",
+      "title_en": "Bindawood Western Region Weekly Offers 25 November 1 December 2026",
+      "title_ar": "عروض بن داود — 2026-11-25 إلى 2026-12-01",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
