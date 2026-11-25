@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-24T22:05:56.869Z",
+  "syncedAt": "2026-11-25T07:35:56.557Z",
   "source": "weekly_flyer_engine_v2",
   "attribution": "Flyer-sourced prices from improved OCR matching + curated leaflet hotspots. Store tweaks create cross-chain spread for Smart Basket.",
   "stores": {
@@ -120,10 +120,10 @@
       ]
     },
     "lulu": {
-      "start_date": "2026-11-24",
-      "end_date": "2026-11-30",
-      "title_en": "Lulu 24 30 November 2026",
-      "title_ar": "عروض لولو — 2026-11-24 إلى 2026-11-30",
+      "start_date": "2026-11-25",
+      "end_date": "2026-12-01",
+      "title_en": "Lulu 25 November 1 December 2026",
+      "title_ar": "عروض لولو — 2026-11-25 إلى 2026-12-01",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -236,10 +236,10 @@
       ]
     },
     "panda": {
-      "start_date": "2026-11-18",
-      "end_date": "2026-11-24",
-      "title_en": "Panda Weekly 18 24 November 2026",
-      "title_ar": "عروض بنده — 2026-11-18 إلى 2026-11-24",
+      "start_date": "2026-11-25",
+      "end_date": "2026-12-01",
+      "title_en": "Panda Weekly 25 November 1 December 2026",
+      "title_ar": "عروض بنده — 2026-11-25 إلى 2026-12-01",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -468,10 +468,10 @@
       ]
     },
     "tamimi": {
-      "start_date": "2026-11-24",
+      "start_date": "2026-11-25",
       "end_date": "2026-12-01",
-      "title_en": "Tamimi Markets 24 November 1 December 2026",
-      "title_ar": "عروض التميمي — 2026-11-24 إلى 2026-12-01",
+      "title_en": "Tamimi Markets 25 November 1 December 2026",
+      "title_ar": "عروض التميمي — 2026-11-25 إلى 2026-12-01",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
@@ -816,10 +816,10 @@
       ]
     },
     "farm": {
-      "start_date": "2026-11-19",
-      "end_date": "2026-11-26",
-      "title_en": "Farm Superstores 19 26 November 2026 2",
-      "title_ar": "عروض المزرعة — 2026-11-19 إلى 2026-11-26",
+      "start_date": "2026-11-25",
+      "end_date": "2026-12-01",
+      "title_en": "Farm Superstores Weekly Southern 25 November 1 December 2026",
+      "title_ar": "عروض المزرعة — 2026-11-25 إلى 2026-12-01",
       "offers": [
         {
           "productId": "44444444-4444-4444-4444-444444444001",
